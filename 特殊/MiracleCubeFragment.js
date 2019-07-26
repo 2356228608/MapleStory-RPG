@@ -1,0 +1,5 @@
+﻿function start() {
+}
+
+function action() {
+}

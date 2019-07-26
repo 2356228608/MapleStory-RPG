@@ -1,0 +1,7 @@
+﻿function enter(pi) {
+    if (pi.haveItem(4001120, 20) && pi.haveItem(4001121, 20) && pi.haveItem(4001122, 20) && pi.isLeader()) {
+        pi.warpParty(925100400, 0);
+    } else {
+        pi.playerMessage(5, "璇锋?堕????绾с??涓?绾с??楂?绾с??娴风??韬?浠藉??20涓?,??????娉???杩?!");
+    }
+}

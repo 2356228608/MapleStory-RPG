@@ -1,0 +1,4 @@
+﻿function enter(pi) {
+    pi.playerMessage(-1, "??娉?杩??ワ?");
+    pi.playerMessage(5, "??娉?杩??ワ?");
+}
