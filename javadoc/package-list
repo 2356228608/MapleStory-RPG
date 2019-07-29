@@ -36,6 +36,7 @@ scripting
 server
 server.achievement
 server.buffs
+server.buffs.buffclasses.Pathfinder
 server.buffs.buffclasses.adventurer
 server.buffs.buffclasses.ark
 server.buffs.buffclasses.beasttamer

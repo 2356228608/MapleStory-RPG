@@ -784,7 +784,7 @@ function getEquipStatToArray() {//得到装备数据
     EquipStat[19] = cm.getEquipBySlot(position).getOption(1,true);
     EquipStat[20] = cm.getEquipBySlot(position).getOption(2,true);
     EquipStat[21] = cm.getEquipBySlot(position).getOption(3,true);
-    EquipStat[22] = cm.getEquipBySlot(position).getCHUC();
+    EquipStat[22] = cm.getEquipBySlot(position).getCHUC();//强化星星次数
     EquipStat[23] = cm.getEquipBySlot(position).getReduceReq();
     EquipStat[24] = cm.getEquipBySlot(position).getSpecialAttribute();
     EquipStat[25] = cm.getEquipBySlot(position).getBDR();
@@ -793,7 +793,7 @@ function getEquipStatToArray() {//得到装备数据
     EquipStat[28] = cm.getEquipBySlot(position).getStatR();
     EquipStat[29] = cm.getEquipBySlot(position).getCuttable();
     //新增属性部分
-    EquipStat[30] = cm.getEquipBySlot(position).getAttribute();
+    EquipStat[30] = cm.getEquipBySlot(position).getAttribute();//道具属性 如封印 防滑 防冻 不可交易
     EquipStat[31] = cm.getEquipBySlot(position).getIUC();
     EquipStat[32] = cm.getEquipBySlot(position).getPrevBonusExpRate();
     EquipStat[33] = 0//cm.getEquipBySlot(position).getSealedLevel();

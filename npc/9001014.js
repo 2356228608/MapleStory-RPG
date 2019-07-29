@@ -71,14 +71,24 @@ function action(mode, type, selection) {
         selStr += "#L2#" + p2 + "在线奖励#l#L3#" + p2 + "充值奖励#l#L4#" + p2 + "装备制作#l#L17#" + p2 + "全场泡点#l\r\n\r\n";
         selStr += "#L5##b" + p2 + "中介兑换#l#L6#" + p2 + "重置副本#l#L7#" + p2 + "美容美发#l#L9#" + p2 + "解锁游戏#l\r\n\r\n";
         selStr += "#L8##d" + p2 + "查活跃渡#l#L10#" + p2 + "春节币店#l#L11#" + p2 + "武器破攻#l#L12#" + p2 + "蜡笔潜能#l\r\n\r\n";
-		selStr += "#L100##b" + p2 + "神秘力量#l\r\n\r\n";
+		selStr += "#L100##b" + p2 + "神秘力量#l";
+		selStr += "#L101##b" + p2 + "激活创世武器潜能#l";
+		selStr += "#L102##b" + p2 + "装备品质提升#l\r\n\r\n";
         selStr += "#g======================================================\r\n";
         selStr += "#L13##r" + p2 + "宠物进化#l#L14#" + p2 + "爆率查询#l#L15#" + p2 + "装备还原#l#L16#" + p2 + "结婚入口#l\r\n\r\n";
         selStr += "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "\r\n";
         cm.askMenu(selStr);
     } else if (status == 1) {
         switch (selection) {
-            case 0:
+            case 102:
+                cm.dispose();
+                cm.openNpc(1530040);
+                break;
+			case 101:
+                cm.dispose();
+                cm.openNpc(3003981);
+                break;
+			case 0:
                 cm.dispose();
                 cm.openNpc(9310144, 1);
                 break;

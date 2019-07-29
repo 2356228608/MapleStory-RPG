@@ -34,11 +34,11 @@
                 return;
         }
         if (status == 0)
-                qm.askAcceptDecline("#v1142004# #e#b#t1142004##k\r\n\r - Time Limit 30 Days\r - Hunt 100,000 Monsters\r #n *Only monsters that are at your level or higher are approved.\r\nDo you want to test your skills to see if you're worthy of this title?");
+                qm.askAcceptDecline("#v1142004# #e#b#t1142004##k\r\n\r - 时间限制30天\r-狩猎100000个怪物 ,只有处于您R级别或更高级别的怪物才被批准。\\r是否要测试您的技能以查看您是否有权查看此标题？");
                 else if (status == 1) {
-        qm.sendNext("Current Ranking \r\n1. #bMoople#k : #r538,673#k monsters\r\n2. #bZeroQuanta#k : #r111,421#k monsters\r\nDon't forget that the record resets at the beginning of each month."); //TODO
+        qm.sendNext("当前排名\r\n1。#bmoole k:r538673 k怪物\r\n2。#bzeroquanta k:r111421 k怪物\r\n别忘了记录在每个月初重置。"); //TODO
         } else if (status == 2) {
-        qm.sendNextPrev("I'll give you 30 days to reach your hunting goal. Once you are finished, come back and see me. Remember, you have to come back and see me within the time limit in order to be approved. Also, you are prohibited from trying out for another title unless you first complete or forfeit this challenge.");
+        qm.sendNextPrev("我给你30天时间来达到你的狩猎目标。一旦你完成了，回来看看我。记住，你必须在规定的时间内回来见我才能被批准。此外，除非您先完成或放弃此挑战，否则您将被禁止尝试其他标题。");
         } else if (status == 3) {
         qm.forceStartQuest();
                 qm.dispose();

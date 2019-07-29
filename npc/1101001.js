@@ -7,7 +7,7 @@
 importPackage(Packages.tools.packet);
 function start() {
     //cm.useItem(2022458);
-    cm.sendOk("不要停止锻炼. 你的每一份力量对保护冒险岛世界都至关重要....");
+    cm.sendOk("Don't stop training. Every ounce of your energy is required to protect the world of Maple....");
     //WvsContext.serverNotice(0, 0, "String message", true);
     cm.dispose();
 }

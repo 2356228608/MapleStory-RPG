@@ -23,20 +23,30 @@ function action(mode, type, selection) {
         ms.npc_SetSpecialAction(3000107, "summon");
         ms.sendNextNoESC("糟糕了！！", 3000107);
     } else if (status === i++) {
+		// 往左走
         ms.inGameDirectionEvent_MoveAction(1);
+		// 持续 0.03s
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
+		// 停止移动
         ms.inGameDirectionEvent_MoveAction(0);
+		// 持续 0.03s
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
+		// 镜头往左移动
         ms.inGameDirectionEvent_PushMoveInfo(0, 300, -400, 27);
     } else if (status === i++) {
+		// 持续 2.5s
         ms.inGameDirectionEvent_AskAnswerTime(2501);
     } else if (status === i++) {
+		// 图片式剧情提示
         ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg1/0", 7000, 0, -150, 1, 0, 1, 3000107, 0, 0);
-        ms.npc_SetForceMove(3000107, 1, 600, 100);
+        // NPC往右走
+		ms.npc_SetForceMove(3000107, 1, 600, 100);
+		// 镜头往右移动
         ms.inGameDirectionEvent_PushMoveInfo(1, 100, 0, 0);
     } else if (status === i++) {
+		// 持续 8s
         ms.inGameDirectionEvent_AskAnswerTime(8076);
     } else if (status === i++) {
         ms.sendNextNoESC("树精族的首都沦陷了！", 3000107);
@@ -55,17 +65,21 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextNoESC("我们有没有什么办法打败达勒摩尔？现在的达勒摩尔拥有能和神一较高下的力量，连时间之超越者克洛尼卡都被他打败，还被夺去了力量。", 3000106);
     } else if (status === i++) {
+		// 往右走
         ms.inGameDirectionEvent_MoveAction(2);
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
+		// 停止移动
         ms.inGameDirectionEvent_MoveAction(0);
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
         ms.sendNextNoESC("赫里希安的防御膜还算坚固，达勒摩尔没那么容易攻进来，只守不攻应该没太大问题。虽然力量的差异显著，但绝对不能放弃希望。", 3000106);
     } else if (status === i++) {
+		// 往左走
         ms.inGameDirectionEvent_MoveAction(1);
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
+		// 停止移动
         ms.inGameDirectionEvent_MoveAction(0);
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {

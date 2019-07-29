@@ -31,7 +31,7 @@ function action(mode, type, selection) {
         txt += "　#b#L6#" + vvv4 + " 刷金币#k#l　#b#L5#" + vvv4 + " 刷余额#b#l　#b#L4#" + vvv4 + " 刷在线时间#k#l\r\n";
         txt += "　#d#L7#" + vvv4 + " 刷经验#k#l　#d#L8#" + vvv4 + " 刷人气#b#l　#d#L9#" + vvv4 + " 修改属性#b#l\r\n";
         txt += "　#d#L10#" + vvv4 + " 满技能#k#l  #d#L11#" + vvv4 + " 高级刷物#b#l#d#L12#" + vvv4 + " 去任意地图#b#l\r\n";
-		txt += "　#d#L15#" + vvv4 + " 刷声望#b#l  #d#L19#" + vvv4 + " 刷核心碎片#b#l#d#L14#" + vvv4 + " 指定升级#b#l\r\n#l";
+		txt += "　#d#L15#" + vvv4 + " 刷声望#b#l  #d#L19#" + vvv4 + " 刷核心碎片#b#l#d#L14#" + vvv4 + " 一键刷级#b#l\r\n#l";
         txt += "  #d#L13#" + vvv4 + "综合在线刷物#b#l";
 		txt += "　     #d#L22#" + vvv4 + "一键获取神装#b#l\r\n";
 		txt += "  #d#L25#" + vvv4 + "一键获取神秘套装(非神装)#b#l\r\n";
