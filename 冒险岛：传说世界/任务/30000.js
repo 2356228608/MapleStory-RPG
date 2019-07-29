@@ -15,11 +15,8 @@ function start(mode, type, selection) {
     } else if (status == 1) {
         qm.sendNext("#b#h ##k，我会用神兽的力量立刻把你传送到圣地。");
     } else if (status == 2) {
-        qm.warp(130000000, 1);
-		qm.inGameDirectionEvent_MoveAction(1);ms.inGameDirectionEvent_AskAnswerTime(1000);
-    } else if (status == 2) {
-        qm.warp(910700200, 0);
-        qm.forceStartQuest();
+        qm.warp(913080000, 1);
+    } else {
         qm.dispose();
     }
 }
