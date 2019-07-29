@@ -18,6 +18,7 @@ function start(mode, type, selection) {
 		qm.sendNextS("没办法出去？出口堵住了吗？知道了，我去试试看。");
 	} else if (status === i++) {
 		qm.sendNext("快去帮我确认一下。我真的很想出去……", 1064001);
+	} else if (status === i++) {
 		// 收尾		
 		qm.forceStartQuest();
 		// 这个还没完成
