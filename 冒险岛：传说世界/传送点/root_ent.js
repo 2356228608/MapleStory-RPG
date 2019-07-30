@@ -3,8 +3,8 @@ Made by Jessefjxm
  */
 function enter(pi) {
 	pi.saveLocation("ROOT");
-	if (pi.isQuestFinished(30013)) {
-		// 已通过剧情任务
+	if (pi.isQuestFinished(30008)) {
+		// 已通过剧情任务前半部分
 		pi.warp(105200000, 0);
 	} else if (!pi.isQuestActive(30000) && !pi.isQuestFinished(30000)) {
 		// 还没开始剧情
