@@ -1,4 +1,10 @@
-﻿var status;
+﻿/*  This is mada by 娜娜    
+ *  This source is made by BMS Team
+ *  脚本功能：满技能功能
+ *  @Author 娜娜 
+ */
+
+var status;
 var sel;
 
 function start() {
@@ -142,6 +148,9 @@ function action(mode, type, selection) {
 						cm.dispose();
 					}else if(cm.getJob() == 332){
 						cm.maxAllSkills_古迹猎人(cm.getJob());
+						cm.dispose();
+					}else if(cm.getJob() == 572){
+						cm.maxAllSkills_龙的传人(cm.getJob());
 						cm.dispose();
 					}else{
 						cm.dispose();

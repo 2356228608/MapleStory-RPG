@@ -172,7 +172,7 @@ function action(mode, type, selection) {
 					cm.dispose();
 					cm.sendOk("请先1转后再来找我!");
 				}else if(cm.getLevel() <= cm.getplayermaxLevel()){
-					cm.askNumber("请输入你想要升级到多少等级.最高255级,\r\n注意:升级过程中请勿其他NPC操作,\r\n#k", 0, 0, 255);
+					cm.askNumber("请输入你想要升级到多少等级.最高"+cm.getplayermaxLevel()+"级,\r\n注意:升级过程中请勿其他NPC操作,\r\n#k", 0, 0, cm.getplayermaxLevel());
 					select=1;
 				}else{
 					cm.dispose();
@@ -209,17 +209,18 @@ function action(mode, type, selection) {
         }
     } else if (status == 2) {
         if(select = 1){
-			//cm.playerMessage(1,"注意:为保证稳定性,升级过程中请勿其他NPC操作,否则容易掉线或者卡住.");
-			cm.setInGameDirectionMode(true,false,false); //屏蔽/解锁操作台 true = 锁 false = 解
+			cm.playerMessage(1,"注意:为保证稳定性,升级过程中请勿其他NPC操作,否则容易掉线或者卡住.");
+			//cm.setInGameDirectionMode(true,false,false); //屏蔽/解锁操作台 true = 锁 false = 解
             //cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 			while (cm.getLevel() < selection) {
-                if (cm.getLevel() < 255) {
-                    cm.getPlayer().gainExp(cm.getPlayer().getNeededExp() - cm.getPlayer().getExp(), true, false, true);
+                if (cm.getLevel() < cm.getplayermaxLevel()) {
+                    //cm.getPlayer().gainExp(cm.getPlayer().getNeededExp() - cm.getPlayer().getExp(), true, false, true);
+					cm.levelUp();
                 }
 				cm.effect_NormalSpeechBalloon("\r\n#fs30#正在刷级,当前等级:<"+cm.getLevel()+">",2000,0);
             }
-			//cm.playerMessage(1,"已升级完成.");
-			cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+			cm.playerMessage(1,"已升级完成.");
+			//cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
             //cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 			cm.dispose();
 		}

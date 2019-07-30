@@ -5,7 +5,6 @@ var status = -1;
 
 function action(mode, type, selection) {
 	status++;
-
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
@@ -54,14 +53,15 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("好的，我马上用神兽的力量把你送到#b寂静的湿地#k去。", 1101002);
 	} else if (status === i++) {
-		// NPC离场
-		ms.npc_LeaveField(1101002);
 		// 收尾
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
+		// 传送到 寂静的湿地
 		ms.warp(105010000, 0);
+		// NPC离场
+		ms.npc_LeaveField(1101002);
 	} else {
 		ms.dispose();
 	}

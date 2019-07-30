@@ -5,14 +5,6 @@ var status = -1;
 
 function action(mode, type, selection) {
 	status++;
-	if (ms.isQuestActive(30000)) {
-		action30000(mode, type, selection);
-	} else {
-		ms.dispose();
-	}
-}
-
-function action30000(mode, type, selection) {
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
@@ -21,23 +13,20 @@ function action30000(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		ms.inGameDirectionEvent_AskAnswerTime(10);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {		
+		ms.sendNextSNoESC("虽然卷轴很陈旧，但是一点问题都没有。重新回去吧。");
 	} else if (status === i++) {
-        ms.effect_Direction("Effect/Direction11.img/meet/Scene0");
-		ms.inGameDirectionEvent_AskAnswerTime(2500);
-	} else if (status === i++) {
-        ms.effect_Direction("Effect/Direction11.img/meet/Scene1");
-		ms.inGameDirectionEvent_AskAnswerTime(6000);
-	} else if (status === i++) {
-        ms.effect_Direction("Effect/Direction11.img/meet/Scene2");
-		ms.inGameDirectionEvent_AskAnswerTime(14000);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		// 收尾
-		ms.forceCompleteQuest(30000);
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
+		// 传送到 巨大的树根	
+		ms.warp(910700200, 0);
+		ms.updateInfoQuest(30004,"oldscroll=2");
 	} else {
 		ms.dispose();
 	}
