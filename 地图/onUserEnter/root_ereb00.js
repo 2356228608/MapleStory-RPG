@@ -5,6 +5,16 @@ var status = -1;
 
 function action(mode, type, selection) {
 	status++;
+	 if (ms.isQuestActive(30000)) {
+	     	action30000(mode, type, selection);
+	 } else if (ms.isQuestActive(30007)) {
+	     	action30007(mode, type, selection);
+	 } else {
+		ms.dispose();
+	 }
+}
+
+function action30000(mode, type, selection) {
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
@@ -62,6 +72,21 @@ function action(mode, type, selection) {
 		ms.warp(105010000, 0);
 		// NPC离场
 		ms.npc_LeaveField(1101002);
+	} else {
+		ms.dispose();
+	}
+}
+
+// 召唤一只南哈特来对话
+function action30007(mode, type, selection) {
+	var i = -1;
+	if (status <= i++) {
+		ms.dispose();
+	} else if (status === i++) {
+		// 召唤会动的NPC
+		ms.npc_ChangeController(1101002, 150, 10, 1); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1101002, "summon");
+		ms.dispose();
 	} else {
 		ms.dispose();
 	}

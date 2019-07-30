@@ -25,8 +25,8 @@ var PQ = '半半';
 var PQ1 = '进阶半半';
 
 //配置文件名称
-var eventname = "HalfJBoss";
-var eventname1 = "HalfBoss";
+var eventname = "HalfBoss";
+var eventname1 = "HalfJBoss";
 
 //设置每日次数
 var maxenter = 50;

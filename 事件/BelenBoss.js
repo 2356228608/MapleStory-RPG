@@ -55,7 +55,11 @@ function playerExit(eim, player) {
 }
 
 function monsterValue(eim, mobId) {
-    return 1;
+	eim.broadcastPlayerMsg(2, "mobId=" + mobId);
+	if (mobId == 8930000) {
+			eim.getPlayers().get(i).updateInfoQuest(30012, "clear=clear");
+	}
+	return 1;
 }
 
 function allMonstersDead(eim) {

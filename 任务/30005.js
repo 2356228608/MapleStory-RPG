@@ -53,7 +53,7 @@ function end(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextNoESC("我也不知道。他们全都披着斗篷，看不见脸。啊，对了，有个一只眼睛戴着眼罩的魔族男子好像是他们的队长。", 1064001);
 	//} else if (status === i++) {
-		// 放图片 黛米安 暂时找不到
+		// 图片 黛米安
 		//qm.inGameDirectionEvent_AskAnswerTime(8000); 
 	} else if (status === i++) {
 		qm.sendNextSNoESC("（一只眼睛戴着眼罩的魔族？到底是谁呢？）");

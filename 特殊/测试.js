@@ -27,8 +27,8 @@ function action(mode, type, selection) {
 		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status == i++) {
-        cm.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/Aura/0", 0, 0, 0);
-        cm.inGameDirectionEvent_AskAnswerTime(1000);
+		cm.updateInfoQuest(30009, "clear=clear");
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status == i++) {
 		cm.curNodeEventEnd(true);
 		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解

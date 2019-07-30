@@ -8,6 +8,6 @@ function enter(pi) {
 	} else if (pi.isQuestActive(30003)) {
 		pi.warp(105010200, 0);
 	} else {
-//		pi.warp(105010200, 0);
+		pi.warp(105010000, 0);
 	}
 }

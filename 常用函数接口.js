@@ -55,7 +55,7 @@ ms.playVideoByScript("kaiser.avi");
 ms.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
 // 刷怪
 ms.mob_EnterField(9300546, -900, 29);
-// 玩家放动画
+// 玩家放动画 ? x y ? ? ? NPCID ?? 
 ms.inGameDirectionEvent_Effect("Skill/6112.img/skill/61121100/hit", 0, 0, 0, 1, 0, 1, 3000122, 0, 0);
 // npc挂了
 ms.npc_SetSpecialAction(3000123, "die1", 1);
