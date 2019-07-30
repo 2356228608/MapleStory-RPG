@@ -25,7 +25,7 @@ function start(mode, type, selection) {
 		qm.sendNextS("到底是怎么回事？嗯，嗯？身，身体被吸进去了！");
 	} else if (status === i++) {
 		// 隐藏主角
-		qm.inGameDirectionEvent_SetHideEffect(1);
+		ms.inGameDirectionEvent_SetHideEffect(1);
 		// 瞬移特效
 		qm.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
