@@ -21,47 +21,25 @@ function action(mode, type, selection) {
 	var i = -1;
 	if (status <= i++) {
 		cm.dispose();
-	} else if (status == i++) {
-		// 5120008 枫叶
-		// 5120012 圣诞礼盒
-		// 5120016 老虎
-		// 5120017 女法师
-		// 5120019 云朵
-		// 5120026 标准黄框
-		// 5120027 高科技信息框
-		// 5120030 棒棒糖
-		// 5120034 披萨盒子和可乐
-		// 5120052 白毛斗士
-		// 5120053 胡子大叔
-		// 5120055 阿卡伊勒
-		// 5120059 希拉国度的女灵魂
-		// 5120080 拿剑的女战士
-		// 5120081 拿法杖的女法师
-		// 5120085 
-		// 5120093 拿锤子的恶魔猎手？
-		// 5120124 被铁链捆绑的木框
-		// 5120130	BBQ
-		// 5120161 兽人大酋长
-		// 5120187	黑暗传令兵
-		// 5120184	迷宫向导
-		// 5120179	小坏蛋冒险萌
-		// 5120178	怪物出租车司机
-		// 5120177	帕普拉图斯指南
-		// 5120176	金币哗啦啦水槽骑宠
-		// 5120175	石精灵
-		// 5120173	布莱克缤提示栏
-		// 5120172	圣诞节任务用
-		// 5121000 火影
-		// 5121027 金元宝
-		// 5121037 鲜花
-		// 5121050 花蘑菇
-		// 5121052 星星
-		cm.getMap().startMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
+	} else if (status == i++) { // 初始化		// 初始化
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		cm.inGameDirectionEvent_AskAnswerTime(100);
+	} else if (status === i++) {
+		cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 2000, 0, -110, 1, 0, 1, 0, 0, 0);	
+
+		cm.inGameDirectionEvent_AskAnswerTime(100);
 	} else {
+		// 收尾
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		cm.dispose();
 	}
 }
 function action普通(mode, type, selection) {
+	cm.fieldEffect_Screencmg("Effect/Direction16.img/effect/terrorOfBlack0/0");
 	// type: 0 = (sendNext, sendOk, sendNextPrev) 1 = (sendYesNo) 12 = (sendAcceptDecline) 3 = (sendGetNumber) 4 = (askMenu)
 	if (status == 0 && mode == 0) {
 		cm.dispose();

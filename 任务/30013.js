@@ -55,7 +55,7 @@ function start(mode, type, selection) {
 		qm.sendNextSNoESC("准备好了吗？那就出发吧！");
 	} else if (status === i++) {
 		// 图片 阿丽莎和冒险骑士团出发了
-        //qm.effect_Direction("Effect/Direction11.img/meet/Scene0");
+        qm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/goEreb");
 		qm.inGameDirectionEvent_AskAnswerTime(4000);
 	} else if (status === i++) {
 		// 收尾		

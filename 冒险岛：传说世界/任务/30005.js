@@ -52,9 +52,10 @@ function end(mode, type, selection) {
 		qm.sendNextSNoESC("入侵者是黑魔法师的手下吗？");
 	} else if (status === i++) {
 		qm.sendNextNoESC("我也不知道。他们全都披着斗篷，看不见脸。啊，对了，有个一只眼睛戴着眼罩的魔族男子好像是他们的队长。", 1064001);
-	//} else if (status === i++) {
+	} else if (status === i++) {
 		// 图片 黛米安
-		//qm.inGameDirectionEvent_AskAnswerTime(8000); 
+        qm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
+		qm.inGameDirectionEvent_AskAnswerTime(8000); 
 	} else if (status === i++) {
 		qm.sendNextSNoESC("（一只眼睛戴着眼罩的魔族？到底是谁呢？）");
 	} else if (status === i++) {
