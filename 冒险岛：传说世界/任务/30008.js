@@ -37,12 +37,16 @@ function start(mode, type, selection) {
 	}
 }
 
-// 自己传送到鲁塔比斯去，我不送你了
+// 要完成30009~30013
 function end(mode, type, selection) {
 	status++;
 	var i = -1;
 	if (status <= i++) {
 		qm.dispose();
+	} else if (status === i++) {
+		qm.sendNextNoESC("虽然幸运地平安救出了世界树，可是所有的危险并没有消失。之前封印世界树的势力好像晚一步得知了世界树被运往圣地的事。他们#r复活了封印守护者#k，意图获得强大的黑暗力量吞噬金银岛。", 1101002);
+	} else if (status === i++) {
+		qm.sendNextNoESC("为了阻止他们的阴谋，我们需要你持续不断的支援。希望你今后也为了冒险岛世界的和平而努力。", 1101002);
 	} else if (status === i++) {
 		qm.forceCompleteQuest();
 		qm.dispose();

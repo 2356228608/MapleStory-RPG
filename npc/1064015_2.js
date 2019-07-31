@@ -1,6 +1,6 @@
 ﻿var status = 0;
 // BOSS名称
-var bossName = "血腥女王";
+var bossName = "贝伦";
 // 难度等级
 var difficulty = ["普通", "进阶"];
 // 限制等级
@@ -14,11 +14,11 @@ var moblevel = 255;
 // 副本开关 开启、true 关闭、false
 var open = true;
 // 配置文件名称
-var eventname = ["BloodyBoss", "BloodyJBoss"];
+var eventname = ["BelenBoss", "BelenJBoss"];
 // 设置每日次数
 var maxenter = [50, 50];
 // 地图名称
-var mapName = "鲁塔比斯庭院南侧入口";
+var mapName = "鲁塔比斯庭院北侧入口";
 
 function start() {
 	status = -1;

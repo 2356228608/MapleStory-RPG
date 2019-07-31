@@ -12,6 +12,7 @@ function start(mode, type, selection) {
 		qm.sendNextNoESC("我在画着王冠的门外感觉到了很强的气息。绝对不能放松警惕！", 1064001);
 	} else if (status === i++) {
 		// 收尾		
+		qm.updateInfoQuest(30011,"");
 		qm.forceStartQuest();
 		qm.dispose();
 	} else {

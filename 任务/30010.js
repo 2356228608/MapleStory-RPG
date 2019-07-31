@@ -9,8 +9,6 @@ function start(mode, type, selection) {
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status === i++) {
-		qm.sendNextNoESC("这次我感觉到了更强的气息。你一定要做好完全的准备。", 1064001);
-	} else if (status === i++) {
 		// 收尾		
 		qm.updateInfoQuest(30010,"");
 		qm.forceStartQuest();

@@ -35,7 +35,7 @@ ms.inGameDirectionEvent_SetHideEffect(1);
 ms.fieldEffect_InsertCanvas(1, 200, 0, 0, 0, 1500, 0);
 // ?? 反正每次开头结尾都要调用
 ms.curNodeEventEnd(true);
-// 显示感叹号（放单张图片）
+// 显示感叹号（放单张图片） 
 ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 0, 0, -110);
 // 召唤NPC ID X Y ？
 ms.npc_ChangeController(3000106, 500, 20, 1); //D5 F8 86 01
@@ -55,7 +55,7 @@ ms.playVideoByScript("kaiser.avi");
 ms.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
 // 刷怪
 ms.mob_EnterField(9300546, -900, 29);
-// 玩家放动画 ? x y ? ? ? NPCID ?? 
+// 玩家放动画 总时长（放几遍） x y ? ? 1头上0地面 NPCID ?? 
 ms.inGameDirectionEvent_Effect("Skill/6112.img/skill/61121100/hit", 0, 0, 0, 1, 0, 1, 3000122, 0, 0);
 // npc挂了
 ms.npc_SetSpecialAction(3000123, "die1", 1);

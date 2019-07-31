@@ -22,6 +22,7 @@ function start(mode, type, selection) {
 		qm.sendNextNoESC("一个人可能会很困难。虽然说是最弱，但我还是感觉浑身直起鸡皮疙瘩。所以你一定要和#r志同道合的同伴#k一起去！", 1064001);
 	} else if (status === i++) {
 		// 收尾		
+		qm.updateInfoQuest(30009,"");
 		qm.forceStartQuest();
 		qm.dispose();
 	} else {
