@@ -13,7 +13,6 @@ function start() {
 	action(1, 0, 0);
 }
 
-// 主体
 function action(mode, type, selection) {
 	status++;
 	var i = -1;
@@ -21,60 +20,77 @@ function action(mode, type, selection) {
 		cm.dispose();
 	} else if (status === i++) {
 		// 初始化
-		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		//cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		cm.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(5120001+status,5120001+status,1);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
 		// 收尾
-		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		//cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		cm.dispose();
 	} else {
