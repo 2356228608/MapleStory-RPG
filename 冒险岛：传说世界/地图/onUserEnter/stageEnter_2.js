@@ -1,0 +1,35 @@
+/* 起源之塔
+Made by Jessefjxm
+ */
+var status = -1;
+
+function action(mode, type, selection) {
+	status++;
+	var i = -1;
+	if (status <= i++) {
+		ms.dispose();
+	} else if (status === i++) {
+		// 初始化
+		ms.curNodeEventEnd(true);
+		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.inGameDirectionEvent_AskAnswerTime(30);
+	} else if (status === i++) {
+		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_Monologue("#fn黑体##fs32#B - 2 F\r\n\r\n#fs22#啊，这个结界是？！\r\n\r\n新的结界，想要突破这个结界，就得从白狼或者野狼那里获得比各个封印更高的数字。", 30000);
+	} else if (status === i++) {
+		// 收尾
+		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 1000, 0, 0);
+		ms.curNodeEventEnd(true);
+		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		ms.dispose();
+		// TODO
+		ms.getMap().startMapEffect("必须捕捉怪物获得数字高于结界的卡片后，才能欺骗结界。", 5120085);
+		ms.warp(992001000, 1);
+	} else {
+		ms.dispose();
+	}
+}
