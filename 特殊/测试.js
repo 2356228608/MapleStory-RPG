@@ -15,74 +15,12 @@ function start() {
 
 function action(mode, type, selection) {
 	status++;
-	var i = -1;
-	if (status <= i++) {
+	if (status <= 0) {
 		cm.dispose();
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.askMenu(" ");
-	} else if (status === i++) {
-		cm.dispose();
+	} else if (status < 10) {
+		cm.warp(992005000 + (status%9)*5000, 0);
+		cm.getMap().startMapEffect("startMapEffect Code "+5120000+status,5120000+status);
+		cm.askMenu("NEXT CODE : "+(5120000+status));
 	} else {
 		cm.dispose();
 	}
