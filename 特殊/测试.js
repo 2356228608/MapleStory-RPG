@@ -18,7 +18,10 @@ function start() {
 // 剧情专用单向事件
 function action(mode, type, selection) {
 	status++;
-	var i = -1;
-	cm.warp(105200300,1);
-	cm.dispose();
+	if (status < 10) {
+		cm.getMap().startMapEffect(status + 5120001, status + 51200001, 1);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
+	} else {
+		cm.dispose();
+	}
 }
