@@ -12,6 +12,10 @@ var z = "#fEffect/ItemEff/1112811/0/0#"; //"+z+"//美化
 function start() {
 	action(1, 0, 0);
 }
+/* 起源之塔
+Made by Jessefjxm
+ */
+var status = -1;
 
 function action(mode, type, selection) {
 	status++;
@@ -25,67 +29,67 @@ function action(mode, type, selection) {
 		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		cm.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.startMapEffect(""+5120001+status,5120001+status,1);
+		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
 		// 收尾
