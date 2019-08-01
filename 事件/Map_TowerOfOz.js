@@ -4,13 +4,12 @@
 
 var mapIds = new Array();
 var mapHall = 992000000;
-var mobs = [9309087, 9309085, 9309047, 9309046, 9309043, 9309042, 9309037, 9309035, 9300891, 9300699, 9010171, 8620011, 8620010];
 
 function init() {
 	em.setProperty("state", "0");
 	em.setProperty("leader", "true");
 	// 暂时很多地图有问题
-	for (var i = 992001000; i <= 992001000; i += 1000) {
+	for (var i = 992010000; i <= 992010000; i += 1000) {
 		mapIds.push(i);
 	}
 }
@@ -19,12 +18,9 @@ function setup(eim, leaderid) {
 	em.setProperty("state", "1");
 	em.setProperty("leader", "true");
 	var eim = em.newInstance("Map_TowerOfOz");
+	eim.broadcastServerMsg("[setup]");
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
-		// 注册所有怪物事件
-		map.getAllMonster().forEach(function (element) {
-			eim.registerMonster(em.getMonster(element));
-		});
 		map.resetFully();
 		map.killAllMonsters(false);
 	}
@@ -33,6 +29,7 @@ function setup(eim, leaderid) {
 }
 
 function playerEntry(eim, player) {
+	eim.broadcastServerMsg("[playerEntry]");
 	var map = eim.getMapInstance(0);
 	player.changeMap(map, map.getPortal(0));
 }
@@ -52,27 +49,27 @@ function playerDisconnected(eim, player) {
 }
 
 function scheduledTimeout(eim) {
-	em.disposeIfPlayerBelow(100, mapHall);
+	eim.disposeIfPlayerBelow(100, mapHall);
 	em.setProperty("state", "0");
 	em.setProperty("leader", "true");
 }
 
 function playerExit(eim, player) {
 	eim.unregisterPlayer(player);
-	if (em.disposeIfPlayerBelow(0, 0)) {
+	if (eim.disposeIfPlayerBelow(0, 0)) {
 		em.setProperty("state", "0");
 		em.setProperty("leader", "true");
 	}
 }
 
 function monsterValue(eim, mobId) {
-	em.broadcastServerMsg("[monsterValue]=" + mobId);
+	eim.broadcastServerMsg("[monsterValue]=" + mobId);
 	return 1;
 }
 
 // not work?
 function allMonstersDead(eim) {
-	em.broadcastServerMsg("[allMonstersDead]");
+	eim.broadcastServerMsg("[allMonstersDead]");
 	var state = em.getProperty("state");
 	if (state.equals("1")) {
 		em.setProperty("state", "2");
@@ -92,11 +89,11 @@ function monsterDrop(eim, player, mob) {}
 function pickUpItem(eim, player, itemID) {}
 
 function monsterDamaged(eim, player, mobID, damage) {
-	em.broadcastServerMsg("[monsterDamaged]=mobID");
+	eim.broadcastServerMsg("[monsterDamaged]=mobID");
 }
 
 function monsterKilled(eim, player, mobID) {
-	em.broadcastServerMsg("[monsterKilled]=mobID");
+	eim.broadcastServerMsg("[monsterKilled]=mobID");
 	/*
 	var map = player.getMap();
 	var check = eim.getProperty("Mob_" + mobID);

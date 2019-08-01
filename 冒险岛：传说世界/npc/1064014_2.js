@@ -40,8 +40,7 @@ function action(mode, type, selection) {
 		for (var i = 0; i < difficulty.length; i++) {
 			var prop = cm.getEventManager(eventname[i]).getProperty("state");
 			var state = (prop == null || prop.equals("0")) ? "#r场地空闲#k" : "#b已被占用#k";
-			var pqtry = maxenter[i] - cm.getPQLog(difficulty[i] + bossName);
-			msg += "#b已进行" + difficulty[i] + "模式 #e" + cm.getPQLog(difficulty[i] + bossName) + " #n/" + pqtry + " 次\t\t状态：" + state + "\r\n";
+			msg += "#b已进行" + difficulty[i] + "模式 #e" + cm.getPQLog(difficulty[i] + bossName) + " #n/" + maxenter[i] + " 次\t\t状态：" + state + "\r\n";
 		}
 		for (var i = 0; i < difficulty.length; i++) {
 			msg += "#L" + i + "#使用#v4033611##z4033611#，移动到" + difficulty[i] + "模式。（" + minLevel[i] + "级以上）#l\r\n";

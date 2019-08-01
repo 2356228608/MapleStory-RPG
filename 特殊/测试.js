@@ -19,52 +19,6 @@ function start() {
 function action(mode, type, selection) {
 	status++;
 	var i = -1;
-	if (status <= i++) {
-		cm.dispose();
-	} else if (status == i++) { // 初始化		// 初始化
-		cm.curNodeEventEnd(true);
-		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		cm.inGameDirectionEvent_AskAnswerTime(100);
-	} else if (status === i++) {
-		cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 2000, 0, -110, 1, 0, 1, 0, 0, 0);	
-
-		cm.inGameDirectionEvent_AskAnswerTime(100);
-	} else {
-		// 收尾
-		cm.curNodeEventEnd(true);
-		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		cm.dispose();
-	}
-}
-function action普通(mode, type, selection) {
-	cm.fieldEffect_Screencmg("Effect/Direction16.img/effect/terrorOfBlack0/0");
-	// type: 0 = (sendNext, sendOk, sendNextPrev) 1 = (sendYesNo) 12 = (sendAcceptDecline) 3 = (sendGetNumber) 4 = (askMenu)
-	if (status == 0 && mode == 0) {
-		cm.dispose();
-		return;
-	}
-	// mode: 1 = (下一页/是/同意) -1 = (结束对话) 0 = (返回/否/拒绝)(askMenu/sendGetNumber时，结束对话)
-	if (mode == 1) {
-		status++;
-	} else {
-		status--;
-	}
-	selectionLog[status] = selection;
-	// 初次对话
-
-	// 结束
+	cm.warp(105200300,1);
 	cm.dispose();
-}
-
-function test() {
-	var item = cm.getInventory(1).getItem(1);
-	var toDrop = item.copy();
-	toDrop.setArc(5000);
-	cm.removeSlot(1, 1, 1);
-	cm.addFromDrop(cm.getClient(), toDrop, false);
-	cm.askMenu("result: " + cm.getReqLevel(item.getItemId()));
-
-	cm.askMenu("说点啥");
 }
