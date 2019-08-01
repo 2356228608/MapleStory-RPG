@@ -28,7 +28,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		// TODO
 		ms.getMap().startMapEffect("必须捕捉怪物获得数字高于结界的卡片后，才能欺骗结界。", 5120085);
-		ms.warp(992001000, 1);
+		ms.warp(992002000, 1);
 	} else {
 		ms.dispose();
 	}
