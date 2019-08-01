@@ -18,7 +18,7 @@ function action(mode, type, selection) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Monologue("#fn黑体##fs32#B - 2 F\r\n\r\n#fs22#啊，这个结界是？！\r\n\r\n新的结界，想要突破这个结界，就得从白狼或者野狼那里获得比各个封印更高的数字。", 30000);
+		ms.inGameDirectionEvent_Monologue("#fn黑体##fs32#B - 02 F\r\n\r\n#fs22#啊，这个结界是？！\r\n\r\n新的结界，想要突破这个结界，就得从白狼或者野狼那里获得比各个封印更高的数字。", 30000);
 	} else if (status === i++) {
 		// 收尾
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 1000, 0, 0);
