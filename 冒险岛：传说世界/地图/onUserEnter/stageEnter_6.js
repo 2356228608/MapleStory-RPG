@@ -1,4 +1,4 @@
-/* 起源之塔 1f
+/* 起源之塔
 Made by Jessefjxm
  */
 var status = -1;
@@ -18,13 +18,7 @@ function action(mode, type, selection) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Monologue("#fn黑体##fs32#B - 01 F\r\n\r\n是#fs22#地下一层的#fs27#古代绿水灵。#fs22#\r\n\r\n据说现在已经灭绝了，不过从前，它们曾像花蘑菇一样繁盛兴旺。\r\n\r\n第一层可以通过积累冲击量来突破，也可以通过猎杀300个古代绿水灵突破。", 30000);
-	} else if (status === i++) {
-		ms.askYesNoS("#b（什么是冲击量呢……要不要问问？）");
-	} else if (status === i++) {
-		ms.sendNextNoESC("我有听到你的问题！简单地说，冲击量就是对它们造成的伤害啦！当力量足够，也可以突破这一层的封印。", 2540000);
-	} else if (status === i++) {
-		ms.sendNextSNoESC("原来如此，就是大力出奇迹啊。好，我开工了！");
+		ms.inGameDirectionEvent_Monologue("#fn黑体##fs32#B - 06 F\r\n\r\n是#fs22#地下6层的#fs27#绿水灵。#fs22#\r\n\r\n它们原本是多么可爱的家伙啊……\r\n\r\n它们也变得狂暴起来了。我所做的一切似乎已变得毫无意义。\r\n\r\n虽然会很痛心，但你愿意去消灭它们吗？只要消灭300个左右，我就会为你打开通往下一层的门。\r\n\r\n对了，如果你看到巨型绿水灵，也不要惊慌。因为那只是它们聚成的一团。", 30000);
 	} else if (status === i++) {
 		// 收尾
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 1000, 0, 0);
@@ -33,8 +27,8 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		// TODO
-		ms.getMap().startMapEffect("请打猎怪物或者积累5千万以上的伤害！", 5120085);
-		ms.warp(992001000, 1);
+		ms.getMap().startMapEffect("请消灭300个绿水灵。", 5120085);
+		ms.warp(992006000, 1);
 	} else {
 		ms.dispose();
 	}
