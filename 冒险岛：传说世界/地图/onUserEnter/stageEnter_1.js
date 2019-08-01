@@ -31,8 +31,10 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.warp(992001000, 1);
 		ms.dispose();
+		// TODO
+		ms.getMap().startMapEffect("请打猎怪物或者积累5千万以上的伤害！", 5120085);
+		ms.warp(992001000, 1);
 	} else {
 		ms.dispose();
 	}
