@@ -12,81 +12,75 @@ var z = "#fEffect/ItemEff/1112811/0/0#"; //"+z+"//美化
 function start() {
 	action(1, 0, 0);
 }
-/* 起源之塔
-Made by Jessefjxm
- */
-var status = -1;
 
-// 主体
-
-// 剧情专用单向事件function action(mode, type, selection) {
+function action(mode, type, selection) {
 	status++;
 	var i = -1;
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.getMap().startMapEffect(""+5120001+status,5120001+status,1);
-		cm.sendNext(" ");
+		cm.askMenu(" ");
 	} else if (status === i++) {
 		cm.dispose();
 	} else {
