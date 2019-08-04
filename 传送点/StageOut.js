@@ -2,7 +2,7 @@
 	var mapId = pi.getMapId();
 	if (mapId >= 992001000 && mapId <= 992050000) {
 		var level = (mapId - 992000000) / 1000;
-		var em = pi.getEventManager("副本_起源之塔");
+		var em = pi.getEventManager("Map_TowerOfOz");
 		var prop = em.getProperty("stage" + level);
 		if (level % 10 == 5 || (prop != null && prop.equals("clear"))) {
 			pi.playerMessage(-1, "传送到起源之塔的第" + (level + 1) + "层。");

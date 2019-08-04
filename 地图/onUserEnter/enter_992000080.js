@@ -139,7 +139,6 @@ function action8(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("最后，我向你说明一下在塔内可以随时和我对话的灵魂连接器。", 2540000);
 	} else if (status === i++) {
-		ms.gainItem(2432461, 1);
 		ms.sendNextNoESC("当你实在找不到路或者突然间身体不舒服的时候，就和我联系吧。虽然我不能每件事都帮到你……但我也会尽力而为的。", 2540000);
 	} else if (status === i++) {
 		ms.askYesNoNoESC("你都理解了吗？", 2540000);

@@ -173,7 +173,7 @@ function action(mode, type, selection) {
 		//cm.addPopupSay(1540108, 2000, "欢迎来到[" + cm.getServerName() + "],实力团队运营,独特的新玩法,有什么我能帮到你吗?");
 		//cm.askMenu(selStr);
 		if (cm.getPlayer().getIntNoRecord(99997) == 0) {
-			cm.askMenu_Bottom(selStr);
+			cm.askMenu(selStr);
 		} else {
 			cm.askMenu(selStr);
 		}

@@ -4,7 +4,7 @@
  *  @Author 娜娜 
  */
 var a = 0;
-
+var text;
 function start() {
     a = -1;
     action(1, 0, 0);
@@ -22,11 +22,48 @@ function action(mode, type, selection) {
             cm.dispose();
         } else if (a == 0) {
             if (cm.getXiuxian()) {
-			cm.askMenu("欢迎来到BMS职业学校，请问你想要做什么？\r\n#b#L100# 正常转职(自选1-4转)#l #L2# 自由转职(仅冒险家)#l \r\n\r\n#L3#一键5转#l #L4#刷V核心碎片#l #L5#打开V核心技能制作UI#l");
+			text+="欢迎来到BMS职业学校，请问你想要做什么?\r\n# "
+			text+="\r\n#b#L100# 正常转职(1-4转)#l";
+			text+="\r\n#b#L2# 自由转职(仅冒险家)#l ";
+			text+="\r\n#b#L3#一键5转#l ";
+			text+="\r\n#b#L4#刷V核心碎片#l ";
+			text+="\r\n#b#L5#打开V核心技能制作UI#l";
+			if (cm.getPlayer().getIntNoRecord(99900) != 0) {
+				text+="\r\n#L200#变回之前职业#l ";
+			}else{
+				text+="\r\n#L200#体验品克缤职业#l ";
+			}
+			
+			cm.askMenu(text);
 		} else if ((cm.getJob() == 112 || cm.getJob() == 122 || cm.getJob() == 132) || (cm.getJob() == 212 || cm.getJob() == 222 || cm.getJob() == 232) || (cm.getJob() == 512 || cm.getJob() == 522 || cm.getJob() == 532) || (cm.getJob() == 412 || cm.getJob() == 422 || cm.getJob() == 434) || (cm.getJob() == 312 || cm.getJob() == 322)) {
-                cm.askMenu("欢迎来到BMS职业学校，请问你想要做什么？\r\n#b#L1# 正常转职(1-4转)#l #L2# 自由转职(仅冒险家)#l \r\n\r\n#L3#一键5转#l #L4#刷V核心碎片#l #L5#打开V核心技能制作UI#l");
+			
+			text+="欢迎来到BMS职业学校，请问你想要做什么?\r\n# "
+			text+="\r\n#b#L1# 正常转职(1-4转)#l";
+			text+="\r\n#b#L2# 自由转职(仅冒险家)#l ";
+			text+="\r\n#b#L3#一键5转#l";
+			text+="\r\n#b#L4#刷V核心碎片#l ";
+			text+="\r\n#b#L5#打开V核心技能制作UI#l";
+			if (cm.getPlayer().getIntNoRecord(99900) != 0) {
+				text+="\r\n#L200#变回之前职业#l ";
+			}else{
+				text+="\r\n#L200#体验品克缤职业#l ";
+			}
+			
+                cm.askMenu(text);
             } else {
-                cm.askMenu("欢迎来到BMS职业学校，请问你想要做什么？\r\n#b#L1# 正常转职(1-4转)#l \r\n\r\n#L3#一键5转#l #L4#刷V核心碎片#l #L5#打开V核心技能制作UI#l");
+				
+			text+="欢迎来到BMS职业学校，请问你想要做什么?\r\n# "
+			text+="\r\n#b#L1# 正常转职(1-4转)#l";
+			text+="\r\n#b#L3#一键5转#l ";
+			text+="\r\n#b#L4#刷V核心碎片#l ";
+			text+="\r\n#b#L5#打开V核心技能制作UI#l";
+			if (cm.getPlayer().getIntNoRecord(99900) != 0) {
+				text+="\r\n#L200#变回之前职业#l ";
+			}else{
+				text+="\r\n#L200#体验品克缤职业#l ";
+			}
+			
+                cm.askMenu(text);
             }
         } else if (a == 1) {
             if (selection == 1) {
@@ -39,6 +76,9 @@ function action(mode, type, selection) {
             } else if (selection == 100) {
                 cm.dispose();
                 cm.openNpc(9900003, "自选职业");
+            } else if (selection == 200) {
+                cm.dispose();
+				cm.openNpc(9900003, "体验品克缤职业");
             } else if (selection == 3) {
 				if(cm.getPlayerStat("LVL") <199){
 					cm.dispose();
@@ -65,6 +105,7 @@ function action(mode, type, selection) {
 				}
             }
         }else if (a == 2) {
+			cm.playerMessage(1,"selection！"+selection);
 			cm.forceCompleteQuest(1460);
             cm.forceCompleteQuest(1461);
             cm.forceCompleteQuest(1462);
@@ -78,7 +119,9 @@ function action(mode, type, selection) {
 			cm.sendOk("逗你玩的，你已经获得了新力量，完成了5转。请打开技能面板查看。\r\n\r\n系统已送你100个5转核心宝石，可打开背包查看。")
 			cm.dispose();
         }
-		
 		//a
     }//mode
 }//f
+
+
+

@@ -6,11 +6,11 @@ var setupTask9;
 var eim;
 var map;
 function init() {
-	eim = em.newInstance("biwu");
-    map = eim.getMapInstance(932200100);
-	ResetProperty();
-	newtime();
-	scheduleNew();
+	//eim = em.newInstance("biwu");
+    //map = eim.getMapInstance(932200100);
+	//ResetProperty();
+	//newtime();
+	//scheduleNew();
 }
 function ResetProperty(){
 	em.setProperty("rank", "0");
@@ -38,7 +38,7 @@ function scheduleNew() {
 		em.setProperty("time", "0");
 	}else{
 		date = year + "-" + month + "-" + (day+1) + " 21:00:00.0";
-        timeStamp = java.sql.Timestamp.valueOf(date).getTime();
+        timeStamp =new java.sql.Timestamp.valueOf(date).getTime();
         setupTask = em.scheduleAtTimestamp("newopen", timeStamp);
 		em.broadcastServerMsg("[跑旗活动] 活动将在"+date+"开始，希望大家积极参加。");
 		em.setProperty("rank", "0");
