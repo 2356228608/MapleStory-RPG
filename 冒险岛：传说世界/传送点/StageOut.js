@@ -13,7 +13,7 @@ function enter(pi) {
 		// x5 层不给任何奖励
 		if (level % 10 == 5 || (prop != null && prop.equals("clear"))) {
 			var index = level - 1 - Math.floor(level / 5);
-			pi.playerMessage(-1, "获得了" + points[index] + "点起源点数。已被转化为了冒险岛世界的气息。");
+			pi.getPlayer().dropMessage(5, "获得了" + points[index] + "点起源点数。已被转化为了冒险岛世界的气息。");
 			pi.gainItem(4036455, points[index]);
 			pi.gainExp(exps[index]);
 			// TODO 暂时避开故障楼层，等娜娜修复
@@ -22,14 +22,14 @@ function enter(pi) {
 			}
 			// 通关了
 			if (mapId == 992050000) {
-				pi.playerMessage(-1, "传送回起源之塔的大厅。");
+				pi.getPlayer().dropMessage(5, "传送回起源之塔的大厅。");
 				pi.warp(992000000, 0);
 			} else {
-				pi.playerMessage(-1, "传送到起源之塔的第" + (level + 1) + "层。");
+				pi.getPlayer().dropMessage(5, "传送到起源之塔的第" + (level + 1) + "层。");
 				pi.warp(992000000 + (level + 1) * 1000, 0);
 			}
 		} else {
-			pi.playerMessage(-1, "传送阵目前还处于无法使用的状态。");
+			pi.getPlayer().dropMessage(5, "传送阵目前还处于无法使用的状态。");
 		}
 	} else {
 		// 枫之高校

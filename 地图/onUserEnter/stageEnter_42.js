@@ -2,7 +2,7 @@
 Made by Jessefjxm
  */
 var status = -1;
-var level = "07";
+var level = "42";
 var header = "#fn黑体##fs42#B - " + level + " F\r\n\r\n";
 
 function action(mode, type, selection) {

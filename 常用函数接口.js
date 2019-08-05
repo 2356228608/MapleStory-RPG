@@ -14,6 +14,11 @@ cm.addPopupSay(0, 2000, "果然有出口。应该把这一事实告诉少女。"
 // 头上雇佣信息 存留一段时间
 cm.hireTutorcmg();
 
+// MapleCharacter下发消息，显示在聊天栏 0白1绿2粉3橙4紫
+player.showMessage(0, "0/300");
+// -1红色正中 1弹窗 2蓝底 3(null)红底 5红色 6蓝色 -6 灰色 -7黄色
+player.dropMessage(-1, "-1/300");
+
 // 传送
 cm.warp(910700200, 0);
 // 开始任务
@@ -34,8 +39,8 @@ cm.effect_OnUserEff("Effect/Direction15.img/effect/tuto/seal/front");
 // 显示文字：字体，大小 刷字时间 持续时间 位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）
 // ... X Y ? ? ? 淡入时间（立刻刷新所有字） 淡入时间（立刻刷新所有字）
 cm.effect_Text("#fnNanum Gothic ExtraBold##fs18#作战开始5天前   #fs15##fnNanum Gothic#黑色之翼基地上空", 100, 2200, 6, -50, -50, 1, 4, 0, 0, 0); //334 0x3D
-// 播放Map里的图片
-qm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
+// 播放特效，固定位置，并且唯一不需要锁定玩家的方法
+cm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
 // 全屏遮罩：开关（1开0关） R G B ? 时间 ？
 cm.fieldEffect_InsertCanvas(1, 128, 0, 0, 500, 2000, 500); //创建一个遮布 0x10
 cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 2000, 0, 0); //20E 0x15 取消遮布
@@ -50,6 +55,10 @@ cm.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/Ballooncmg1/1
 cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/Balloonmsg0/0", 0, 0, -120, 1, 0, 1, 3000108, 0, 0);
 // 玩家放动画 总时长（放几遍） x y ? 图层优先级，9999之后能覆盖地图但是会变小 1头上0地面 NPCID 放大到全屏？ 不全屏？
 cm.inGameDirectionEvent_Effect("Skill/6112.img/skill/61121100/hit", 0, 0, 0, 1, 0, 1, 3000122, 0, 0);
+// 特效：开始、完成、失败
+cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/start", 0, 0, -200, 1, 0, 0, 0, 0, 0);
+cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/clear", 0, 0, -200, 1, 0, 0, 0, 0, 0);
+cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/fail", 0, 0, -200, 1, 0, 0, 0, 0, 0);
 // 屏幕中间显示文字，而且要玩家触发：文字 时间
 cm.inGameDirectionEvent_Monologue("#fn黑体##fs26#黑魔法师出现之前，冒险岛世界曾是那么的平静祥和……", 1000);
 // 屏幕中间显示文字，从下往上滚动：文字 反正不能为0 0左对齐1居中2右对齐 减速 加速 （后两者太高的话，播放会变得不连续）
@@ -140,13 +149,13 @@ cm.setInGameDirectionMode(true, false, false);
 cm.getMap().startMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
 
 ！第一次回到大厅
-#h #，塔的里面怎么样？
+ # h # ，塔的里面怎么样？
 看你在塔中努力的冒险，就给你一份小小的礼物吧。
 戒指箱，起源之塔荣誉勋章，经验值，起源点数全部都已经发放了，打开消耗栏确认一下吧。
 
 ！主动回来
-#h #，塔的里面怎么样？
-#h #，即便使用了朦胧石，依然在回来之前剩余了许多时间啊，虽然我没法将时间完全逆转，但是我可以尝试将剩余时间的一半重新做成石头。
+ # h # ，塔的里面怎么样？
+ # h # ，即便使用了朦胧石，依然在回来之前剩余了许多时间啊，虽然我没法将时间完全逆转，但是我可以尝试将剩余时间的一半重新做成石头。
 另外我能够重新研磨的最大时长是所使用的朦胧石时间的一半，如果增加了90分钟就是45分钟。
 我尝试将剩余时间重新研磨成了朦胧石，去看看背包吧。
 作为你努力探索塔的奖赏，就给你一份小小的礼物吧。

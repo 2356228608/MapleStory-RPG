@@ -39,6 +39,7 @@ function action(mode, type, selection) {
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请保持左右两侧怪物的平衡。");
 		ms.warp(992004000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

@@ -49,6 +49,7 @@ function action(mode, type, selection) {
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请搜集1000个古代乌龟蛋。");
 		ms.warp(992003000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

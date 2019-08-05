@@ -1,49 +1,66 @@
 ﻿/*
- * 起源之塔
+ * 血腥女王
+ * 修改：jessefjxm
  */
+var mapIds = [105200310];
 
-var mapIds = new Array();
-var mapHall = 992000000;
-var mobs = [9309087, 9309085, 9309047, 9309046, 9309043, 9309042, 9309037, 9309035, 9300891, 9300699, 9010171, 8620011, 8620010];
+//自定义复活次数
+var reviveCount = 5;
+var next = 0;
 
 function init() {
 	em.setProperty("state", "0");
 	em.setProperty("leader", "true");
-	// 暂时很多地图有问题
-	for (var i = 992001000; i <= 992001000; i += 1000) {
-		mapIds.push(i);
-	}
 }
 
 function setup(eim, leaderid) {
 	em.setProperty("state", "1");
+	em.setProperty("stage", "0");
 	em.setProperty("leader", "true");
-	var eim = em.newInstance("Map_TowerOfOz");
+	var eim = em.newInstance("Bloody");
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
-		// 注册所有怪物事件
-		map.getAllMonster().forEach(function (element) {
-			eim.registerMonster(em.getMonster(element));
-		});
 		map.resetFully();
-		map.killAllMonsters(false);
+		map.killAllMonsters(true);
 	}
-	eim.startEventTimer(60 * 60 * 1000);
+	eim.startEventTimer(15 * 60 * 1000); //15分钟
 	return eim;
 }
 
 function playerEntry(eim, player) {
 	var map = eim.getMapInstance(0);
+	//map.startMapEffect("和沉睡的血腥女皇说话吧。", 5120124);
+	map.startMapEffect("无礼的家伙！竟然随意进出大殿！", 5120124);
+	player.setReviveCount(reviveCount); //地图复活次数
 	player.changeMap(map, map.getPortal(0));
 }
 
 function playerRevive(eim, player) {
-	return false;
+	if (player.getReviveCount() > 0) {
+		player.eventRevive();
+		player.changePortal(0);
+		return true;
+	}
+	player.addHP(50);
+	var map = eim.getMapInstance(0);
+	player.changeMap(map, map.getPortal(0));
+	return true;
+}
+
+function scheduledTimeout(eim) {
+	eim.disposeIfPlayerBelow(100, 105200000);
+	em.setProperty("state", "0");
+	em.setProperty("leader", "true");
 }
 
 function changedMap(eim, player, mapid) {
+	//eim.broadcastPlayerMsg(2, "changedMap [ID]=" + mapIds.indexOf(mapid));
 	if (mapIds.indexOf(mapid) < 0) {
-		playerExit(eim, player);
+		eim.unregisterPlayer(player);
+		if (eim.disposeIfPlayerBelow(0, 0)) {
+			em.setProperty("state", "0");
+			em.setProperty("leader", "true");
+		}
 	}
 }
 
@@ -51,28 +68,28 @@ function playerDisconnected(eim, player) {
 	return 0;
 }
 
-function scheduledTimeout(eim) {
-	em.disposeIfPlayerBelow(100, mapHall);
-	em.setProperty("state", "0");
-	em.setProperty("leader", "true");
-}
-
 function playerExit(eim, player) {
+	//eim.broadcastPlayerMsg(2, "playerExit");
 	eim.unregisterPlayer(player);
-	if (em.disposeIfPlayerBelow(0, 0)) {
+	if (eim.disposeIfPlayerBelow(0, 0)) {
 		em.setProperty("state", "0");
 		em.setProperty("leader", "true");
 	}
 }
 
 function monsterValue(eim, mobId) {
-	em.broadcastServerMsg("[monsterValue]=" + mobId);
+	if (mobId == 8920000 || mobId == 8920001 || mobId == 8920002 || mobId == 8920003 || mobId == 8920100 || mobId == 8920101 || mobId == 8920102 || mobId == 8920103) {
+		for (var i = 0; i < eim.getPlayerCount(); i++) {
+			eim.getPlayers().get(i).updateInfoQuest(30011, "clear=clear");
+			eim.getPlayers().get(i).updateInfoQuest(30019, "clear=clear");
+		}
+	}
 	return 1;
 }
 
-// not work?
+// TODO
 function allMonstersDead(eim) {
-	em.broadcastServerMsg("[allMonstersDead]");
+	eim.broadcastPlayerMsg(2, "allMonstersDead");
 	var state = em.getProperty("state");
 	if (state.equals("1")) {
 		em.setProperty("state", "2");
@@ -81,34 +98,9 @@ function allMonstersDead(eim) {
 	}
 }
 
-function clearPQ(eim) {
-	scheduledTimeout(eim);
-}
 function leftParty(eim, player) {}
 function disbandParty(eim) {}
 function playerDead(eim, player) {}
 function cancelSchedule() {}
 function monsterDrop(eim, player, mob) {}
 function pickUpItem(eim, player, itemID) {}
-
-function monsterDamaged(eim, player, mobID, damage) {
-	em.broadcastServerMsg("[monsterDamaged]=mobID");
-}
-
-function monsterKilled(eim, player, mobID) {
-	em.broadcastServerMsg("[monsterKilled]=mobID");
-	/*
-	var map = player.getMap();
-	var check = eim.getProperty("Mob_" + mobID);
-	if (check != null) {
-	map.playFieldSound("Dojang/clear");
-	map.showScreenEffect("dojang/end/clear");
-	var reactor = map.getReactorByID(2508000);
-	if (reactor != null) {
-	reactor.forceHitReactor(1);
-	}
-	var stage = parseInt(map.getMapID() % 10000 / 100);
-	eim.setProperty("Floor_" + stage, "1");
-	}
-	 */
-}
