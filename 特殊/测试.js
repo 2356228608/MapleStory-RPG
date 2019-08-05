@@ -16,9 +16,32 @@ var start = 1000; // 阿丽莎呢？？？？
 var end = 1000;
 var level = [5, 15, 25, 35, 45, 10, 20, 30, 40, 50];
 function action(mode, type, selection) {
-		cm.fieldEffect_ScreenMsg("UI/UIWindow3.img/aquarisTowerFrame/1366");
+	if (mode === 0) {
+		status--;
+	} else {
+		status++;
+	}
+
+	var i = -1;
+	if (status <= i++) {
 		cm.dispose();
+	} else if (status === i++) {
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		//cm.effect_OnUserEff("UI/UIWindow3.img/aquarisTowerFrame/1366");
+		//cm.fieldEffect_ProcessOnOffLayer(count, "UI/UIWindow3.img/aquarisTowerFrame/1366", 0, 500, 0, 00, 40,0, 0);
+		//cm.fieldEffect_ScreenMsg("UI/UIWindow3.img/aquarisTowerFrame/1366");
+		cm.inGameDirectionEvent_Effect("UI/UIWindow3.img/aquarisTowerFrame/1366", 3000, 0, 0, 10000000, 66666, 0, 2540000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(00);
+	} else if (status === i++) {
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.dispose();
+	} else {
+		cm.dispose();
+	}
 }
+var count = 30;
 function bbbaction(mode, type, selection) {
 	status++;
 	if (status < 0) {
