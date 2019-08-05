@@ -36,34 +36,39 @@ cm.curNodeEventEnd(true);
 cm.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
 // ???
 cm.effect_OnUserEff("Effect/Direction15.img/effect/tuto/seal/front");
-// 显示文字：字体，大小 刷字时间 持续时间 位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）
-// ... X Y ? ? ? 淡入时间（立刻刷新所有字） 淡入时间（立刻刷新所有字）
+// 显示文字：字体，大小 [刷字时间] [持续时间] [位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）]
+// ... [X] [Y] [?] [?] [?] [淡入时间（立刻刷新所有字）] [淡入时间（立刻刷新所有字）]
 cm.effect_Text("#fnNanum Gothic ExtraBold##fs18#作战开始5天前   #fs15##fnNanum Gothic#黑色之翼基地上空", 100, 2200, 6, -50, -50, 1, 4, 0, 0, 0); //334 0x3D
-// 播放特效，固定位置，并且唯一不需要锁定玩家的方法
+// 播放特效，固定位置，并且不需要锁定玩家界面
 cm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
-// 全屏遮罩：开关（1开0关） R G B ? 时间 ？
+// 全屏遮罩：[1开0关] [R] [G] [B] [?] [时间] [？]
 cm.fieldEffect_InsertCanvas(1, 128, 0, 0, 500, 2000, 500); //创建一个遮布 0x10
 cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 2000, 0, 0); //20E 0x15 取消遮布
-// 玩家走动，持续 0.03s 0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
+// 放图片，优先级最高，覆盖所有UI [tag，不可覆盖，直到取消] [path] [0=生成，1=移动，2=？] [淡入时间,移动时间] [出场/移动X] [出场/移动Y] [?] [0=左上，1=右上，2=？，3=左下，4=右下，5=？]
+qm.fieldEffect_ProcessOnOffLayer("0", "Map/Effect2.img/kinesis/chaJay", 0, 500, 100, 200, 12, 5, 0);
+qm.fieldEffect_ProcessOnOffLayer("0", "", 1, 300, -800, 0, 0, 0, 0);
+qm.fieldEffect_ProcessOnOffLayer("0", "", 2, 0, 0, 0, 0, 0, 0);
+// 玩家走动 [0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立]
 cm.inGameDirectionEvent_MoveAction(1);
+// 当且仅当锁定画面时，一定时间后执行next效果 [毫秒] 
 cm.inGameDirectionEvent_AskAnswerTime(30);
-// 镜头移动 0移1复原 移动速度（越大越快） X Y （复原时速度越慢迟滞越久，除非0）
+// 镜头移动 [0移1复原] [移动速度（越大越快）] [目标X] [目标Y]
 cm.inGameDirectionEvent_PushMoveInfo(0, 300, -400, 27);
 // 显示感叹号（放单张图片）
 cm.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/Ballooncmg1/1", 0, 0, -110);
 // 玩家放动画：省略号
 cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/Balloonmsg0/0", 0, 0, -120, 1, 0, 1, 3000108, 0, 0);
-// 玩家放动画 总时长（放几遍） x y ? 图层优先级，9999之后能覆盖地图但是会变小 1头上0地面 NPCID 放大到全屏？ 不全屏？
+// 玩家放动画，优先级较低，会跟随玩家 [总时长（放几遍）] [相对x] [相对y] [?] [图层优先级，9999之后能覆盖地图但是会变小] [1头上0地面] [NPCID] [放大到全屏？] [不全屏？]
 cm.inGameDirectionEvent_Effect("Skill/6112.img/skill/61121100/hit", 0, 0, 0, 1, 0, 1, 3000122, 0, 0);
 // 特效：开始、完成、失败
 cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/start", 0, 0, -200, 1, 0, 0, 0, 0, 0);
 cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/clear", 0, 0, -200, 1, 0, 0, 0, 0, 0);
 cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/fail", 0, 0, -200, 1, 0, 0, 0, 0, 0);
-// 屏幕中间显示文字，而且要玩家触发：文字 时间
+// 屏幕中间显示文字，而且要玩家触发：[文字] [时间]
 cm.inGameDirectionEvent_Monologue("#fn黑体##fs26#黑魔法师出现之前，冒险岛世界曾是那么的平静祥和……", 1000);
-// 屏幕中间显示文字，从下往上滚动：文字 反正不能为0 0左对齐1居中2右对齐 减速 加速 （后两者太高的话，播放会变得不连续）
+// 屏幕中间显示文字，从下往上滚动：[文字] [反正不能为0] [0左对齐1居中2右对齐] [减速] [加速] （后两者太高的话，播放会变得不连续）
 cm.inGameDirectionEvent_MonologueScroll("#fn黑体##fs26#黑魔法师出现之前，冒险岛世界曾是那么的平静祥和……\r\n传送传送传送", 100, 0, 1, 5);
-// 隐藏角色,1=隐藏 0=显示
+// 隐藏角色 [1=隐藏 0=显示]
 cm.inGameDirectionEvent_SetHideEffect(1);
 // 左下角全地图系统提示
 cm.mapMessage("三生三世");
@@ -71,7 +76,7 @@ cm.mapMessage("三生三世");
 cm.mob_EnterField(9300546, -900, 29);
 // NPC离场
 cm.npc_LeaveField(3000107);
-// 召唤NPC ID X Y ？
+// 召唤NPC [ID] [X] [Y] ？
 cm.npc_ChangeController(3000106, 500, 20, 1); //D5 F8 86 01
 cm.npc_SetSpecialAction(3000106, "summon");
 // NPC往右走 ID 0左1右 X Y
