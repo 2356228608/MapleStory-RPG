@@ -8,9 +8,9 @@
 
 var status = 0;
 //限制等级
-var minLevel = 250; //最低等级
+var minLevel = 210; //最低等级
 var maxLevel = 999;//最高等级
-var minLevel1 = 250; //最低等级
+var minLevel1 = 210; //最低等级
 var maxLevel1 = 999;//最高等级
 
 //限制人数

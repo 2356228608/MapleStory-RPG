@@ -12,6 +12,13 @@ function enter(pi) {
 		var prop = em.getProperty("stage" + level);
 		// x5 层不给任何奖励
 		if (level % 10 == 5 || (prop != null && prop.equals("clear"))) {
+			// 3F 通关清理
+			if (level == 3) {
+				var itemid = [4009237, 4009238];
+				pi.getPlayer().removeItem(itemid[0], pi.getPlayer().getItemAmount(itemid[0]));
+				pi.getPlayer().removeItem(itemid[1], pi.getPlayer().getItemAmount(itemid[1]));
+			}
+			// 发放奖励
 			var index = level - 1 - Math.floor(level / 5);
 			pi.getPlayer().dropMessage(5, "获得了" + points[index] + "点起源点数。已被转化为了冒险岛世界的气息。");
 			pi.gainItem(4036455, points[index]);

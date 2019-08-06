@@ -52,7 +52,7 @@ qm.fieldEffect_ProcessOnOffLayer("0", "", 2, 0, 0, 0, 0, 0, 0);
 cm.inGameDirectionEvent_MoveAction(1);
 // 当且仅当锁定画面时，一定时间后执行next效果 [毫秒] 
 cm.inGameDirectionEvent_AskAnswerTime(30);
-// 镜头移动 [0移1复原] [移动速度（越大越快）] [目标X] [目标Y]
+// 镜头移动 [0移1复原] [移动速度（越大越快）] [相对X 右正左负] [相对Y 上正下负]
 cm.inGameDirectionEvent_PushMoveInfo(0, 300, -400, 27);
 // 显示感叹号（放单张图片）
 cm.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/Ballooncmg1/1", 0, 0, -110);

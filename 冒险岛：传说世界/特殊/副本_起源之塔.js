@@ -42,8 +42,7 @@ function action(mode, type, selection) {
 		for (var i = 0; i < difficulty.length; i++) {
 			var prop = cm.getEventManager(eventname[i]).getProperty("state");
 			var state = (prop == null || prop.equals("0")) ? "#r空闲#k" : "#b占用#k";
-			var pqtry = maxenter[i] - cm.getPQLog(difficulty[i] + eventName);
-			msg += "#k今天已探索#b" + difficulty[i] + "模式 #e" + cm.getPQLog(difficulty[i] + eventName) + " #n/ " + pqtry + " 层\t\t状态：" + state + "\r\n";
+			msg += "#k今天已探索#b" + difficulty[i] + "模式 #e" + cm.getPQLog(difficulty[i] + eventName) + " #n/ " + maxenter[i] + " 层\t\t状态：" + state + "\r\n";
 		}
 		for (var i = 0; i < difficulty.length; i++) {
 			msg += "#L" + i + "#挑战" + difficulty[i] + "模式的" + eventName + "。（" + minLevel[i] + "级以上）#l\r\n";
@@ -57,12 +56,8 @@ function action(mode, type, selection) {
 		} else if (em == null || open == false) {
 			cm.askMenu("配置文件不存在,请联系管理员。");
 			cm.dispose();
-		} else if (cm.getParty() == null) { //判断组队
-			cm.sendOk("创建组队才能进入。");
-			cm.dispose();
-		} else if (!cm.isLeader() || cm.getParty().getMembers().size()!=1) { // 判断组队队长
-			cm.sendOk("只能一个人进行挑战。");
-			cm.dispose();
+		} else if (cm.getParty() == null || !cm.isLeader() || cm.getParty().getMembers().size() != 1) { //判断组队
+			cm.sendOk("你需要创建一个#b只有你一人的队伍#k才能进入。");
 		} else {
 			var prop = em.getProperty("state");
 			if (prop == null || prop.equals("0")) {

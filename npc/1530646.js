@@ -71,9 +71,9 @@ function action(mode, type, selection) {
             } else if (!cm.allMembersHere()) {
                 cm.sendOk("你的组队部分成员不在当前地图,请召集他们过来后在尝试。"); //判断组队成员是否在一张地图..
             } else if (!cm.isAllPartyMembersAllowedLevel(minLevel[chs], maxLevel[chs])) {
-                cm.sendNext("组队成员等级 " + minLevel[chs] + " 以上 " + maxLevel[chs] + " 以下才可以入场。");
+                cm.sendNext("要求等级 " + minLevel[chs] + " 以上 " + maxLevel[chs] + " 以下才可以入场。");
             } else if (!cm.isAllPartyMembersAllowedPQ(PQLog[chs], maxenter[chs])) {
-                cm.sendNext("你的队员#r#e \"" + cm.getNotAllowedPQMemberName(PQLog[chs], maxenter[chs]) + "\" #k#n次数已经达到上限了。");
+                cm.sendNext("次数已经达到上限了#r#e \"" + cm.getNotAllowedPQMemberName(PQLog[chs], maxenter[chs]) + "\" #k#n次数已经达到上限了。");
             }/* else if (!cm.isAllPartyMembersNotCoolDown(questID, 1000 * 60 * 90)) {//判断组队成员是否l冷却..
              cm.sendOk("你的队员#r#e \"" + cm.getIsInCoolDownMemberName(questID, 1000 * 60 * 90) + "\" #k#n目前处于等待重置时间状态。");
              cm.dispose();

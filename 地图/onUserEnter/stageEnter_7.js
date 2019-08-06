@@ -8,7 +8,7 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 function action(mode, type, selection) {
 	status++;
 	var em = ms.getEventManager("Map_TowerOfOz");
-	var prop = em == null ? null : em.getProperty("stage" + level);
+	var prop = em == null ? null : em.getProperty("stage" + parseInt(level));
 	if (prop != null && prop.equals("start")) {
 		ms.addPopupSay(2540000, 6000, "请你守护好那名被狂暴的猴子伤害的探险家。");
 		ms.dispose();
@@ -23,6 +23,7 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.spawnNpcForPlayer(2540001, -850, 2300);
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
@@ -31,10 +32,12 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_Monologue(header + "#fs22#在黑魔法师的影响下，变得狂暴的猴子们正在攻击人类。\r\n\r\n啊，那边有人受到了猴子的攻击，看那边！", 30000);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 1000, 0, 0);
-		ms.inGameDirectionEvent_PushMoveInfo(0, 600, 0, -1000);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
+		ms.inGameDirectionEvent_PushMoveInfo(0, 1000, 0, 2500);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_AskAnswerTime(4000);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushMoveInfo(1, 0, 0, 0);
+	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
@@ -55,7 +58,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		ms.warp(992007000, 1);
-		em.setProperty("stage" + level, "start");
+		em.setProperty("stage" + parseInt(level), "start");
 		ms.addPopupSay(2540000, 6000, "请你守护好那名被狂暴的猴子伤害的探险家。");
 	} else {
 		ms.dispose();

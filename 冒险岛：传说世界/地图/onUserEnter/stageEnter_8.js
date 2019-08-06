@@ -8,7 +8,7 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 function action(mode, type, selection) {
 	status++;
 	var em = ms.getEventManager("Map_TowerOfOz");
-	var prop = em == null ? null : em.getProperty("stage" + level);
+	var prop = em == null ? null : em.getProperty("stage" + parseInt(level));
 	if (prop != null && prop.equals("start")) {
 		ms.addPopupSay(2540000, 6000, "希望你能消灭100个左右的火山虫。");
 		ms.dispose();
@@ -37,7 +37,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		ms.warp(992008000, 1);
-		em.setProperty("stage" + level, "start");
+		em.setProperty("stage" + parseInt(level), "start");
 		ms.addPopupSay(2540000, 6000, "希望你能消灭100个左右的火山虫。");
 	} else {
 		ms.dispose();

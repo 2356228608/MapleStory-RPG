@@ -24,7 +24,8 @@ function setup(eim, leaderid) {
 	var eim = em.newInstance("Map_TowerOfOz");
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
-		map.resetFully();
+		if (i > 0) // 避免1F重载浪费时间
+			map.resetFully();
 		map.killAllMonsters(false);
 	}
 	return eim;
@@ -41,15 +42,25 @@ function playerRevive(eim, player) {
 }
 
 function changedMap(eim, player, mapid) {
+	em.broadcastServerMsg("[changedMap]");
 	if (mapIds.indexOf(mapid) < 0) {
 		playerExit(eim, player);
 	} else {
-		switch (em.getProperty("state")) {
-		case "1":
-			if (em.getProperty("stage1_kill") == null)
-				em.setProperty("stage1_kill", 0);
-			if (em.getProperty("stage1_damage") == null)
-				em.setProperty("stage1_damage", 0.0);
+		var level = (mapid - mapHall) / 1000;
+		em.setProperty("state", level);
+		switch (level) {
+		case 1:
+			initProp("stage1_kill", 0);
+			initProp("stage1_damage", 0.0);
+			break;
+		case 3:
+			initProp("stage3_last_egg_count", 0);
+			initProp("stage3_bet_egg_on_left", 0);
+			initProp("stage3_bet_egg_on_right", 0);
+			initProp("stage3_winner", 0);
+			// 背景事件
+			scheduleNew("stage3_CountItem", 3);
+			scheduleNew("stage3_Fight", randomNum(1 * 60, 3 * 60));
 			break;
 		}
 		return 1;
@@ -57,53 +68,54 @@ function changedMap(eim, player, mapid) {
 }
 
 function playerDisconnected(eim, player) {
+	em.broadcastServerMsg("[playerDisconnected]");
+	on玩家退场(eim, player, false);
 	return 0;
 }
 
 function scheduledTimeout(eim) {
-	eim.disposeIfPlayerBelow(100, mapHall);
-	em.setProperty("state", 0);
-	em.setProperty("leader", "true");
+	em.broadcastServerMsg("[scheduledTimeout]");
+	on玩家退场(eim, eim.getPlayers().get(0), true);
 }
 
 function playerExit(eim, player) {
-	eim.unregisterPlayer(player);
-	if (eim.disposeIfPlayerBelow(0, 0)) {
-		em.setProperty("state", 0);
-		em.setProperty("leader", "true");
-	}
+	em.broadcastServerMsg("[playerExit]");
+	on玩家退场(eim, player, false);
 }
 
 function monsterValue(eim, mobId) {
-	em.broadcastServerMsg(em.getProperty("state") + "[monsterValue]=" + mobId);
-	var curstage = em.getProperty("stage" + em.getProperty("state"));
-	switch (em.getProperty("state")) {
-	case "1":
+	em.broadcastServerMsg("[monsterValue]=" + mobId);
+	var state = parseInt(em.getProperty("state"));
+	var curstage = em.getProperty("stage" + state);
+	switch (state) {
+	case 1:
+		em.broadcastServerMsg("[case 1]=0");
 		if (curstage != null && curstage.equals("clear"))
 			break;
+		em.broadcastServerMsg("[case 1]=1");
 		var kilReq = 300;
 		var kill = parseInt(em.getProperty("stage1_kill")) + 1;
 		em.setProperty("stage1_kill", kill);
 		eim.getPlayers().forEach(function (player) {
 			var damage = parseFloat(em.getProperty("stage1_damage")) + player.getStat().getCurrentMaxBaseDamage() / 10000;
 			em.setProperty("stage1_damage", damage);
-			player.dropMessage(-1, "消灭古代绿水灵 " + (kill) + " / " + kilReq + "，累积冲击量 " + damage.toFixed(2) + " / 5000万");
+			player.dropMessage(-1, "消灭古代绿水灵 " + (kill) + " / " + kilReq + "，累积冲击量 " + damage.toFixed(2) + "万 / 5000万");
 		});
 		if (kill >= kilReq || parseFloat(em.getProperty("stage1_damage")) > 5000) {
 			em.setProperty("stage1", "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(992001000).startMapEffect("你现在可以前往下一层了。", 5120061);
+			var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	}
 	return 1;
 }
 
-// not work?
-function allMonstersDead(eim) {
-	em.broadcastServerMsg("[allMonstersDead]");
+function monsterDrop(eim, player, mob) {
+	em.broadcastServerMsg("[monsterDrop]");
 }
 
 function clearPQ(eim) {
@@ -113,17 +125,99 @@ function leftParty(eim, player) {}
 function disbandParty(eim) {}
 function playerDead(eim, player) {}
 function cancelSchedule() {}
-function monsterDrop(eim, player, mob) {
-	em.broadcastServerMsg("[monsterDrop]=" + mob);
-}
-function pickUpItem(eim, player, itemID) {
-	em.broadcastServerMsg("[pickUpItem]=" + itemID);
+
+var setupTask;
+
+// 3F 收集龙蛋
+function stage3_CountItem() {
+	var itemid = [4009237, 4009238];
+	var reqNum = 1000;
+	var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+	if (mapid != 3 * 1000 + mapHall)
+		return;
+
+	em.getPlayersInMap(mapid).forEach(function (player) {
+		var owns = player.getItemAmount(itemid[0]) + player.getItemAmount(itemid[1]);
+		if (parseInt(em.getProperty("stage3_last_egg_count")) == owns) {
+			scheduleNew("stage3_CountItem", 3);
+			return;
+		}
+		em.setProperty("stage3_last_egg_count", owns);
+		player.dropMessage(-1, "古代乌龟蛋 " + owns + " / " + reqNum);
+		if (owns < reqNum) {
+			scheduleNew("stage3_CountItem", 3);
+			return;
+		} else {
+			em.getMapFactoryMap(mapid).startMapEffect("哇！你真的收集到1000个啦？现在我们可以前往下一层了。", 5120061);
+			em.setProperty("stage3", "clear");
+			player.openNpc(2540005, "特效_完成");
+		}
+	});
 }
 
-function monsterDamaged(eim, player, mobID, damage) {
-	em.broadcastServerMsg("[monsterDamaged]=" + mobID);
+// 3F 世纪对决
+function stage3_Fight() {
+	var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+	if (mapid != 3 * 1000 + mapHall) {
+		return;
+	}
+
+	var winner = randomNum(1, 2) == 1 ? 2540012 : 2540014;
+	em.setProperty("stage3_winner", winner);
+	em.getPlayersInMap(mapid).forEach(function (player) {
+		player.openNpc(winner, "起源之塔_3F_对决胜利");
+	});
+
+	scheduleNew("stage3_Fight", randomNum(1 * 60, 3 * 60));
 }
 
-function monsterKilled(eim, player, mobID) {
-	em.broadcastServerMsg("[monsterKilled]=" + mobID);
+// ===================== 功能类方法 ======================
+
+function randomNum(minNum, maxNum) {
+	switch (arguments.length) {
+	case 1:
+		return parseInt(Math.random() * minNum + 1, 10);
+		break;
+	case 2:
+		return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+		break;
+	default:
+		return 0;
+		break;
+	}
+}
+
+// 初始化参数
+function initProp(name, val) {
+	if (em.getProperty(name) == null)
+		em.setProperty(name, val);
+}
+// 循环调动事件
+function scheduleNew(funcName, seconds) {
+	var setupTask = em.scheduleAtTimestamp(funcName, java.lang.System.currentTimeMillis() + seconds * 1000);
+	return setupTask;
+}
+// 处理玩家退场
+function on玩家退场(eim, player, isTimeout) {
+	// 保存一部分数据，方便之后领取奖励
+	var time = eim.getTimeLeft();
+	var level = em.getProperty("state");
+	// ????
+	if (isTimeout) {
+		eim.disposeIfPlayerBelow(100, mapHall);
+	} else {
+		eim.disposeIfPlayerBelow(0, 0);
+	}
+	// 清空配置文件
+	em.getProperties().clear();
+	em.setProperty("state", 0);
+	em.setProperty("leader", "true");
+	eim.unregisterPlayer(player);
+	// 清空玩家道具
+	var itemid = [4009237, 4009238];
+	player.removeItem(itemid[0], player.getItemAmount(itemid[0]));
+	player.removeItem(itemid[1], player.getItemAmount(itemid[1]));
+	// 记录本次通关数据
+	em.setProperty("time" + player.getId(), time);
+	em.setProperty("level" + player.getId(), level);
 }
