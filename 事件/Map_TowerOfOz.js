@@ -24,7 +24,7 @@ function setup(eim, leaderid) {
 	var eim = em.newInstance("Map_TowerOfOz");
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
-		if (i != 1 && i != 7) // 避免部分地图重载丢失
+		if (i != 1) // 加速载入，或者避免部分地图重载丢失
 			map.resetFully();
 		map.killAllMonsters(false);
 	}
@@ -42,10 +42,12 @@ function playerRevive(eim, player) {
 }
 
 function changedMap(eim, player, mapid) {
-	em.broadcastServerMsg("[changedMap]");
+	// em.broadcastServerMsg("[changedMap]");
 	if (mapIds.indexOf(mapid) < 0) {
-		playerExit(eim, player);
-	} else {
+		on玩家退场(eim, player, false);
+		return;
+	}
+	// 初始化变量
 		var level = (mapid - mapHall) / 1000;
 		em.setProperty("state", level);
 		switch (level) {
@@ -71,9 +73,14 @@ function changedMap(eim, player, mapid) {
 		case 8:
 			initProp("stage8_kill", 0);
 			break;
+		case 9:
+			initProp("stage9_level", 0);
+			initProp("stage9_fail", 0);
+			for(var i=0;i<8;i++){
+				initProp("stage9_puzzle_"+i, randomNum(0, 3));
+			}
+			break;
 		}
-		return 1;
-	}
 }
 
 function playerDisconnected(eim, player) {
