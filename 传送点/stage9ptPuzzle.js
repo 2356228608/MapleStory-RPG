@@ -19,7 +19,7 @@ function enter(pi) {
 		em.setProperty("stage9_level", curLevel);
 		pi.warp(992009000, startPortal + curLevel*4);
 		var pos = pi.getPortal().getPosition();
-		pi.spawnNpcForPlayer(9201555, pos.getX(), pos.getY());
+		pi.spawnNpcForPlayer(10310, pos.getX(), pos.getY());
 		// 通关
 		if(curLevel==8){
 			em.setProperty("stage9", "clear");
