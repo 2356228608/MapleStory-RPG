@@ -11,6 +11,10 @@ function action(mode, type, selection) {
     } else {
         status--;
     }
+    if(cm.getMapId() != 4000001){
+        cm.dispose();
+        return;
+    }
 
     if (cm.isAllReactorState(1008010, 5) == true) {
         if (status == -1 && mode != 1) {
