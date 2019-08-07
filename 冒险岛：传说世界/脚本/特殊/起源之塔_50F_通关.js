@@ -28,6 +28,7 @@ function action(mode, type, selection) {
 		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		cm.getPlayer().dropMessage(5, "传送回起源之塔的大厅。");
 		cm.warp(992000000, 0);
+		cm.gainItem(1142685, 1);
 		cm.dispose();
 	} else {
 		cm.dispose();
