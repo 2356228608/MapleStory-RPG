@@ -83,6 +83,10 @@ function changedMap(eim, player, mapid) {
 	case 11:
 		initProp("stage11_kill", 0);
 		break;
+	case 13:
+		initProp("stage13_kill", 0);
+		scheduleNew("stage13_Fight", 10);
+		break;
 	}
 }
 
@@ -182,6 +186,25 @@ function monsterValue(eim, mobId) {
 				player.openNpc(2540005, "特效_完成");
 			});
 			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+		}
+		break;
+	case 13:
+		var mobName = ["蓝色花牛","绿色花牛","白刺熊","褐刺熊"];
+		var kilReq = 20;
+		var kill = parseInt(em.getProperty("stage13_kill")) + 1;
+		var index = Math.floor((kill-1)/kilReq);
+		em.setProperty("stage11_kill", kill);
+		eim.getPlayers().forEach(function (player) {
+			player.dropMessage(-1, "消灭"+mobName[index]+" " + (kill-index*kilReq) + " / " + kilReq);
+		});
+		if (kill == kilReq*4) {
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+			});
+			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+		}else if (kill == kilReq*3 || kill == kilReq*2 || kill == kilReq*1) {
+			scheduleNew("stage13_Fight", 10);			
 		}
 		break;
 	case 20:
@@ -331,6 +354,24 @@ function stage7_Fight() {
 		em.getPlayersInMap(mapid).forEach(function (player) {
 			player.openNpc(2540004, "起源之塔_7F_赶猴子");
 		});
+	}
+}
+
+// 13F 防御战
+function stage13_Fight() {
+	var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+	if (mapid != 13 * 1000 + mapHall) {
+		return;
+	}
+	var mobId = [9309098,9309099,9309104,9309105];
+	var kilReq = 20;
+	var kill = parseInt(em.getProperty("stage13_kill"));
+	var index = Math.floor(kill/kilReq);
+	var map = em.getMapFactoryMap(mapid);
+	var mob;
+	for (var i = 0; i < kilReq; i++) {
+		mob = em.getMonster(mobId[index]);
+		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000 + i*50, 0));
 	}
 }
 
