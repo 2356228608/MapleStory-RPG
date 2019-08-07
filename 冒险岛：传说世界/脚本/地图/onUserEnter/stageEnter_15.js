@@ -23,7 +23,7 @@ function action(mode, type, selection) {
 		ms.forceStartQuest(quest);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		ms.sendNextNoESC("视贺你！你是第一次来到第15层吧？你如此敢于探验，甚至让我感到非常意外。", 2540000);
+		ms.sendNextNoESC("视贺你！你是第一次来到第" + level + "层吧？你如此敢于探验，甚至让我感到非常意外。", 2540000);
 	} else if (status === i++) {
 		ms.sendNextNoESC("我要送你一份礼物！", 2540000);
 	} else if (status === i++) {
