@@ -7,6 +7,7 @@ function action(mode, type, selection) {
 	status++;
 	var level = 45;
 	var quest = 32024 + level/5;
+	var medal = 1142685 + level/5;
 	// 领取过了
 	if (ms.isQuestFinished(quest)) {
 		ms.dispose();
@@ -28,6 +29,7 @@ function action(mode, type, selection) {
 		ms.sendNextNoESC("我要送你一份礼物！", 2540000);
 	} else if (status === i++) {
 		ms.forceCompleteQuest(quest);
+		ms.gainItem(medal, 1);
 		ms.sendNextNoESC("希望你能继续保持，我们马上就要到达最深处了！", 2540000);
 	} else if (status === i++) {
 		// 收尾
