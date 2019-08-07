@@ -233,7 +233,22 @@ function clearPQ(eim) {
 }
 function leftParty(eim, player) {}
 function disbandParty(eim) {}
-function playerDead(eim, player) {}
+function playerDead(eim, player) {
+	em.broadcastServerMsg("[monsterValue]=" + mobId);
+	var state = parseInt(em.getProperty("state"));
+	var curstage = em.getProperty("stage" + state);
+	var mapid = state * 1000 + mapHall;
+	switch (state) {
+	case 50:	// 1142684	起源之塔最初挑战者
+		eim.getPlayers().forEach(function (player) {
+			if(!player.haveItem(1142684, 1)){
+				player.dropMessage(5, "在被桃乐丝击败时，似乎得到了什么。");
+				player.gainItem(1142684, 1);
+			}
+		});			
+	break;
+	}
+}
 function cancelSchedule() {}
 
 var setupTask;
@@ -275,7 +290,8 @@ function stage3_Fight() {
 	var winner = randomNum(1, 2) == 1 ? 2540012 : 2540014;
 	em.setProperty("stage3_winner", winner);
 	em.getPlayersInMap(mapid).forEach(function (player) {
-		player.openNpc(winner, "起源之塔_3F_对决胜利");
+		
+		openNpc(winner, "起源之塔_3F_对决胜利");
 	});
 
 	scheduleNew("stage3_Fight", randomNum(1 * 60, 3 * 60));
