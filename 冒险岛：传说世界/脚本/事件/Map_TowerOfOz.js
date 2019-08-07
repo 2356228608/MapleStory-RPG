@@ -123,7 +123,7 @@ function monsterValue(eim, mobId) {
 			player.dropMessage(-1, "消灭古代绿水灵 " + (kill) + " / " + kilReq + "，累积冲击量 " + damage.toFixed(2) + "万 / 5000万");
 		});
 		if (kill >= kilReq || parseFloat(em.getProperty("stage1_damage")) > 5000) {
-			em.setProperty("stage1", "clear");
+			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
@@ -138,7 +138,7 @@ function monsterValue(eim, mobId) {
 			player.dropMessage(-1, "消灭绿水灵 " + (kill) + " / " + kilReq);
 		});
 		if (kill >= kilReq) {
-			em.setProperty("stage6", "clear");
+			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
@@ -153,7 +153,7 @@ function monsterValue(eim, mobId) {
 			player.dropMessage(-1, "消灭火山虫 " + (kill) + " / " + kilReq);
 		});
 		if (kill >= kilReq) {
-			em.setProperty("stage8", "clear");
+			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
@@ -162,9 +162,10 @@ function monsterValue(eim, mobId) {
 		break;
 	case 10:
 		if(mobId==9309201){
-			em.setProperty("stage10", "clear");
+			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
+				player.openNpc(state, "起源之塔_BOSS结算");
 			});			
 		}
 		break;
@@ -176,11 +177,47 @@ function monsterValue(eim, mobId) {
 			player.dropMessage(-1, "消灭石头人 " + (kill) + " / " + kilReq);
 		});
 		if (kill >= kilReq) {
-			em.setProperty("stage11", "clear");
+			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
 			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+		}
+		break;
+	case 20:
+		if(mobId==9309201){
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+				player.openNpc(state, "起源之塔_BOSS结算");
+			});			
+		}
+		break;
+	case 30:
+		if(mobId==9309200){
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+				player.openNpc(state, "起源之塔_BOSS结算");
+			});			
+		}
+		break;
+	case 40:
+		if(mobId==9309203){
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+				player.openNpc(state, "起源之塔_BOSS结算");
+			});			
+		}
+		break;
+	case 50:
+		if(mobId==9309207){
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+				player.openNpc(state, "起源之塔_BOSS结算");
+			});			
 		}
 		break;
 	}
