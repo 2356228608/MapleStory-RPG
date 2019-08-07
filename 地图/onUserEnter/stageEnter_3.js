@@ -10,7 +10,6 @@ function action(mode, type, selection) {
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + parseInt(level));
 	if (prop != null && prop.equals("start")) {
-		ms.addPopupSay(2540000, 6000, "请搜集1000个古代乌龟蛋。");
 		ms.dispose();
 		return;
 	}
@@ -47,8 +46,8 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + parseInt(level), "start");
-		ms.addPopupSay(2540000, 6000, "请搜集1000个古代乌龟蛋。");
 		ms.warp(992003000, 1);
+		ms.addPopupSay(2540000, 6000, "请搜集1000个古代乌龟蛋。");
 		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();

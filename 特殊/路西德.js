@@ -28,8 +28,11 @@ var PQ = '[路西德-简单]';
 var PQ1 = '[路西德-困难]';
 
 //配置文件名称
-var eventname = "luxide_NORMAL";
-var eventname1 = "luxide_HARD";
+//var eventname = "luxide_NORMAL";
+//var eventname1 = "luxide_HARD";
+
+var eventname = "Lucid";
+var eventname1 = "Lucid";
 
 //设置每日次数
 var maxenter = 10;

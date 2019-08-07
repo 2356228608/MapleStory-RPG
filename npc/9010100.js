@@ -1,221 +1,125 @@
-﻿/*  This is mada by 娜娜    
- *  This source is made by BMS Team
- *  脚本功能： 露西德
- *  @Author 娜娜 
+/*
+ * 功能: 路西德入场
+ * Form: 芬芬时尚潮流
  */
-
-
-
-var status = 0;
-//限制等级
-var minLevel = 200; //最低等级
-var maxLevel = 999;//最高等级
-var minLevel1 = 230; //最低等级
-var maxLevel1 = 999;//最高等级
-
-//限制人数
-var minPlayers = 1;
-var maxPlayers = 6;
-
-//怪物最大等级设置
-var moblevel = 255;
 
 //副本开关 开启、true 关闭、false
 var open = true;
-
-//组队log记录
-var PQ = '[路西德-简单]';
-var PQ1 = '[路西德-困难]';
-
 //配置文件名称
-var eventname = "BossLucid_NORMAL";
-var eventname1 = "BossLucid";
+var PQname = ["BossLucid_NORMAL"];
+//记录次数名称
+var PQLog = ["路西德[普通]"];
+//开始的地图
+var startmap = 450004000; //噩梦时间塔顶端
+//等级限制
+var minLevel = [210];
+var maxLevel = [1000];
+//次数限制
+var maxenter = [30];
+//几天一次
+var interval = [1];
+var status = -1;
+//限制人数
+var minPlayers = [1, 1, 1];
+var maxPlayers = [6, 6, 6];
+var minLimitBreak = [0, 0, 0]; //武器破攻需求，0为不要求
+var chs;
+var MapList = Array(
+		940200252, //森林 刺溜树9833066 1447 -265
+		940200206, //草笛森林 坠落
+		940200204, //森林入口
+		940200205, //森林可见处   花8880163 -265 39
+		450001250, //水雾瀑布 跳崖
+		450001380, //洞穴 阿勒玛8641010 736 177
+		940200202, //神秘河某处上空 传送
+		940200203, //光之漩涡 噩梦粉色石8880161  -85 215             死亡后召唤蝴蝶 8880165  -690 215
+		921171000, //碎梦者 噩梦岩石 8880171  542 -1963/ -1726 -237/ 3352 -237/ 1091 1485
+		450004150, //梦幻森林 路西德 1阶段
+		450004550, //坍塌时间 路西德 2阶段
+		450004600 //噩梦塔 奖励阶段    音乐盒8880167 93,35
+	);
 
-//设置每日次数
-var maxenter = 100;
-var maxenter1 = 100;
 function start() {
-    status = -1;
-    action(1, 0, 0);
+	if (cm.getMapId() == startmap) {
+		var text = "#e<首领怪:路西德>#n\r\n如果不能阻拦路西德，将会发生很可怕的事情。\r\n";
+		for (var i = 0; i < PQname.length; i++) {
+			text += "\r\n#b#L" + i + "#申请入场<首领怪:路西德>（" + minLevel[i] + "级以上）#l#k";
+		}
+		cm.askMenu(text);
+	} else {
+		cm.askYesNo("#e<首领怪:路西德>#n\r\n\r\n你现在确定放弃任务,从这里出去?\r\n");
+	}
 }
+
 function action(mode, type, selection) {
-    if (status >= 1 && mode == 0) {
-        cm.sendOk("快捷寻找组队按热键“O”赶快加入组队来挑战组队任务吧。");
-        cm.dispose();
-        return;
-    }
-    if (mode == 1)
-        status++;
-    else
-        status--;
-
-    if (status == 0) {
-        var em = cm.getEventManager(eventname);
-        var em1 = cm.getEventManager(eventname1);
-        var prop = em.getProperty("state");
-        if (prop == null || prop.equals("0")) {
-            var vipstr = "#r副本空闲#k";
-        } else {
-            var vipstr = "#b已经开启#k";
-        }
-        var prop = em1.getProperty("state");
-        if (prop == null || prop.equals("0")) {
-            var vipstr1 = "#r副本空闲#k";
-        } else {
-            var vipstr1 = "#b已经开启#k";
-        }
-
-        if (cm.getPlayer().getClient().getChannel() != 0) {
-            var pqtry = maxenter - cm.getPQLog(PQ);
-            var pqtry1 = maxenter1 - cm.getPQLog(PQ1);
-            var rwpz = "";
-
-            rwpz += "#e推荐等级：140 - 250";
-            rwpz += "推荐人数：多人副本  \r\n#b已进行普通模式：" + cm.getPQLog(PQ) + " 次       剩余挑战次数：" + pqtry + " 次#k";
-            rwpz += "\r\n#r已进行进阶模式：" + cm.getPQLog(PQ1) + " 次       #r剩余挑战次数：" + pqtry1 + " 次#n#k";
-            rwpz += "\r\n普通模式状态：" + vipstr + "        进阶模式状态：" + vipstr1 + "";
-            var zyms = "";
-            zyms = "#e<Boss - 露西德 ->#n\r\n#b#h0# \n\#k你现在挑战这个BOSS副本吗?\r\n" + rwpz + "\r\n\r\n";
-            //zyms += "任务建设中\r\n\r\n";
-            zyms += "#L1##b是的,进行普通模式#l\r\n\r\n\r\n";
-			zyms += "#L2##b是的,进行进阶模式#l\r\n\r\n\r\n";
-            //zyms += "#b   由于露西德只有一个ID 进阶模式无法开放\r\n\r\n";
-			zyms += "#L3##b暂时不想挑战,我要回家#l\r\n\r\n\r\n";
-            cm.askMenu(zyms);
-        } else {
-            cm.sendOk("当前副本只能在1频道进行。");
-            cm.dispose();
-        }
-
-    } else if (status == 1) {
-        if (selection == 1) {
-            if (cm.getParty() == null) { //判断组队
-                cm.sendOk("创建组队才能进入。");
-                cm.dispose();
-            }/* else if(cm.haveItem(4033611) < 1){
-             cm.sendOk("你没有#v4033611##z4033611#无法进入副本。");
-             cm.dispose();
-             }*/ else if (!cm.isLeader()) { // 判断组队队长
-                cm.sendOk("请你们团队的队长和我对话。");
-                cm.dispose();
-            } else if (cm.getPQLog(PQ) >= maxenter) {
+	if (status >= 0 && mode == 0) {
+		cm.dispose();
+		return;
+	}
+	mode == 1 ? status++ : status--;
+	if (cm.getPlayer().isGM()) {
+		maxenter = [999];
+	}
+	chs = selection;
+	if (cm.getMapId() == startmap) {
+		if (status == 0) {
+			if (cm.getParty() == null) { //判断组队
+				cm.sendOk("你并没有组队，请创建组建一个队伍在来吧。");
+			} else if (!cm.isLeader()) { // 判断组队队长
+				cm.sendOk("请让你们的组队长和我对话。");
+			} else if (cm.getLimitBreak() < minLimitBreak[chs]) { // 判断组队队长
+				cm.sendOk("武器破功不够" + minLimitBreak[chs] + "，不允许进入！");
+			} else if (!cm.isAllPartyMembersAllowedLevel(minLevel[chs], maxLevel[chs])) {
+				cm.sendNext("组队成员等级 " + minLevel[chs] + " 以上 " + maxLevel[chs] + " 以下才可以入场。");
+			} else if (cm.getPQLog(PQLog) >= maxenter) {
                 cm.sendOk("你今天挑战次数已经用完了,请明天在来吧!");
                 cm.dispose();
             } else if (!cm.allMembersHere()) {
-                cm.sendOk("你的组队部分成员不在当前地图,请召集他们过来后在尝试。"); //判断组队成员是否在一张地图..
-                cm.dispose();
-            } else {
-                var party = cm.getParty().getMembers();
-                var mapId = cm.getMapId();
-                var next = true;
-                var levelValid = 0;
-                var inMap = 0;
+				cm.sendOk("你的组队部分成员不在当前地图,请召集他们过来后在尝试。"); //判断组队成员是否在一张地图..
+			} else if (cm.getPlayerCount(MapList[chs]) != 0) {
+				cm.sendOk("目前该频道已经有人在挑战，请换个频道重新进入。");
+			} else {
+				var em = cm.getEventManager(PQname[chs]);
+				if (em == null || open == false) {
+					cm.askMenu("配置文件不存在,请联系管理员。");
+				} else {
+					var party = cm.getParty().getMembers();
+					var next = true;
+					/*
+					for (var keys in MapList) {
+					if (cm.getPlayerCount(MapList[keys]) != 0) {
+					next = false;
+					break;
+					}
+					}*/
+					if (!cm.getPlayer().isGM() && (party.size() > maxPlayers[chs] || party.size() < minPlayers[chs])) {
+						next = false;
+					}
+					if (next) {
+						var prop = em.getProperty("state");
+						if (prop == null || prop.equals("0")) {
+							cm.dispose();
+							em.startInstance(cm.getParty(), cm.getMap());
+							cm.gainMembersPQ(PQLog[chs], 1);
+							cm.worldSpouseMessage(0x0F, "[副本挑战] : " + cm.getChar().getName() + " 带队开始挑战" + PQLog[chs] + "。祝Ta满载而归！");
+							return;
+						} else {
+							cm.sendOk("已经有队伍在进行了,请换其他频道尝试。");
+						}
+					} else {
+						cm.sendOk("你需要有一个 " + minPlayers[chs] + " - " + maxPlayers[chs] + " 人的队伍. 请您组好队员后再试.");
+						cm.dispose();
+					}
+				}
+			}
+		} else {
+			cm.dispose();
+		}
+	} else {
+		cm.dispose();
+		if (status == 0) {
+			cm.warp(startmap, 0);
+		}
+	}
 
-                var it = party.iterator();
-                while (it.hasNext()) {
-                    var cPlayer = it.next();
-                    if (cPlayer.getLevel() >= minLevel && cPlayer.getLevel() <= maxLevel) {
-                        levelValid += 1;
-                    } else {
-                        //cm.sendOk("所有成员等级 "+ minLevel +" 以上 "+ maxLevel +" 以下才可以入场。");
-                        cm.dispose();
-                        next = false;
-                    }
-                    if (cPlayer.getMapid() == mapId) {
-                        inMap += 1;
-                    }
-                }
-                if (party.size() > maxPlayers || inMap < minPlayers) {
-                    next = false;
-                }
-                if (next) {
-                    var em = cm.getEventManager(eventname);
-                    if (em == null || open == false) {
-                        cm.askMenu("配置文件不存在,请联系管理员。");
-                    } else {
-                        var prop = em.getProperty("state");
-                        if (prop == null || prop.equals("0")) {
-                            cm.setPQLog(PQ);
-                            em.startInstance(cm.getParty(), cm.getMap(), moblevel);
-                        } else {
-                            cm.askMenu("已经有队伍在进行了,请换其他频道尝试。");
-                            cm.dispose();
-                        }
-                        //cm.gainItem(4033611,-1);
-                        cm.dispose();
-                    }
-                } else {
-                    cm.askYesNo("所有成员等级 " + minLevel + " 以上 " + maxLevel + " 以下才可以入场。");
-                }
-            }
-
-        } else if (selection == 2) {
-            if (cm.getParty() == null) { //判断组队
-                cm.sendOk("创建组队才能进入。");
-                cm.dispose();
-            }/* else if(cm.haveItem(4033611) < 1){
-             cm.sendOk("你没有#v4033611##z4033611#无法进入副本。");
-             cm.dispose();
-             }*/ else if (!cm.isLeader()) { // 判断组队队长
-                cm.sendOk("请你们团队的队长和我对话。");
-                cm.dispose();
-            } else if (cm.getPQLog(PQ1) >= maxenter1) {
-                cm.sendOk("你今天挑战次数已经用完了,请明天在来吧!");
-                cm.dispose();
-            } else if (!cm.allMembersHere()) {
-                cm.sendOk("你的组队部分成员不在当前地图,请召集他们过来后在尝试。"); //判断组队成员是否在一张地图..
-                cm.dispose();
-            } else {
-                var party = cm.getParty().getMembers();
-                var mapId = cm.getMapId();
-                var next = true;
-                var levelValid = 0;
-                var inMap = 0;
-
-                var it = party.iterator();
-                while (it.hasNext()) {
-                    var cPlayer = it.next();
-                    if (cPlayer.getLevel() >= minLevel1 && cPlayer.getLevel() <= maxLevel1) {
-                        levelValid += 1;
-                    } else {
-                        //cm.sendOk("所有成员等级 "+ minLevel +" 以上 "+ maxLevel +" 以下才可以入场。");
-                        cm.dispose();
-                        next = false;
-                    }
-                    if (cPlayer.getMapid() == mapId) {
-                        inMap += 1;
-                    }
-                }
-                if (party.size() > maxPlayers || inMap < minPlayers) {
-                    next = false;
-                }
-                if (next) {
-                    var em = cm.getEventManager(eventname1);
-                    if (em == null || open == false) {
-                        cm.askMenu("配置文件不存在,请联系管理员。");
-                    } else {
-                        var prop = em.getProperty("state");
-                        if (prop == null || prop.equals("0")) {
-                            em.startInstance(cm.getParty(), cm.getMap(), moblevel);
-                        } else {
-                            cm.askMenu("已经有队伍在进行了,请换其他频道尝试。");
-                            cm.dispose();
-                        }
-                        cm.setPQLog(PQ1);
-                        //cm.gainItem(4033611,-1);
-                        cm.dispose();
-                    }
-                } else {
-                    cm.sendOk("所有成员等级 " + minLevel1 + " 以上 " + maxLevel1 + " 以下才可以入场。");
-                }
-            }
-        } else if (selection == 3) {
-			cm.warp(910000000,0);
-            cm.dispose();
-        }
-    } else if (status == 2) {
-        cm.dispose();
-    } else if (mode == 0) {
-        cm.dispose();
-    }
 }
