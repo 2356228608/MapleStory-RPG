@@ -44,10 +44,9 @@ function enter(pi) {
 	while (badMaps.indexOf(level + 1) > -1) {
 		level++;
 	}
-	// 通关了？
+	// 通关了？放动画
 	if (mapId == 992050000) {
-		pi.getPlayer().dropMessage(5, "传送回起源之塔的大厅。");
-		pi.warp(992000000, 0);
+		pi.openNpc(0, "起源之塔_50F_通关");
 	} else {
 		pi.getPlayer().dropMessage(5, "传送到起源之塔的第" + (level + 1) + "层。");
 		pi.warp(992000000 + (level + 1) * 1000, 0);
