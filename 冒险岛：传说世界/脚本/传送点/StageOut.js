@@ -3,6 +3,8 @@ var points = [4, 12, 14, 16, 24, 29, 35, 46, 75, 58, 73, 77, 96, 112, 137, 139, 
 var exps = [33474, 83687, 83687, 127118, 143248, 143248, 192090, 192090, 413928, 413928, 571006, 571006, 571006, 640872, 839876, 839876, 903628, 1355442, 1656447, 1656447, 1656447, 1830930, 2395173, 2395173, 2622873, 2622873, 4667404, 4667404, 5909948, 5909948, 5909948, 7038672, 7983508, 7983508, 10080948, 12601185, 13096065, 13096065, 13096065, 13562465, 13562465, 13562465, 13562465, 13562465, 16272958]
 // 目前故障的楼层
 var badMaps = [2, 4, 6, 16, 19, 21, 29, 37, 38, 42, 43, 46];
+// 跑酷楼层，直接通过
+var bypassFloor = [12];
 
 function enter(pi) {
 	// pi.mapMessage("[curPortal " + pi.getPortal().getId() + "]");
@@ -18,11 +20,11 @@ function enter(pi) {
 	var prop = em.getProperty("stage" + level);
 	// 没有通关，也不是 x5 层
 	if (level % 10 != 5 && (prop == null || !prop.equals("clear"))) {
-		if (level == 12) { // 部分关卡直接通关
-			em.setProperty("stage12", "clear");
-			pi.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
-		} else {
+		if (bypassFloor.indexOf(level) < 0) {
 			pi.getPlayer().dropMessage(5, "传送阵目前还处于无法使用的状态。");
+		} else { // 部分关卡直接通关
+			em.setProperty("stage" + level, "clear");
+			pi.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
 		}
 		return true;
 	}
