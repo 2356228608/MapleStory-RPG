@@ -1,8 +1,1 @@
-/* 起源之塔
-Made by Jessefjxm
- */
-function enter(pi) {
-	//pi.warp(992012000, 3);
-	//pi.addPopupSay(2540000, 6000, "当心！那有陷阱。这次你试着从别的方向通过吧。");
-	return false;
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/传送点/stage12trap03.js

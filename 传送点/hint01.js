@@ -1,4 +1,1 @@
-function enter(pi) {
-	pi.openNpc(1, "起源之塔_23F_提示");
-    return true;
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/传送点/hint01.js

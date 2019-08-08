@@ -1,7 +1,1 @@
-﻿/* 鲁塔比斯入口
-Made by Jessefjxm
- */
-function enter(pi) {
-	pi.warp(910700200, 0);
-    return true;
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/传送点/root_route.js

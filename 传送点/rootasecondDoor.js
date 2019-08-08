@@ -1,4 +1,1 @@
-﻿function enter(pi) {
-    pi.openNpc(1064012);
-    return true;
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/传送点/rootasecondDoor.js

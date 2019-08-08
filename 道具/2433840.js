@@ -1,6 +1,1 @@
-﻿function start() {
-    var honor = im.nextInt(100);
-    im.gainHonor(honor, true);
-    im.gainItem(im.getItemId(), -1);
-    im.dispose();
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/道具/2433840.js

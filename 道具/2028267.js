@@ -1,5 +1,1 @@
-function start() {
-	im.openNpc(im.getItemId(), "道具_阿丽莎戒指箱");
-	im.dispose();
-}
-
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/道具/2028267.js

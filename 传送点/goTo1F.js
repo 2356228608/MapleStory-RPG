@@ -1,4 +1,1 @@
-function enter(pi) {
-	pi.openNpc(2540000, "副本_起源之塔");
-    return true;
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/传送点/goTo1F.js

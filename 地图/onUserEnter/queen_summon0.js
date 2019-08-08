@@ -1,2 +1,1 @@
-﻿function start() {
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/地图/onUserEnter/queen_summon0.js

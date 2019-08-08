@@ -1,4 +1,1 @@
-function enter(pi) {
-	pi.openNpc(4, "起源之塔_24F_猜音乐");
-    return true;
-}
+C:/Games/BMS163/脚本/冒险岛：传说世界/脚本/传送点/stage24_up04.js
