@@ -46,7 +46,10 @@ function action(mode, type, selection) {
 function 对话首页() {
 	text = "有什么事？快点说，#b#h ##k。\r\n\r\n";
 	text += "#L1##b我不想再待在这里了。#l\r\n";
-	text += "#L2##b掉下来了，请送我上去。#l\r\n";
+	var mapId = im.getMapId();
+	if(mapId==992023000){
+		text += "#L2##b掉下来了，请送我上去。#l\r\n";
+	}
 	im.askMenu(text, NPC);
 }
 
@@ -71,7 +74,7 @@ function 我不想再待在这里了() {
 function 掉下来了() {
 	var mapId = im.getMapId();
 	var em = im.getEventManager("Map_TowerOfOz");
-	switch (im.getMapId()) {
+	switch (mapId) {
 	case 992023000:
 		var fails = parseInt(em.getProperty("stage23_fail")) + 1;
 		var portal = parseInt(em.getProperty("stage23_stage"));
