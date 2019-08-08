@@ -4,7 +4,7 @@
 // 全局变量
 var status = -1; // status: 当前聊天交互轮数
 var BGM = [["阿里安特", "Bgm14/Ariant"], ["明珠港", "Bgm02/AboveTheTreetops"], ["射手村", "Bgm00/FloralLife"], ["勇士部落", "Bgm00/Nightmare"], ["废弃都市", "Bgm01/BadGuys"], ["魔法密林", "Bgm02/WhenTheMorningComes"], ["林中之城", "Bgm00/SleepyWood"], ["埃欧雷", "Bgm25/WindAndFlower"], ["天空之城", "Bgm04/Shinin'Harbor"], ["冰封雪域", "Bgm03/SnowyVillage"], ["水下世界", "Bgm11/Aquarium"], ["玩具城", "Bgm06/FantasticThinking"], ["神木村", "Bgm13/Leafre"], ["圣地", "Bgm18/QueensGarden"], ["埃德尔斯坦", "Bgm22/EdelsteinCity"], ["玛加提亚", "Bgm12/Dispute"], ["武陵", "Bgm15/MureungHill"], ["里恩", "Bgm19/RienVillage"], ["尖耳狐狸村", "Bgm36/foxvillage"], ["万神殿", "Bgm27/Pantheon"], ["童话村", "Bgm11/DownTown"]];
-
+var correctText = ["嗯~挺厉害的嘛。你看上去可不怎么聪明。", "真了不起！你是怎么答对的？", "切……对了。这次我就让你通过吧。", "你看上去笨笨的，还有两下子嘛。"];
 // 开头
 function start() {
 	action(1, 0, 0);
@@ -39,17 +39,30 @@ function action(mode, type, selection) {
 			cm.sendOk("答错了，你个笨蛋！不聪明的人会受到桃乐丝的惩罚！", 2540010);
 			cm.dispose();
 		} else {
-			cm.sendOk(id<=2 ? "嗯~挺厉害的嘛。你看上去可不怎么聪明。" : "真了不起！你是怎么答对的？", 2540010);
+			cm.sendNext(correctText[randomNum(0, correctText.length)], 2540010);
 		}
 	} else if (status === i++) {
-		cm.warp(992024000, id + 1);
-		var nextSound = parseInt(em.getProperty("stage24_bgm_" + (id + 1)));
-		cm.fieldEffect_PlayBGM(BGM[nextSound][1]);
-		em.setProperty("stage24_question_"+id, "clear");
+		if(id==4){
+			cm.inGameDirectionEvent_AskAnswerTime(0);
+		}else{
+			cm.curNodeEventEnd(true);
+			cm.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+			var nextSound = parseInt(em.getProperty("stage24_bgm_" + (id + 1)));
+			cm.fieldEffect_PlayBGM(BGM[nextSound][1]);
+			cm.addPopupSay(2540000, 6000, "音乐发生了变化，暂停一下，集中精神倾听音乐吧。");
+			cm.inGameDirectionEvent_AskAnswerTime(6000);
+		}
+	} else if (status === i++) {
+		cm.warp(992024000, id + 1);	
 		if(id==4){
 			em.setProperty("stage24", "clear");
 			cm.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
+		}else{
+			// 收尾
+			cm.curNodeEventEnd(true);
+			cm.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		}
+		em.setProperty("stage24_question_"+id, "clear");	
 		cm.dispose();
 	} else {
 		cm.dispose();
