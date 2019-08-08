@@ -8,6 +8,9 @@ var mapHall = 992000000;
 var badMaps = [2, 4, 6, 16, 19, 21, 29, 37, 38, 42, 43, 46];
 // 24F BGM
 var BGM = [["阿里安特", "Bgm14/Ariant"], ["明珠港", "Bgm02/AboveTheTreetops"], ["射手村", "Bgm00/FloralLife"], ["勇士部落", "Bgm00/Nightmare"], ["废弃都市", "Bgm01/BadGuys"], ["魔法密林", "Bgm02/WhenTheMorningComes"], ["林中之城", "Bgm00/SleepyWood"], ["埃欧雷", "Bgm25/WindAndFlower"], ["天空之城", "Bgm04/Shinin'Harbor"], ["冰封雪域", "Bgm03/SnowyVillage"], ["水下世界", "Bgm11/Aquarium"], ["玩具城", "Bgm06/FantasticThinking"], ["神木村", "Bgm13/Leafre"], ["圣地", "Bgm18/QueensGarden"], ["埃德尔斯坦", "Bgm22/EdelsteinCity"], ["玛加提亚", "Bgm12/Dispute"], ["武陵", "Bgm15/MureungHill"], ["里恩", "Bgm19/RienVillage"], ["尖耳狐狸村", "Bgm36/foxvillage"], ["万神殿", "Bgm27/Pantheon"], ["童话村", "Bgm11/DownTown"]];
+// 27F 怪物
+var mobs27F = [9309014, 9309015];
+var mobsName27F = ["沙漠蛇先生", "壁虎"];
 
 function init() {
 	em.setProperty("state", 0);
@@ -110,6 +113,9 @@ function changedMap(eim, player, mapid) {
 		break;
 	case 26:
 		initProp("stage" + level + "_kill", 0);
+		break;
+	case 24:
+		initPropArray("stage" + level + "_kill", 0, 0, 1);
 		break;
 	}
 }
@@ -275,6 +281,22 @@ function monsterValue(eim, mobId) {
 			player.dropMessage(-1, "消灭古代橙水灵 " + (kill) + " / " + kilReq);
 		});
 		if (kill >= kilReq) {
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+			});
+			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+		}
+		break;
+	case 28:
+		var kilReq = 20;
+		var index = mobs27F.indexOf(mobId);
+		var kill = [parseInt(em.getProperty("stage" + state + "_kill_0")) + 1, parseInt(em.getProperty("stage" + state + "_kill_1")) + 1];
+		em.setProperty("stage" + state + "_kill_" + index, kill[index]);
+		eim.getPlayers().forEach(function (player) {
+			player.dropMessage(-1, "消灭"+mobsName27F[index]+" " + (kill[index]) + " / " + kilReq);
+		});
+		if (kill[0] >= kilReq && kill[1] >= kilReq) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
