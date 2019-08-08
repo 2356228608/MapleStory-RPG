@@ -122,6 +122,7 @@ function changedMap(eim, player, mapid) {
 		break;
 	case 32:
 		initProp("stage" + level + "_kill", 0);
+		initProp("stage" + level + "_fairy_summon", 0);
 		initProp("stage" + level + "_angry", 0);
 		break;
 	}
@@ -320,6 +321,9 @@ function monsterValue(eim, mobId) {
 		}
 		break;
 	case 31:
+		if(mobId == 9309129){
+			break;
+		}
 		var kilReq = 200;
 		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
 		em.setProperty("stage" + state + "_kill", kill);
@@ -376,13 +380,15 @@ function monsterDrop(eim, player, mob) {
 	switch (state) {
 		case 31:		// 确保是玩家杀的？
 		var mobId = 9309129;
-		var template = em.getMonster(mobId);
-		if(template.getMobMaxHp() == mob.getMobMaxHp()){
+		if(mobId == mob.getId()){
+			var summon = randomNum(1,5);
+			var fairySummon = parseInt(em.getProperty("stage" + state + "_fairy_summon")) + summon;
+			em.setProperty("stage" + state + "_fairy_summon", fairySummon);
 			em.setProperty("stage31_angry", 1);
 			player.openNpc(2540000, "起源之塔_31F_妖精被杀");
-			for (var i = 0; i < randomNum(1,5); i++) {
+			for (var i = 0; i < summon; i++) {
 				mob = em.getMonster(mobId);
-				map.spawnMonsterOnGroundBelow(mob, getOldPosition());
+				map.spawnMonsterOnGroundBelow(mob, mob.getPosition());
 			}
 		}
 		break;
@@ -572,9 +578,8 @@ function stage31_FairyLeave() {
 	
 	var mobId = 9309129;
 	var eim = em.getInstance("Map_TowerOfOz");
-	var mob = em.getMonster(mobId);
 	eim.getMobs().forEach(function(element){
-		if(element.getMap().getId() == mapid && element.getMobMaxHp() == mob.getMobMaxHp())
+		if(element.getMap().getId() == mapid && element.getId() == mobId)
 			element.killed();
 	});
 	scheduleNew("stage31_FairySpawn", 60);
