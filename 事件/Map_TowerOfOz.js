@@ -104,7 +104,8 @@ function changedMap(eim, player, mapid) {
 		initProp("stage" + level + "_fail", 0);
 		break;
 	case 24:
-		initPropArrayRandom("stage" + level + "_bgm", 0, BGM.length - 1, 4);
+		initPropArrayRandom("stage" + level + "_bgm", 0, BGM.length - 1, 1, 4);
+		initPropArray("stage" + level + "_question", 0, 1, 4);
 		break;
 	}
 }
@@ -476,13 +477,13 @@ function initProp(name, val) {
 	if (em.getProperty(name) == null)
 		em.setProperty(name, val);
 }
-function initPropArray(name, val, number) {
-	for (var i = 1; i <= number; i++) {
+function initPropArray(name, val, startI, endI) {
+	for (var i = startI; i <= endI; i++) {
 		if (em.getProperty(name + "_" + i) == null)
 			em.setProperty(name + "_" + i, val);
 	}
 }
-function initPropArrayRandom(name, min, max, number) { // 不重复的随机数序列
+function initPropArrayRandom(name, min, max, startI, endI) { // 不重复的随机数序列
 	var arr = new Array();
 	var maxTimes = number;
 	do {
@@ -492,7 +493,7 @@ function initPropArrayRandom(name, min, max, number) { // 不重复的随机数�
 			maxTimes--;
 		}
 	} while (maxTimes);
-	for (var i = 1; i <= number; i++) {
+	for (var i = startI; i <= endI; i++) {
 		if (em.getProperty(name + "_" + i) == null)
 			em.setProperty(name + "_" + i, arr[i - 1]);
 	}
