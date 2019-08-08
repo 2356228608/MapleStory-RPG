@@ -18,26 +18,38 @@ function action(mode, type, selection) {
 		return;
 	}
 	var i = -1;
+	var em = cm.getEventManager("Map_TowerOfOz");
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status === i++) {
-		cm.askText("你要仔细想想现在听到的音乐是哪个村庄的背景音乐。\r\n然后将村庄的名字写在下面的空格内。\r\n对了，我可是无比严格的女人哦。哈哈哈！", 2540010);
+		cm.askText("你要仔细想想现在听到的音乐是哪个村庄的背景音乐，然后将村庄的名字写在下面的空格内。\r\n对了，我可是无比严格的女人哦。哈哈哈！", 2540010);
 	} else if (status === i++) {
+		var eim = em.getInstance("Map_TowerOfOz");
+		var isLastQuestionFinished = (id==1) ? 1 : parseInt(em.getInstance("stage24_question_"+(id-1)));
 		var text = cm.getText();
 		var sound = parseInt(em.getProperty("stage24_bgm_" + id));
-		if (text.equals(BGM[sound][0])) {
-			if (randomNum(1, 2) == 1) {
-				cm.sendOk("嗯~挺厉害的嘛。你看上去可不怎么聪明。", 2540010);
-			} else {
-				cm.sendOk("真了不起！你是怎么答对的？", 2540010);
-			}
+		if(isLastQuestionFinished==0){
+			eim.setRemainingTimer(eim.getTimeLeft() - 5*60*1000);
+			cm.addPopupSay(2540000, 4000, "糟糕，朦胧石的保护时间被桃乐丝扣除了5分钟！");
+			cm.sendOk("咦，你还没有回答上一个问题怎么就到这里来了？桃乐丝讨厌投机取巧的人！", 2540010);
+			cm.dispose();
+		} else if (!text.equals(BGM[sound][0])){			
+			eim.setRemainingTimer(eim.getTimeLeft() - 5*60*1000);
+			cm.addPopupSay(2540000, 4000, "糟糕，朦胧石的保护时间被桃乐丝扣除了5分钟！下次回答前一定要想清楚啊！");
+			cm.sendOk("答错了，你个笨蛋！不聪明的人会受到桃乐丝的惩罚！", 2540010);
+			cm.dispose();
 		} else {
-			
+			cm.sendOk(id<=2 ? "嗯~挺厉害的嘛。你看上去可不怎么聪明。" : "真了不起！你是怎么答对的？", 2540010);
 		}
 	} else if (status === i++) {
 		cm.warp(992024000, id + 1);
 		var nextSound = parseInt(em.getProperty("stage24_bgm_" + (id + 1)));
-		ms.fieldEffect_PlayBGM(BGM[nextSound][1]);
+		cm.fieldEffect_PlayBGM(BGM[nextSound][1]);
+		em.setProperty("stage24_question_"+id, "clear");
+		if(id==4){
+			em.setProperty("stage24", "clear");
+			cm.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
+		}
 		cm.dispose();
 	} else {
 		cm.dispose();
