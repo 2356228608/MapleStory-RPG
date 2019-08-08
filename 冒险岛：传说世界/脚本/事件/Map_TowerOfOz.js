@@ -102,10 +102,14 @@ function changedMap(eim, player, mapid) {
 	case 23:
 		initProp("stage" + level + "_stage", 0);
 		initProp("stage" + level + "_fail", 0);
+		initPropArray("stage" + level + "_help", 0, 0, 2);
 		break;
 	case 24:
 		initPropArrayRandom("stage" + level + "_bgm", 0, BGM.length - 1, 1, 4);
 		initPropArray("stage" + level + "_question", 0, 1, 4);
+		break;
+	case 26:
+		initProp("stage" + level + "_kill", 0);
 		break;
 	}
 }
@@ -261,6 +265,21 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(state, "起源之塔_BOSS结算");
 			});
+		}
+		break;
+	case 26:
+		var kilReq = 300;
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
+		eim.getPlayers().forEach(function (player) {
+			player.dropMessage(-1, "消灭古代橙水灵 " + (kill) + " / " + kilReq);
+		});
+		if (kill >= kilReq) {
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+			});
+			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 30:
