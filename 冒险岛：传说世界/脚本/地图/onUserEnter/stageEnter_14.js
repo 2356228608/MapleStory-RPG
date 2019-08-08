@@ -39,7 +39,29 @@ function action(mode, type, selection) {
 		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		// 传送到小游戏模式？
 		//ms.warp(992008000, 1);
+		var map = em.getMapFactoryMap(ms.getMapId());
+		var mobList = [9309116, 9309117];
+		mobList.forEach(function (element) {
+			for (var i = 0; i < 10; i++) {
+				var mob = em.getMonster(element);
+				map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(randomNum(-300, 300), randomNum(0, 300)));
+			}
+		});
 	} else {
 		ms.dispose();
+	}
+}
+
+function randomNum(minNum, maxNum) {
+	switch (arguments.length) {
+	case 1:
+		return parseInt(Math.random() * minNum + 1, 10);
+		break;
+	case 2:
+		return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+		break;
+	default:
+		return 0;
+		break;
 	}
 }

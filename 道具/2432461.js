@@ -70,11 +70,13 @@ function 我不想再待在这里了() {
 
 function 掉下来了() {
 	var mapId = im.getMapId();
+	var em = im.getEventManager("Map_TowerOfOz");
 	switch (im.getMapId()) {
 	case 992023000:
-		var fails = em.getProperty("stage23_fail");
-		em.setProperty("stage23_fail", (fails == null ? 0 : fail) + 1);
-		im.warp(992023000, 1);
+		var fails = parseInt(em.getProperty("stage23_fail")) + 1;
+		var portal = parseInt(em.getProperty("stage23_stage"));
+		em.setProperty("stage23_fail", fails);
+		im.warp(992023000, portal + 1);
 		break;
 	default:
 		im.askMenu("这里什么问题也没有啊？你是不是走错路了。", NPC);

@@ -38,6 +38,15 @@ function action(mode, type, selection) {
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请消灭铁皮人。");
 		//ms.warp(992019000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		var eim = em.getInstance("Map_TowerOfOz");
+		var map = em.getMapFactoryMap(ms.getMapId());
+		var mob = em.getMonster(9309205);
+		var modified = em.newMonsterStats();
+		modified.setOHp(1000000000);
+		mob.setOverrideStats(modified);
+		eim.registerMonster(mob);
+		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000, 0));
 	} else {
 		ms.dispose();
 	}

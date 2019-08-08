@@ -37,8 +37,8 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + parseInt(level), "start");
 		ms.warp(992002000, 1);
-		ms.addPopupSay(2540000, 6000, "必须捕捉怪物获得数字高于结界的卡片后，才能欺骗结界。");
 		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.addPopupSay(2540000, 6000, "必须捕捉怪物获得数字高于结界的卡片后，才能欺骗结界。");
 	} else {
 		ms.dispose();
 	}

@@ -48,7 +48,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "小心小心，踩着云朵向着出口奔跑吧。");
+		ms.addPopupSay(2540000, 6000, "小心翼翼地踏着云朵跑到出口去吧。");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

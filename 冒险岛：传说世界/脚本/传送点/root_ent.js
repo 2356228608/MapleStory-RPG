@@ -13,4 +13,5 @@ function enter(pi) {
 		// 还没完成剧情任务
 		pi.warp(105010200, 0);
 	}
+    return true;
 }

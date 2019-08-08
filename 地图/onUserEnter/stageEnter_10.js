@@ -39,7 +39,7 @@ function action(mode, type, selection) {
 		ms.addPopupSay(2540000, 6000, "请击败巨型蜘蛛。");
 		//ms.warp(992008000, 1);
 		var eim = em.getInstance("Map_TowerOfOz");
-		var map = em.getMapFactoryMap(992010000);
+		var map = em.getMapFactoryMap(ms.getMapId());
 		var mob = em.getMonster(9309201);
 		var modified = em.newMonsterStats();
 		modified.setOHp(400000000);

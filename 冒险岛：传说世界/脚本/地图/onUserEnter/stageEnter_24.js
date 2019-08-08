@@ -2,8 +2,9 @@
 Made by Jessefjxm
  */
 var status = -1;
-var level = "25";
+var level = "24";
 var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
+var BGM = [["阿里安特", "Bgm14/Ariant"], ["明珠港", "Bgm02/AboveTheTreetops"], ["射手村", "Bgm00/FloralLife"], ["勇士部落", "Bgm00/Nightmare"], ["废弃都市", "Bgm01/BadGuys"], ["魔法密林", "Bgm02/WhenTheMorningComes"], ["林中之城", "Bgm00/SleepyWood"], ["埃欧雷", "Bgm25/WindAndFlower"], ["天空之城", "Bgm04/Shinin'Harbor"], ["冰封雪域", "Bgm03/SnowyVillage"], ["水下世界", "Bgm11/Aquarium"], ["玩具城", "Bgm06/FantasticThinking"], ["神木村", "Bgm13/Leafre"], ["圣地", "Bgm18/QueensGarden"], ["埃德尔斯坦", "Bgm22/EdelsteinCity"], ["玛加提亚", "Bgm12/Dispute"], ["武陵", "Bgm15/MureungHill"], ["里恩", "Bgm19/RienVillage"], ["尖耳狐狸村", "Bgm36/foxvillage"], ["万神殿", "Bgm27/Pantheon"], ["童话村", "Bgm11/DownTown"]];
 
 function action(mode, type, selection) {
 	status++;
@@ -36,7 +37,9 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "从现在起仔细聆听背景音乐，解开问题后通过吧。");
+		ms.addPopupSay(2540000, 6000, "现在，你要认真倾听音乐，然后回答问题并通过这里。");
+		var sound = parseInt(em.getProperty("stage" + level + "_bgm_1"));
+		ms.fieldEffect_PlayBGM(BGM[sound][1]);
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

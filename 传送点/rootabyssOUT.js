@@ -14,4 +14,5 @@ function enter(pi) {
 		pi.warp(returnMap);
 		pi.playerMessage("从鲁塔比斯回到原来所在的地方。");
 	}
+    return true;
 }

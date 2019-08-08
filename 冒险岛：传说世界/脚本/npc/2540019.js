@@ -55,13 +55,13 @@ function 对话首页() {
 
 function 起源之塔探险排名() {
 	var text = "\r\n#e[起源之塔探险排名]#n\r\n\r\n";
-	text += "#b[排名]\t\t[昵称]\t\t[层数]\t\t[时间]#k\r\n";
+	text += "#b[排名]\t\t[昵称]\t\t[层数]\t\t[剩余时间]#k\r\n";
 	var topRank = getTopRank();
 	if (topRank == null || topRank.length == 0) {
 		text += "#e==#n #b目前起源之塔暂时还没有人挑战。#k #e=="
 	} else {
 		for (var i = 0; i < topRank.length; i++) {
-			text += "#e[" + (i + 1) + "]#n\t\t" + topRank[0][0] + "\t\t" + topRank[0][1] + "层\t\t\t" + toTime(topRank[0][2]);
+			text += "#e[" + (i + 1) + "]#n\t\t" + topRank[i][0] + "\t\t" + topRank[i][1] + "层\t\t\t" + toTime(topRank[i][2]) + "\r\n";
 		}
 	}
 	cm.askMenu(text);
@@ -84,7 +84,7 @@ function 我探险到的最深层() {
 function toTime(time) {
 	var hours = parseInt((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = parseInt((time % (1000 * 60 * 60)) / (1000 * 60));
-	var seconds = (time % (1000 * 60)) / 1000;
+	var seconds = parseInt((time % (1000 * 60)) / 1000);
 	var h = (hours >= 10 ? hours : '0' + hours) + ':';
 	var m = (minutes >= 10 ? minutes : '0' + minutes) + ':';
 	var s = (seconds >= 10 ? seconds : '0' + seconds);

@@ -13,9 +13,29 @@ function start() {
 	action(1, 0, 0);
 }
 function action(mode, type, selection) {
-	cm.forceStartQuest(42009);
-	cm.forceCompleteQuest(42009);
-	cm.dispose();
+	status++;
+	var i = -1;
+	if (status <= i++) {
+		cm.dispose();
+	} else if (status === i++) {
+		// 初始化
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		cm.fieldEffect_ProcessOnOffLayer("0", "Map/Tile/ancientForest.img/edU/", 0, 500, 100, 200, 12, 5, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(0);
+	} else if (status === i++) {
+		cm.inGameDirectionEvent_AskAnswerTime(3000);
+	} else if (status === i++) {
+		// 收尾
+		cm.fieldEffect_ProcessOnOffLayer("0", "", 2, 0, 0, 0, 0, 0, 0);
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		cm.dispose();
+	} else {
+		cm.dispose();
+	}
 }
 
 function randomNum(minNum, maxNum) {

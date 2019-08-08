@@ -74,4 +74,96 @@ function reward(em, time, level) {
 	// 清理
 	em.getProperties().remove("time" + ms.getPlayer().getId());
 	em.getProperties().remove("level" + ms.getPlayer().getId());
+	// 更新数据
+	var myInfo = getMyInfo();
+	if (myInfo == null || myInfo.length == 0) {
+		updateMyInfo(level, time, -1);
+	} else {
+		var lastlevel = myInfo[0][0];
+		var lasttime = myInfo[0][1];
+		if (level > lastlevel || level == lastlevel && time > lasttime) {
+			updateMyInfo(level, time, -1);
+		}
+	}
+}
+
+// 创建MYSQL表
+function createTable() {
+	var conn = ms.getConnection();
+	var ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS `oz_tower` ("
+			 + "`characterid` int(11) NOT NULL DEFAULT '0' COMMENT '角色ID',"
+			 + "`charactername` varchar(100) NOT NULL DEFAULT '无名' COMMENT '角色名称',"
+			 + "`maxlevel` int(11) NOT NULL DEFAULT '0' COMMENT '最佳纪录通过层数',"
+			 + "`time` int(11) NOT NULL DEFAULT '0' COMMENT '最佳纪录通过时间',"
+			 + "`slots` int(11) NOT NULL DEFAULT '1' COMMENT '朦胧石栏位数量',"
+			 + "`slot_stone_1` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.1',"
+			 + "`slot_stone_2` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.2',"
+			 + "`slot_stone_3` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.3',"
+			 + "`slot_stone_4` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.4',"
+			 + "`slot_stone_5` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.5',"
+			 + "PRIMARY KEY (`characterid`)" + ") ;");
+	ps.executeUpdate();
+	ps.close();
+	conn.close();
+}
+
+// 搜索自己
+function getMyInfo() {
+	// 先检查一遍创建了没
+	createTable();
+
+	var conn = ms.getConnection();
+	var ps = conn.prepareStatement("SELECT `maxlevel`,`time`,`slots` FROM `oz_tower` WHERE `characterid`=" + ms.getPlayer().getId() + " ;");
+	var resultSet = ps.executeQuery();
+	var myInfo = new Array();
+	if (resultSet.next()) {
+		myInfo.push([resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3)]);
+	}
+	resultSet.close();
+	ps.close();
+	conn.close();
+	return myInfo;
+}
+
+// 更新数据
+function updateMyInfo(maxlevel, time, slots) {
+	// 先检查一遍创建了没
+	createTable();
+
+	var sql = "INSERT INTO `oz_tower`(`characterid`,`charactername`";
+	if (maxlevel > 0) {
+		sql += ",`maxlevel`";
+	}
+	if (time > 0) {
+		sql += ",`time`";
+	}
+	if (slots > 0) {
+		sql += ",`slots`";
+	}
+	sql += ") VALUES(" + ms.getPlayer().getId() + ",'" + ms.getPlayer().getName() + "'";
+	if (maxlevel > 0) {
+		sql += "," + maxlevel;
+	}
+	if (time > 0) {
+		sql += "," + time;
+	}
+	if (slots > 0) {
+		sql += "," + slots;
+	}
+	sql += ") ON DUPLICATE KEY UPDATE `charactername`=VALUES(charactername) ";
+	if (maxlevel > 0) {
+		sql += ",`maxlevel`=VALUES(maxlevel)";
+	}
+	if (time > 0) {
+		sql += ",`time`=VALUES(time)";
+	}
+	if (slots > 0) {
+		sql += ",`slots`=VALUES(slots)";
+	}
+	sql += ";";
+	var conn = ms.getConnection();
+	var ps = conn.prepareStatement(sql);
+	ps.executeUpdate();
+	ps.close();
+	conn.close();
 }

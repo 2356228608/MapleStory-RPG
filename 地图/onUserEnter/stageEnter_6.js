@@ -35,10 +35,9 @@ function action(mode, type, selection) {
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
-		em.setProperty("stage" + parseInt(level), "start");
 		ms.warp(992006000, 1);
+		em.setProperty("stage" + parseInt(level), "start");
 		ms.addPopupSay(2540000, 6000, "请消灭300个绿水灵。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

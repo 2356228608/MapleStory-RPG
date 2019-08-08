@@ -10,7 +10,6 @@ function action(mode, type, selection) {
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + parseInt(level));
 	if (prop != null && prop.equals("start")) {
-		ms.addPopupSay(2540000, 6000, "请打猎怪物或者积累5千万以上的伤害！");
 		ms.dispose();
 		return;
 	}

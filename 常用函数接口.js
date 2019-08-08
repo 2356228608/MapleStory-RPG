@@ -8,7 +8,7 @@ cm.askAcceptDecline("text");
 cm.sendNextNoESC("糟糕了！！", 3000107);
 
 // 0~4 各种类型的通知
-cm.playerMessage(1, "果然有出口。应该把这一事实告诉少女。");
+cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
 // 右下角弹窗通知
 cm.addPopupSay(0, 2000, "果然有出口。应该把这一事实告诉少女。");
 // 头上雇佣信息 存留一段时间

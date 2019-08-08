@@ -3,4 +3,5 @@ Made by Jessefjxm
  */
 function enter(pi) {
 	pi.warp(910700200, 0);
+    return true;
 }

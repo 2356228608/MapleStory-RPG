@@ -16,4 +16,5 @@
     } else if (pi.getPlayer().getMapId() == 105200700) {
         pi.openNpc(1064014, 2); //杩??惰??ュコ??
     }
+    return true;
 }

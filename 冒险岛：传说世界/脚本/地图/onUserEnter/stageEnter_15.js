@@ -28,11 +28,11 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("我要送你一份礼物！", 2540000);
 	} else if (status === i++) {
-		ms.forceCompleteQuest(quest);
-		ms.gainItem(medal, 1);
 		ms.sendNextNoESC("希望你能继续发挥出色，我们的目标还在更深处呢。", 2540000);
 	} else if (status === i++) {
 		// 收尾
+		ms.forceCompleteQuest(quest);
+		ms.gainItem(medal, 1);
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家

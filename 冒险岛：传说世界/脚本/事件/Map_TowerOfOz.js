@@ -1,7 +1,7 @@
 ﻿/*
  * 起源之塔
+ * by Jessefjxm
  */
-
 var mapIds = new Array();
 var mapHall = 992000000;
 // 目前故障的楼层
@@ -119,8 +119,8 @@ function monsterValue(eim, mobId) {
 	switch (state) {
 	case 1:
 		var kilReq = 300;
-		var kill = parseInt(em.getProperty("stage1_kill")) + 1;
-		em.setProperty("stage1_kill", kill);
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
 		eim.getPlayers().forEach(function (player) {
 			var damage = parseFloat(em.getProperty("stage1_damage")) + player.getStat().getCurrentMaxBaseDamage() / 10000;
 			em.setProperty("stage1_damage", damage);
@@ -136,8 +136,8 @@ function monsterValue(eim, mobId) {
 		break;
 	case 6:
 		var kilReq = 300;
-		var kill = parseInt(em.getProperty("stage6_kill")) + 1;
-		em.setProperty("stage6_kill", kill);
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
 		eim.getPlayers().forEach(function (player) {
 			player.dropMessage(-1, "消灭绿水灵 " + (kill) + " / " + kilReq);
 		});
@@ -151,8 +151,8 @@ function monsterValue(eim, mobId) {
 		break;
 	case 8:
 		var kilReq = 100;
-		var kill = parseInt(em.getProperty("stage8_kill")) + 1;
-		em.setProperty("stage8_kill", kill);
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
 		eim.getPlayers().forEach(function (player) {
 			player.dropMessage(-1, "消灭火山虫 " + (kill) + " / " + kilReq);
 		});
@@ -165,18 +165,18 @@ function monsterValue(eim, mobId) {
 		}
 		break;
 	case 10:
-		if(mobId==9309201){
+		if (mobId == 9309201) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 				player.openNpc(state, "起源之塔_BOSS结算");
-			});			
+			});
 		}
 		break;
 	case 11:
 		var kilReq = 300;
-		var kill = parseInt(em.getProperty("stage11_kill")) + 1;
-		em.setProperty("stage11_kill", kill);
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
 		eim.getPlayers().forEach(function (player) {
 			player.dropMessage(-1, "消灭石头人 " + (kill) + " / " + kilReq);
 		});
@@ -189,58 +189,58 @@ function monsterValue(eim, mobId) {
 		}
 		break;
 	case 13:
-		var mobName = ["蓝色花牛","绿色花牛","白刺熊","褐刺熊"];
+		var mobName = ["蓝色花牛", "绿色花牛", "白刺熊", "褐刺熊"];
 		var kilReq = 20;
-		var kill = parseInt(em.getProperty("stage13_kill")) + 1;
-		var index = Math.floor((kill-1)/kilReq);
-		em.setProperty("stage11_kill", kill);
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		var index = Math.floor((kill - 1) / kilReq);
+		em.setProperty("stage" + state + "_kill", kill);
 		eim.getPlayers().forEach(function (player) {
-			player.dropMessage(-1, "消灭"+mobName[index]+" " + (kill-index*kilReq) + " / " + kilReq);
+			player.dropMessage(-1, "消灭" + mobName[index] + " " + (kill - index * kilReq) + " / " + kilReq);
 		});
-		if (kill == kilReq*4) {
+		if (kill == kilReq * 4) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
 			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
-		}else if (kill == kilReq*3 || kill == kilReq*2 || kill == kilReq*1) {
-			scheduleNew("stage13_Fight", 10);			
+		} else if (kill == kilReq * 3 || kill == kilReq * 2 || kill == kilReq * 1) {
+			scheduleNew("stage13_Fight", 10);
 		}
 		break;
 	case 20:
-		if(mobId==9309201){
+		if (mobId == 9309201) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 				player.openNpc(state, "起源之塔_BOSS结算");
-			});			
+			});
 		}
 		break;
 	case 30:
-		if(mobId==9309200){
+		if (mobId == 9309200) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 				player.openNpc(state, "起源之塔_BOSS结算");
-			});			
+			});
 		}
 		break;
 	case 40:
-		if(mobId==9309203){
+		if (mobId == 9309203) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 				player.openNpc(state, "起源之塔_BOSS结算");
-			});			
+			});
 		}
 		break;
 	case 50:
-		if(mobId==9309207){
+		if (mobId == 9309207) {
 			em.setProperty("stage" + state, "clear");
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 				player.openNpc(state, "起源之塔_BOSS结算");
-			});			
+			});
 		}
 		break;
 	}
@@ -262,14 +262,14 @@ function playerDead(eim, player) {
 	var curstage = em.getProperty("stage" + state);
 	var mapid = state * 1000 + mapHall;
 	switch (state) {
-	case 50:	// 1142684	起源之塔最初挑战者
+	case 50: // 1142684	起源之塔最初挑战者
 		eim.getPlayers().forEach(function (player) {
-			if(!player.haveItem(1142684, 1)){
+			if (!player.haveItem(1142684, 1)) {
 				player.dropMessage(5, "在被桃乐丝击败时，似乎得到了什么。");
 				player.gainItem(1142684, 1);
 			}
-		});			
-	break;
+		});
+		break;
 	}
 }
 function cancelSchedule() {}
@@ -313,7 +313,7 @@ function stage3_Fight() {
 	var winner = randomNum(1, 2) == 1 ? 2540012 : 2540014;
 	em.setProperty("stage3_winner", winner);
 	em.getPlayersInMap(mapid).forEach(function (player) {
-		
+
 		openNpc(winner, "起源之塔_3F_对决胜利");
 	});
 
@@ -363,15 +363,15 @@ function stage13_Fight() {
 	if (mapid != 13 * 1000 + mapHall) {
 		return;
 	}
-	var mobId = [9309098,9309099,9309104,9309105];
+	var mobId = [9309098, 9309099, 9309104, 9309105];
 	var kilReq = 20;
 	var kill = parseInt(em.getProperty("stage13_kill"));
-	var index = Math.floor(kill/kilReq);
+	var index = Math.floor(kill / kilReq);
 	var map = em.getMapFactoryMap(mapid);
 	var mob;
 	for (var i = 0; i < kilReq; i++) {
 		mob = em.getMonster(mobId[index]);
-		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000 + i*50, 0));
+		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(500 + i * 50, 0));
 	}
 }
 

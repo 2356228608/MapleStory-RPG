@@ -10,7 +10,6 @@ function action(mode, type, selection) {
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + parseInt(level));
 	if (prop != null && prop.equals("start")) {
-		ms.addPopupSay(2540000, 6000, "希望你能消灭100个左右的火山虫。");
 		ms.dispose();
 		return;
 	}

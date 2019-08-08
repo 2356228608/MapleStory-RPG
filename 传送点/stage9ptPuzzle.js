@@ -33,6 +33,7 @@ function enter(pi) {
 			pi.warp(992009000, startPortal + index * 4 + 4 + randomNum(0,3));
 		}
 	}
+    return true;
 }
 
 function randomNum(minNum, maxNum) {

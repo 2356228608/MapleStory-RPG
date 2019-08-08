@@ -10,4 +10,5 @@ function enter(pi) {
 	} else {
 		pi.warp(105010000, 0);
 	}
+    return true;
 }
