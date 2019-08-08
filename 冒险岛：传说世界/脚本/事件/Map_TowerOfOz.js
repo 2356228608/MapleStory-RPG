@@ -114,8 +114,15 @@ function changedMap(eim, player, mapid) {
 	case 26:
 		initProp("stage" + level + "_kill", 0);
 		break;
-	case 24:
+	case 28:
 		initPropArray("stage" + level + "_kill", 0, 0, 1);
+		break;
+	case 31:
+		initProp("stage" + level + "_kill", 0);
+		break;
+	case 32:
+		initProp("stage" + level + "_kill", 0);
+		initProp("stage" + level + "_angry", 0);
 		break;
 	}
 }
@@ -312,6 +319,36 @@ function monsterValue(eim, mobId) {
 			});
 		}
 		break;
+	case 31:
+		var kilReq = 200;
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
+		eim.getPlayers().forEach(function (player) {
+			player.dropMessage(-1, "消灭食虫水灵 " + (kill) + " / " + kilReq);
+		});
+		if (kill >= kilReq) {
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+			});
+			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+		}
+		break;
+	case 32:
+		var kilReq = 30;
+		var kill = parseInt(em.getProperty("stage" + state + "_kill")) + 1;
+		em.setProperty("stage" + state + "_kill", kill);
+		eim.getPlayers().forEach(function (player) {
+			player.dropMessage(-1, "消灭蓝色古代水灵 " + (kill) + " / " + kilReq);
+		});
+		if (kill >= kilReq) {
+			em.setProperty("stage" + state, "clear");
+			eim.getPlayers().forEach(function (player) {
+				player.openNpc(2540005, "特效_完成");
+			});
+			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+		}
+		break;
 	case 40:
 		if (mobId == 9309203) {
 			em.setProperty("stage" + state, "clear");
@@ -334,6 +371,22 @@ function monsterValue(eim, mobId) {
 
 function monsterDrop(eim, player, mob) {
 	em.broadcastServerMsg("[monsterDrop] " + mob);
+	var state = parseInt(em.getProperty("state"));
+	var mapid = state * 1000 + mapHall;
+	switch (state) {
+		case 31:		// 确保是玩家杀的？
+		var mobId = 9309129;
+		var template = em.getMonster(mobId);
+		if(template.getMobMaxHp() == mob.getMobMaxHp()){
+			em.setProperty("stage31_angry", 1);
+			player.openNpc(2540000, "起源之塔_31F_妖精被杀");
+			for (var i = 0; i < randomNum(1,5); i++) {
+				mob = em.getMonster(mobId);
+				map.spawnMonsterOnGroundBelow(mob, getOldPosition());
+			}
+		}
+		break;
+	}
 }
 
 function clearPQ(eim) {
@@ -342,7 +395,7 @@ function clearPQ(eim) {
 function leftParty(eim, player) {}
 function disbandParty(eim) {}
 function playerDead(eim, player) {
-	em.broadcastServerMsg("[monsterValue]=" + mobId);
+	em.broadcastServerMsg("[playerDead]");
 	var state = parseInt(em.getProperty("state"));
 	var curstage = em.getProperty("stage" + state);
 	var mapid = state * 1000 + mapHall;
@@ -350,7 +403,7 @@ function playerDead(eim, player) {
 	case 50: // 1142684	起源之塔最初挑战者
 		eim.getPlayers().forEach(function (player) {
 			if (!player.haveItem(1142684, 1)) {
-				player.dropMessage(5, "在被桃乐丝击败时，似乎得到了什么。");
+				player.dropMessage(5, "在被桃乐丝击败时，背包里似乎多了什么。");
 				player.gainItem(1142684, 1);
 			}
 		});
@@ -495,6 +548,36 @@ function stage18_CountItem() {
 			player.openNpc(2540005, "特效_完成");
 		}
 	});
+}
+
+// 31F 妖精出没
+function stage31_FairySpawn() {
+	var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+	if (mapid != 31 * 1000 + mapHall)
+		return;
+
+	var mobId = 9309129;
+	var map = em.getMapFactoryMap(mapid);
+	var mob = em.getMonster(mobId);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(randomNum(-1000, 1000), randomNum(2000, 4000)));
+	scheduleNew("stage31_FairyLeave", 30);
+}
+
+// 31F 妖精隐退
+function stage31_FairyLeave() {
+	var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+	var isAngry = parseInt(em.getProperty("stage31_angry"));
+	if (isAngry || (mapid != 31 * 1000 + mapHall))
+		return;
+	
+	var mobId = 9309129;
+	var eim = em.getInstance("Map_TowerOfOz");
+	var mob = em.getMonster(mobId);
+	eim.getMobs().forEach(function(element){
+		if(element.getMap().getId() == mapid && element.getMobMaxHp() == mob.getMobMaxHp())
+			element.killed();
+	});
+	scheduleNew("stage31_FairySpawn", 60);
 }
 
 // ===================== 功能类方法 ======================
