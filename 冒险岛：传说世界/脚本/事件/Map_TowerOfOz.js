@@ -134,6 +134,7 @@ function changedMap(eim, player, mapid) {
 		break;
 	case 36:
 		initProp("stage" + level + "_stage", 0);
+		initPropArrayRandom("stage" + level + "_password", 0, 3, 1, 8);
 		break;
 	}
 }
@@ -653,7 +654,8 @@ function initPropArray(name, val, startI, endI) {
 			em.setProperty(name + "_" + i, val);
 	}
 }
-function initPropArrayRandom(name, min, max, startI, endI) { // 不重复的随机数序列
+ // 不重复的随机数序列
+function initPropArrayRandom(name, min, max, startI, endI) {
 	var arr = new Array();
 	var maxTimes = endI - startI + 1;
 	do {
