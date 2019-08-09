@@ -44,9 +44,10 @@ function action(mode, type, selection) {
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
+		ms.warp(992037000, 1);
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请消灭狐蒙，秃鹰，沙漠地鼠，沙漠毒蝎各100只。");
-		ms.warp(992037000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

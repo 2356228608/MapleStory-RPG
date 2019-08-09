@@ -9,7 +9,7 @@ var badMaps = [2, 4, 6, 16, 19, 21, 29, 37, 38, 42, 43, 46];
 // 24F BGM
 var BGM = [["阿里安特", "Bgm14/Ariant"], ["明珠港", "Bgm02/AboveTheTreetops"], ["射手村", "Bgm00/FloralLife"], ["勇士部落", "Bgm00/Nightmare"], ["废弃都市", "Bgm01/BadGuys"], ["魔法密林", "Bgm02/WhenTheMorningComes"], ["林中之城", "Bgm00/SleepyWood"], ["埃欧雷", "Bgm25/WindAndFlower"], ["天空之城", "Bgm04/Shinin'Harbor"], ["冰封雪域", "Bgm03/SnowyVillage"], ["水下世界", "Bgm11/Aquarium"], ["玩具城", "Bgm06/FantasticThinking"], ["神木村", "Bgm13/Leafre"], ["圣地", "Bgm18/QueensGarden"], ["埃德尔斯坦", "Bgm22/EdelsteinCity"], ["玛加提亚", "Bgm12/Dispute"], ["武陵", "Bgm15/MureungHill"], ["里恩", "Bgm19/RienVillage"], ["尖耳狐狸村", "Bgm36/foxvillage"], ["万神殿", "Bgm27/Pantheon"], ["童话村", "Bgm11/DownTown"]];
 // 27F 怪物
-var mobs27F = [9309014, 9309015];
+var mobs27F = [2600106, 9800145];
 var mobsName27F = ["沙漠蛇先生", "壁虎"];
 
 function init() {
@@ -302,7 +302,7 @@ function monsterValue(eim, mobId) {
 		var kill = [parseInt(em.getProperty("stage" + state + "_kill_0")) + 1, parseInt(em.getProperty("stage" + state + "_kill_1")) + 1];
 		em.setProperty("stage" + state + "_kill_" + index, kill[index]);
 		eim.getPlayers().forEach(function (player) {
-			player.dropMessage(-1, "消灭"+mobsName27F[index]+" " + (kill[index]) + " / " + kilReq);
+			player.dropMessage(-1, "消灭" + mobsName27F[index] + " " + (kill[index]) + " / " + kilReq);
 		});
 		if (kill[0] >= kilReq && kill[1] >= kilReq) {
 			em.setProperty("stage" + state, "clear");
@@ -321,7 +321,7 @@ function monsterValue(eim, mobId) {
 		}
 		break;
 	case 31:
-		if(mobId == 9309129){
+		if (mobId == 5250006) {
 			break;
 		}
 		var kilReq = 200;
@@ -378,10 +378,10 @@ function monsterDrop(eim, player, mob) {
 	var state = parseInt(em.getProperty("state"));
 	var mapid = state * 1000 + mapHall;
 	switch (state) {
-		case 31:		// 确保是玩家杀的？
-		var mobId = 9309129;
-		if(mobId == mob.getId()){
-			var summon = randomNum(1,5);
+	case 31: // 确保是玩家杀的？
+		var mobId = 5250006;
+		if (mobId == mob.getId()) {
+			var summon = randomNum(1, 5);
 			var fairySummon = parseInt(em.getProperty("stage" + state + "_fairy_summon")) + summon;
 			em.setProperty("stage" + state + "_fairy_summon", fairySummon);
 			em.setProperty("stage31_angry", 1);
@@ -562,10 +562,14 @@ function stage31_FairySpawn() {
 	if (mapid != 31 * 1000 + mapHall)
 		return;
 
-	var mobId = 9309129;
+	var mobId = 5250006;
 	var map = em.getMapFactoryMap(mapid);
 	var mob = em.getMonster(mobId);
-	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(randomNum(-1000, 1000), randomNum(2000, 4000)));
+	var modified = em.newMonsterStats();
+	modified.setOHp(3379200);
+	mob.setOverrideStats(modified);
+	eim.registerMonster(mob);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(randomNum(-1500, -500), randomNum(-1500, -500)));
 	scheduleNew("stage31_FairyLeave", 30);
 }
 
@@ -575,11 +579,11 @@ function stage31_FairyLeave() {
 	var isAngry = parseInt(em.getProperty("stage31_angry"));
 	if (isAngry || (mapid != 31 * 1000 + mapHall))
 		return;
-	
-	var mobId = 9309129;
+
+	var mobId = 5250006;
 	var eim = em.getInstance("Map_TowerOfOz");
-	eim.getMobs().forEach(function(element){
-		if(element.getMap().getId() == mapid && element.getId() == mobId)
+	eim.getMobs().forEach(function (element) {
+		if (element.getMap().getId() == mapid && element.getId() == mobId)
 			element.killed();
 	});
 	scheduleNew("stage31_FairySpawn", 60);
@@ -614,7 +618,7 @@ function initPropArray(name, val, startI, endI) {
 }
 function initPropArrayRandom(name, min, max, startI, endI) { // 不重复的随机数序列
 	var arr = new Array();
-	var maxTimes = number;
+	var maxTimes = endI - startI + 1;
 	do {
 		var num = randomNum(min, max);
 		if (arr.indexOf(num) < 0) { //数组中不存在

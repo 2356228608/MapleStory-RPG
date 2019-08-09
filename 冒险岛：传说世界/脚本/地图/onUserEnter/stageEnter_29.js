@@ -60,6 +60,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.addPopupSay(2540000, 6000, "摇晃树木叫出那些家伙吧。");
 		//ms.warp(992019000, 1);
 	} else {

@@ -9,7 +9,7 @@ function action(mode, type, selection) {
 	status++;
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + level);
-	if (prop != null && prop.equals("start")) {
+	if (prop != null && (prop.equals("start") || prop.equals("clear"))) {
 		ms.dispose();
 		return;
 	}
@@ -36,8 +36,9 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
+		ms.warp(992027000, 1);
 		ms.addPopupSay(2540000, 6000, "移动时避开奇怪的踏板与绳子吧。");
-		//ms.warp(992019000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

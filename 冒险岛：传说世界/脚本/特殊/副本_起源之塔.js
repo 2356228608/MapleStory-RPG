@@ -37,10 +37,10 @@ function action(mode, type, selection) {
 	else
 		status--;
 	if (status == 0) {
-		var msg = "";
-		msg += "#b#e[" + mapName + "]#n\r\n\r\n";
+		var msg = "#b#e[" + mapName + "]#n\r\n\r\n";
 		for (var i = 0; i < difficulty.length; i++) {
-			var prop = cm.getEventManager(eventname[i]).getProperty("state");
+			var em = cm.getEventManager(eventname[i]);
+			var prop = em == null ? null : em.getProperty("state");
 			var state = (prop == null || prop.equals("0")) ? "#r空闲#k" : "#b占用#k";
 			msg += "#k今天已探索#b" + difficulty[i] + "模式 #e" + cm.getPQLog(difficulty[i] + eventName) + " #n/ " + maxenter[i] + " 层\t\t状态：" + state + "\r\n";
 		}

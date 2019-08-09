@@ -4,7 +4,7 @@ Made by Jessefjxm
 var status = -1;
 var level = "32";
 var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
-var pos = [[0, 2000], [1000, 2000], [2000,2000]];
+var pos = [[0, 2000], [1000, 2000], [2000, 2000]];
 
 function action(mode, type, selection) {
 	status++;
@@ -23,14 +23,6 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		// 刷怪
-		var map = em.getMapFactoryMap(992032000);
-		for(var k=0;k<pos.length;k++){
-			for (var i = 0; i < 10; i++) {
-				var mob = em.getMonster(mobId[index]);
-				map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(pos[k][0]+randomNum(-100,100), pos[k][1]));
-			}
-		}
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
@@ -46,7 +38,16 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "消灭区域内所有怪物，移动至下一层吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
+		// 刷怪
+		var map = em.getMapFactoryMap(992032000);
+		for (var k = 0; k < pos.length; k++) {
+			for (var i = 0; i < 10; i++) {
+				var mob = em.getMonster(mobId[index]);
+				map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(pos[k][0] + randomNum(-100, 100), pos[k][1]));
+			}
+		}
 	} else {
 		ms.dispose();
 	}

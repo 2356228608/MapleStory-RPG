@@ -49,6 +49,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "小心翼翼地踏着云朵跑到出口去吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

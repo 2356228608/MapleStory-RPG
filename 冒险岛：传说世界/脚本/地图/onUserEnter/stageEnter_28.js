@@ -9,7 +9,7 @@ function action(mode, type, selection) {
 	status++;
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + level);
-	if (prop != null && prop.equals("start")) {
+	if (prop != null && (prop.equals("start") || prop.equals("clear"))) {
 		ms.dispose();
 		return;
 	}
@@ -37,6 +37,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "摇晃树木叫出那些家伙吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

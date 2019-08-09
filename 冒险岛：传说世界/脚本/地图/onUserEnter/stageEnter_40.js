@@ -37,6 +37,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请消灭稻草人，前往下一层吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

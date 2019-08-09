@@ -37,6 +37,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请收集上方楼层紫色牧童掉落的紫色皮革10个。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

@@ -11,7 +11,7 @@ var badMaps = [2, 4, 6, 16, 19, 21, 29, 37, 38, 42, 43, 46];
 var bypassFloor = [12, 17, 19, 22, 23, 27];
 
 function enter(pi) {
-	// pi.mapMessage("[curPortal " + pi.getPortal().getId() + "]");
+	//pi.mapMessage("[curPortal " + pi.getPortal().getId() + "]");
 	var mapId = pi.getMapId();
 	// 【1】枫之高校
 	if (mapId < 992001000 || mapId > 992050000) {
