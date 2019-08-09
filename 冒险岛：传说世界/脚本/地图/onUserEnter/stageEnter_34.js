@@ -27,7 +27,7 @@ function action(mode, type, selection) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Monologue(header + "#fs22#有看到羊旁边的黄色牧童吧？先猎杀黄色牧童吧。 \r\n\r\n搜集黄色牧童掉落的黄色皮革10个左右透过羊旁边的传送点可前往上方楼层。 \r\n\r\n从上方楼层的紫色牧童那搜集10个紫色皮革的话就可移动至下一楼！", 30000);
+		ms.inGameDirectionEvent_Monologue(header + "#fs22#有看到旁边的黄色卷毛牛吧？先猎杀黄色卷毛牛吧。 \r\n\r\n搜集黄色卷毛牛掉落的黄色皮革10个左右，再透过羊旁边的传送点可前往上方楼层。 \r\n\r\n从上层的紫色卷毛牛那搜集10个紫色皮革的话就可移动至下一楼！", 30000);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 1000, 0, 0);
 		// 收尾
@@ -36,7 +36,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "请收集上方楼层紫色牧童掉落的紫色皮革10个。");
+		ms.addPopupSay(2540000, 6000, "请搜集10个以上上层紫色卷毛牛掉落的紫色皮革。");
 		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
