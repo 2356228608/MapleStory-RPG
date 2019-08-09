@@ -1,4 +1,4 @@
-﻿/*
+/*
  * 起源之塔
  * by Jessefjxm
  */
@@ -122,8 +122,18 @@ function changedMap(eim, player, mapid) {
 		break;
 	case 32:
 		initProp("stage" + level + "_kill", 0);
-		initProp("stage" + level + "_fairy_summon", 0);
+		initProp("stage" + level + "_fairy_summon", 0);	// 统计
 		initProp("stage" + level + "_angry", 0);
+		break;
+	case 33:
+		initProp("stage" + level + "_reset", 0);	// 不超过4次
+		break
+	case 34:
+		initProp("stage" + level + "_count", 0);
+		scheduleNew("stage" + level + "_CountItem", 3);
+		break;
+	case 36:
+		initProp("stage" + level + "_stage", 0);
 		break;
 	}
 }
@@ -587,6 +597,33 @@ function stage31_FairyLeave() {
 			element.killed();
 	});
 	scheduleNew("stage31_FairySpawn", 60);
+}
+
+// 34F 收集紫皮
+function stage34_CountItem() {
+	var itemid = [4009235];
+	var reqNum = 10;
+	var mapid = parseInt(em.getProperty("state")) * 1000 + mapHall;
+	if (mapid != 34 * 1000 + mapHall)
+		return;
+
+	em.getPlayersInMap(mapid).forEach(function (player) {
+		var owns = player.getItemAmount(itemid[0]);
+		if (parseInt(em.getProperty("stage34_count")) == owns) {
+			scheduleNew("stage34_CountItem", 3);
+			return;
+		}
+		em.setProperty("stage34_count", owns);
+		player.dropMessage(-1, "紫色皮革 " + owns + " / " + reqNum);
+		if (owns < reqNum) {
+			scheduleNew("stage34_CountItem", 3);
+			return;
+		} else {
+			em.getMapFactoryMap(mapid).startMapEffect("你已经将10个紫色皮革全部搜集到了！让我们前往下一层吧！", 5120061);
+			em.setProperty("stage34", "clear");
+			player.openNpc(2540005, "特效_完成");
+		}
+	});
 }
 
 // ===================== 功能类方法 ======================
