@@ -8,7 +8,7 @@ var exps = [33474, 83687, 83687, 127118, 143248, 143248, 192090, 192090, 413928,
 // 目前故障的楼层
 var badMaps = [2, 4, 6, 16, 19, 21, 29, 37, 38, 42, 43, 46];
 // 跑酷楼层，直接通过   
-var bypassFloor = [12, 17, 19, 22, 23, 27];
+var bypassFloor = [12, 17, 19, 22, 23, 27, 41, 44, 48];
 
 function enter(pi) {
 	//pi.mapMessage("[curPortal " + pi.getPortal().getId() + "]");
@@ -41,6 +41,11 @@ function enter(pi) {
 	if (level == 18) {
 		var itemid = [4000136];
 		pi.getPlayer().removeItem(itemid[0], pi.getPlayer().getItemAmount(itemid[0]));
+	}
+	if (level == 34) {
+		var itemid = [4009234, 4009235];
+		pi.getPlayer().removeItem(itemid[0], pi.getPlayer().getItemAmount(itemid[0]));
+		pi.getPlayer().removeItem(itemid[1], pi.getPlayer().getItemAmount(itemid[1]));
 	}
 	// 发放奖励
 	var index = level - 1 - Math.floor(level / 5);

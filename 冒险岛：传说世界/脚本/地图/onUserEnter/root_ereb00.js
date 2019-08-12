@@ -1,5 +1,5 @@
 /* 鲁塔比斯
-Made by Jessefjxm
+Made by Jessefjxm  地图:913080000
  */
 var status = -1;
 

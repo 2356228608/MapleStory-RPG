@@ -3,7 +3,7 @@
  Neinheart
  Made by Daenerys, jessefjxm
  */
-        var status = -1;
+var status = -1;
 
 function start(mode, type, selection) {
     if (mode == 1)

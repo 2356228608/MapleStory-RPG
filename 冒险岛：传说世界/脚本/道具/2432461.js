@@ -50,10 +50,10 @@ function 对话首页() {
 	text = "有什么事？快点说，#b#h ##k。\r\n\r\n";
 	text += "#L1##b我不想再待在这里了。#l\r\n";
 	var mapId = im.getMapId();
-	if(mapId==992023000){
+	if (mapId == 992023000) {
 		text += "#L2##b掉下来了，请送我上去。#l\r\n";
 	}
-	if(mapId==992033000){
+	if (mapId == 992033000) {
 		text += "#L3##b钥匙全部用完了。#l\r\n";
 	}
 	im.askMenu(text, NPC);
@@ -96,21 +96,20 @@ function 掉下来了() {
 
 function 钥匙全部用完了() {
 	var mapId = im.getMapId();
-	if(mapId!=992033000){
+	if (mapId != 992033000) {
 		return;
 	}
 	if (status == 1) {
 		text = "钥匙都已经用完了，还没能找到出口吗？";
 		im.askYesNo(text, NPC);
 	} else if (status == 2) {
-		if(im.haveItem(4009231) || im.haveItem(4009233)){
+		if (im.haveItem(4009231) || im.haveItem(4009233)) {
 			text = "你的背包里不是还有钥匙吗？再试试吧。";
-			im.sendOk(text, NPC);			
+			im.sendOk(text, NPC);
 			im.dispose(); // 结束
-		}else
+		} else
 			text = "哎呀。看来这次真的走错路了。要重新回到迷宫的起点吗？";
-			im.askYesNo(text, NPC);
-		}
+		im.askYesNo(text, NPC);
 	} else if (status == 3) {
 		im.warp(992033000, 0);
 		im.gainItem(4009233, 2);

@@ -38,6 +38,16 @@ function action(mode, type, selection) {
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请消灭稻草人，前往下一层吧。");
 		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		var eim = em.getInstance("Map_TowerOfOz");
+		var map = em.getMapFactoryMap(ms.getMapId());
+		var mob = em.getMonster(9309203);
+		var modified = em.newMonsterStats();
+		modified.setOHp(2100000000);
+		mob.setOverrideStats(modified);
+		mob.getStats().setFixedDamage(1000000);
+		mob.getStats().setChange(true);
+		eim.registerMonster(mob);
+		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000, 0));
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

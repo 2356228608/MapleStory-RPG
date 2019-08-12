@@ -4,15 +4,16 @@ Made by Jessefjxm
 var status = -1;
 var level = "32";
 var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
-var pos = [[0, 2000], [1000, 2000], [2000, 2000]];
+var pos = [[-1800, -200], [-1000, -200], [-200, -200]];
 
 function action(mode, type, selection) {
 	status++;
 	var em = ms.getEventManager("Map_TowerOfOz");
+	var eim = em.getInstance("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
 		ms.dispose();
-		return;
+			return;
 	}
 
 	var i = -1;
@@ -41,10 +42,11 @@ function action(mode, type, selection) {
 		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 		// 刷怪
-		var map = em.getMapFactoryMap(992032000);
+		var map = em.getMapFactoryMap(ms.getMapId());
 		for (var k = 0; k < pos.length; k++) {
-			for (var i = 0; i < 10; i++) {
-				var mob = em.getMonster(mobId[index]);
+			for (var i = 0; i < 15; i++) {
+				var mob = em.getMonster(9309037);
+				eim.registerMonster(mob);
 				map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(pos[k][0] + randomNum(-100, 100), pos[k][1]));
 			}
 		}

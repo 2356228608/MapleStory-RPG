@@ -54,9 +54,17 @@ function end(mode, type, selection) {
 		qm.sendNextNoESC("我也不知道。他们全都披着斗篷，看不见脸。啊，对了，有个一只眼睛戴着眼罩的魔族男子好像是他们的队长。", 1064001);
 	} else if (status === i++) {
 		// 图片 黛米安
+		qm.curNodeEventEnd(true);
+		qm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		qm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
         qm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
-		qm.inGameDirectionEvent_AskAnswerTime(8000); 
+		qm.inGameDirectionEvent_AskAnswerTime(5000); 
 	} else if (status === i++) {
+		qm.curNodeEventEnd(true);
+		qm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		qm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		qm.inGameDirectionEvent_AskAnswerTime(500); 
+	}  else if (status === i++) {
 		qm.sendNextSNoESC("（一只眼睛戴着眼罩的魔族？到底是谁呢？）");
 	} else if (status === i++) {
 		qm.sendNextNoESC("他们发现我的力量还没有完全恢复，就把我封印在了这里，说要等我完全恢复力量之后再把我带走。", 1064001);

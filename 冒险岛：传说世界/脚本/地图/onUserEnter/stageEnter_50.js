@@ -37,6 +37,15 @@ function action(mode, type, selection) {
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "你如果将桃乐丝消灭，就真的胜利了。这将是一场激烈的战斗，加油。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		var eim = em.getInstance("Map_TowerOfOz");
+		var map = em.getMapFactoryMap(ms.getMapId());
+		var mob = em.getMonster(9309207);
+		var modified = em.newMonsterStats();
+		modified.setOHp(2100000000 );
+		mob.setOverrideStats(modified);
+		eim.registerMonster(mob);
+		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(390, 154));
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

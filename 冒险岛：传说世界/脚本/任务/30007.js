@@ -42,6 +42,7 @@ function start(mode, type, selection) {
 		qm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		qm.forceStartQuest();
 		qm.dispose();
+		qm.sendNextSNoESC("请找南哈特继续对话。");
 	} else {
 		qm.dispose();
 	}

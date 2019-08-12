@@ -1,3 +1,4 @@
+function o对话工具(){}
 // 可交互的对话，支持选项
 cm.askMenu("text", 10000);
 // 自己说话（多了个S）
@@ -19,6 +20,7 @@ player.showMessage(0, "0/300");
 // -1红色正中 1弹窗 2蓝底 3(null)红底 5红色 6蓝色 -6 灰色 -7黄色
 player.dropMessage(-1, "-1/300");
 
+function o任务工具(){}
 // 传送
 cm.warp(910700200, 0);
 // 开始任务
@@ -30,10 +32,12 @@ cm.isQuestActive(30000)
 // 设置任务特别标签 对应infoNumber，exVariable，value
 cm.updateInfoQuest(30002, "outportal=2");
 
+function o影视特效(){}
 // ?? 反正每次开头结尾都要调用
 cm.curNodeEventEnd(true);
 // 全屏幕放图片
 cm.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
+cm.effect_Direction("Map/Effect.img/temaD/enter/fairyAcademy");
 // ???
 cm.effect_OnUserEff("Effect/Direction15.img/effect/tuto/seal/front");
 // 显示文字：字体，大小 [刷字时间] [持续时间] [位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）]
@@ -89,6 +93,10 @@ cm.playVideoByScript("kaiser.avi");
 cm.setStandAloneMode(false);
 // 屏蔽/解锁操作台 true锁/false解 true有黑边/false无黑边
 cm.setInGameDirectionMode(true, false, false);
+// 播放BGM
+cm.fieldEffect_PlayBGM("Bgm34/TheFairyForest");
+
+function o文字特效(){}
 /*
 #k 黑色字
 #e 粗体字
@@ -117,6 +125,7 @@ cm.setInGameDirectionMode(true, false, false);
 \t 空格
  */
 
+function o地图特效(){}
 // 5120008 枫叶
 // 5120012 圣诞礼盒
 // 5120016 老虎
@@ -153,23 +162,33 @@ cm.setInGameDirectionMode(true, false, false);
 // 5121052 星星
 cm.getMap().startMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
 
-20F 离开
-你真了不起！居然能击败铁皮人。相信后面的楼层也难不住你了。
-我要送你一份礼物！
-希望你能继续发挥出色，我们的目标还在更深处呢。
 
-40F 离开
-你真了不起！居然已经进入到第41层！你真是一名能力远超我想象的冒险者！
-你击败了一个强大的对手。我要送你一份礼物！
-希望你能继续发挥这样的气势，我们的目标还在更深处呢。
+function o功能类方法(){}
+function randomNum(minNum, maxNum) {
+	switch (arguments.length) {
+	case 1:
+		return parseInt(Math.random() * minNum + 1, 10);
+		break;
+	case 2:
+		return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+		break;
+	default:
+		return 0;
+		break;
+	}
+}
 
-50F 离开
-莫非……真没想到你会来这里，你真的很了不起!
-为纪念你通关最高层，我要送你一枚比较特殊的勋章！
-你真的完成啦！祝贺你！！
-你的背包已满了吧？你先空出装备栏的1格后，再使用传送出口吧。
-
-黑屏
-ms.inGameDirectionEvent_Monologue("#fn黑体##fs32#B - 49 F\r\n\r\n#fs22#你最终打败桃乐丝啦！真的太感谢了！不过……怎么回事？\r\n\r\n对塔的控制权还没到我的手上。\r\n\r\n我怎么感觉到这里还并没有结束。", 30000);
-底部
-敬请期待……
+function o特殊符号(){}
+●⊙⊕◎★☆
+⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇
+?①②③④⑤⑥⑦⑧⑨⑩
+㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩
+◆◇
+·⊙①？◎Θ⊙●○¤㊣㈱@の■□★☆◆◇◣◢◤◥▲△▼▽⊿◢
+▂▃▄▅▆▇█▉▊▋▌▍▎▏■▓回□〓≡
+↑↓→←↘↙♀♂┇┅‖$@*&#※卍卐∞Ψ§∮№⌒*
+±+-×÷∧∨∑∏∪∩∈√⊥∥∠⌒⊙∫∮≡≌≈∽∝≠≮≯≤≥∞∶ ∵∴∷♂♀°′″℃$¤￠￡‰§№☆★〇○●◎◇◆ 回
+‘’“”〝〞〔〕〈〉《》「」『』〖〗【】()[]{｝︻︼﹄﹃
+─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛
+├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋
+═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬╳╔ ╗╝╚ ╬ ═ ╓ ╩ ┠ ┨┯ ┷┏ ┓┗ ┛┳⊥﹃﹄┌╭╮╯╰

@@ -52,8 +52,9 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "请突破至44楼吧。");
 		ms.warp(992043000, 1);
+		ms.addPopupSay(2540000, 6000, "请突破至44楼吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

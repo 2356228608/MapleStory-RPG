@@ -21,6 +21,7 @@ function action(mode, type, selection) {
 	var medal = 1142685 + level/5;
 	// 领取过了
 	if (cm.isQuestFinished(quest)) {
+		cm.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
 		cm.dispose();
 		return;
 	}

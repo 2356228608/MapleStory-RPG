@@ -25,6 +25,7 @@ function action(mode, type, selection) {
 		eim.registerMonster(mob);
 		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(155, 155));
 		cm.addPopupSay(2540000, 6000, "胆小的狮子从黑暗中现身了。请你去追踪逃跑的狮子！");
+		em.setProperty("stage30", "fighting");
 	}
 	cm.dispose();
 }

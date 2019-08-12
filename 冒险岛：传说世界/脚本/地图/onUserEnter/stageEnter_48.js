@@ -22,6 +22,7 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.spawnNpcForPlayer(2540004, -1433, 270);
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
@@ -36,7 +37,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "哇噢！我们又见面了。竟能来到这里，你有两下子！又想叫我帮忙？那跟我走吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

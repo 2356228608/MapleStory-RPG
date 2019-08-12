@@ -224,7 +224,7 @@ eim.schedule("summonButterfly", 3500);
 }*/
 
 function dragon(eim) {
-	var state = parseInt(em.getProperty("state"));
+	/*var state = parseInt(em.getProperty("state"));
 	var map = eim.getMapInstance(state);
 	if (eim.getProperty("phase").equals("0")) {
 		if (map != null) {
@@ -244,7 +244,7 @@ function dragon(eim) {
 			//map.onDragon(2, posxLT, posyLT, LeftX, LeftY, Left);
 		}
 		eim.schedule("dragon", 1000 * 60 * 1);
-	}
+	}*/
 }
 
 function pickupItem(eim, player, itemID) {}

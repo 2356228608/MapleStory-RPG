@@ -61,15 +61,26 @@ function randomNum(minNum, maxNum) {
 }
 
 function action(mode, type, selection) {
-	cm.playerMessage(5, cm.getPlayer().getTruePosition());
-	var em = cm.getEventManager("Map_TowerOfOz");
-	var eim = em.getInstance("Map_TowerOfOz");
-	var map = em.getMapFactoryMap(cm.getMapId());
-	var mob = em.getMonster(9300891);
-	mob.getStats().setFly(true);
-	mob.getStats().setChange(true);
-	map.spawnMonster(mob, new java.awt.Point(-3000, -2500));
-	cm.dispose();
+	status++;
+	var i = -1;
+	if (status <= i++) {
+		cm.dispose();
+	} else if (status === i++) {
+		// 初始化
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.inGameDirectionEvent_AskAnswerTime(0);
+	} else if (status === i++) {
+		cm.inGameDirectionEvent_Effect("Effect/OnUserEff.img/aquarisTower/failed", 0, 0, -110);
+		cm.inGameDirectionEvent_AskAnswerTime(0);
+	} else if (status === i++) {
+		// 收尾
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.dispose();
+	} else {
+		cm.dispose();
+	}
 }
 
 function actionMob(mode, type, selection) {

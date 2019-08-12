@@ -22,6 +22,7 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.spawnNpcForPlayer(2540010, 171, 185);
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 1000, 0);
@@ -38,6 +39,7 @@ function action(mode, type, selection) {
 		em.setProperty("stage" + level, "start");
 		// TODO
 		ms.addPopupSay(2540000, 6000, "请解答桃乐丝的所有问题，然后前往下一层吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();

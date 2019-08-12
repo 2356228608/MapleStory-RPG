@@ -44,7 +44,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushMoveInfo(0, 500, 500, -700);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_AskAnswerTime(4500);
+		ms.inGameDirectionEvent_AskAnswerTime(5500);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushMoveInfo(1, 500, 0, 0);
 	} else if (status === i++) {
@@ -58,6 +58,7 @@ function action(mode, type, selection) {
 		em.setProperty("stage" + level, "start");
 		ms.addPopupSay(2540000, 6000, "请小心越过障碍，向第41层突破吧。");
 		//ms.warp(992019000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	} else {
 		ms.dispose();
 	}

@@ -10,7 +10,6 @@ function action(mode, type, selection) {
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
-		ms.addPopupSay(2540000, 6000, "请消灭狐蒙，秃鹰，沙漠地鼠，沙漠毒蝎各100只。");
 		ms.dispose();
 		return;
 	}

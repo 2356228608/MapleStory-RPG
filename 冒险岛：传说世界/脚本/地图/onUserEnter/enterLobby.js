@@ -13,15 +13,15 @@ function action(mode, type, selection) {
 		return;
 	}
 	var em = ms.getEventManager("Map_TowerOfOz");
-	var time = em==null ? null : em.getProperty("time" + ms.getPlayer().getId());
-	var level = em==null ? null : em.getProperty("level" + ms.getPlayer().getId());
+	var time = em == null ? null : em.getProperty("time" + ms.getPlayer().getId());
+	var level = em == null ? null : em.getProperty("level" + ms.getPlayer().getId());
 	// 不是完成副本后退出的
 	if (level == null || time == null || status < 0) {
 		ms.dispose();
 		return;
 	}
 	// 超时退出
-	if (time < 4 * 60 * 1000) {
+	if (time - 10 * 60 * 1000 < 4 * 60 * 1000) {
 		if (status == 0) {
 			ms.curNodeEventEnd(true);
 			ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解

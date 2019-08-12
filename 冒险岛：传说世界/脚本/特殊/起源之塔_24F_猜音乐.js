@@ -21,7 +21,6 @@ function action(mode, type, selection) {
 	var i = -1;
 	var em = cm.getEventManager("Map_TowerOfOz");
 	var sound = parseInt(em.getProperty("stage24_bgm_" + id));
-	cm.playerMessage(5, BGM[sound][0]);
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status === i++) {

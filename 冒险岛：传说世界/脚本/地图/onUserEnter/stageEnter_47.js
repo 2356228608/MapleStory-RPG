@@ -21,7 +21,9 @@ function action(mode, type, selection) {
 		// 初始化
 		ms.dispose();
 		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "这里……？我的力量……就……到……这……可能要……死了……");
+		ms.addPopupSay(2540000, 6000, "这里……呃，我的力量……知道路线……的话……死……看不……");
+		ms.playerMessage(5, "阿丽莎的思念体的力量似乎到不了这里。你自己找出通往下一层的路吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		//ms.warp(992019000, 1);
 	} else {
 		ms.dispose();
