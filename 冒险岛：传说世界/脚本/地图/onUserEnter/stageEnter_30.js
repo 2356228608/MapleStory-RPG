@@ -13,6 +13,13 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "让我们靠近恐怖发生装置，将胆小的狮子唤出来吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
