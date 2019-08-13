@@ -14,6 +14,14 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.warp(992019000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.addPopupSay(2540000, 6000, "嗯？你想知道走下这层的方法？呵呵……行~看你好像是新来的，跟我走吧。");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
