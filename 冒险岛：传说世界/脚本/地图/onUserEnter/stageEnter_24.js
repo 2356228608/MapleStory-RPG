@@ -14,6 +14,15 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "现在，你要认真倾听音乐，然后回答问题并通过这里。");
+		var sound = parseInt(em.getProperty("stage" + level + "_bgm_1"));
+		ms.fieldEffect_PlayBGM(BGM[sound][1]);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
