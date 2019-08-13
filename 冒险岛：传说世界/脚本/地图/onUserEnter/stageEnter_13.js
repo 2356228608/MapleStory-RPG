@@ -13,6 +13,15 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		ms.warp(992013000, 1);
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "请躲避掉落的碎片，并在怪物撞击到魔力石之前，将它们全部消灭。注意不要远离魔力石。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		scheduleNew("stage13_Fight", 10, em);
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
