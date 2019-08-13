@@ -13,6 +13,14 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		ms.warp(992001000, 1);
+		em.setProperty("stage" + parseInt(level), "start");
+		ms.addPopupSay(2540000, 6000, "请打猎怪物或者积累5千万以上的伤害！");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
