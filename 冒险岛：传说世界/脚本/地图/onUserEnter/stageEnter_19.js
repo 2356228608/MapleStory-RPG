@@ -10,7 +10,6 @@ function action(mode, type, selection) {
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
-		ms.addPopupSay(2540000, 6000, "嗯？你想知道走下这层的方法？呵呵……行~看你好像是新来的，跟我走吧。");
 		ms.dispose();
 		return;
 	}
