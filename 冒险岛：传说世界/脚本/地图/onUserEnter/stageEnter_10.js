@@ -13,6 +13,22 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "请击败巨型蜘蛛。");
+		//ms.warp(992008000, 1);
+		var eim = em.getInstance("Map_TowerOfOz");
+		var map = em.getMapFactoryMap(ms.getMapId());
+		var mob = em.getMonster(9309201);
+		var modified = em.newMonsterStats();
+		modified.setOHp(400000000);
+		mob.setOverrideStats(modified);
+		eim.registerMonster(mob);
+		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(0, 0));
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
