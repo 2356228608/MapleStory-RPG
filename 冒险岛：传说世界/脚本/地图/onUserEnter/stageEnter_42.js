@@ -13,6 +13,14 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "请各消灭橡木甲虫、金属甲虫、哈维以及血腥哈维，向第42层突破吧。");
+		//ms.warp(992019000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
