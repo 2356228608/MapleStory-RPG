@@ -13,6 +13,12 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "你试着和跟菜鸟冒险家对话吧。");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
