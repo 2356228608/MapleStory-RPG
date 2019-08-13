@@ -10,7 +10,14 @@ function action(mode, type, selection) {
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
+		ms.dispose();
+		return;
+	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.warp(992016000, 1);
 		ms.addPopupSay(2540000, 6000, "请消灭鳄鱼或黑鳄鱼，一共消灭200只就可以了。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 		ms.dispose();
 		return;
 	}
