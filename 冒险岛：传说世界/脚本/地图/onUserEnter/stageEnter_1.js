@@ -14,11 +14,7 @@ function action(mode, type, selection) {
 		return;
 	}
 	if (ms.isQuestFinished(42010)) {
-		ms.warp(992001000, 1);
-		em.setProperty("stage" + parseInt(level), "start");
-		ms.addPopupSay(2540000, 6000, "请打猎怪物或者积累5千万以上的伤害！");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		ms.dispose();
+		startMap(em);
 		return;
 	}
 
@@ -48,12 +44,16 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		ms.warp(992001000, 1);
-		em.setProperty("stage" + parseInt(level), "start");
-		ms.addPopupSay(2540000, 6000, "请打猎怪物或者积累5千万以上的伤害！");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em){
+	ms.dispose();
+	ms.warp(992001000, 1);
+	em.setProperty("stage" + parseInt(level), "start");
+	ms.addPopupSay(2540000, 6000, "请打猎怪物或者积累5千万以上的伤害！");
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 }
