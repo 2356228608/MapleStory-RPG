@@ -13,6 +13,14 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + parseInt(level), "start");
+		ms.warp(992002000, 1);
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.addPopupSay(2540000, 6000, "必须捕捉怪物获得数字高于结界的卡片后，才能欺骗结界。");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
