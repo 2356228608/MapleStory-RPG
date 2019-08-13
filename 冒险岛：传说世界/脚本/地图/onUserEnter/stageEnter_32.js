@@ -15,6 +15,23 @@ function action(mode, type, selection) {
 		ms.dispose();
 			return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "消灭区域内所有怪物，移动至下一层吧。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		//ms.warp(992019000, 1);
+		// 刷怪
+		var map = em.getMapFactoryMap(ms.getMapId());
+		for (var k = 0; k < pos.length; k++) {
+			for (var i = 0; i < 15; i++) {
+				var mob = em.getMonster(9309037);
+				eim.registerMonster(mob);
+				map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(pos[k][0] + randomNum(-100, 100), pos[k][1]));
+			}
+		}
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
