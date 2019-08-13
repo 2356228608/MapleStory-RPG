@@ -13,6 +13,13 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "请将艾利杰消灭后往下走吧。你打猎怪物后，愤怒的艾利杰就会出现的。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
