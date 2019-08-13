@@ -29,6 +29,8 @@ function action(mode, type, selection) {
 		ms.sendNext("航海士，向总部前进吧！", 1510007);
 	} else if (ms.isQuestActive(32187)) {
 		ms.sendNext("你要去冰川破坏者的巢穴啊，航海士。你往右上方最偏僻的地方走就能到达。", 1510006);
+	} else if (ms.isQuestActive(32191)) {
+		ms.sendNext("返回总部吧，航海士！", 1510006);
 	}
 	ms.dispose();
 }

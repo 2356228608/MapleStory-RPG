@@ -62,15 +62,8 @@ function randomNum(minNum, maxNum) {
 }
 
 function action(mode, type, selection) {
-	var qid = 32194;
-	im.getQuestRecord(qid).setCustomData("1;1");
-	//im.getQuestRecord(qid).setStatus(1);
-	im.updateInfoQuest(qid, "1;1");
-	im.playerMessage(5, "getQuest - " + im.getQuest(qid));
-	im.playerMessage(5, "getQuestRecord.getCustomData - " + im.getQuestRecord(qid).getCustomData());
-	// getQuestStatus 0：没开始 1：开始了 2：结束了
-	im.playerMessage(5, "getQuestStatus - " + im.getQuestStatus(qid));
-	im.playerMessage(5, "getInfoQuest - " + im.getInfoQuest(qid));
+	im.playerMessage(5, im.getPlayer().getPosition());
+		im.fieldEffect_ScreenMsg("Effect/Direction1.img/effect/aran/finishLilin/0");
 	im.dispose();
 }
 function actionQuest(mode, type, selection) {

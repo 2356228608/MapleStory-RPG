@@ -15,7 +15,6 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	var id = cm.getNpc() - 1;
-	cm.playerMessage(5, "id = " + id);
 	if (id < 0 || id >= area.length) {
 		cm.dispose();
 		return;

@@ -39,7 +39,7 @@ function end(mode, type, selection) {
 			qm.sendNext("你们刚刚没有仔细观察湖泊吗？很显然，水上很难留下什么证据。什么也无法找到。");
 			status -= 2;
 		} else if (selectionLog[1] == 2) {
-			qm.sendNext("我们已经试过用魔法搜寻他们了。但是毫无收获……");
+			qm.sendNext("艾利涅周围的森林里，魔法气息非常强。魔法粒子的浓度非常强，所以用普通的探索魔法反而无法找到孩子们。");
 			status -= 2;
 		} else {
 			qm.sendNext("你打算以此来推断孩子们消失去了哪里吗？这个方案好像不错……");

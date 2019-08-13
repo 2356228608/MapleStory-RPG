@@ -30,12 +30,12 @@ function start(mode, type, selection) {
 		qm.askMenu(text);
 	} else if (status == 4) {
 		if (selectionLog[4] == 1) {
-			qm.sendNext("问题是，我们现在不就是为了找到孩子们吗？发愁啊……");
+			qm.sendNext("#h #，清醒一点。我不是说过嘛，我们得先掌握那个秘密，才能找到孩子。你前后颠倒啦！");
 			status -= 2;
 		} else if (selectionLog[4] == 2) {
 			qm.sendNext("这个想法不错。最好寻找一下孩子们在上课时偷偷交换的纸条。");
 		} else {
-			qm.sendNext("我也没有头绪。发愁啊……");
+			qm.sendNext("我也是没有什么好办法所以才问的。说说你的看法吧。");
 			status -= 2;
 		}
 	} else if (status == 5) {

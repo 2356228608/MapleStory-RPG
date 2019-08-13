@@ -40,6 +40,7 @@ function action(mode, type, selection) {
 	} else if (status == 11) {
 		cm.sendNextNoESC("谢谢你！你不会后悔这个决定的。\r\n（向第1观测站移动。）");
 	} else if (status == 12) {
+		cm.forceStartQuest(32194, "1");
 		cm.warp(141010000, 0);
 		cm.sendNextNoESC("勇士，你来了。你旁边的是谁？", 1510001);
 	} else if (status == 13) {

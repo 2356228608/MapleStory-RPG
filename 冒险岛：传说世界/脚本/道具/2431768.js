@@ -4,7 +4,7 @@
 // 全局变量
 var status = -1; // status: 当前聊天交互轮数
 var selectionLog = new Array(); // 记录每一轮的选择
-var chat = ["#e#b我们的秘密物品已经安全地藏在书桌下了。这可千万不能让副校长发现。", "困死了……何时才下课啊？", "你更傻！彩虹反射"];
+var chat = ["#e#b我们的秘密物品已经安全地藏在书桌下了。这可千万不能让副校长发现。", "困死了……何时才下课啊？", "好耀眼……副校长的头发好耀眼啊……", "你更傻！彩虹反射", "一决胜负吧，帕伊尼！我要让你知道，我比你更快。下午来一场对决吧。"];
 var randChat = 0;
 // 开头
 function start() {
@@ -26,7 +26,7 @@ function action(mode, type, selection) {
 	if (!im.isQuestActive(32110)) {
 		im.sendOkS("#b（上面写的都是一些闲聊的内容……没什么有价值的东西）");
 		im.dispose();
-		im.gainItem(im.getItemId(), -1);
+		im.gainItem(im.getItemId(), -im.itemQuantity(im.getItemId()));
 		return;
 	}
 	if (status == 0) {

@@ -31,6 +31,8 @@ cm.forceCompleteQuest(30000);
 cm.isQuestActive(30000)
 // 设置任务特别标签 对应infoNumber，exVariable，value
 cm.updateInfoQuest(30002, "outportal=2");
+// 有些任务会用隐藏任务作为特别开关
+im.forceStartQuest(32194, "1");
 
 function o影视特效(){}
 // ?? 反正每次开头结尾都要调用
@@ -57,6 +59,7 @@ cm.inGameDirectionEvent_MoveAction(1);
 // 当且仅当锁定画面时，一定时间后执行next效果 [毫秒] 
 cm.inGameDirectionEvent_AskAnswerTime(30);
 // 镜头移动 [0移1复原] [移动速度（越大越快）] [相对X 右正左负] [相对Y 上正下负]
+// 需要单独迭代次数！
 cm.inGameDirectionEvent_PushMoveInfo(0, 300, -400, 27);
 // 显示感叹号（放单张图片）
 cm.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/Ballooncmg1/1", 0, 0, -110);

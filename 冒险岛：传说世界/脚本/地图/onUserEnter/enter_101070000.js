@@ -4,12 +4,7 @@ Made by Jessefjxm
 var status = -1;
 
 function action(mode, type, selection) {
-	if (ms.isQuestFinished(32101) || ms.isQuestFinished(32100) || ms.isQuestFinished(32102) || ms.isQuestActive(32102)) {
-		ms.dispose();
-		return;
-	}
 	status++;
-
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
@@ -30,12 +25,20 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 2000, 0); //20E 0x15 取消遮布
 		ms.inGameDirectionEvent_Effect("Map/Effect.img/temaD/enter/fairyAcademy", 0, 200, -210);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
+
+		if (ms.isQuestFinished(32104)) {
+			ms.inGameDirectionEvent_AskAnswerTime(4000);
+		} else {
+			ms.inGameDirectionEvent_AskAnswerTime(2000);
+		}
 	} else if (status === i++) {
 		// 收尾
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		if (ms.isQuestFinished(32104)) {
+			ms.warp(101070010, 0);
+		}
 		ms.dispose();
 	} else {
 		ms.dispose();
