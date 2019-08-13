@@ -13,6 +13,22 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		em.setProperty("stage" + level, "start");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		// 传送到小游戏模式？
+		//ms.warp(992008000, 1);
+		var map = em.getMapFactoryMap(ms.getMapId());
+		var mobList = [9309116, 9309117];
+		mobList.forEach(function (element) {
+			for (var i = 0; i < 10; i++) {
+				var mob = em.getMonster(element);
+				map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(randomNum(-300, 300), randomNum(0, 300)));
+			}
+		});
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
