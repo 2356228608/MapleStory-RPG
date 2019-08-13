@@ -13,6 +13,10 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		startMap(em);
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
@@ -34,20 +38,23 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "你如果将桃乐丝消灭，就真的胜利了。这将是一场激烈的战斗，加油。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		var eim = em.getInstance("Map_TowerOfOz");
-		var map = em.getMapFactoryMap(ms.getMapId());
-		var mob = em.getMonster(9309207);
-		var modified = em.newMonsterStats();
-		modified.setOHp(2100000000 );
-		mob.setOverrideStats(modified);
-		eim.registerMonster(mob);
-		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(390, 154));
-		//ms.warp(992019000, 1);
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em){
+	ms.dispose();
+	em.setProperty("stage" + level, "start");
+	ms.addPopupSay(2540000, 6000, "你如果将桃乐丝消灭，就真的胜利了。这将是一场激烈的战斗，加油。");
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+	var eim = em.getInstance("Map_TowerOfOz");
+	var map = em.getMapFactoryMap(ms.getMapId());
+	var mob = em.getMonster(9309207);
+	var modified = em.newMonsterStats();
+	modified.setOHp(2100000000 );
+	mob.setOverrideStats(modified);
+	eim.registerMonster(mob);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(390, 154));
 }
