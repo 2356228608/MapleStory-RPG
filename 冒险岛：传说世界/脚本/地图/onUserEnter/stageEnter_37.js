@@ -13,6 +13,14 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	if (ms.isQuestFinished(42010)) {
+		ms.warp(992037000, 1);
+		em.setProperty("stage" + level, "start");
+		ms.addPopupSay(2540000, 6000, "请消灭狐蒙，秃鹰，沙漠地鼠，沙漠毒蝎各100只。");
+		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		ms.dispose();
+		return;
+	}
 
 	var i = -1;
 	if (status <= i++) {
