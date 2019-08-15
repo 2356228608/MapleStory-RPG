@@ -7,22 +7,25 @@
         }
 
 function action(mode, type, selection) {
-    //if (mode == 1) {
-    if (cm.getMapId() != 270051100) {
+    if (cm.getMapId() == 270050100) {
         cm.removeNpc(cm.getMapId(), 2141000);
-        cm.forceStartReactor(cm.getMapId(), 2709000);
-    } else {
-
-        cm.killAllMob();
-        cm.spawnMob(8820108, 1, 7, -42);
-        cm.removeNpc(cm.getMapId(), 2141000);
-
-
+		cm.killAllMob();
+        cm.spawnMonster(8820008);
+		cm.spawnMonster(8820010);
+		cm.spawnMob(9010126, 1, -54, -42);
+		cm.addPopupSay(1540108, 2000, "请先击败普通品克缤化身!");
+        //cm.forceStartReactor(cm.getMapId(), 2709000);
     }
-
-    //}
+	if (cm.getMapId() == 270051100) {//进阶
+        cm.killAllMob();
+		cm.addPopupSay(1540108, 2000, "请先击败混沌品克缤化身!");
+		cm.spawnMob(8820008, 1, 7, -42);
+		cm.spawnMob(8820300, 1, 7, -42);
+		cm.spawnMob(9010126, 1, -236, -42);
+		//cm.killAllMob();
+		//cm.killMonster(8820300);
+		//cm.killMonster(8820000);
+        cm.removeNpc(cm.getMapId(), 2141000);
+    }
     cm.dispose();
-
-// If accepted, = summon PB + Kriston Disappear + 1 hour timer
-// If deny = NoTHING HAPPEN
 }

@@ -7,13 +7,15 @@ cm.sendNextS("text");
 cm.askAcceptDecline("text");
 // 只能往下翻页
 cm.sendNextNoESC("糟糕了！！", 3000107);
+// 控制字体
+#fn黑体##fs32
 
 // 0~4 各种类型的通知
 cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
 // 右下角弹窗通知
 cm.addPopupSay(0, 2000, "果然有出口。应该把这一事实告诉少女。");
 // 头上雇佣信息 存留一段时间
-cm.hireTutorcmg();
+cm.hireTutorMsg();
 
 // MapleCharacter下发消息，显示在聊天栏 0白1绿2粉3橙4紫
 player.showMessage(0, "0/300");
@@ -33,6 +35,8 @@ cm.isQuestActive(30000)
 cm.updateInfoQuest(30002, "outportal=2");
 // 有些任务会用隐藏任务作为特别开关
 im.forceStartQuest(32194, "1");
+// [1开0关] [NPCID] [SkillID，需要查表，80001789=黑猫， 80001788=内罗， 80002688=小鸟] [?]
+im.setPartner(0, 1501010, 80002688, 0);
 
 function o影视特效(){}
 // ?? 反正每次开头结尾都要调用
@@ -40,7 +44,7 @@ cm.curNodeEventEnd(true);
 // 全屏幕放图片
 cm.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
 cm.effect_Direction("Map/Effect.img/temaD/enter/fairyAcademy");
-// ???
+// OnUserEff?
 cm.effect_OnUserEff("Effect/Direction15.img/effect/tuto/seal/front");
 // 显示文字：字体，大小 [刷字时间] [持续时间] [位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）]
 // ... [X] [Y] [?] [?] [?] [淡入时间（立刻刷新所有字）] [淡入时间（立刻刷新所有字）]
@@ -50,10 +54,13 @@ cm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
 // 全屏遮罩：[1开0关] [R] [G] [B] [?] [时间] [？]
 cm.fieldEffect_InsertCanvas(1, 128, 0, 0, 500, 2000, 500); //创建一个遮布 0x10
 cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 2000, 0, 0); //20E 0x15 取消遮布
-// 放图片，优先级最高，覆盖所有UI [tag，不可覆盖，直到取消] [path] [0=生成，1=移动，2=？] [淡入时间,移动时间] [出场/移动X] [出场/移动Y] [?] [0=左上，1=右上，2=？，3=左下，4=右下，5=？]
+// 放图片，优先级最高，覆盖所有UI [tag，不可覆盖，直到取消] [path] [0=生成，1=移动，2=消失] [淡入时间/移动时间] [出场/移动X] [出场/移动Y] [?] [0=左上，1=右上，2=？，3=左下，4=右下，5=右中] [?]
 qm.fieldEffect_ProcessOnOffLayer("0", "Map/Effect2.img/kinesis/chaJay", 0, 500, 100, 200, 12, 5, 0);
 qm.fieldEffect_ProcessOnOffLayer("0", "", 1, 300, -800, 0, 0, 0, 0);
 qm.fieldEffect_ProcessOnOffLayer("0", "", 2, 0, 0, 0, 0, 0, 0);
+// 黑屏？
+ms.fieldEffect_ProcessOnOffLayer("BlackOut", "Map/Effect2.img/BlackOut", 0, 1000, 0, 0, 0, 4, 1);
+ms.fieldEffect_ProcessOnOffLayer("BlackOut", "Map/Effect2.img/BlackOut", 2, 1000, 0, 0, 0, 0, 0);
 // 玩家走动 [0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立]
 cm.inGameDirectionEvent_MoveAction(1);
 // 当且仅当锁定画面时，一定时间后执行next效果 [毫秒] 
@@ -61,8 +68,10 @@ cm.inGameDirectionEvent_AskAnswerTime(30);
 // 镜头移动 [0移1复原] [移动速度（越大越快）] [相对X 右正左负] [相对Y 上正下负]
 // 需要单独迭代次数！
 cm.inGameDirectionEvent_PushMoveInfo(0, 300, -400, 27);
-// 显示感叹号（放单张图片）
-cm.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/Ballooncmg1/1", 0, 0, -110);
+// 显示感叹号（红色！！！）
+cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -110);
+// 显示感叹号（白色!!!!）
+cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -110);
 // 玩家放动画：省略号
 cm.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/Balloonmsg0/0", 0, 0, -120, 1, 0, 1, 3000108, 0, 0);
 // 玩家放动画，优先级较低，会跟随玩家 [总时长（放几遍）] [相对x] [相对y] [?] [图层优先级，9999之后能覆盖地图但是会变小] [1头上0地面] [NPCID] [放大到全屏？] [不全屏？]
@@ -94,10 +103,15 @@ cm.npc_SetSpecialAction(3000123, "die1", 1);
 cm.playVideoByScript("kaiser.avi");
 // 屏蔽/解锁 剧情其他玩家
 cm.setStandAloneMode(false);
-// 屏蔽/解锁操作台 true锁/false解 true有黑边/false无黑边
+// 屏蔽/解锁操作台 [true锁/false解] [true有黑边/false无黑边]
+// 解锁时，第二个参数如果是true，会解除所有缩放
 cm.setInGameDirectionMode(true, false, false);
 // 播放BGM
 cm.fieldEffect_PlayBGM("Bgm34/TheFairyForest");
+// 变成无面人
+ms.inGameDirectionEvent_SetFaceOff(1,300);//0x10
+// 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y] 
+ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -850, 140);
 
 function o文字特效(){}
 /*

@@ -13,12 +13,12 @@ var eventName = ["PinkBeanBattle", "ChaosPinkBean"];
 var eventLog = ["品克缤", "混沌品克缤"];
 //限制等级
 var minLevel = [160, 170];
-var maxLevel = [255, 255];
+var maxLevel = [1000, 1000];
 //限制人数
 var minPlayers = 1;
 var maxPlayers = 6;
 //限制次数
-var maxEnter = [5, 3];
+var maxEnter = [150, 130];
 //设置怪物最大等级
 var mobLevel = 255;
 //事件选择

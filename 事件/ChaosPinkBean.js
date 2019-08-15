@@ -3,6 +3,8 @@
  *  功能：混沌品克缤
  *  @Author nana 
  */
+ 
+ var reviveCount = 5; //复活限制
 
         function init() {
             em.setProperty("leader", "true");
@@ -14,6 +16,8 @@ function setup(eim, leaderid) {
     var eim = em.newInstance("ChaosPinkBean");
     eim.setInstanceMap(270051100).resetFully();
     eim.setInstanceMap(270051200).resetFully();
+	//map.killAllMonsters(true);
+
     em.setProperty("state", "1");
     eim.setProperty("summon", "0");
     eim.startEventTimer(3600000 * 1.5); // 1 hr
@@ -22,6 +26,7 @@ function setup(eim, leaderid) {
 
 function playerEntry(eim, player) {
     var map = eim.getMapInstance(0);
+	player.setReviveCount(reviveCount);
     player.changeMap(map, map.getPortal(0));
 }
 
@@ -55,7 +60,14 @@ function playerDisconnected(eim, player) {
 }
 
 function monsterValue(eim, mobId) {
-    return 1;
+	if (mobid == 9010126) {
+		eim.getMapFactory().getMap(27005100).killAllMonsters(true);//杀死所有怪物
+		eim.broadcastPlayerMsg(1, "[杀死所有怪物]~");		
+        return 0;
+		}
+		if (eim.getMapFactory().getMap(27005100).getCharactersSize() != 0) {
+        return 1;
+    }
 }
 
 function playerExit(eim, player) {

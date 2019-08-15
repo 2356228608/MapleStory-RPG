@@ -13,10 +13,29 @@ function start() {
 	action(1, 0, 0);
 }
 
+function action(mode, type, selection) {
+	var qid = 37176;
+	//im.forceStartQuest(qid, "1");
+	//im.updateInfoQuest(qid, "value=9");
+	var newStatus = im.getQuestNoRecord(qid);
+	newStatus.setCustomData("21");
+	//newStatus.setStatus(1);
+	// 这样才能有效更新
+	im.getPlayer().updateQuest(newStatus, true);
+	im.playerMessage(5, "getQuest - " + im.getQuest(qid));
+	im.playerMessage(5, "getQuestRecord - " + im.getQuestRecord(qid));
+	im.playerMessage(5, "getQuestCustomData - " + im.getQuestCustomData(qid));
+	// getQuestStatus 0：没开始 1：开始了 2：结束了
+	im.playerMessage(5, "getQuestStatus - " + im.getQuestStatus(qid));
+	im.playerMessage(5, "getInfoQuest - " + im.getInfoQuest(qid));
+	im.dispose();
+}
+
 function actionPos(mode, type, selection) {
 	im.playerMessage(5, im.getPlayer().getPosition());
 	im.dispose();
 }
+
 function actionMovie(mode, type, selection) {
 	status++;
 	selectionLog[status] = selection;
@@ -28,16 +47,11 @@ function actionMovie(mode, type, selection) {
 		im.curNodeEventEnd(true);
 		im.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		im.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		// 显示文字：字体，大小 [刷字时间] [持续时间] [位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）]
-		// ... [X] [Y] [?] [?] [?] [淡入时间（立刻刷新所有字）] [淡入时间（立刻刷新所有字）]
-		im.effect_Text("   ", 500, 0, 4, -50, -50, 1, 4, 0, 0, 0); //334 0x3D
 		im.inGameDirectionEvent_AskAnswerTime(0);
 	} else if (status === i++) {
-		im.effect_Text("   ", 500, 0, 4, -150, -150, 1, 4, 0, 0, 0); //334 0x3D
 		im.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		// 收尾
-		im.fieldEffect_ProcessOnOffLayer("0", "", 2, 0, 0, 0, 0, 0, 0);
 		im.curNodeEventEnd(true);
 		im.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		im.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
@@ -61,16 +75,47 @@ function randomNum(minNum, maxNum) {
 	}
 }
 
-function action(mode, type, selection) {
-	im.playerMessage(5, im.getPlayer().getPosition());
-		im.fieldEffect_ScreenMsg("Effect/Direction1.img/effect/aran/finishLilin/0");
-	im.dispose();
+function action缩放(mode, type, selection) {
+	status++;
+	var i = -1;
+	if (status <= i++) {
+		im.dispose();
+	} else if (status === i++) {
+		im.curNodeEventEnd(true);
+		im.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		im.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		im.inGameDirectionEvent(14, 0);
+		im.inGameDirectionEvent_AskAnswerTime(500);
+	} else if (status === i++) {
+		// [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y] 单独占用一次迭代
+		im.inGameDirectionEvent_PushScaleInfo(1000, 500, 1000, 1000, -620);
+	} else if (status === i++) {
+		im.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		im.inGameDirectionEvent_PushScaleInfo(3000, 1000, 3000, -162, 264);
+	} else if (status === i++) {
+		im.inGameDirectionEvent_AskAnswerTime(3000);
+	} else if (status === i++) {
+		im.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		im.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		im.dispose();
+	} else {
+		im.dispose();
+	}
 }
+
 function actionQuest(mode, type, selection) {
-	var qid = 32163;
-	im.forceStartQuest(qid);
+	var qid = 37169;
+	//im.forceStartQuest(qid, "1");
+	//im.updateInfoQuest(qid, "value=9");
+	var newStatus = im.getQuestNoRecord(qid);
+	newStatus.setCustomData("9");
+	//newStatus.setStatus(1);
+	// 这样才能有效更新
+	im.getPlayer().updateQuest(newStatus, true);
 	im.playerMessage(5, "getQuest - " + im.getQuest(qid));
 	im.playerMessage(5, "getQuestRecord - " + im.getQuestRecord(qid));
+	im.playerMessage(5, "getQuestCustomData - " + im.getQuestCustomData(qid));
 	// getQuestStatus 0：没开始 1：开始了 2：结束了
 	im.playerMessage(5, "getQuestStatus - " + im.getQuestStatus(qid));
 	im.playerMessage(5, "getInfoQuest - " + im.getInfoQuest(qid));
@@ -99,5 +144,35 @@ function actionMapEffect(mode, type, selection) {
 		im.askMenu("NEXT CODE : " + now);
 	} else {
 		im.dispose();
+	}
+}
+
+function start黑屏放动画(mode, type, selection) {
+	if (mode == 1) {
+		status++;
+	} else {
+		status--;
+	}
+	var i = -1;
+	if (status <= i++) {
+		qm.dispose();
+	} else if (status === i++) {
+		qm.curNodeEventEnd(true);
+		qm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		qm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		qm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 1000, 0); //创建一个遮布 0x10
+		qm.inGameDirectionEvent_AskAnswerTime(3000);
+	} else if (status === i++) {
+		qm.fieldEffect_ProcessOnOffLayer("b0", "Effect/Direction21.img/Elodin/birdgrow/0", 0, 2000, 0, 0, 0, 4, 1);
+		qm.inGameDirectionEvent_AskAnswerTime(3000);
+	} else if (status === i++) {
+		qm.fieldEffect_ProcessOnOffLayer("b0", "Effect/Direction21.img/Elodin/birdgrow/0", 2, 1000, 0, 0, 0, 4, 1);
+		qm.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 2000, 0); //创建一个遮布 0x10
+		qm.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		qm.curNodeEventEnd(true);
+		qm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		qm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		qm.dispose();
 	}
 }

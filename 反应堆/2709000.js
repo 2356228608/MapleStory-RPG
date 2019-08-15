@@ -13,6 +13,9 @@
             //rm.scheduleWarp(3600, 270050300);
             rm.killAllMob();
             rm.spawnMonster(8820008);
+			rm.spawnMonster(8820010);
+			rm.spawnMob(9010126, 1, -54, -42);
+			//rm.killAllMob();
             if (!rm.getPlayer().isGM()) {
                 rm.getMap().startSpeedRun();
             }

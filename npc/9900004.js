@@ -163,6 +163,7 @@ function action(mode, type, selection) {
 		selStr += "#L307#" + tz14 + "个人信息#l#L308#" + tz14 + "修复日志#l";
 		selStr += "#L500#" + tz14 + "黑色天堂#l";
 		selStr += "#L501#" + tz14 + "切换拍卖风格#l";
+		//selStr += "#L502#" + tz14 + "BOSS奖励结算#l";
 		//selStr+="\r\n";
 
 		//selStr+= ""+ tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "\r\n";
@@ -182,6 +183,11 @@ function action(mode, type, selection) {
 
 	} else if (status == 1) {
 		switch (selection) {
+			case 502:
+			cm.dispose();
+			cm.openNpc(9900004,"BOSS奖励结算");
+			break;
+			
 		case 501:
 			if (cm.getPlayer().getIntNoRecord(99997) == 0) {
 				cm.getPlayer().getQuestNAdd(cm.getQuestById(99997)).setCustomData("1");
