@@ -21,7 +21,7 @@ function action(mode, type, selection) {
 		cm.warp(next, portal);
 		cm.sendOkS("糟糕……好像完全迷路了……");
 	} else if (!cm.isQuestFinished(37160)) { // 找魔女
-		cm.warp(101080900, 0);
+		cm.warp(910143002, 0);
 	} else { // 找到路了
 		var next = map == 1010810000 ? 101080900 : 101081300;
 		var portal = map == 1010810000 ? 1 : 2;

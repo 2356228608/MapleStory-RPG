@@ -18,12 +18,11 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextS("而且怪物的数量不减反增。");
 	} else if (status === i++) {
-		qm.askYesNo("不赶快杀出一条路摆脱它们 ，恐怕要永远出不去了。");
+		qm.askYesNoS("不赶快杀出一条路摆脱它们 ，恐怕要永远出不去了。");
 	} else if (status === i++) {
 		qm.forceStartQuest();
 		qm.dispose();
 	}	
-	qm.dispose();
 }
 
 function end(mode, type, selection) {
@@ -37,6 +36,7 @@ function end(mode, type, selection) {
 		qm.dispose();
 	} else if (status === i++) {
 		qm.forceCompleteQuest();
+		qm.gainExp(8400);
 		qm.warp(101080900, 0);
 		qm.dispose();
 	}

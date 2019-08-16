@@ -2,13 +2,19 @@
  */
 var status = -1;
 
+function start(mode, type, selection) {
+	(mode == 1) ? status++ : status--;
+	var i = -1;
+	qm.dispose();
+}
+
 function end(mode, type, selection) {
 	if (mode == 1) {
 		status++;
 	} else {
 		status--;
 	}
-	var info = im.getInfoQuest(37153);
+	var info = qm.getInfoQuest(37153);
 	if(info==null || info.isEmpty() || info.equals("")){
 		end1(mode, type, selection);
 	}else if(info.equals("NpcSpeech=10321061")){
@@ -61,6 +67,7 @@ function end3(mode, type, selection) {
 	} else if (status === i++) {
 		qm.updateInfoQuest(37153, "NpcSpeech=10321061/10321002/10321013");
 		qm.forceCompleteQuest();
+		qm.gainExp(3700);
 		qm.dispose();
 	}
 }

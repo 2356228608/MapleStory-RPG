@@ -65,6 +65,7 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		qm.forceStartQuest();
 		qm.forceCompleteQuest();
+		qm.gainExp(8400);
 		qm.dispose();
 	}
 }

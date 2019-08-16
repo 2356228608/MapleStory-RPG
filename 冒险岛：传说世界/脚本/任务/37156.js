@@ -16,12 +16,11 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextS("这都是从哪儿冒出来的？呃呃……怎么突然跑出来把路给挡住了！");
 	} else if (status === i++) {
-		qm.askYesNo("消灭拦住前路的荆棘树和泣者，赶快离开吧！");
+		qm.askYesNoS("消灭拦住前路的荆棘树和泣者，赶快离开吧！");
 	} else if (status === i++) {
 		qm.forceStartQuest();
 		qm.dispose();
 	}	
-	qm.dispose();
 }
 
 function end(mode, type, selection) {
@@ -35,6 +34,7 @@ function end(mode, type, selection) {
 		qm.dispose();
 	} else if (status === i++) {
 		qm.forceCompleteQuest();
+		qm.gainExp(8400);
 		qm.dispose();
 	}
 }

@@ -58,6 +58,7 @@ function start(mode, type, selection) {
 		qm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		qm.forceStartQuest();
 		qm.forceCompleteQuest();
+		qm.gainExp(10320);
 		qm.dispose();
 	}
 }

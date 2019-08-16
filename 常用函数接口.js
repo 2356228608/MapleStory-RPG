@@ -35,13 +35,13 @@ cm.isQuestActive(30000)
 cm.updateInfoQuest(30002, "outportal=2");
 // 有些任务会用隐藏任务作为特别开关
 im.forceStartQuest(32194, "1");
-// [1开0关] [NPCID] [SkillID，需要查表，80001789=黑猫， 80001788=内罗， 80002688=小鸟] [?]
+// [1开0关] [NPCID] [SkillID，需要查string里的skill.xml] [?]
 im.setPartner(0, 1501010, 80002688, 0);
 
 function o影视特效(){}
 // ?? 反正每次开头结尾都要调用
 cm.curNodeEventEnd(true);
-// 全屏幕放图片
+// 全屏幕播放预设好的音画组合，注意此时目录不会在effect下面
 cm.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
 cm.effect_Direction("Map/Effect.img/temaD/enter/fairyAcademy");
 // OnUserEff?
@@ -108,6 +108,8 @@ cm.setStandAloneMode(false);
 cm.setInGameDirectionMode(true, false, false);
 // 播放BGM
 cm.fieldEffect_PlayBGM("Bgm34/TheFairyForest");
+// 静音
+cm.fieldEffect_PlayBGM("Bgm00/Silence");
 // 变成无面人
 ms.inGameDirectionEvent_SetFaceOff(1,300);//0x10
 // 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y] 

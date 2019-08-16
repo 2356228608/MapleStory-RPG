@@ -33,7 +33,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2500);
 	} else if (status === i++) {
-		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/Elodin/scream_far");
+		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/Elodin/song_far");
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
 		ms.sendNextSNoESC_Bottom("！！！惨……惨叫声！");
@@ -54,6 +54,7 @@ function action(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.warp(101081000, 0);
 		ms.forceCompleteQuest(37155);
+		ms.gainExp(3700);
 		ms.dispose();
 	} else {
 		ms.dispose();

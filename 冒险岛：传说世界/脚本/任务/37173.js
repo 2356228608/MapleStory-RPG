@@ -33,6 +33,7 @@ function end(mode, type, selection) {
 		qm.sendOk("那倒没有，不过这水真清爽啊。我还想再喝一瓶！", 1501010);
 	} else if (status === i++) {
 		qm.forceCompleteQuest();
+		qm.gainExp(10320);
 		qm.dispose();
 	}
 }

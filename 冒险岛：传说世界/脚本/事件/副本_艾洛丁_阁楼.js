@@ -76,14 +76,17 @@ function monsterValue(eim, mobId) {
 		if (kill >= 50) {
 			return;
 		}
+		var item = player.getItemQuantity(4036502);
 		if (kill % 10 == 0) {
-			if (player.haveItem(4036502)) {
+			if (item > 0) {
 				player.removeItem(4036502, 1);
 				player.dropMessage(-1, "使用了一把简陋的扫帚。开始打扫灰尘吧。");
 			} else {
 				player.dropMessage(-1, "简陋的扫帚不够了。必须搜集草屑，制作扫帚。");
 				return;
 			}
+		} else if (kill % 9 == 0) {
+			player.dropMessage(-1, "简陋的扫帚坏掉了一个。现在还剩下" + item + "把扫帚。");
 		}
 		player.updateInfoQuest(37164, "count=" + (kill + 1));
 		player.dropMessage(-1, "消灭灰尘团 " + (kill + 1) + " / " + kilReq);

@@ -41,6 +41,7 @@ function end(mode, type, selection) {
 		qm.dispose();
 	} else if (status === i++) {
 		qm.forceCompleteQuest();
+		qm.gainExp(3700);
 		qm.dispose();
 	}
 }

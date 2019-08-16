@@ -4,6 +4,13 @@ Made by Jessefjxm
 var status = -1;
 function action(mode, type, selection) {
 	status++;
+	if (ms.isQuestFinished(37163)) {
+		ms.removeAll(4036501);
+	}
+	if (ms.isQuestFinished(37164)) {
+		ms.removeAll(4036502);
+		ms.removeAll(2630159);
+	}
 	var info = ms.getInfoQuest(37159);
 	if (info == null || info.isEmpty() || info.equals("")) {
 		action首次进入(mode, type, selection);
@@ -14,13 +21,6 @@ function action(mode, type, selection) {
 	} else if (info.equals("3")) {
 		action37160(mode, type, selection);
 	} else {
-		if (ms.isQuestFinished(37163)) {
-			ms.removeAll(4036501);
-		}
-		if (ms.isQuestFinished(37164)) {
-			ms.removeAll(4036502);
-			ms.removeAll(2630159);
-		}
 		ms.dispose();
 	}
 }
@@ -34,6 +34,7 @@ function action首次进入(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.fieldEffect_PlayBGM("Bgm00/Silence");
 		ms.fieldEffect_InsertCanvas(1, 150, 0, 0, 0, 100, 0); //创建一个遮布 0x10
 		ms.inGameDirectionEvent_PushScaleInfo(0, 1500, 0, -550, 100);
 	} else if (status === i++) {
@@ -59,6 +60,7 @@ function action首次进入(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
+		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/heart");
 		ms.inGameDirectionEvent_PushScaleInfo(200, 2000, 200, -120, 100);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
@@ -66,9 +68,11 @@ function action首次进入(mode, type, selection) {
 		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/heart");
 		ms.inGameDirectionEvent_PushScaleInfo(200, 2500, 200, -50, 100);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_AskAnswerTime(2500);
+		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
-		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/Elodin/scream_far");
+		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/Elodin/scream_close");
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushScaleInfo(200, 1500, 200, -280, 100);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
@@ -172,6 +176,7 @@ function action37159(mode, type, selection) {
 		ms.updateInfoQuest(37150, "00=h0;01=h1;02=h0;03=h1");
 		ms.updateInfoQuest(37159, "1");
 		ms.forceCompleteQuest(37159);
+		ms.gainExp(10320);
 		ms.dispose();
 	}
 }
@@ -226,6 +231,7 @@ function action37160(mode, type, selection) {
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.updateInfoQuest(37159, "1");
 		ms.forceCompleteQuest(37160);
+		ms.gainExp(10320);
 		ms.dispose();
 	}
 }

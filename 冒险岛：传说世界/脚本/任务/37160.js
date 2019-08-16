@@ -64,6 +64,7 @@ function end(mode, type, selection) {
 		qm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		qm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0); //创建一个遮布 0x10
 		qm.updateInfoQuest(37159, "3");
+		qm.gainExp(8400);
 		qm.warp(101082000, 0);
 		qm.dispose();
 	}

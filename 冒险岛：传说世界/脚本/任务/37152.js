@@ -18,7 +18,7 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNext("那一天，我还跟往常一样折纸飞机玩……", 1012110);
 	} else if (status === i++) {
-		qm.warp(101080000, 0);
+		qm.warp(910143000, 0);
 		qm.forceStartQuest();
 		qm.dispose();
 	}

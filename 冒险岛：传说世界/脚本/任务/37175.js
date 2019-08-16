@@ -57,6 +57,7 @@ function end(mode, type, selection) {
 		qm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		qm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		qm.forceCompleteQuest();
+		qm.gainExp(10320);
 		qm.dispose();
 	}
 }

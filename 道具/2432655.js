@@ -1,5 +1,1 @@
-﻿function start() {
-    im.forceStartQuest(2000012);
-    //im.warp(106030100,0);
-    im.dispose();
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/道具/2432655.js
