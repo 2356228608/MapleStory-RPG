@@ -1,4 +1,8 @@
 function enter(pi) {
-	pi.openNpc(pi.getPortal().getId(), "蘑菇城_入场动画");
+	if (pi.isQuestFinished(30050)) {
+		pi.warp(106030000, 0);
+	} else {
+		pi.warp(910143001, 0);
+	}
 	return true;
 }

@@ -13,8 +13,41 @@ function start() {
 	action(1, 0, 0);
 }
 
+function act蘑菇城() {
+	cm.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -850, 140);
+
+	cm.npc_ChangeController(1302101, 366, 193, 0); //D5 F8 86 01
+	cm.npc_SetSpecialAction(1302101, "summon");
+	cm.npc_LeaveField(1302101);
+
+	cm.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/flowervioleta/twingkle/0", 0, 0, 0, 1, 0, 1, 1302101, 0, 0);
+
+	cm.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/cheer");
+	cm.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/appear");
+	cm.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/wind");
+	cm.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/curtain");
+
+	cm.effect_Voice("Voice.img/flowervioleta/mc/0");
+
+	cm.effect_NormalSpeechBalloon("想让公主笑的人", 2000, 4);
+
+	cm.fieldEffect_PlayBGM("Bgm00/Silence");
+	cm.fieldEffect_PlayBGM("Bgm38/MushroomCastle");
+
+	cm.effect_Direction("Effect/Direction2.img/flowervioleta/opennig");
+	cm.effect_Direction("Effect/Direction2.img/flowervioleta/copa");
+	cm.effect_Direction("Effect/Direction2.img/flowervioleta/face");
+	cm.effect_Direction("Effect/Direction2.img/flowervioleta/song");
+
+	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/bird");
+	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/bird2");
+	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/ending");
+	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/viking");
+	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
+}
+
 function action(mode, type, selection) {
-cm.fieldEffect_ScreenMsg("Effect/Direction2.img/flowervioleta/opennig/0");
+	cm.inGameDirectionEvent_Effect("Map/Effect2.img/flowervioleta/puzzle", 0, 0, 0);
 	cm.dispose();
 }
 
@@ -24,7 +57,7 @@ function actionPos(mode, type, selection) {
 }
 
 function actionMovie(mode, type, selection) {
-	(mode == 1) ? status++ : status--;
+	status++;
 	selectionLog[status] = selection;
 	var i = -1;
 	if (status <= i++) {
@@ -111,8 +144,16 @@ function actionQuest(mode, type, selection) {
 
 function actionMob(mode, type, selection) {
 	var em = cm.getEventManager("副本_起源之塔");
+	var eim = em.getInstance("Map_TowerOfOz");
 	var map = em.getMapFactoryMap(cm.getMapId());
-	map.killMonster(9309046);
+	var mob = em.getMonster(9309200);
+	var modified = em.newMonsterStats();
+	modified.setOHp(2100000000);
+	mob.setOverrideStats(modified);
+	eim.registerMonster(mob);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(155, 155));
+	cm.addPopupSay(2540000, 6000, "胆小的狮子从黑暗中现身了。请你去追踪逃跑的狮子！");
+	em.setProperty("stage30", "fighting");
 	cm.dispose();
 }
 
@@ -135,7 +176,7 @@ function actionMapEffect(mode, type, selection) {
 }
 
 function start黑屏放动画(mode, type, selection) {
-	(mode == 1) ? status++ : status--;
+	status++;
 	var i = -1;
 	if (status <= i++) {
 		cm.dispose();

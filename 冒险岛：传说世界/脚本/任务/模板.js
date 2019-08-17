@@ -1,4 +1,4 @@
-﻿/* 艾洛丁 by jessefjxm
+﻿/* by jessefjxm
  */
 var status = -1;
 
@@ -9,6 +9,12 @@ function start(mode, type, selection) {
 }
 
 function end(mode, type, selection) {
+	(mode == 1) ? status++ : status--;
+	var i = -1;
+	qm.dispose();
+}
+
+function test(mode, type, selection) {
 	(mode == 1) ? status++ : status--;
 	var i = -1;
 	if (status <= i++) {

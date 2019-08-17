@@ -1,6 +1,7 @@
 /* 艾洛丁 by jessefjxm
  */
 var status = -1;
+var quest = 37153;
 
 function start(mode, type, selection) {
 	(mode == 1) ? status++ : status--;
@@ -14,7 +15,7 @@ function end(mode, type, selection) {
 	} else {
 		status--;
 	}
-	var info = qm.getInfoQuest(37153);
+	var info = qm.getInfoQuest(quest);
 	if(info==null || info.isEmpty() || info.equals("")){
 		end1(mode, type, selection);
 	}else if(info.equals("NpcSpeech=10321061")){
@@ -33,7 +34,7 @@ function end1(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextS("（维英好像不怎么感兴趣。去问问艾温吧。）");
 	} else if (status === i++) {
-		qm.updateInfoQuest(37153, "NpcSpeech=10321061");
+		qm.updateInfoQuest(quest, "NpcSpeech=10321061");
 		qm.dispose();
 	}
 }
@@ -51,7 +52,7 @@ function end2(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextS("（艾温好像不想再说了。去问问罗雯吧。）");
 	} else if (status === i++) {
-		qm.updateInfoQuest(37153, "NpcSpeech=10321061/10321002");
+		qm.updateInfoQuest(quest, "NpcSpeech=10321061/10321002");
 		qm.dispose();
 	}
 }
@@ -65,7 +66,7 @@ function end3(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNext("南部森林？嗯……你去那里有什么事吗？", 1032101);
 	} else if (status === i++) {
-		qm.updateInfoQuest(37153, "NpcSpeech=10321061/10321002/10321013");
+		qm.updateInfoQuest(quest, "NpcSpeech=10321061/10321002/10321013");
 		qm.forceCompleteQuest();
 		qm.gainExp(3700);
 		qm.dispose();

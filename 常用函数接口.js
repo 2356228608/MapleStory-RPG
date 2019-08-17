@@ -1,4 +1,4 @@
-function o对话工具(){}
+function o对话工具() {}
 // 可交互的对话，支持选项
 cm.askMenu("text", 10000);
 // 自己说话（多了个S）
@@ -8,7 +8,7 @@ cm.askAcceptDecline("text");
 // 只能往下翻页
 cm.sendNextNoESC("糟糕了！！", 3000107);
 // 控制字体
-#fn黑体##fs32
+ # fn黑体 ## fs32
 
 // 0~4 各种类型的通知
 cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
@@ -22,7 +22,7 @@ player.showMessage(0, "0/300");
 // -1红色正中 1弹窗 2蓝底 3(null)红底 5红色 6蓝色 -6 灰色 -7黄色
 player.dropMessage(-1, "-1/300");
 
-function o任务工具(){}
+function o任务工具() {}
 // 传送
 cm.warp(910700200, 0);
 // 开始任务
@@ -38,7 +38,7 @@ im.forceStartQuest(32194, "1");
 // [1开0关] [NPCID] [SkillID，需要查string里的skill.xml] [?]
 im.setPartner(0, 1501010, 80002688, 0);
 
-function o影视特效(){}
+function o影视特效() {}
 // ?? 反正每次开头结尾都要调用
 cm.curNodeEventEnd(true);
 // 全屏幕播放预设好的音画组合，注意此时目录不会在effect下面
@@ -51,9 +51,9 @@ cm.effect_OnUserEff("Effect/Direction15.img/effect/tuto/seal/front");
 cm.effect_Text("#fnNanum Gothic ExtraBold##fs18#作战开始5天前   #fs15##fnNanum Gothic#黑色之翼基地上空", 100, 2200, 6, -50, -50, 1, 4, 0, 0, 0); //334 0x3D
 // 播放特效，固定位置，并且不需要锁定玩家界面
 cm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
-// 全屏遮罩：[1开0关] [R] [G] [B] [?] [时间] [？]
-cm.fieldEffect_InsertCanvas(1, 128, 0, 0, 500, 2000, 500); //创建一个遮布 0x10
-cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 2000, 0, 0); //20E 0x15 取消遮布
+// 全屏遮罩：[1开0关] [R] [G] [B] [?色彩通道] [时间] [？]
+cm.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 2000, 0); //创建一个遮布 0x10
+cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 2000, 0); //20E 0x15 取消遮布
 // 放图片，优先级最高，覆盖所有UI [tag，不可覆盖，直到取消] [path] [0=生成，1=移动，2=消失] [淡入时间/移动时间] [出场/移动X] [出场/移动Y] [?] [0=左上，1=右上，2=？，3=左下，4=右下，5=右中] [?]
 qm.fieldEffect_ProcessOnOffLayer("0", "Map/Effect2.img/kinesis/chaJay", 0, 500, 100, 200, 12, 5, 0);
 qm.fieldEffect_ProcessOnOffLayer("0", "", 1, 300, -800, 0, 0, 0, 0);
@@ -63,7 +63,7 @@ ms.fieldEffect_ProcessOnOffLayer("BlackOut", "Map/Effect2.img/BlackOut", 0, 1000
 ms.fieldEffect_ProcessOnOffLayer("BlackOut", "Map/Effect2.img/BlackOut", 2, 1000, 0, 0, 0, 0, 0);
 // 玩家走动 [0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立]
 cm.inGameDirectionEvent_MoveAction(1);
-// 当且仅当锁定画面时，一定时间后执行next效果 [毫秒] 
+// 当且仅当锁定画面时，一定时间后执行next效果 [毫秒]
 cm.inGameDirectionEvent_AskAnswerTime(30);
 // 镜头移动 [0移1复原] [移动速度（越大越快）] [相对X 右正左负] [相对Y 上正下负]
 // 需要单独迭代次数！
@@ -103,7 +103,7 @@ cm.npc_SetSpecialAction(3000123, "die1", 1);
 cm.playVideoByScript("kaiser.avi");
 // 屏蔽/解锁 剧情其他玩家
 cm.setStandAloneMode(false);
-// 屏蔽/解锁操作台 [true锁/false解] [true有黑边/false无黑边]
+// 屏蔽/解锁操作台 [true锁/false解] [true有黑边/false无黑边] [是否高优先级，会遮挡对话框]
 // 解锁时，第二个参数如果是true，会解除所有缩放
 cm.setInGameDirectionMode(true, false, false);
 // 播放BGM
@@ -111,11 +111,20 @@ cm.fieldEffect_PlayBGM("Bgm34/TheFairyForest");
 // 静音
 cm.fieldEffect_PlayBGM("Bgm00/Silence");
 // 变成无面人
-ms.inGameDirectionEvent_SetFaceOff(1,300);//0x10
-// 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y] 
+ms.inGameDirectionEvent_SetFaceOff(1, 300); //0x10
+// 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y]
 ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -850, 140);
 
-function o文字特效(){}
+// 换表情？
+cm.effect_Direction("Effect/Direction4.img/cannonshooter/face01");
+// 浮在头上的文本，浅灰色背景
+cm.balloonMsg("balloonMsg", 100, 100);
+// 浮在头上的文本，金框粉底
+cm.effect_NormalSpeechBalloon("参数1", 2000, 4);
+// 屏幕变黑，只有周围有光
+cm.effect_Lightness(false);
+
+function o文字特效() {}
 /*
 #k 黑色字
 #e 粗体字
@@ -144,7 +153,7 @@ function o文字特效(){}
 \t 空格
  */
 
-function o地图特效(){}
+function o地图特效() {}
 // 5120008 枫叶
 // 5120012 圣诞礼盒
 // 5120016 老虎
@@ -181,8 +190,7 @@ function o地图特效(){}
 // 5121052 星星
 cm.getMap().startMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
 
-
-function o功能类方法(){}
+function o功能类方法() {}
 function randomNum(minNum, maxNum) {
 	switch (arguments.length) {
 	case 1:
@@ -197,17 +205,18 @@ function randomNum(minNum, maxNum) {
 	}
 }
 
-function o特殊符号(){}
+function o特殊符号() {}
 ●⊙⊕◎★☆
 ⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇
-?①②③④⑤⑥⑦⑧⑨⑩
+ ? ①②③④⑤⑥⑦⑧⑨⑩
 ㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩
 ◆◇
-·⊙①？◎Θ⊙●○¤㊣㈱@の■□★☆◆◇◣◢◤◥▲△▼▽⊿◢
+·⊙①？◎Θ⊙●○¤㊣㈱ @ の■□★☆◆◇◣◢◤◥▲△▼▽⊿◢
 ▂▃▄▅▆▇█▉▊▋▌▍▎▏■▓回□〓≡
-↑↓→←↘↙♀♂┇┅‖$@*&#※卍卐∞Ψ§∮№⌒*
-±+-×÷∧∨∑∏∪∩∈√⊥∥∠⌒⊙∫∮≡≌≈∽∝≠≮≯≤≥∞∶ ∵∴∷♂♀°′″℃$¤￠￡‰§№☆★〇○●◎◇◆ 回
-‘’“”〝〞〔〕〈〉《》「」『』〖〗【】()[]{｝︻︼﹄﹃
-─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛
-├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋
-═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬╳╔ ╗╝╚ ╬ ═ ╓ ╩ ┠ ┨┯ ┷┏ ┓┗ ┛┳⊥﹃﹄┌╭╮╯╰
+↑↓→←↘↙♀♂┇┅‖$ @  *  &  # ※卍卐∞Ψ§∮№⌒ *
+± + -×÷∧∨∑∏∪∩∈√⊥∥∠⌒⊙∫∮≡≌≈∽∝≠≮≯≤≥∞∶ ∵∴∷♂♀°′″℃$¤￠￡‰§№☆★〇○●◎◇◆ 回
+‘’“”〝〞〔〕〈〉《》「」『』〖〗【】()[]{
+	｝︻︼﹄﹃
+	─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛
+	├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋
+	═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬╳╔ ╗╝╚ ╬ ═ ╓ ╩ ┠ ┨┯ ┷┏ ┓┗ ┛┳⊥﹃﹄┌╭╮╯╰

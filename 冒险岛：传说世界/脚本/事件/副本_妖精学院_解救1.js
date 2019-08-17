@@ -3,6 +3,7 @@
  * by Jessefjxm
  */
 var mapIds = [101073010];
+var mapHall = 101073000;
 
 function init() {
 	em.setProperty("state", 0);

@@ -2,6 +2,7 @@
  * by Jessefjxm
  */
 var mapIds = [101082100, 101082200, 101082300];
+var mapHall = 101082000;
 
 function init() {
 	em.setProperty("state", 0);

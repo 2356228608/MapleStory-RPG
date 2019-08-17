@@ -4,9 +4,8 @@ function start() {
 	action(1, 0, 0);
 }
 
-function actionMovie(mode, type, selection) {
+function action(mode, type, selection) {
 	(mode == 1) ? status++ : status--;
-	selectionLog[status] = selection;
 	var i = -1;
 	if (status <= i++) {
 		im.dispose();

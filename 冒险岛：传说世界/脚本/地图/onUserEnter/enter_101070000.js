@@ -13,10 +13,7 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		ms.inGameDirectionEvent_MoveAction(1);
-		ms.inGameDirectionEvent_AskAnswerTime(0);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_MoveAction(0);
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
@@ -24,8 +21,7 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 2000, 0); //20E 0x15 取消遮布
-		ms.inGameDirectionEvent_Effect("Map/Effect.img/temaD/enter/fairyAcademy", 0, 200, -210);
-
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/temaD/enter/fairyAcademy");
 		if (ms.isQuestFinished(32104)) {
 			ms.inGameDirectionEvent_AskAnswerTime(4000);
 		} else {
