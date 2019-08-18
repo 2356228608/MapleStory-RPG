@@ -15,7 +15,10 @@ var EventList = Array(
         Array("#r[日常任务] 金利奇的口袋#k#l", 120),
 		Array("#b[每日任务] 神秘微章 #k#l", 129),
 		Array("#b[剧情任务] 鲁塔比斯 #k#l", 140),
-		Array("#b[剧情任务] 起源之塔 #k#l", 141)
+		Array("#b[剧情任务] 起源之塔 #k#l", 141),
+		Array("#b[主题副本] 列娜海峡的邀请 #k#l", 142),
+		Array("#b[剧情任务] [艾洛丁]桉的求助 #k#l", 143),
+		Array("#b[剧情任务] [金海滩]金利奇的邀请 #k#l", 144)
         );
 
 function start() {
@@ -45,9 +48,15 @@ function action(mode, type, selection) {
         if (EventList[selects][1] >= 10000) {
             cm.openNpc(mode);
         } else {
-            cm.dispose();
-            cm.openNpc(9900003, mode);
-            //cm.setNPC_Mode(0)
+			switch(mode){
+				case 144:
+				cm.dispose();
+				cm.openNpc(9900003, "金海滩副本开始");
+				break;
+				default:
+				cm.dispose();
+				cm.openNpc(9900003,mode);
+			}
         }
     }
 }

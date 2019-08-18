@@ -128,7 +128,7 @@ Packages.server.MapleInventoryManipulator.unequip(cm.getClient(), -11, cm.getPla
             }
 			cm.curNodeEventEnd(true);//角色站立方向信息
             cm.setInGameDirectionMode(true,false,false); //屏蔽/解锁操作台 true = 锁 false = 解
-            cm.effect_NormalSpeechBalloon("\r\n#fs30#请稍等\r\n神正在为你进行转生中...\r\n此过程需要10-20秒",20000,0);
+            cm.effect_NormalSpeechBalloon("\r\n#fs30#请稍等\r\n神正在为你进行转生中...\r\n此过程需要10-20秒",1,1,0,4000,0,0);
 			cm.changeJob(0);
             cm.gainMeso(-needMeso);
             cm.gainItem(4031454, -1); //圣杯

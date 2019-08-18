@@ -6,138 +6,6 @@ var status = -1; // status: 当前聊天交互轮数
 
 // 主体
 function action(mode, type, selection) {
-	if (!ms.isQuestFinished(30073)) {
-		action第一幕(mode, type, selection);
-	} else {
-		action第二幕(mode, type, selection);
-	}
-}
-
-// TODO 暂时用不上啊
-function action第一幕(mode, type, selection) {
-	status++;
-	var i = -1;
-	if (status <= i++) {
-		ms.dispose();
-	} else if (status === i++) {
-		// 初始化
-		ms.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		ms.npc_ChangeController(1302101, 366, 193, 1); //D5 F8 86 01
-		ms.npc_SetSpecialAction(1302101, "summon");
-		ms.inGameDirectionEvent_AskAnswerTime(1000);
-	} else if (status === i++) {
-		ms.sendNextSNoESC_Bottom("真的是蘑菇大臣！");
-	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("呵呵呵，你一定是看错了。好了，下一位挑战者上来了。大家把目光转移到舞台上来。", 1302100);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("把痣去掉的话，就一模一祥，干嘛总说不是啊！", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("已经是第一百位参加者了。我屈膝跪下，是为了获得推进力！比任何人更快，与所有人都不同，连名字都不愿意透露的迷一般的男人，请你出来吧！", 1302108);
-	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/flowervioleta/twingkle/0", 0, 0, 0, 1, 0, 1, 1302111, 0, 0);
-		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/cheer");
-		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/appear");
-		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/curtain");
-		ms.npc_SetSpecialAction(1302111, "open");
-		ms.npc_SetSpecialState(1302111, 2, 0);
-		ms.npc_ChangeController(1302103, 133, 260, 0); //D5 F8 86 01
-		ms.npc_SetSpecialAction(1302103, "summon");
-		ms.inGameDirectionEvent_AskAnswerTime(1000);
-	} else if (status === i++) {
-		var newStatus = ms.getQuestRecord(30080);
-		newStatus.setStatus(1);
-		ms.getPlayer().updateQuest(newStatus, true);
-		ms.inGameDirectionEvent_AskAnswerTime(3000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("有一只马吃掉了一头大象。", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("为什么会这样呢~？", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("难，难道……", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("因为那是在象棋！呵呵呵呵呵", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.fieldEffect_PlayBGM("Bgm00/Silence");
-		ms.inGameDirectionEvent_AskAnswerTime(3000);
-		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/wind");
-	} else if (status === i++) {
-		// 全场都
-		ms.effect_NormalSpeechBalloon("……", 4000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.fieldEffect_PlayBGM("Bgm38/MushroomCastle");
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("石头上钻一个洞会变成什么呢~？", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("钻石！呵呵呵呵呵", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("那小鸡吃的药的名字是什么呢~？", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("把那个蘑菇从我眼前拿开。", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("哼，要是非要见血，那就没办法了。", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("事实上，我就是……", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(3000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("蘑菇大臣！", 2000, 4);
-		ms.inGameDirectionEvent_PushScaleInfo(500, 3500, 500, 133, 270);
-	} else if (status === i++) {
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, 133, 270);
-	} else if (status === i++) {
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/suprise");
-		ms.effect_NormalSpeechBalloon("什，什么？真的是蘑菇大臣吗！", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(1000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("哎呀，完全被蒙在鼓里了！", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(1000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("看来是做了精心的准备！", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(1000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("真不敢相信，那个蘑菇就是蘑菇大臣！", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(1000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("又被他完美的伪装给骗过去了！", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("……", 2000, 4);
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("我回来是为了洗刷过去的耻辱。当然，我不是一个人来的。我请来了一些客人，那就是……在天上飞的大海盗部队！", 1302103);
-	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("你们好像在正门的防御上花了不少功夫，真是不好意思，大海盗部队会攻击警备松懈的后门。好了，让我们重新开始吧！这次我一定要将蘑菇王国掌握在手中！", 1302103);
-	} else if (status === i++) {
-		// 收尾
-		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.warp(106030000, 0);
-		ms.dispose();
-		ms.npc_LeaveField(1302101);
-		ms.npc_LeaveField(1302111);
-		ms.npc_LeaveField(1302103);
-	} else {
-		ms.dispose();
-	}
-}
-
-function action第二幕(mode, type, selection) {
 	status++;
 	var i = -1;
 	if (status <= i++) {
@@ -164,7 +32,7 @@ function action第二幕(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("对了，我碧欧蕾塔愿意成为勇士的新娘。", 1302001);
 	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,0,0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.sendNextSNoESC_Bottom("不，不，没关系。真的……真的没关系。");
@@ -176,20 +44,20 @@ function action第二幕(mode, type, selection) {
 		ms.sendNextSNoESC_Bottom("其实，我……喜欢黑大海盗！");
 	} else if (status === i++) {
 		// 全场！
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302100,0);
-		ms.effect_NormalSpeechBalloon("!",1,1,0,2000,1302101,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302104,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302105,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302106,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302107,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302108,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302113,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302114,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302115,0);
-		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302116,0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302100, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 1, 0, 2000, 1302101, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302104, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302105, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302106, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302107, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302108, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302113, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302114, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302115, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302116, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("好了，再见！",1,0,0,2000,0,0);
+		ms.effect_NormalSpeechBalloon("好了，再见！", 1, 0, 0, 2000, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_MoveAction(2);
@@ -211,14 +79,14 @@ function action第二幕(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("谢谢你，蘑菇大臣。好了，博公主一笑大会重新开始！能够博公主一笑的人，可以成为这个国家的国王！", 1302000);
 	} else if (status === i++) {
-		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302105,0);
-		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302106,0);
-		ms.effect_NormalSpeechBalloon("国王陛下万岁！",1,0,0,2000,1302107,0);
-		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302108,0);
-		ms.effect_NormalSpeechBalloon("蘑菇王国！",1,0,0,2000,1302113,0);
-		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302114,0);
-		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302115,0);
-		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302116,0);
+		ms.effect_NormalSpeechBalloon("万岁！", 1, 0, 0, 2000, 1302105, 0);
+		ms.effect_NormalSpeechBalloon("万岁！", 1, 0, 0, 2000, 1302106, 0);
+		ms.effect_NormalSpeechBalloon("国王陛下万岁！", 1, 0, 0, 2000, 1302107, 0);
+		ms.effect_NormalSpeechBalloon("万岁！", 1, 0, 0, 2000, 1302108, 0);
+		ms.effect_NormalSpeechBalloon("蘑菇王国！", 1, 0, 0, 2000, 1302113, 0);
+		ms.effect_NormalSpeechBalloon("万岁！", 1, 0, 0, 2000, 1302114, 0);
+		ms.effect_NormalSpeechBalloon("万岁！", 1, 0, 0, 2000, 1302115, 0);
+		ms.effect_NormalSpeechBalloon("万岁！", 1, 0, 0, 2000, 1302116, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("（但是父王……父亲……我其实一直在笑。为什么没人看得出来呢……？）", 1302001);
@@ -228,10 +96,10 @@ function action第二幕(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
-		ms.npc_SetSpecialState(1302101, 3, 0);
+		//ms.npc_SetSpecialState(1302101, 2, 0);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
-		ms.npc_SetSpecialState(1302101, 2, 0);
+		//ms.npc_SetSpecialState(1302101, 1, 0);
 	} else if (status === i++) {
 		// 片尾曲
 		ms.fieldEffect_PlayBGM("Bgm38/FlowerVioleta");

@@ -50,7 +50,7 @@ function action(mode, type, selection) {
 			//cm.enableActions2();
 			//cm.addPlayeramuont();//增加修仙等级
 			//cm.setRepairpoint(cm.getRepairpoint()-cm.getPlayeramuont()*1000);
-			cm.effect_NormalSpeechBalloon("\r\n#fs30#恭喜:当前转数<"+cm.getRepairquency()+">",5000,0);
+			cm.effect_NormalSpeechBalloon("\r\n#fs30#恭喜:当前转数<"+cm.getRepairquency()+">",1,1,0,4000,0,0);
 			cm.worldSpouseMessage(0x24, "『转生系统』" + " : " + "恭喜" + cm.getChar().getName() + ",转生了" + cm.getRepairquency() + "次,他又变强大了,羡慕吧!极品装备又进了一步");
 			cm.playerMessage(1,"您做得非常好, 您已经成功转生了,您现在的属性点情况如下：\r\n" + "   力量: " + p.getStat().getStr() + " 点" + "\r\n   敏捷: " + p.getStat().getDex() + " 点" + "\r\n   智力: " + p.getStat().getInt() + " 点" + "\r\n   运气: " + p.getStat().getLuk() + " 点" + "\r\n   未分配的AP: " + p.getRemainingAp() + " 点");
             //cm.playerMessage(1,"温馨提示:如果称号未变化,请小退再进.");

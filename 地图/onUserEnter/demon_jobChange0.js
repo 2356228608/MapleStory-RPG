@@ -117,7 +117,7 @@ function action(mode, type, selection) {
 				ms.getRecalcLocalStats();
 				ms.enableActions();
 				ms.dispose();
-				ms.effect_NormalSpeechBalloon("\r\n#fs30#[恶魔提示]:如果提示无法在此地图中更换装备,\r\n或者是在此地图中无法变更属性的,请小退后再继续.",50000,0);
+				ms.effect_NormalSpeechBalloon("\r\n#fs30#[恶魔提示]:如果提示无法在此地图中更换装备,\r\n或者是在此地图中无法变更属性的,请小退后再继续.",1,1,0,4000,0,0);
                 ms.sendOk("#b为了向黑魔法师复仇，就算使用在军团长时期曾经用过的力量也在所不惜！！在离开之前，打开背包，确认一下消耗栏中的物品吧。背包可以通过#r“I”#b键打开。\r\n\r\n[恶魔提示]:如果提示无法在此地图中更换装备,或者是在此地图中无法使用的,请小退后再继续.");
 				
         } 

@@ -47,8 +47,36 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-		cm.effect_NormalSpeechBalloon("这个蘑菇怎么这么可怕？！", 1, 1, 0, 2000, 0, 0);
+	status++;
+	var i = -1;
+	if (status <= i++) {
 		cm.dispose();
+	} else if (status === i++) {
+		// 初始化
+		cm.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		cm.npc_ChangeController(1302101, -75, 202, 0); //D5 F8 86 01
+		cm.npc_SetSpecialAction(1302101, "summon");
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.npc_SetSpecialState(1302101, 3, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.npc_SetSpecialState(1302101, 2, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		cm.fieldEffect_PlayFieldSound("Sound/SoundEff.img/PL_CaptainNomad/Use");
+		cm.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/flowervioleta/twingkle/0", 0, 0, 0, 1, 0, 1, 1302101, 0, 0);
+		cm.npc_LeaveField(1302101);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		// 收尾
+		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		cm.dispose();
+	} else {
+		cm.dispose();
+	}
 }
 
 function actionPos(mode, type, selection) {

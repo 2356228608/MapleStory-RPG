@@ -42,7 +42,7 @@ function action(mode, type, selection) {
     }else if (status == 13) {
 		ms.sendNextSNoESC("现在去修炼场击败树叶木偶10个.");
     }else if (status == 14) {
-		ms.effect_NormalSpeechBalloon("\r\n#fs30#由于剧情问题\r\n请小退再进游戏或者更换一下频道\r\n要不然出现在当前地图无法更换装备.\r\n小退后可正常",15000,0);
+		ms.effect_NormalSpeechBalloon("\r\n#fs30#由于剧情问题\r\n请小退再进游戏或者更换一下频道\r\n要不然出现在当前地图无法更换装备.\r\n小退后可正常",1,1,0,4000,0,0);
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
         ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.dispose();

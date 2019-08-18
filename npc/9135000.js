@@ -17,7 +17,7 @@ function action(mode, type, selection) {
             cm.dispose();
         } else if (status === i++) {
             cm.inGameDirectionEvent_Monologue("\r\n#fs50#欢迎来到[BMS]冒险岛\r\n同步更新150\r\n解卡命令@ea \r\n快速回程@fm \r\n打开万能NPC命令@wn", 1);
-			//cm.effect_NormalSpeechBalloon("\r\n#fs50#欢迎来到[BMS]冒险岛\r\n同步更新150\r\n解卡命令@ea \r\n快速回程@fm \r\n打开万能NPC命令@wn");
+			//cm.effect_NormalSpeechBalloon("\r\n#fs50#欢迎来到[BMS]冒险岛\r\n同步更新150\r\n解卡命令@ea \r\n快速回程@fm \r\n打开万能NPC命令@wn",1,1,0,4000,0,0);
 			cm.inGameDirectionEvent_AskAnswerTime(1000);
         } else if (status === i++) {
             cm.curNodeEventEnd(true);//角色站立方向信息

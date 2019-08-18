@@ -37,7 +37,7 @@ function action(mode, type, selection) {
             ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
             ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 			ms.enableActions2();
-			ms.effect_NormalSpeechBalloon("\r\n#fs30#欢迎来到" + ms.getServerName() + "\r\n同步更新\r\n解卡命令@ea \r\n快速回程命令 @fm \r\n快速复活命令@fh \r\n打开万能NPC命令 @wn",5000,0);
+			ms.effect_NormalSpeechBalloon("\r\n#fn黑体##fs30#欢迎来到" + ms.getServerName() + "\r\n同步更新\r\n解卡命令@ea \r\n快速回程命令 @fm \r\n快速复活命令@fh \r\n打开万能NPC命令 @wn",1,1,0,4000,0,0);
             ms.dispose();
         } else {
             ms.dispose();

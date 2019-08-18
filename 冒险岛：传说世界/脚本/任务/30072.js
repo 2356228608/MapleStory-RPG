@@ -12,5 +12,8 @@ function end(mode, type, selection) {
 	} else {
 		status--;
 	}
+	qm.warp(106031002, 0);
+	qm.forceCompleteQuest();
+	qm.gainExp(44000);
 	qm.dispose();
 }

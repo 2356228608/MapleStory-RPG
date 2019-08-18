@@ -5,7 +5,7 @@
  */
 function start() {
     ms.resetMap(ms.getMapId());
-    ms.effect_NormalSpeechBalloon("只有那个箱子的把手\r\n感觉有点不太一样呢……？",3000,0);
+    ms.effect_NormalSpeechBalloon("只有那个箱子的把手\r\n感觉有点不太一样呢……？",1,1,0,4000,0,0);
     ms.spawnMob(9300522, 150, 152);
     ms.spawnMob(9300522, 0, 152);
     ms.spawnMob(9300521, -150, 152);

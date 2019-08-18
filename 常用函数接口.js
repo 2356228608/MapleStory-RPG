@@ -80,7 +80,7 @@ cm.inGameDirectionEvent_Effect("Skill/6112.img/skill/61121100/hit", 0, 0, 0, 1, 
 cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/start", 0, 0, -200, 1, 0, 0, 0, 0, 0);
 cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/clear", 0, 0, -200, 1, 0, 0, 0, 0, 0);
 cm.inGameDirectionEvent_Effect("UI/UIWindowPL.img/HiddenCatch/StageImg/fail", 0, 0, -200, 1, 0, 0, 0, 0, 0);
-// 屏幕中间显示文字，而且要玩家触发：[文字] [时间]
+// 屏幕中间显示文字，而且要玩家触发：[文字] [0不中断，1中断]
 cm.inGameDirectionEvent_Monologue("#fn黑体##fs26#黑魔法师出现之前，冒险岛世界曾是那么的平静祥和……", 1000);
 // 屏幕中间显示文字，从下往上滚动：[文字] [反正不能为0] [0左对齐1居中2右对齐] [减速] [加速] （后两者太高的话，播放会变得不连续）
 cm.inGameDirectionEvent_MonologueScroll("#fn黑体##fs26#黑魔法师出现之前，冒险岛世界曾是那么的平静祥和……\r\n传送传送传送", 100, 0, 1, 5);
@@ -114,7 +114,7 @@ cm.fieldEffect_PlayBGM("Bgm00/Silence");
 ms.inGameDirectionEvent_SetFaceOff(1, 300); //0x10
 // 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y]
 ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -850, 140);
-// 切换NPC动画状态，详见蘑菇城 [NPCID] [状态序号，从1开始] [是否重复]
+// 切换NPC动画状态，详见蘑菇城 [NPCID] [状态序号，从0开始] [是否重复]
 cm.npc_SetSpecialState(1302114, 2,0);
 // 换表情？
 cm.effect_Direction("Effect/Direction4.img/cannonshooter/face01");

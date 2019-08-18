@@ -7,8 +7,10 @@ var status = -1; // status: 当前聊天交互轮数
 // 主体
 function action(mode, type, selection) {
 	if (!ms.isQuestFinished(30060)) {
-		action第二幕(mode, type, selection);
+		action第一幕(mode, type, selection);
 	} else if (!ms.isQuestFinished(30068)) {
+		action第二幕(mode, type, selection);
+	} else if (!ms.isQuestFinished(30073)) {
 		action第三幕(mode, type, selection);
 	} else {
 		ms.warp(106030000, 0);
@@ -16,7 +18,7 @@ function action(mode, type, selection) {
 	}
 }
 
-function action第二幕(mode, type, selection) {
+function action第一幕(mode, type, selection) {
 	status++;
 	var i = -1;
 	if (status <= i++) {
@@ -152,7 +154,7 @@ function action第二幕(mode, type, selection) {
 	}
 }
 
-function action第三幕(mode, type, selection) {
+function action第二幕(mode, type, selection) {
 	status++;
 	var i = -1;
 	if (status <= i++) {
@@ -214,6 +216,117 @@ function action第三幕(mode, type, selection) {
 		ms.npc_LeaveField(1302101);
 		ms.forceCompleteQuest(30067);
 		ms.gainExp(36995);
+	} else {
+		ms.dispose();
+	}
+}
+
+function action第三幕(mode, type, selection) {
+	status++;
+	var i = -1;
+	if (status <= i++) {
+		ms.dispose();
+	} else if (status === i++) {
+		// 初始化
+		ms.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.npc_ChangeController(1302103, 133, 260, 1); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1302103, "summon");
+		ms.npc_ChangeController(1302101, 366, 193, 1); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1302101, "summon");
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("蘑菇国王！这一切全都是因为你的无能造成的！", 1302103);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("你在说什么啊？因为我的无能造成的？你仔细说给我听听。", 1302100);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("在我年轻的时候，因为你这个无能的国王，我一直饱受贫穷的困扰。那时我是低级官员，经常被拖欠工资。就在那个时候，我的妻子生病死去了。", 1302103);
+	} else if (status === i++) {
+		// 全场都
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 0, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302100, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 1, 0, 2000, 1302101, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302105, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302106, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302107, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302108, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("最后只剩下嗷嗷待哺的女儿和我两个人。但是因为太穷，我没办法养活我的女儿。所以最后……我只能亲手把女儿扔掉！", 1302103);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("……你说得对，年轻时的我确实很无能，没能好好地照顾百姓们。所有的一切都是我的责任。", 1302100);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("那天之后，我就对世界上的一切充满了怨恨和复仇之心，请你杀了我吧！我已经没有任何眷恋了。我只想看看我丢弃在孢子山丘的女儿一眼……", 1302103);
+	} else if (status === i++) {
+		ms.effect_NormalSpeechBalloon("！！！", 0, 0, 0, 2000, 1302100, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("你，你说孢子山丘？你是在二十年前满月的晚上把女儿丢在那里的吗？", 1302100);
+	} else if (status === i++) {
+		ms.effect_NormalSpeechBalloon("！！！", 0, 0, 0, 2000, 1302103, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("你，你怎么知道的……难，难道你知道我女儿在哪里吗？希望你能让我见她一面……不，不，请帮我转告她。希望她能好好活下去……", 1302103);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("你的女儿活得非常好。因为你的女儿就是……#r碧欧蕾塔#k！", 1302100);
+	} else if (status === i++) {
+		// 全场都
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 0, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302103, 0);
+		ms.effect_NormalSpeechBalloon("？!", 1, 1, 0, 2000, 1302101, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302105, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302106, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302107, 0);
+		ms.effect_NormalSpeechBalloon("!", 1, 0, 0, 2000, 1302108, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("父王，你们到底在说什么啊？我怎么会是蘑菇大臣的女儿？那不可能……", 1302101);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("碧欧蕾塔，其实你是我捡到的孩子。被你当作母亲的死去的王妃和我一直没有孩子，我们认为你是上天送来的孩子，于是就把你当作自己的女儿养大了。", 1302100);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("那是真的吗？那么说，我……", 1302101);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("是的，如果二十年前被遗弃在孢子山丘的孩子是蘑菇大臣的女儿的话，你应该就是蘑菇大臣的亲生女儿。你的亲生父亲就是蘑菇大臣。", 1302100);
+	} else if (status === i++) {
+		ms.fieldEffect_PlayBGM("Bgm00/Silence");
+		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/destiny");
+		ms.sendNextNoESC_Bottom("怎，怎么会这样……我，不相信！", 1302101);
+	} else if (status === i++) {
+		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/PL_CaptainNomad/Use");
+		ms.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/flowervioleta/twingkle/0", 0, 0, 0, 1, 0, 1, 1302101, 0, 0);
+		ms.npc_LeaveField(1302101);
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		ms.npc_LeaveField(1302103);
+		ms.npc_ChangeController(1302103, 133, 260, 0); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1302103, "summon");
+
+		ms.npc_ChangeController(1302101, 517, 382, 0); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1302101, "summon");
+		ms.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/flowervioleta/twingkle/0", 0, 0, 0, 1, 0, 1, 1302101, 0, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/PL_CaptainNomad/Use");
+		ms.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/flowervioleta/twingkle/0", 0, 0, 0, 1, 0, 1, 1302101, 0, 0);
+		ms.npc_LeaveField(1302101);
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		ms.npc_SetSpecialState(1302103, 2, 0);
+		ms.effect_NormalSpeechBalloon("公，公主……不，碧欧蕾塔！", 1, 0, 0, 2000, 1302103, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.npc_SetSpecialState(1302103, 3, 0);
+		ms.effect_NormalSpeechBalloon("呜呜呜呜！", 1, 0, 0, 2000, 1302103, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.effect_NormalSpeechBalloon("蘑菇大臣！快叫御医！快！", 1, 0, 0, 2000, 1302100, 0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		// 收尾
+		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		ms.warp(106030000, 0);
+		ms.dispose();
 	} else {
 		ms.dispose();
 	}

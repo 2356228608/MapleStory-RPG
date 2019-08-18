@@ -48,7 +48,7 @@ function action(mode, type, selection) {
 			//cm.enableActions2();
 			cm.addPlayeramuont();//增加修仙等级
 			//cm.setRepairpoint(cm.getRepairpoint()-cm.getPlayeramuont()*1000);
-			cm.effect_NormalSpeechBalloon("\r\n#fs30#恭喜:已成功成为<"+cm.getXiuxianname()+">",5000,0);
+			cm.effect_NormalSpeechBalloon("\r\n#fs30#恭喜:已成功成为<"+cm.getXiuxianname()+">",1,1,0,4000,0,0);
 			cm.worldSpouseMessage(0x24, "『修仙系统』：【" + cm.getChar().getName() + "】已成功修仙为<"+cm.getXiuxianname()+">...");
 			cm.broadcastServerMsg(5122015, "『修仙系统』：【" + cm.getChar().getName() + "】已成功修仙为<"+cm.getXiuxianname()+">...", true);
 			//cm.playerMessage(1,"温馨提示:如果称号未变化,请小退再进.");

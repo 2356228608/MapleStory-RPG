@@ -217,7 +217,7 @@ function action(mode, type, selection) {
                     //cm.getPlayer().gainExp(cm.getPlayer().getNeededExp() - cm.getPlayer().getExp(), true, false, true);
 					cm.levelUp();
                 }
-				cm.effect_NormalSpeechBalloon("\r\n#fs30#正在刷级,当前等级:<"+cm.getLevel()+">",2000,0);
+				cm.effect_NormalSpeechBalloon("\r\n#fs30#正在刷级,当前等级:<"+cm.getLevel()+">",1,1,0,2000,0,0);
             }
 			cm.playerMessage(1,"已升级完成.");
 			//cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
