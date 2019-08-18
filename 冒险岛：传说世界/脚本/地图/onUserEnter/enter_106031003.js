@@ -23,7 +23,7 @@ function action第一幕(mode, type, selection) {
 		// 初始化
 		ms.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		ms.npc_ChangeController(1302101, 366, 193, 0); //D5 F8 86 01
+		ms.npc_ChangeController(1302101, 366, 193, 1); //D5 F8 86 01
 		ms.npc_SetSpecialAction(1302101, "summon");
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
@@ -41,9 +41,15 @@ function action第一幕(mode, type, selection) {
 		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/appear");
 		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/curtain");
 		ms.npc_SetSpecialAction(1302111, "open");
+		ms.npc_SetSpecialState(1302111, 2, 0);
 		ms.npc_ChangeController(1302103, 133, 260, 0); //D5 F8 86 01
 		ms.npc_SetSpecialAction(1302103, "summon");
-		ms.inGameDirectionEvent_AskAnswerTime(4000);
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		var newStatus = ms.getQuestRecord(30080);
+		newStatus.setStatus(1);
+		ms.getPlayer().updateQuest(newStatus, true);
+		ms.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
 		ms.effect_NormalSpeechBalloon("有一只马吃掉了一头大象。", 2000, 4);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
@@ -140,7 +146,7 @@ function action第二幕(mode, type, selection) {
 		// 初始化
 		ms.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		ms.npc_ChangeController(1302101, 288, 260, 0); //D5 F8 86 01
+		ms.npc_ChangeController(1302101, 288, 260, 1); //D5 F8 86 01
 		ms.npc_SetSpecialAction(1302101, "summon");
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
@@ -158,8 +164,8 @@ function action第二幕(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("对了，我碧欧蕾塔愿意成为勇士的新娘。", 1302001);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -110);
-		ms.sendNextSNoESC_Bottom("！");
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,0,0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.sendNextSNoESC_Bottom("不，不，没关系。真的……真的没关系。");
 	} else if (status === i++) {
@@ -169,20 +175,22 @@ function action第二幕(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextSNoESC_Bottom("其实，我……喜欢黑大海盗！");
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302100, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -120, 1, 0, 1, 1302101, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302104, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302105, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302106, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302107, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302108, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302113, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302114, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302115, 0, 0);
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/2", 0, 0, -120, 1, 0, 1, 1302116, 0, 0);
-		ms.inGameDirectionEvent_AskAnswerTime(4000);
+		// 全场！
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302100,0);
+		ms.effect_NormalSpeechBalloon("!",1,1,0,2000,1302101,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302104,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302105,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302106,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302107,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302108,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302113,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302114,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302115,0);
+		ms.effect_NormalSpeechBalloon("!",1,0,0,2000,1302116,0);
+		ms.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
-		ms.sendNextSNoESC_Bottom("好了，再见！");
+		ms.effect_NormalSpeechBalloon("好了，再见！",1,0,0,2000,0,0);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_MoveAction(2);
 		ms.inGameDirectionEvent_AskAnswerTime(3500);
@@ -190,6 +198,8 @@ function action第二幕(mode, type, selection) {
 		ms.inGameDirectionEvent_MoveAction(0);
 		ms.inGameDirectionEvent_SetHideEffect(1);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_PushMoveInfo(0, 200, 136, 382);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("呵呵，这样也好。我希望你能找个蘑菇做女婿，一起治理这个国家，你明白我的心意吗？", 1302000);
 	} else if (status === i++) {
@@ -201,11 +211,15 @@ function action第二幕(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("谢谢你，蘑菇大臣。好了，博公主一笑大会重新开始！能够博公主一笑的人，可以成为这个国家的国王！", 1302000);
 	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("#b（异口同声）\r\n#k万岁！", 1302107);
-	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("#b（异口同声）\r\n#k国王陛下万岁！", 1302107);
-	} else if (status === i++) {
-		ms.sendNextNoESC_Bottom("#b（异口同声）\r\n#k蘑菇王国万岁！", 1302113);
+		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302105,0);
+		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302106,0);
+		ms.effect_NormalSpeechBalloon("国王陛下万岁！",1,0,0,2000,1302107,0);
+		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302108,0);
+		ms.effect_NormalSpeechBalloon("蘑菇王国！",1,0,0,2000,1302113,0);
+		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302114,0);
+		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302115,0);
+		ms.effect_NormalSpeechBalloon("万岁！",1,0,0,2000,1302116,0);
+		ms.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("（但是父王……父亲……我其实一直在笑。为什么没人看得出来呢……？）", 1302001);
 	} else if (status === i++) {
@@ -213,8 +227,11 @@ function action第二幕(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.npc_SetSpecialAction(1302101, "cry");
-		ms.inGameDirectionEvent_AskAnswerTime(2000);
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+		ms.npc_SetSpecialState(1302101, 3, 0);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_AskAnswerTime(1000);
+		ms.npc_SetSpecialState(1302101, 2, 0);
 	} else if (status === i++) {
 		// 片尾曲
 		ms.fieldEffect_PlayBGM("Bgm38/FlowerVioleta");
@@ -228,7 +245,7 @@ function action第二幕(mode, type, selection) {
 		ms.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/ending");
 		ms.inGameDirectionEvent_MonologueScroll("#fn黑体##fs26#总监		SY\r\n\r\n脚本		Syasya\r\n\r\n修复		Jessefjxm\r\n\r\n支持		BMS技术团队\r\n\r\n助理总监	Wonky\r\n\r\n艺术总监	林次长\r\n\r\n策划/开发	Jara Keutokki\r\n\r\n			MJ WW\r\n\r\n设计		Kkyuji Banilra\r\n\r\n			Shyegg洪 Komaboy\r\n\r\n			设计师Y\r\n\r\nQA			最强战士普通人\r\n\r\n			粗心姐姐 Kkangroki\r\n\r\n运营		Tina.P Annamese\r\n\r\n			海盗王船长\r\n\r\nCS			Ericsson金博士\r\n\r\n营销/网站	Sangbbang Keurom\r\n\r\n			Jejeking Cocoa\r\n\r\n			明月之家老幺\r\n\r\nGamma歌曲	DD\r\n\r\nOmega歌曲	Mini\r\n\r\n配音		金尚柏\r\n\r\n音响		STUDIO EIM\r\n\r\n标题影像	Todeffect\r\n\r\n制作		（株）NEXON Korea", 100, 0, 1, 3);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_AskAnswerTime(5000);
+		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 2000, 0); //创建一个遮布 0x10
 		// 收尾

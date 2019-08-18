@@ -64,7 +64,7 @@ function end3(mode, type, selection) {
 		qm.updateInfoQuest(quest, "NpcSpeech=13020111/13020072/13020013");
 		qm.forceCompleteQuest();
 		qm.gainExp(51455);
-		qm.warp(106031002, 0);
+		qm.warp(106031000, 0);
 		qm.dispose();
 	}
 }

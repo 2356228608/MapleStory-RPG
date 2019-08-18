@@ -35,10 +35,10 @@ function action(mode, type, selection) {
 	}
 	var x = im.getPlayer().getPosition().getX();
 	var y = im.getPlayer().getPosition().getY();
-	if (Math.abs(x - loc[index][0]) > 200 || Math.abs(y - loc[index][1]) > 200) {
-		im.sendOkS("离需要拍摄的内容太远了一点。我需要靠近些才能拍出有效的照片。");
-	} else if (im.haveItem(photo[index])) {
+	if (im.haveItem(photo[index])) {
 		im.sendOkS("这里的照片已经拍过了，赶紧去交差吧。");
+	} else if (Math.abs(x - loc[index][0]) > 200 || Math.abs(y - loc[index][1]) > 200) {
+		im.sendOkS("离需要拍摄的内容太远了一点。我需要靠近些才能拍出有效的照片。");
 	} else {
 		im.gainItem(photo[index], 1);
 		im.sendOkS("嗯，这张应该可以交差了。");

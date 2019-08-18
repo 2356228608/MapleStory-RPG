@@ -16,8 +16,6 @@ function setup(eim, leaderid) {
 	var eim = em.newInstance("副本_蘑菇城_城堡后门");
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
-		map.resetFully();
-		map.killAllMonsters(false);
 	}
 	return eim;
 }

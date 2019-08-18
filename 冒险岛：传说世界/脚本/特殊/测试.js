@@ -47,15 +47,8 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	var qid = 30075;
-	cm.playerMessage(5, "getQuest - " + cm.getQuest(qid));
-	cm.playerMessage(5, "getQuestRecord - " + cm.getQuestRecord(qid));
-	cm.playerMessage(5, "getQuestCustomData - " + cm.getQuestCustomData(qid));
-	// getQuestStatus 0：没开始 1：开始了 2：结束了
-	cm.playerMessage(5, "getQuestStatus - " + cm.getQuestStatus(qid));
-	cm.playerMessage(5, "getInfoQuest - " + cm.getInfoQuest(qid));
-	cm.playerMessage(5, "getQuestRecord - " + cm.getQuest(qid).getCompleteActs());
-	cm.dispose();
+		cm.effect_NormalSpeechBalloon("这个蘑菇怎么这么可怕？！", 1, 1, 0, 2000, 0, 0);
+		cm.dispose();
 }
 
 function actionPos(mode, type, selection) {
@@ -135,7 +128,7 @@ function actionQuest(mode, type, selection) {
 	var qid = 37169;
 	//cm.forceStartQuest(qid, "1");
 	//cm.updateInfoQuest(qid, "value=9");
-	var newStatus = cm.getQuestNoRecord(qid);
+	var newStatus = cm.getQuestRecord(qid);
 	newStatus.setCustomData("9");
 	//newStatus.setStatus(1);
 	// 这样才能有效更新

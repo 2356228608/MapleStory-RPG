@@ -7,5 +7,6 @@ function action(mode, type, selection) {
 	} else {
 		status++;
 	}
+	cm.warp(106030103, 0);
 	cm.dispose();
 }

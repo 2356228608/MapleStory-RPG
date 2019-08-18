@@ -8,7 +8,7 @@ cm.askAcceptDecline("text");
 // 只能往下翻页
 cm.sendNextNoESC("糟糕了！！", 3000107);
 // 控制字体
- # fn黑体 ## fs32
+#fn黑体##fs32#
 
 // 0~4 各种类型的通知
 cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
@@ -92,7 +92,7 @@ cm.mapMessage("三生三世");
 cm.mob_EnterField(9300546, -900, 29);
 // NPC离场
 cm.npc_LeaveField(3000107);
-// 召唤NPC [ID] [X] [Y] ？
+// 召唤NPC [ID] [X] [Y] [方向 0右1左]
 cm.npc_ChangeController(3000106, 500, 20, 1); //D5 F8 86 01
 cm.npc_SetSpecialAction(3000106, "summon");
 // NPC往右走 ID 0左1右 X Y
@@ -114,7 +114,8 @@ cm.fieldEffect_PlayBGM("Bgm00/Silence");
 ms.inGameDirectionEvent_SetFaceOff(1, 300); //0x10
 // 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y]
 ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -850, 140);
-
+// 切换NPC动画状态，详见蘑菇城 [NPCID] [状态序号，从1开始] [是否重复]
+cm.npc_SetSpecialState(1302114, 2,0);
 // 换表情？
 cm.effect_Direction("Effect/Direction4.img/cannonshooter/face01");
 // 浮在头上的文本，浅灰色背景

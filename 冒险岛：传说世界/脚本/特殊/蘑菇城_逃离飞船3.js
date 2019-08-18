@@ -21,15 +21,20 @@ function action(mode, type, selection) {
 		cm.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.sendNextSNoESC_Bottom("马上就要到宫殿了！");
+		cm.effect_NormalSpeechBalloon("马上就要到宫殿了！", 1, 0, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("哎呀，勇士，你是在故意放慢脚步吗？", 1302001);
+		cm.effect_NormalSpeechBalloon("哎呀，勇士，你是在故意放慢脚步吗？", 1, 1, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextSNoESC_Bottom("碧欧蕾塔公主。");
+		cm.effect_NormalSpeechBalloon("碧欧蕾塔公主。", 1, 0, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("嗯？", 1302001);
+		cm.effect_NormalSpeechBalloon("嗯？", 1, 1, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextSNoESC_Bottom("要是你再不闭嘴的话，我真的要把你丢下了。");
+		cm.effect_NormalSpeechBalloon("要是你再不闭嘴的话，我真的要把你丢下了。", 1, 0, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		cm.curNodeEventEnd(true);
 		cm.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解

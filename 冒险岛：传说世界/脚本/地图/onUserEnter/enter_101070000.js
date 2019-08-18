@@ -13,7 +13,6 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {

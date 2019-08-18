@@ -21,15 +21,20 @@ function action(mode, type, selection) {
 		cm.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		cm.sendNextSNoESC_Bottom("腿，腿在发抖。");
+		cm.effect_NormalSpeechBalloon("腿，腿在发抖。", 1, 0, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("勇士，你为什么不说话？", 1302001);
+		cm.effect_NormalSpeechBalloon("勇士，你为什么不说话？", 1, 1, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextSNoESC_Bottom("……因为没力气说话。");
+		cm.effect_NormalSpeechBalloon("……因为没力气说话。", 1, 0, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("哎呀，和我在一起这么紧张吗？", 1302001);
+		cm.effect_NormalSpeechBalloon("哎呀，和我在一起这么紧张吗？", 1, 1, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.sendNextSNoESC_Bottom("是你的体重太让人紧张了，你的体重！");
+		cm.effect_NormalSpeechBalloon("是你的体重太让人紧张了，你的体重！", 1, 0, 0, 2000, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		cm.curNodeEventEnd(true);
 		cm.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解
