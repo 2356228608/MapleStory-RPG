@@ -1,4 +1,4 @@
 ﻿function enter(pi) {
-	pi.warp(106030800, 0);
+	pi.openNpc(1000000, "蘑菇城_Boss_离开");
 	return true;
 }

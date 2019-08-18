@@ -6,7 +6,7 @@ var status = -1; // status: 当前聊天交互轮数
 
 // 主体
 function action(mode, type, selection) {
-	if (ms.isQuestFinished(30069)) {
+	if (ms.isQuestFinished(30070)) {
 		spawn();
 		return;
 	}
@@ -17,12 +17,12 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.npc_ChangeController(1302019, -88, 289, 1); //D5 F8 86 01
 		ms.npc_SetSpecialAction(1302019, "say");
-		ms.npc_ChangeController(1302104, 167, 289, 1); //D5 F8 86 01
-		ms.npc_SetSpecialAction(1302104, "summon");
+		ms.npc_ChangeController(1302005, 167, 289, 1); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1302005, "summon");
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("女孩~可爱的女孩~可爱的女孩~", 1302019);
@@ -37,21 +37,21 @@ function action(mode, type, selection) {
 		ms.sendNextSNoESC_Bottom("你是黑大海盗吗？");
 	} else if (status === i++) {
 		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/action");
-		ms.inGameDirectionEvent_PushScaleInfo(1000, 3000, 1000, -444, 90);
+		ms.inGameDirectionEvent_PushScaleInfo(1000, 2000, 1000, -444, 140);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_PushScaleInfo(0, 3000, 0, 404, 90);
+		ms.inGameDirectionEvent_PushScaleInfo(0, 2000, 0, 404, 190);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_PushScaleInfo(0, 3000, 0, -88, 289);
+		ms.inGameDirectionEvent_PushScaleInfo(0, 2000, 0, -88, 289);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("这……这是我的取向。请尊重我！", 1302019);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, 0, 0);
+		ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -30, 140);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {

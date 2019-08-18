@@ -47,7 +47,14 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	cm.inGameDirectionEvent_Effect("Map/Effect2.img/flowervioleta/puzzle", 0, 0, 0);
+	var qid = 30075;
+	cm.playerMessage(5, "getQuest - " + cm.getQuest(qid));
+	cm.playerMessage(5, "getQuestRecord - " + cm.getQuestRecord(qid));
+	cm.playerMessage(5, "getQuestCustomData - " + cm.getQuestCustomData(qid));
+	// getQuestStatus 0：没开始 1：开始了 2：结束了
+	cm.playerMessage(5, "getQuestStatus - " + cm.getQuestStatus(qid));
+	cm.playerMessage(5, "getInfoQuest - " + cm.getInfoQuest(qid));
+	cm.playerMessage(5, "getQuestRecord - " + cm.getQuest(qid).getCompleteActs());
 	cm.dispose();
 }
 

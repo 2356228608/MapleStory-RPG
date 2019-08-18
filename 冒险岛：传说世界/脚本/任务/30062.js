@@ -1,4 +1,5 @@
 ﻿var status = -1;
+var quest = 30062;
 
 function start(mode, type, selection) {
 	(mode == 1) ? status++ : status--;

@@ -65,15 +65,12 @@ function allMonstersDead(eim) {
 
 function monsterValue(eim, mobId) {
 	// em.broadcastServerMsg("[monsterValue]=" + mobId);
-	if (mobId != 3501008) {
-		return 1;
-	}
 	var kilReq = 1;
 	var kill = parseInt(em.getProperty("kill")) + 1;
 	em.setProperty("kill", kill);
 	if (kill >= kilReq) {
 		eim.getPlayers().forEach(function (player) {
-			player.openNpc(2540005, "蘑菇城_Boss_完成");
+			player.openNpc(0, "蘑菇城_Boss_完成");
 		});
 		em.setProperty("state", 10);
 	}

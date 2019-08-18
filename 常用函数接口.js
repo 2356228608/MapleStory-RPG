@@ -46,12 +46,12 @@ cm.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene0");
 cm.effect_Direction("Map/Effect.img/temaD/enter/fairyAcademy");
 // OnUserEff?
 cm.effect_OnUserEff("Effect/Direction15.img/effect/tuto/seal/front");
-// 显示文字：字体，大小 [刷字时间] [持续时间] [位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）]
+// 显示标题文字：字体，大小 [刷字时间] [持续时间] [位置（0=左上，1=中上，2=右上，3=左中，4=正中，5=右中，6=左下，7=中下，8=右下 ）]
 // ... [X] [Y] [?] [?] [?] [淡入时间（立刻刷新所有字）] [淡入时间（立刻刷新所有字）]
 cm.effect_Text("#fnNanum Gothic ExtraBold##fs18#作战开始5天前   #fs15##fnNanum Gothic#黑色之翼基地上空", 100, 2200, 6, -50, -50, 1, 4, 0, 0, 0); //334 0x3D
 // 播放特效，固定位置，并且不需要锁定玩家界面
 cm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/demian");
-// 全屏遮罩：[1开0关] [R] [G] [B] [?色彩通道] [时间] [？]
+// 全屏遮罩：[1开0关] [Alpha] [R] [G] [B] [时间] [？]
 cm.fieldEffect_InsertCanvas(1, 128, 0, 0, 0, 2000, 0); //创建一个遮布 0x10
 cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 2000, 0); //20E 0x15 取消遮布
 // 放图片，优先级最高，覆盖所有UI [tag，不可覆盖，直到取消] [path] [0=生成，1=移动，2=消失] [淡入时间/移动时间] [出场/移动X] [出场/移动Y] [?] [0=左上，1=右上，2=？，3=左下，4=右下，5=右中] [?]
