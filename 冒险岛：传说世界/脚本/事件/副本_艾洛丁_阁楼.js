@@ -22,6 +22,7 @@ function setup(eim, leaderid) {
 function playerEntry(eim, player) {
 	var map = eim.getMapInstance(0);
 	player.changeMap(map, map.getPortal(1));
+	eim.startEventTimer(10 * 60 * 1000);
 }
 
 function playerRevive(eim, player) {
