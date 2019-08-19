@@ -22,13 +22,13 @@ function action(mode, type, selection) {
 		if (state < 100) {
 			cm.askYesNoS("今天的课程还没有结束，这样就要走了吗？");
 		} else {
-			cm.warp(744000000, 0);
+			cm.warp(744000000, 1);
 			cm.dispose();
 		}
 	} else if (status == i++) {
 		cm.sendOkS("呼！还好没有被老师们发现。");
 	} else {
-		cm.warp(744000000, 0);
+		cm.warp(744000000, 1);
 		cm.dispose();
 	}
 }

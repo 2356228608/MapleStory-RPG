@@ -19,182 +19,11 @@ function setup(eim, leaderid) {
 		map.killAllMonsters(false);
 	}
 	// 初始化变量
-	initPropArray("kill", 0, 1, 16)
 	initPropArrayRandom("next_map", 3, 15, 1, 10);
-	initPropArray("map", "clear", 1, 16)
+	initPropArray("map", "", 1, 16);
 	initProp("next_map_11", 1);
 	initProp("next_map_12", 16);
-	return eim;
-}
-
-function setupOld(level, leaderid) {
-	em.setProperty("state", "1");
-	em.setProperty("leader", "true");
-	var eim = em.newInstance("副本_枫之高校");
-	var map = eim.setInstanceMap(744000008);
-	map.resetFully();
-
-	var map1 = eim.setInstanceMap(744000014);
-	map1.resetFully();
-	var mob = em.getMonster(9410183);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map1.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	var map2 = eim.setInstanceMap(744000013);
-	map2.resetFully();
-	var mob = em.getMonster(9410182);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map2.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	var map3 = eim.setInstanceMap(744000015);
-	map3.resetFully();
-	var mob = em.getMonster(9410183);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map3.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	var map4 = eim.setInstanceMap(744000003);
-	map4.resetFully();
-	var mob = em.getMonster(9410178);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map4.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	var map5 = eim.setInstanceMap(744000002);
-	map5.resetFully();
-	var mob = em.getMonster(9410179);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map5.spawnMonsterOnGroundBelow(mob, new java.awt.Point(70, 240));
-
-	var map6 = eim.setInstanceMap(744000006);
-	map6.resetFully();
-	for (var i = 9410147; i <= 9410151; i++) {
-		var mob = em.getMonster(i);
-		mob.changeLevel(level);
-		eim.registerMonster(mob);
-		var modified = em.newMonsterStats();
-		modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-		mob.setOverrideStats(modified);
-		map6.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-	}
-
-	var map7 = eim.setInstanceMap(744000007);
-	map7.resetFully();
-	var mob = em.getMonster(9410171);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map7.spawnMonsterOnGroundBelow(mob, new java.awt.Point(70, 240));
-
-	var map8 = eim.setInstanceMap(744000010);
-	map8.resetFully();
-	var mob = em.getMonster(9410173);
-	var mob1 = em.getMonster(9410174);
-	var mob2 = em.getMonster(9410175);
-	var mob3 = em.getMonster(9410176);
-	mob.changeLevel(level);
-	mob1.changeLevel(level);
-	mob2.changeLevel(level);
-	mob3.changeLevel(level);
-	mob.setHp(5000000 * 50);
-	mob1.setHp(200000000 * 50);
-	mob2.setHp(200000000 * 50);
-	mob3.setHp(200000000 * 50);
-	eim.registerMonster(mob);
-	eim.registerMonster(mob1);
-	eim.registerMonster(mob2);
-	eim.registerMonster(mob3);
-	map8.spawnMonsterOnGroundBelow(mob, new java.awt.Point(80, 240));
-	map8.spawnMonsterOnGroundBelow(mob1, new java.awt.Point(150, 240));
-	map8.spawnMonsterOnGroundBelow(mob2, new java.awt.Point(220, 240));
-	map8.spawnMonsterOnGroundBelow(mob3, new java.awt.Point(290, 240));
-	for (var i = 0; i < 10; i++) {
-		var mob = em.getMonster(9410190);
-		mob.changeLevel(level);
-		var modified = em.newMonsterStats();
-		modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-		mob.setOverrideStats(modified);
-		eim.registerMonster(mob);
-		map8.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-	}
-
-	var map9 = eim.setInstanceMap(744000009);
-	map9.resetFully();
-	for (var i = 9410187; i <= 9410189; i++) {
-		var mob = em.getMonster(i);
-		mob.changeLevel(level);
-		var modified = em.newMonsterStats();
-		modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-		mob.setOverrideStats(modified);
-		eim.registerMonster(mob);
-		map9.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-	}
-
-	var map10 = eim.setInstanceMap(744000011);
-	map10.resetFully();
-	var mob = em.getMonster(9410180);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map10.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	var map11 = eim.setInstanceMap(744000012);
-	map11.resetFully();
-	var mob = em.getMonster(9410181);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map11.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	var map12 = eim.setInstanceMap(744000001);
-	map12.resetFully();
-	eim.getMapFactory().getMap(744000001).killAllMonsters(false);
-	for (var i = 9410162; i <= 9410165; i++) {
-		var mob = em.getMonster(i);
-		mob.changeLevel(level);
-		var modified = em.newMonsterStats();
-		modified.setOHp(mob.getMobMaxHp() * 10000);
-		mob.setOverrideStats(modified);
-		eim.registerMonster(mob);
-		map12.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-	}
-	map12.spawnNpc(9330192, new java.awt.Point(-160, 240));
-
-	var map13 = eim.setInstanceMap(744000004);
-	map13.resetFully();
-	var mob = em.getMonster(9410177);
-	mob.changeLevel(level);
-	var modified = em.newMonsterStats();
-	modified.setOHp(mob.getMobMaxHp() * 22000000 * 50);
-	mob.setOverrideStats(modified);
-	eim.registerMonster(mob);
-	map13.spawnMonsterOnGroundBelow(mob, new java.awt.Point(50, 240));
-
-	eim.startEventTimer(1000 * 60 * 5); //5 min
+	initProp("kill", 0);
 	return eim;
 }
 
@@ -209,10 +38,13 @@ function playerRevive(eim, player) {
 }
 
 function changedMap(eim, player, mapid) {
-	// em.broadcastServerMsg("[changedMap]");
 	if (mapIds.indexOf(mapid) < 0) {
 		on玩家退场(eim, player, false);
 		return;
+	}
+	// 初始化变量
+	if (player.getParty().getLeader().getId() == player.getId()) {
+		em.setProperty("kill", 0);
 	}
 	eim.startEventTimer(5 * 60 * 1000);
 }
@@ -235,21 +67,94 @@ function playerExit(eim, player) {
 }
 
 function allMonstersDead(eim) {
-	em.broadcastServerMsg("[allMonstersDead]");
+	// em.broadcastServerMsg("[allMonstersDead]");
 }
 
 function monsterValue(eim, mobId) {
 	// em.broadcastServerMsg("[monsterValue]=" + mobId);
-	var kilReq = 1;
 	var kill = parseInt(em.getProperty("kill")) + 1;
 	em.setProperty("kill", kill);
-	if (kill >= kilReq) {
-		//map12.spawnNpc(9330192, new java.awt.Point(-160, 240));
-		eim.getPlayers().forEach(function (player) {
-			player.openNpc(2540005, "特效_完成");
-		});
-		em.setProperty("state", 10);
-	}
+	eim.getPlayers().forEach(function (player) {
+		if (player.getParty().getLeader().getId() != player.getId())
+			return;
+		var mapid = player.getMapId() - 744000000;
+		if (mapid == 5) {
+			var kilReq = 3;
+		} else if (mapid == 6 || mapid == 10) {
+			var kilReq = 20;
+		} else if (mapid == 9) {
+			var kilReq = 21;
+		} else {
+			var kilReq = 1;
+		}
+		if (kill < kilReq) {
+			return;
+		}
+		var map = eim.getMapFactoryMap(mapid + 744000000);
+		switch (mapid) {
+		case 1:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("让我看看你从和朋友的对决那里学到了什么吧。", 5120120);
+			break;
+		case 2:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("让我看看你从和朋友的对决那里学到了什么吧。", 5120120);
+			break;
+		case 3:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("让我看看你从候补校长那里学到了什么吧。", 5120120);
+			break;
+		case 4:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			break;
+		case 5:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("算你好运。居然躲掉接种预防针？下次不会放过你。", 5120120);
+			break;
+		case 6:
+			em.setProperty("map_" + mapid, "done");
+			break;
+		case 7:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("让我看看你从库梅老师那里学到了什么吧", 5120120);
+			break;
+		case 8:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			break;
+		case 9:
+			em.setProperty("map_" + mapid, "done");
+			break;
+		case 10:
+			map.spawnNpc(9330192, new java.awt.Point(390, 240));
+			player.getMap().startMapEffect("全……全部力量结合起来。总……总有一天会成为朋友……", 5120066);
+			break;
+		case 11:
+			map.spawnNpc(9330187, new java.awt.Point(276, 189));
+			player.getMap().startMapEffect("授课已经结束了。接受物理老师的考核吧", 5120071);
+			break;
+		case 12:
+			map.spawnNpc(9330188, new java.awt.Point(3, 58));
+			player.getMap().startMapEffect("授课已经结束了。接受历史老师的考核吧", 5120070);
+			break;
+		case 13:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("呼~太手下留情了，下次一定要把你带走", 5120072);
+			break;
+		case 14:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("真是的……不允许有社员比社长还强。不准入社！", 5120075);
+			break;
+		case 15:
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			player.getMap().startMapEffect("不懂艺术……音乐部不需要你……", 5120074);
+			break;
+		case 16:
+			player.getMap().startMapEffect("你今天的学习已经圆满结束了。可以放学了。", 5120120);
+			map.spawnNpc(9330192, new java.awt.Point(177, 240));
+			em.setProperty("state", 100);
+			break;
+		}
+	});
 	return 1;
 }
 
@@ -339,4 +244,10 @@ function on玩家退场(eim, player, isTimeout) {
 	em.setProperty("state", 0);
 	em.setProperty("leader", "true");
 	eim.unregisterPlayer(player);
+}
+
+function passRoom5() {
+	var eim = em.getInstance("副本_枫之高校");
+	var map = eim.getMapFactoryMap(5 + 744000000);
+	map.spawnNpc(9330192, new java.awt.Point(177, 240));
 }

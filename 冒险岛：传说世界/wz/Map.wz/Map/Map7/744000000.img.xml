@@ -16,7 +16,7 @@
 		<int name="fly" value="0"/>
 		<int name="noMapCmd" value="0"/>
 		<int name="fieldLimit" value="0"/>
-		<string name="onFirstUserEnter" value=""/>
+		<string name="onFirstUserEnter" value="StageFirstUserEnter"/>
 		<string name="onUserEnter" value="StageUserEnter"/>
 		<int name="VRTop" value="-400"/>
 		<int name="VRLeft" value="-672"/>

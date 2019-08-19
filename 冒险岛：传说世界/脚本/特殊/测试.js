@@ -47,9 +47,27 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	cm.getMap().startMapEffect("身为导师绝对不原谅打架这件事！只能用力量来阻止你！", 5120077);
+	if (mapId == 16) {
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
+	} else {
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/stage");
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
+		if (state > 10)
+			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + Math.floor(state / 10));
+	}
 	cm.dispose();
+}
 
+function actionStage(mode, type, selection) {
+	if (mapId == 16) {
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
+	} else {
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/stage");
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
+		if (state > 10)
+			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + Math.floor(state / 10));
+	}
+	cm.dispose();
 }
 
 function actionPos(mode, type, selection) {

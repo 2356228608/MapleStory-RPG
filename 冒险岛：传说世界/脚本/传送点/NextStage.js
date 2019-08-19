@@ -1,7 +1,7 @@
 function enter(pi) {
 	var em = pi.getEventManager("副本_枫之高校");
-	var map = pi.getMapId() - 744000000;
-	var prop = em.getProperty("map_" + map);
+	var mapid = pi.getMapId() - 744000000;
+	var prop = em.getProperty("map_" + mapid);
 	if (prop != null && prop.equals("clear")) {
 		var state = parseInt(em.getProperty("state"));
 		if (state == 5) { // map 6 固定仓库
@@ -14,6 +14,7 @@ function enter(pi) {
 		pi.warp(744000000 + next, 0);
 		em.setProperty("state", state + 1);
 	} else {
+		pi.getPlayer().dropMessage(5, prop);
 		pi.getPlayer().dropMessage(5, "这里的考试还没有结束，不能前往下一间教室。");
 	}
 	return true;
