@@ -22,6 +22,11 @@ function setup(eim, leaderid) {
 function playerEntry(eim, player) {
 	var map = eim.getMapInstance(0);
 	player.changeMap(map, map.getPortal(1));
+	eim.startEventTimer(10 * 60 * 1000);
+	// 初始化变量
+	var info = player.getInfoQuest(37164);
+	var count = (info == null || info.isEmpty() || info.equals("")) ? 0 : parseInt(info.substring(6));
+	initProp(player.getId() + "kill", count);
 }
 
 function playerRevive(eim, player) {
@@ -34,12 +39,7 @@ function changedMap(eim, player, mapid) {
 		on玩家退场(eim, player, false);
 		return;
 	}
-	// 初始化变量
-	eim.getPlayers().forEach(function (player) {
-		var info = player.getInfoQuest(37164);
-		var count = (info == null || info.isEmpty() || info.equals("")) ? 0 : parseInt(info.substring(6));
-		initProp(player.getId() + "kill", count);
-	});
+	player.dropMessage(-1, "这里的灰尘可真多。速战速决吧。");
 }
 
 function playerDisconnected(eim, player) {
