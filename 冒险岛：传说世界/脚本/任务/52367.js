@@ -16,7 +16,7 @@ function start(mode, type, selection) {
 	} else if (status == 1) {
 		qm.sendNextPrev("老师在每个村庄待命，来找我，我会把你送往学校！");
 	} else if (status == 2) {
-		qm.sendNextPrev("今天来学校的话，特别……给你去其他教室巡回的钥匙!!! 喔哈哈哈哈~");
+		qm.sendNextPrev("今天来学校的话，特别……给你去其他教室巡回的钥匙！！！喔哈哈哈哈~");
 	} else if (status == 3) {
 		qm.forceStartQuest();
 		qm.dispose();
@@ -45,32 +45,21 @@ function end(mode, type, selection) {
 	} else if (status == 4) {
 		qm.sendNextPrev("最后，通过屋顶或是中途感到累了的时候，可以通过左边的门，随时回到教室。");
 	} else if (status == 5) {
-		qm.sendNextPrev("嗯~ 拿着，这是打开右边门锁的钥匙，可以使用传送点。");
+		qm.sendNextPrev("嗯~ #b#i5252017##z5252017##k拿着，这是打开右边门锁的钥匙，可以使用传送点。");
 	} else if (status == 6) {
 		if (qm.getPlayer().getLevel() <= 30) {
 			qm.gainExp(15000 * 2);
-			qm.gainItem(5252017, 1);
-			qm.forceCompleteQuest();
-			qm.dispose();
-		}
-		if (qm.getPlayer().getLevel() <= 70 && qm.getPlayer().getLevel() > 30) {
+		} else if (qm.getPlayer().getLevel() <= 70 && qm.getPlayer().getLevel() > 30) {
 			qm.gainExp(30000 * 2);
-			qm.gainItem(5252017, 1);
-			qm.forceCompleteQuest();
-			qm.dispose();
-		}
-		if (qm.getPlayer().getLevel() <= 120 && qm.getPlayer().getLevel() > 70) {
+		} else if (qm.getPlayer().getLevel() <= 120 && qm.getPlayer().getLevel() > 70) {
 			qm.gainExp(60000 * 2);
-			qm.gainItem(5252017, 1);
-			qm.forceCompleteQuest();
-			qm.dispose();
-		}
-		if (qm.getPlayer().getLevel() <= 200 && qm.getPlayer().getLevel() > 120) {
+		} else if (qm.getPlayer().getLevel() <= 200 && qm.getPlayer().getLevel() > 120) {
 			qm.gainExp(120000 * 2);
-			qm.gainItem(5252017, 1);
-			qm.forceCompleteQuest();
-			qm.dispose();
+		} else {
+			qm.gainExp(240000 * 2);
 		}
+		qm.gainItem(5252017, 1);
+		qm.forceCompleteQuest();
 		qm.dispose();
 	}
 }

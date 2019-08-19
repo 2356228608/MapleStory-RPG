@@ -15,7 +15,7 @@ function enter(pi) {
 	var mapId = pi.getMapId();
 	// 【1】枫之高校
 	if (mapId < 992001000 || mapId > 992050000) {
-		pi.openNpc(9330189, 1);
+		pi.openNpc(9330189, "枫之高校_离开");
 		return true;
 	}
 	// 【2】起源之塔
