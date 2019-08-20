@@ -7,7 +7,8 @@ var status = -1; // status: 当前聊天交互轮数
 var selectionLog = new Array(); // 记录每一轮的选择
 // 材料
 var 好感材料 = 3800452;
-var 好感图标 = 3800453;
+var 灰好感图标 = 3800453;
+var 金币图标 = 3801305;
 // UI图片
 var z = "#fEffect/ItemEff/1112811/0/0#"; //"+z+"//美化
 var tz12 = "#fEffect/CharacterEff/1112924/0/0#"; //黄星
@@ -15,6 +16,7 @@ var tz13 = "#fEffect/CharacterEff/1112925/0/0#"; //蓝星
 var itemIcon = "#fUI/Basic.img/Cursor/32/0#";
 var itemBorder = "#fUI/UIWindow.img/Item/New/inventory/0#";
 // 好感菜单
+var name = ["乔","海丽蜜","小龙","李卡司"];
 var totem = [[1202026, 1202025, 1202024, 1202023], [1202030, 1202029, 1202028, 1202027], [1202034, 1202033, 1202032, 1202031], [1202038, 1202037, 1202036, 1202035]];
 // 好感度等级要求，够了才能解锁高级商店
 var likeReq = [500, 1000, 2000, 3000, 4000];
@@ -67,7 +69,7 @@ function 好感菜单() {
 	}
 	text += "\r\n\t  ";
 	text += "乔\t\t 海丽蜜\t\t   小龙\t\t    李卡司";
-	text += "\r\n";
+	text += "\r\n#r";
 	var lens = [likes[0].toString().length, likes[1].toString().length, likes[2].toString().length, likes[3].toString().length];
 	for (var i = 0; i < Math.max(0, 4 - Math.floor(lens[0] / 2)); i++)
 		text += ' ';
@@ -81,7 +83,7 @@ function 好感菜单() {
 	for (var i = 0; i < 10 - Math.floor(lens[2] / 2) - lens[2] % 2 - Math.floor(lens[3] / 2); i++)
 		text += ' ';
 	text += "#i" + 好感材料 + "# " + likes[3];
-	text += "\r\n";
+	text += "#k\r\n";
 	for (var i = 0; i < 4; i++) {
 		text += "#b#L" + i + "#提升好感#l  ";
 	}
@@ -114,20 +116,20 @@ function 提升好感() {
 		}
 		text += "\r\n\t  ";
 		text += "乔\t\t 海丽蜜\t\t   小龙\t\t    李卡司";
-		text += "\r\n";
+		text += "\r\n#r";
 		var lens = [likes[0].toString().length, likes[1].toString().length, likes[2].toString().length, likes[3].toString().length];
 		for (var i = 0; i < Math.max(0, 4 - Math.floor(lens[0] / 2)); i++)
 			text += ' ';
-		text += "#i" + (0 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[0];
+		text += "#i" + (0 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[0];
 		for (var i = 0; i < 10 - Math.floor(lens[0] / 2) - lens[0] % 2 - Math.floor(lens[1] / 2); i++)
 			text += ' ';
-		text += "#i" + (1 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[1];
+		text += "#i" + (1 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[1];
 		for (var i = 0; i < 10 - Math.floor(lens[1] / 2) - lens[1] % 2 - Math.floor(lens[2] / 2); i++)
 			text += ' ';
-		text += "#i" + (2 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[2];
+		text += "#i" + (2 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[2];
 		for (var i = 0; i < 10 - Math.floor(lens[2] / 2) - lens[2] % 2 - Math.floor(lens[3] / 2); i++)
 			text += ' ';
-		text += "#i" + (3 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[3];
+		text += "#i" + (3 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[3];
 		text += "#k#e\r\n\r\n└\t\t\t\t\t\t\t\t\t\t\t┘#n";
 		var item = cm.getItemQuantity(好感材料);
 		if (item > 0) {
@@ -170,40 +172,41 @@ function 兑换收藏() {
 		}
 		text += "\r\n\t  ";
 		text += "乔\t\t 海丽蜜\t\t   小龙\t\t    李卡司";
-		text += "\r\n";
+		text += "\r\n#r";
 		var lens = [likes[0].toString().length, likes[1].toString().length, likes[2].toString().length, likes[3].toString().length];
 		for (var i = 0; i < Math.max(0, 4 - Math.floor(lens[0] / 2)); i++)
 			text += ' ';
-		text += "#i" + (0 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[0];
+		text += "#i" + (0 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[0];
 		for (var i = 0; i < 10 - Math.floor(lens[0] / 2) - lens[0] % 2 - Math.floor(lens[1] / 2); i++)
 			text += ' ';
-		text += "#i" + (1 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[1];
+		text += "#i" + (1 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[1];
 		for (var i = 0; i < 10 - Math.floor(lens[1] / 2) - lens[1] % 2 - Math.floor(lens[2] / 2); i++)
 			text += ' ';
-		text += "#i" + (2 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[2];
+		text += "#i" + (2 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[2];
 		for (var i = 0; i < 10 - Math.floor(lens[2] / 2) - lens[2] % 2 - Math.floor(lens[3] / 2); i++)
 			text += ' ';
-		text += "#i" + (3 == selectionLog[1] ? 好感材料 : 好感图标) + "# " + likes[3];
+		text += "#i" + (3 == selectionLog[1] ? 好感材料 : 灰好感图标) + "# " + likes[3];
 
-		text += "\r\n\r\n我们已经是这么熟悉的好朋友了，想必换取这些真贵的图腾收藏，他们也一定会同意的吧？！\r\n";
+		text += "#k\r\n\r\n我们已经是这么熟悉的好朋友了，想必换取这些珍贵的图腾收藏，他们也一定会同意的吧？\r\n";
 		shop[selectionLog[1]].forEach(function (e, index) {
-			text += "#L" + index + "##b#i" + e[0] + "##z" + e[0] + "# · #r#i" + ((likes[selectionLog[1]] > e[1]) ? 好感材料 : 好感图标) + "#" + e[1] + "#k · 需要金币 #e" + e[2] + "#l\r\n";
+			if(likes[selectionLog[1]] > e[1]){
+				text += "#L" + index + "##b#i" + e[0] + "##z" + e[0] + "##k · #r#i" + 好感材料 + "#" + e[1] + "#k · #i"+金币图标+"# #e" + e[2] + "#l\r\n";
+			}else{
+				text += "#b#i" + e[0] + "##z" + e[0] + "##k · #i" + 灰好感图标 + "#" + e[1] + "#k · #i"+金币图标+"# #e" + e[2] + "\r\n";
+			}
 		});
 		text += "#k#e\r\n\r\n└\t\t\t\t\t\t\t\t\t\t\t┘#n";
 	} else if (status == 2) {
-		if (cm.getPlayer().getMeso() >= 800) {
-			cm.gainMeso(-800);
-			cm.sendOk("我们马上就要开船了。上来吧！");
+		var cost = shop[selectionLog[1]][selectionLog[2]][2];
+		var item = shop[selectionLog[1]][selectionLog[2]][0];
+		if (cm.getPlayer().getMeso() >= cost) {
+			cm.gainMeso(-cost);
+			cm.sendOk("成功入手了 #b#i" + item + "##z" + item + "##k！\r\n\r\n虽然拿走了#b"+name[selectionLog[1]]+"#k的珍贵收藏图腾，但看在这么多金币的份上，想必一定会很乐意接受的吧……？");
+			cm.gainItem(item, 1);
 		} else {
-			cm.sendOk("船费是800金币，有足够的金币在来找我吧。");
-			cm.dispose();
+			cm.sendOk("即使是这么熟悉的伙伴，不留下足够的金币想必也是无法交换成功的吧。还是再多积攒一些金币好了。");
 		}
-		text = "\r\n\r\n#r#i" + 好感材料 + "#好感#k提升成功了！";
-		cm.sendOk(text);
-	} else {
-		cm.gainItem(好感材料, -selectionLog[2]);
-		likes[selectionLog[1]] += selectionLog[2];
-		cm.updateInfoQuest(52367, likes[0] + ";" + likes[1] + ";" + likes[2] + ";" + likes[3]);
+	}else{
 		cm.dispose();
 	}
 }
