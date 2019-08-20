@@ -1,8 +1,12 @@
 ﻿function action(mode, type, selection) {
 	ms.fieldEffect_PlayBGM("BgmTW/MapleHighSchool");
+	var mapId = ms.getMapId() - 744000000;
+	if (mapId == 0) {
+		ms.dispose();
+		return;
+	}
 	var em = ms.getEventManager("副本_枫之高校");
 	var eim = em.getInstance("副本_枫之高校");
-	var mapId = ms.getMapId() - 744000000;
 	var map = em.getMapFactoryMap(ms.getMapId());
 	var level = getPartyMaxLevel();
 	var state = parseInt(em.getProperty("state"));
@@ -11,9 +15,13 @@
 		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
 	} else {
 		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/stage");
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
-		if (state > 10)
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + Math.floor(state / 10));
+		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
+		if (state > 10) {
+			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
+			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + Math.floor(state / 10));
+		} else {
+			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
+		}
 	}
 
 	switch (mapId) {

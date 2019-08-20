@@ -11,7 +11,7 @@ function action(mode, type, selection) {
         status--;
     }
 
-    if (!ms.isQuestFinished(32202)) {
+    if (ms.isQuestFinished(32202)) {
         if (status == 0) {
             ms.curNodeEventEnd(true);
             ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解

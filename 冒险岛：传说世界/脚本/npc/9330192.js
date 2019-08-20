@@ -37,6 +37,10 @@ function action(mode, type, selection) {
 		} else {
 			cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/clear");
 		}
+		if (mapid == 1 || mapid == 2 || mapid == 10) {
+			cm.playerMessage(5, "友情在战斗中磨炼。四大天王对你的好感提升了！");
+			cm.gainItem(3800452, parseInt(state * cm.getPlayer().getLevel() / 10));
+		}
 		cm.gainExp(1000 * state * cm.getPlayer().getLevel());
 		cm.gainItem(4310105, parseInt(state * cm.getPlayer().getLevel() / 10));
 		em.setProperty("map_" + mapid, "clear");
