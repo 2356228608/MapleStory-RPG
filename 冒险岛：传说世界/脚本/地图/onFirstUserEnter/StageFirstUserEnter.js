@@ -11,19 +11,6 @@
 	var level = getPartyMaxLevel();
 	var state = parseInt(em.getProperty("state"));
 
-	if (mapId == 16) {
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
-	} else {
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/stage");
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
-		if (state > 10) {
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + Math.floor(state / 10));
-		} else {
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
-		}
-	}
-
 	switch (mapId) {
 	case 1:
 		// 744000001 - 枫之高校 - 屋顶
