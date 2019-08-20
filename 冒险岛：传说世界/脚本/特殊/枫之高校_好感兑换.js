@@ -190,21 +190,24 @@ function 兑换收藏() {
 		text += "#k\r\n\r\n我们已经是这么熟悉的好朋友了，想必换取这些珍贵的图腾收藏，他们也一定会同意的吧？\r\n";
 		shop[selectionLog[1]].forEach(function (e, index) {
 			if(likes[selectionLog[1]] > e[1]){
-				text += "#L" + index + "##b#i" + e[0] + "##z" + e[0] + "##k · #r#i" + 好感材料 + "#" + e[1] + "#k · #i"+金币图标+"# #e" + e[2] + "#l\r\n";
+				text += "#L" + index + "##b#i" + e[0] + "##z" + e[0] + "##k · #r#i" + 好感材料 + "#" + e[1] + "#k · #i"+金币图标+"# #e" + parseInt(e[2]).toLocaleString() + "#l\r\n";
 			}else{
-				text += "#b#i" + e[0] + "##z" + e[0] + "##k · #i" + 灰好感图标 + "#" + e[1] + "#k · #i"+金币图标+"# #e" + e[2] + "\r\n";
+				text += "#b#i" + e[0] + "##z" + e[0] + "##k · #i" + 灰好感图标 + "#" + e[1] + "#k · #i"+金币图标+"# #e" + parseInt(e[2]).toLocaleString() + "\r\n";
 			}
 		});
 		text += "#k#e\r\n\r\n└\t\t\t\t\t\t\t\t\t\t\t┘#n";
 	} else if (status == 2) {
 		var cost = shop[selectionLog[1]][selectionLog[2]][2];
 		var item = shop[selectionLog[1]][selectionLog[2]][0];
-		if (cm.getPlayer().getMeso() >= cost) {
+		var meso = cm.getPlayer().getMeso();
+		if (meso >= cost) {
 			cm.gainMeso(-cost);
 			cm.sendOk("成功入手了 #b#i" + item + "##z" + item + "##k！\r\n\r\n虽然拿走了#b"+name[selectionLog[1]]+"#k的珍贵收藏图腾，但看在这么多金币的份上，想必一定会很乐意接受的吧……？");
 			cm.gainItem(item, 1);
 		} else {
-			cm.sendOk("即使是这么熟悉的伙伴，不留下足够的金币想必也是无法交换成功的吧。还是再多积攒一些金币好了。");
+			var text = "即使是这么熟悉的伙伴，不留下足够的金币想必也是无法交换成功的吧。还是再多积攒一些金币好了。";
+			var text += "\r\n\r\n#i"+金币图标+"# "+parseInt(meso).toLocaleString()+"#e / "+cost+" #n";
+			cm.sendOk("");
 		}
 	}else{
 		cm.dispose();
