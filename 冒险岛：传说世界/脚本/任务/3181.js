@@ -33,6 +33,7 @@ function end(mode, type, selection) {
 		qm.sendNext("为了找到他，我们派出了救援队。但是城里突然出现了怪物，我们没能找到他，结果变成了这个样子……");
 	} else if (status == i++) {
 		qm.sendOk("这封信我会交给他的家人的……");
+	} else if (status == i++) {
 		qm.gainItem(4032859, -1);
 		qm.forceCompleteQuest();
 		qm.dispose();

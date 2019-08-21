@@ -27,6 +27,7 @@ function start(mode, type, selection) {
 		qm.sendNext("我在魔法密林等你。", 1012110);
 	} else if (status === i++) {
 		qm.warp(101000000, 4);
+		qm.OnStartNavigation(101000000,1,"1012110",37151);
 		qm.forceStartQuest();
 		qm.dispose();
 	}

@@ -47,14 +47,11 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	var qid = 32102;
-	cm.forceStartQuest(qid, "1");
-	//cm.updateInfoQuest(qid, "value=9");
-	var newStatus = cm.getQuestRecord(qid);
-	newStatus.setStatus(1);
-	// 这样才能有效更新
+	cm.forceStartQuest(3182, "1");
+	var newStatus = cm.getQuestRecord(3182);
+	newStatus.setCustomData("211060400");
 	cm.getPlayer().updateQuest(newStatus, true);
-		cm.dispose();
+	cm.dispose();
 }
 
 function actionStage(mode, type, selection) {
