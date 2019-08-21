@@ -1,4 +1,4 @@
-﻿/*
+/*
  *  功能：测试
  *  @Author Jessefjxm
  */
@@ -47,21 +47,27 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	cm.openShop(933019332);
-	cm.dispose();
+	var qid = 32102;
+	cm.forceStartQuest(qid, "1");
+	//cm.updateInfoQuest(qid, "value=9");
+	var newStatus = cm.getQuestRecord(qid);
+	newStatus.setStatus(1);
+	// 这样才能有效更新
+	cm.getPlayer().updateQuest(newStatus, true);
+		cm.dispose();
 }
 
 function actionStage(mode, type, selection) {
 	if (mapId == 16) {
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
+		cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
 	} else {
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/stage");
-		ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
+		cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/stage");
+		cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
 		if (state > 10) { // 00=个位 0=十位
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + Math.floor(state / 10));
+			cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_00/" + state % 10);
+			cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + Math.floor(state / 10));
 		} else {
-			ms.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
+			cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/number_0/" + state % 10);
 		}
 	}
 	cm.dispose();
@@ -159,12 +165,13 @@ function actionQuest(mode, type, selection) {
 }
 
 function actionMob(mode, type, selection) {
-	var em = cm.getEventManager("副本_起源之塔");
-	var eim = em.getInstance("Map_TowerOfOz");
+	var emName = "副本_起源之塔";
+	var em = cm.getEventManager(emName);
+	var eim = em.getInstance(emName);
 	var map = em.getMapFactoryMap(cm.getMapId());
 	var mob = em.getMonster(9309200);
 	var modified = em.newMonsterStats();
-	modified.setOHp(2100000000);
+	modified.setOHp(mob.getMobMaxHp() * 10000);
 	mob.setOverrideStats(modified);
 	eim.registerMonster(mob);
 	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(155, 155));
@@ -215,4 +222,8 @@ function start黑屏放动画(mode, type, selection) {
 		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		cm.dispose();
 	}
+}
+
+function isLeader(player) {
+	return player.getParty().getLeader().getId() == player.getId();
 }

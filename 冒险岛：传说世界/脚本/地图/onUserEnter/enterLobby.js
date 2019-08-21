@@ -12,6 +12,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
+	ms.effect_Text("#fn微软雅黑##fs24#◆ 独立副本 ◆\r\n#fn黑体##fs40#起源之塔", 100, 2000, 4, 0, -150, 1, 4, 0, 0, 0);
 	var em = ms.getEventManager("Map_TowerOfOz");
 	var time = em == null ? null : em.getProperty("time" + ms.getPlayer().getId());
 	var level = em == null ? null : em.getProperty("level" + ms.getPlayer().getId());
@@ -87,31 +88,8 @@ function reward(em, time, level) {
 	}
 }
 
-// 创建MYSQL表
-function createTable() {
-	var conn = ms.getConnection();
-	var ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS `oz_tower` ("
-			 + "`characterid` int(11) NOT NULL DEFAULT '0' COMMENT '角色ID',"
-			 + "`charactername` varchar(100) NOT NULL DEFAULT '无名' COMMENT '角色名称',"
-			 + "`maxlevel` int(11) NOT NULL DEFAULT '0' COMMENT '最佳纪录通过层数',"
-			 + "`time` int(11) NOT NULL DEFAULT '0' COMMENT '最佳纪录通过时间',"
-			 + "`slots` int(11) NOT NULL DEFAULT '1' COMMENT '朦胧石栏位数量',"
-			 + "`slot_stone_1` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.1',"
-			 + "`slot_stone_2` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.2',"
-			 + "`slot_stone_3` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.3',"
-			 + "`slot_stone_4` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.4',"
-			 + "`slot_stone_5` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.5',"
-			 + "PRIMARY KEY (`characterid`)" + ") ;");
-	ps.executeUpdate();
-	ps.close();
-	conn.close();
-}
-
 // 搜索自己
 function getMyInfo() {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = ms.getConnection();
 	var ps = conn.prepareStatement("SELECT `maxlevel`,`time`,`slots` FROM `oz_tower` WHERE `characterid`=" + ms.getPlayer().getId() + " ;");
 	var resultSet = ps.executeQuery();
@@ -127,9 +105,6 @@ function getMyInfo() {
 
 // 更新数据
 function updateMyInfo(maxlevel, time, slots) {
-	// 先检查一遍创建了没
-	createTable();
-
 	var sql = "INSERT INTO `oz_tower`(`characterid`,`charactername`";
 	if (maxlevel > 0) {
 		sql += ",`maxlevel`";

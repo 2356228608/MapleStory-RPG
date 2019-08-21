@@ -9,8 +9,6 @@ function start() {
 	action(1, 0, 0);
 }
 // 主体
-function action(mode, type, selection) {}
-
 function action(mode, type, selection) {
 	status++;
 	var i = -1;
@@ -19,8 +17,12 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		cm.sendNextS("嗯？好奇怪的感觉，身体怎么变得那么重？");
 	} else if (status === i++) {
-		cm.warp(101070001, 0);
-		cm.forceCompleteQuest(32102);
+		if (cm.isQuestActive(32102)) {
+			cm.warp(101070001, 0);
+			cm.forceCompleteQuest(32102);
+		} else {
+			cm.warp(101070000, 0);
+		}
 		cm.dispose();
 	} else {
 		cm.dispose();

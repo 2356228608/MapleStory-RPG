@@ -260,20 +260,8 @@ function 勋章记录() {
 	cm.dispose(); // 结束
 }
 
-// 创建MYSQL表
-function createTable() {
-	var conn = cm.getConnection();
-	var ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS `combine_medal` (" + "`id` int(11) NOT NULL AUTO_INCREMENT," + "`characterid` int(11) NOT NULL DEFAULT '0'," + "`medalid` int(11) NOT NULL DEFAULT '0'," + "`str` smallint(6) NOT NULL DEFAULT '0'," + "`dex` smallint(6) NOT NULL DEFAULT '0'," + "`int` smallint(6) NOT NULL DEFAULT '0'," + "`luk` smallint(6) NOT NULL DEFAULT '0'," + "`hp` smallint(6) NOT NULL DEFAULT '0'," + "`mp` smallint(6) NOT NULL DEFAULT '0'," + "`PAD` smallint(6) NOT NULL DEFAULT '0'," + "`MAD` smallint(6) NOT NULL DEFAULT '0'," + "`PDD` smallint(6) NOT NULL DEFAULT '0'," + "`speed` smallint(6) NOT NULL DEFAULT '0'," + "`jump` smallint(6) NOT NULL DEFAULT '0'," + "`BDR` int(3) NOT NULL DEFAULT '0' COMMENT 'BOSS伤害百分比'," + "`IMDR` int(3) NOT NULL DEFAULT '0' COMMENT '无视怪物防御百分比'," + "`DamR` int(3) NOT NULL DEFAULT '0' COMMENT '总伤害百分比增加'," + "`StatR` int(3) NOT NULL DEFAULT '0' COMMENT '所有属性百分比增加'," + "PRIMARY KEY (`id`)" + ") ;");
-	ps.executeUpdate();
-	ps.close();
-	conn.close();
-}
-
 // 获取总属性
 function getAttrSum() {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("SELECT SUM(str),SUM(dex),SUM(`int`),SUM(luk),SUM(hp),SUM(mp),SUM(PAD),SUM(MAD),SUM(PDD),SUM(speed),SUM(jump),SUM(BDR),SUM(IMDR),SUM(IMDR),SUM(DamR) FROM `combine_medal` WHERE `characterid`=" + cm.getPlayer().getId() + ";");
 	var resultSet = ps.executeQuery();
@@ -295,9 +283,6 @@ function getAttrSum() {
 
 // 获取融合总数
 function getMedalCount() {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("SELECT count(*) FROM `combine_medal` WHERE `characterid`=" + cm.getPlayer().getId() + ";");
 	var resultSet = ps.executeQuery();
@@ -310,9 +295,6 @@ function getMedalCount() {
 
 // 检查勋章是否存在
 function findMedal(item) {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("SELECT count(*) FROM `combine_medal` WHERE `characterid`=" + cm.getPlayer().getId() + " AND `medalid`=" + item.getItemId() + ";");
 	var resultSet = ps.executeQuery();
@@ -325,9 +307,6 @@ function findMedal(item) {
 
 // 添加新勋章
 function addMedal(item) {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("INSERT INTO `combine_medal` (`characterid`,`medalid`,`str`,`dex`,`int`,`luk`,`hp`,`mp`,`PAD`,`MAD`,`PDD`,`speed`,`jump`,`BDR`,`IMDR`,`DamR`,`StatR`) VALUES (" + cm.getPlayer().getId() + "," + item.getItemId() + "," + item.getStr() + "," + item.getDex() + "," + item.getInt() + "," + item.getLuk() + "," + item.getMaxHP() + "," + item.getMaxMP() + "," + item.getPAD() + "," + item.getMAD() + "," + item.getPDD() + "," + item.getSpeed() + "," + item.getJump() + "," + item.getBDR() + "," + item.getIMDR() + "," + item.getDamR() + "," + item.getStatR() + ");");
 	ps.executeUpdate();
@@ -337,9 +316,6 @@ function addMedal(item) {
 
 // 获取所有融合的勋章
 function getMedalList() {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("SELECT `medalid` FROM `combine_medal` WHERE `characterid`=" + cm.getPlayer().getId() + " order by `medalid` asc;");
 	var resultSet = ps.executeQuery();
@@ -356,9 +332,6 @@ function getMedalList() {
 
 // 强行视为已经完成任务，获得勋章
 function updateMedalRecord(item) {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("SELECT `questid` FROM `wz_questdata` WHERE `viewMedalItem`=" + item.getItemId() + " order by `questid` asc;");
 	var resultSet = ps.executeQuery();
@@ -369,14 +342,6 @@ function updateMedalRecord(item) {
 		count++;
 	}
 	resultSet.close();
-	/*	好像不能这么玩，先不管了
-	if (count == 0) { // 需要创建任务
-		var conn = cm.getConnection();
-		var ps = conn.prepareStatement("INSERT INTO `wz_questdata` (`questid`,`name`,`autoStart`,`autoPreComplete`,`viewMedalItem`,`selectedSkillID`,`blocked`,`autoAccept`,`autoComplete`,`selfStart`) VALUES (" + item.getItemId() + ",\"称号 - " + item.getItemId() + "\",1,0," + item.getItemId() + ",0,0,1,0,0);");
-		ps.executeUpdate();
-		cm.startQuest(item.getItemId()); //开始任务
-		cm.completeQuest(item.getItemId());
-	}*/
 	ps.close();
 	conn.close();
 }

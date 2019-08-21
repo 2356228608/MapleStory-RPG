@@ -40,26 +40,6 @@ function toTime(time) {
 	return h + m + s;
 }
 
-// 创建MYSQL表
-function createTable() {
-	var conn = cm.getConnection();
-	var ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS `oz_tower` ("
-			 + "`characterid` int(11) NOT NULL DEFAULT '0' COMMENT '角色ID',"
-			 + "`charactername` varchar(100) NOT NULL DEFAULT '无名' COMMENT '角色名称',"
-			 + "`maxlevel` int(11) NOT NULL DEFAULT '0' COMMENT '最佳纪录通过层数',"
-			 + "`time` int(11) NOT NULL DEFAULT '0' COMMENT '最佳纪录通过时间',"
-			 + "`slots` int(11) NOT NULL DEFAULT '1' COMMENT '朦胧石栏位数量',"
-			 + "`slot_stone_1` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.1',"
-			 + "`slot_stone_2` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.2',"
-			 + "`slot_stone_3` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.3',"
-			 + "`slot_stone_4` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.4',"
-			 + "`slot_stone_5` int(11) NOT NULL DEFAULT '0' COMMENT '朦胧石NO.5',"
-			 + "PRIMARY KEY (`characterid`)" + ") ;");
-	ps.executeUpdate();
-	ps.close();
-	conn.close();
-}
-
 // 添加朦胧石
 function addStone(item) {
 	var stones = getStone();
@@ -108,9 +88,6 @@ function 查看朦胧石(text, stones, maxSlots) {
 
 // 检查朦胧石
 function getStone() {
-	// 先检查一遍创建了没
-	createTable();
-
 	var conn = cm.getConnection();
 	var ps = conn.prepareStatement("SELECT `slots`,`slot_stone_1`,`slot_stone_2`,`slot_stone_3`,`slot_stone_4`,`slot_stone_5` FROM `oz_tower` WHERE `characterid`=" + cm.getPlayer().getId() + " ;");
 	var resultSet = ps.executeQuery();
@@ -126,9 +103,6 @@ function getStone() {
 
 // 更新石头，注意输入index有效值为1~5
 function updateStones(stones) {
-	// 先检查一遍创建了没
-	createTable();
-
 	var sql = "INSERT INTO `oz_tower`(`characterid`,`charactername`";
 	for (var i = 1; i <= 5; i++) {
 		if (stones[i] > 0) {

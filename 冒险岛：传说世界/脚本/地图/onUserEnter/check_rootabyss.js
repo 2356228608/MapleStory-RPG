@@ -16,6 +16,7 @@ function action(mode, type, selection) {
 		}
 		ms.dispose();
 	} else {
+		ms.effect_Text("#fn微软雅黑##fs24#◆ 主题副本 ◆\r\n#fn黑体##fs40#鲁塔比斯", 100, 2000, 4, 0, -150, 1, 4, 0, 0, 0);
 		ms.dispose();
 	}
 }

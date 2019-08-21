@@ -152,6 +152,7 @@ function o文字特效() {}
 #B[%]# 显示为一个进度条
 \r\n 在下一行显示
 \t 空格
+#fNpc/1500011.img/stand/0# NPC图片
  */
 
 function o地图特效() {}
