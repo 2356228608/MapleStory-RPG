@@ -7,19 +7,13 @@
 var selects;
 var mode;
 var EventList = Array(
-        Array("#r[签到福利] 每日签到#k#l", 7),
-        Array("#r[签到福利] 连续签到#k#l", 502),
-        Array("#r[HOTTIME] 隐藏的箱子。#k#l", 103),
-        Array("#r[HOTTIME] 数字猜猜猜！#k#l", 104),
-        Array("#r[日常任务] 月枫的需求#k#l", 110),
-        Array("#r[日常任务] 金利奇的口袋#k#l", 120),
-		Array("#b[每日任务] 神秘微章 #k#l", 129),
-		Array("#b[剧情任务] [鲁塔比斯] #k#l", 140),
-		Array("#b[剧情任务] [起源之塔] #k#l", 141),
-		Array("#b[主题副本] [列娜海峡]的邀请 #k#l", 142),
-		Array("#b[剧情任务] [艾洛丁]桉的求助 #k#l", 143),
-		Array("#b[剧情任务] [金海滩]金利奇的邀请 #k#l", 144),
-		Array("#b[主题副本] [蘑菇国王]的邀请信 #k#l", 145)
+        Array("#b[签到福利] 每日签到#k#l", 7),
+        Array("#b[签到福利] 连续签到#k#l", 502),
+        Array("#b[HOTTIME] 隐藏的箱子。#k#l", 103),
+        Array("#b[HOTTIME] 数字猜猜猜！#k#l", 104),
+        Array("#b[日常任务] 月枫的需求#k#l", 110),
+        Array("#b[日常任务] 金利奇的口袋#k#l", 120),
+		Array("#b[每日任务] 神秘微章 #k#l", 129)
         );
 
 function start() {
@@ -51,16 +45,12 @@ function action(mode, type, selection) {
         } else {
 			switch(mode){
 				case 144:
-				cm.dispose();
-				cm.openNpc(9900003, "金海滩副本开始");
-				break;
-				case 145:
-				cm.dispose();
-				cm.openNpc(9900003, "蘑菇国王的邀请信");
-				break;
+					cm.dispose();
+					cm.openNpc(9900003, "金海滩副本开始");
+					break;
 				default:
-				cm.dispose();
-				cm.openNpc(9900003,mode);
+					cm.dispose();
+					cm.openNpc(9900003,mode);
 			}
         }
     }

@@ -6,7 +6,7 @@ var status = -1; // status: 当前聊天交互轮数
 
 // 主体
 function action(mode, type, selection) {
-	(mode == 1) ? status++ : status--;
+	status++;
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
@@ -18,9 +18,9 @@ function action(mode, type, selection) {
 		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/Elodin/forest");
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
-		ms.sendNextS("呃啊啊啊……为什么……我到底干了什么，要把我困在这里，不让我出去……");
+		ms.sendNextSNoESC("呃啊啊啊……为什么……我到底干了什么，要把我困在这里，不让我出去……");
 	} else if (status === i++) {
-		ms.sendNextS("我想回去……");
+		ms.sendNextSNoESC("我想回去……");
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
@@ -34,9 +34,9 @@ function action(mode, type, selection) {
 		ms.npc_LeaveField(1501012);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		ms.sendNextS("……咦？");
+		ms.sendNextSNoESC("……咦？");
 	} else if (status === i++) {
-		ms.sendNextS("那是那个……魔女？");
+		ms.sendNextSNoESC("那是那个……魔女？");
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
@@ -44,7 +44,7 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_Effect("Effect/OnUserEff.img/emotion/ddam", 0, 0, 0, 1, 0, 1, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
-		ms.sendNextS("管不了那么多了！只要没把我变成青蛙，就是个好人！先跟上去再说！");
+		ms.sendNextSNoESC("管不了那么多了！只要没把我变成青蛙，就是个好人！先跟上去再说！");
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {

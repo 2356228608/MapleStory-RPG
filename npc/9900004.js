@@ -148,7 +148,7 @@ function action(mode, type, selection) {
 		//selStr += n;
 		selStr += "#L1##b" + tz14 + "返回市场#l#L199#" + tz14 + "NPC 地图#l#L130#" + tz14 + "娱乐花园#l#L200#" + tz14 + "进入商城#l"; //
 		selStr += n;
-		selStr += "#L0#" + tz14 + "万能传送#l#L8#" + tz14 + "每日签到#l#L555#" + tz14 + "每日任务#l#L225#" + tz14 + "在线奖励#l";
+		selStr += "#L0#" + tz14 + "万能传送#l#L8#" + tz14 + "每日签到#l#L555#" + tz14 + "剧情任务#l#L225#" + tz14 + "在线奖励#l";
 		selStr += n;
 		selStr += "#L5#" + tz14 + "所有副本#l#L7#" + tz14 + "所有商店#l#L9#" + tz14 + "删除道具#l#L86#" + tz14 + "新手礼包#l";
 		selStr += n;
@@ -316,7 +316,8 @@ function action(mode, type, selection) {
 			break;
 		case 555:
 			cm.dispose();
-			cm.openNpc(9900003, 12);
+			//cm.openNpc(9900003, 12);
+			cm.openNpc(9900003, "剧情任务");
 			break;
 		case 7:
 			cm.dispose();
