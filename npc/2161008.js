@@ -1,6 +1,1 @@
-﻿var status = -1;
-
-function action(mode, type, selection) {
-    cm.warp(211070000, 0);
-    cm.dispose();
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/npc/2161008.js

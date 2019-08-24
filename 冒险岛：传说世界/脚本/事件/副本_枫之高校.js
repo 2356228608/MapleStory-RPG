@@ -94,29 +94,29 @@ function monsterValue(eim, mobId) {
 		switch (mapid) {
 		case 1:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("让我看看你从和朋友的对决那里学到了什么吧。", 5120120);
+			player.getMap().startSimpleMapEffect("让我看看你从和朋友的对决那里学到了什么吧。", 5120120);
 			break;
 		case 2:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("让我看看你从和朋友的对决那里学到了什么吧。", 5120120);
+			player.getMap().startSimpleMapEffect("让我看看你从和朋友的对决那里学到了什么吧。", 5120120);
 			break;
 		case 3:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("让我看看你从候补校长那里学到了什么吧。", 5120120);
+			player.getMap().startSimpleMapEffect("让我看看你从候补校长那里学到了什么吧。", 5120120);
 			break;
 		case 4:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
 			break;
 		case 5:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("算你好运。居然躲掉接种预防针？下次不会放过你。", 5120120);
+			player.getMap().startSimpleMapEffect("算你好运。居然躲掉接种预防针？下次不会放过你。", 5120120);
 			break;
 		case 6:
 			em.setProperty("map_" + mapid, "done");
 			break;
 		case 7:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("让我看看你从库梅老师那里学到了什么吧", 5120120);
+			player.getMap().startSimpleMapEffect("让我看看你从库梅老师那里学到了什么吧", 5120120);
 			break;
 		case 8:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
@@ -126,30 +126,30 @@ function monsterValue(eim, mobId) {
 			break;
 		case 10:
 			map.spawnNpc(9330192, new java.awt.Point(390, 240));
-			player.getMap().startMapEffect("全……全部力量结合起来。总……总有一天会成为朋友……", 5120066);
+			player.getMap().startSimpleMapEffect("全……全部力量结合起来。总……总有一天会成为朋友……", 5120066);
 			break;
 		case 11:
 			map.spawnNpc(9330187, new java.awt.Point(276, 189));
-			player.getMap().startMapEffect("授课已经结束了。接受物理老师的考核吧", 5120071);
+			player.getMap().startSimpleMapEffect("授课已经结束了。接受物理老师的考核吧", 5120071);
 			break;
 		case 12:
 			map.spawnNpc(9330188, new java.awt.Point(3, 58));
-			player.getMap().startMapEffect("授课已经结束了。接受历史老师的考核吧", 5120070);
+			player.getMap().startSimpleMapEffect("授课已经结束了。接受历史老师的考核吧", 5120070);
 			break;
 		case 13:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("呼~太手下留情了，下次一定要把你带走", 5120072);
+			player.getMap().startSimpleMapEffect("呼~太手下留情了，下次一定要把你带走", 5120072);
 			break;
 		case 14:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("真是的……不允许有社员比社长还强。不准入社！", 5120075);
+			player.getMap().startSimpleMapEffect("真是的……不允许有社员比社长还强。不准入社！", 5120075);
 			break;
 		case 15:
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
-			player.getMap().startMapEffect("不懂艺术……音乐部不需要你……", 5120074);
+			player.getMap().startSimpleMapEffect("不懂艺术……音乐部不需要你……", 5120074);
 			break;
 		case 16:
-			player.getMap().startMapEffect("你今天的学习已经圆满结束了。可以放学了。", 5120120);
+			player.getMap().startSimpleMapEffect("你今天的学习已经圆满结束了。可以放学了。", 5120120);
 			map.spawnNpc(9330192, new java.awt.Point(177, 240));
 			em.setProperty("state", 100);
 			break;

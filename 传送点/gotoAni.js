@@ -1,5 +1,1 @@
-﻿function enter(pi) {
-    pi.playPortalSE();
-    //pi.warp(211060800, 1); // fourth tower
-    return true;
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/传送点/gotoAni.js

@@ -53,7 +53,7 @@ function changedMap(eim, player, mapid) {
 	}
 	if (mapid == mapIds[1]) {
 		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startMapEffect("从时空缝隙中召唤半半吧。", 5120026);
+		map.startSimpleMapEffect("从时空缝隙中召唤半半吧。", 5120026);
 	}
 }
 

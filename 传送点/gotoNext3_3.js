@@ -1,5 +1,1 @@
-﻿function enter(pi) {
-    pi.playPortalSE();
-    pi.warp(211060620, 2); // Lion King's Castle: Tall Castle Walls 1
-    return true;
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/传送点/gotoNext3_3.js

@@ -62,7 +62,7 @@ function changedMap(eim, player, mapid) {
 	}
 	if (mapid == mapIds[1]) {
 		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startMapEffect("无礼的家伙！竟然随意进出大殿！", 5120099);
+		map.startSimpleMapEffect("无礼的家伙！竟然随意进出大殿！", 5120099);
 	}
 }
 

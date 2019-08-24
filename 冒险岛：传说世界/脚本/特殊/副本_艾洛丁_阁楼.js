@@ -1,4 +1,4 @@
-﻿/* 
+﻿/*
 Made by jessefjxm
  */
 //副本开关 开启、true 关闭、false
@@ -34,12 +34,16 @@ function action(mode, type, selection) {
 		cm.dispose();
 		return;
 	}
+	if (!cm.isQuestFinished(37162)) {
+		cm.sendOkS("没得到这里主人的许可前，还是不要乱闯了吧。");
+		cm.dispose();
+	}
 	mode == 1 ? status++ : status--;
 	if (cm.getMapId() == startmap) {
 		if (status == 0) {
 			var em = cm.getEventManager(PQname[selection]);
 			if (em == null || open == false) {
-				cm.sendOk("配置文件不存在,请联系管理员。");
+				cm.sendOkS("配置文件不存在,请联系管理员。");
 				cm.dispose();
 				return;
 			}

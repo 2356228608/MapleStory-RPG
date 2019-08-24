@@ -31,7 +31,7 @@ function setup(eim, leaderid) {
 
 function playerEntry(eim, player) {
 	var map = eim.getMapInstance(0);
-	//map.startMapEffect("和沉睡的血腥女皇说话吧。", 5120124);
+	//map.startSimpleMapEffect("和沉睡的血腥女皇说话吧。", 5120124);
 	player.setReviveCount(reviveCount); //地图复活次数
 	player.changeMap(map, map.getPortal(0));
 }
@@ -58,7 +58,7 @@ function changedMap(eim, player, mapid) {
 	}
 	if (mapid == mapIds[1]) {
 		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startMapEffect("无礼的家伙！竟然随意进出大殿！", 5120099);
+		map.startSimpleMapEffect("无礼的家伙！竟然随意进出大殿！", 5120099);
 	}
 }
 

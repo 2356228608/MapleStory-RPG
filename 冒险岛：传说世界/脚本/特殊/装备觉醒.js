@@ -71,7 +71,7 @@ function action(mode, type, selection) {
 			勋章记录();
 			break;
 		default:
-			cm.sendSimple("啊你说什么？没听清楚。");
+			cm.askMenu("啊你说什么？没听清楚。");
 			cm.dispose(); // 结束
 			break;
 		}
@@ -83,7 +83,7 @@ function 对话首页() {
 	text += "#L1#" + "#v1142483#" + "#b勋章吸收\r\n#l";
 	text += "#L2#" + "#v3800747#" + "#b勋章注灵\r\n#l";
 	text += "#L3#" + "#v1142477#" + "#b勋章记录\r\n#l";
-	cm.sendSimple(text);
+	cm.askMenu(text);
 }
 
 function 勋章吸收() {
@@ -97,7 +97,7 @@ function 勋章吸收() {
 			text += "#k勋章的力量会继续存留在你的身体里，直到你将它们注入到#b另一枚勋章上#k才会发挥效力。\r\n";
 			if(findMedal(item)>0){	// 已经有了					
 				text += "#k看上去你已经吸收过#i" + toDrop.getItemId() + "##e#r#z" + toDrop.getItemId() + "##n#k的力量了。每一枚勋章只能吸收一次\r\n";
-				cm.sendSimple(text);
+				cm.askMenu(text);
 				cm.dispose(); // 结束
 				return;
 			}
@@ -148,19 +148,19 @@ function 勋章吸收() {
 			if (toDrop.getAllStat() > 0) {
 				text += "#b◇所有属性#k- " + attrSum[15] + "#e -> " + (toDrop.getAllStat() + attrSum[15]) + "#g\t↑" + toDrop.getAllStat() + "#n#k\r\n";
 			}
-			cm.sendSimple(text);
+			cm.askMenu(text);
 		} else if (status == 2) {
 			// 添加记录，删除道具
 			addMedal(toDrop);
 			cm.removeSlot(1, 1, 1);
 			var count = getMedalCount();
 			text = "#k勋章吸收成功了！现在你已经吸收了 #b#e" + count + "枚 #k#n勋章的力量。\r\n";
-			cm.sendSimple(text);
+			cm.askMenu(text);
 			cm.dispose(); // 结束
 		}
 	} else {
 		text += "嘿，看起来#i" + toDrop.getItemId() + "##e#r#z" + toDrop.getItemId() + "##n#k不是勋章，你无法吸收它。";
-		cm.sendSimple(text);
+		cm.askMenu(text);
 		cm.dispose(); // 结束
 	}
 }
@@ -222,7 +222,7 @@ function 勋章注灵() {
 			if (item.getAllStat() < attrSum[15]) {
 				text += "#b◇所有属性#k- " + item.getAllStat() + "#e -> " + (attrSum[15]) + "#g\t↑" + (item.getAllStat() - attrSum[15]) + "#n#k\r\n";
 			}
-			cm.sendSimple(text);
+			cm.askMenu(text);
 		} else if (status == 2) {
 			// 覆盖属性
 			var toDrop = item.copy();
@@ -244,12 +244,12 @@ function 勋章注灵() {
 			cm.removeSlot(1, 1, 1);
 			cm.addFromDrop(cm.getC(), toDrop, false);
 			text = "#k为#i" + toDrop.getItemId() + "#注灵成功了！查看一下它的新力量吧。\r\n";
-			cm.sendSimple(text);
+			cm.askMenu(text);
 			cm.dispose(); // 结束
 		}
 	} else {
 		text += "嘿，看起来#i" + item.getItemId() + "##e#r#z" + item.getItemId() + "##n#k不是勋章，你无法往里面注入勋章的力量。";
-		cm.sendSimple(text);
+		cm.askMenu(text);
 		cm.dispose(); // 结束
 	}
 }
@@ -266,7 +266,7 @@ function 勋章记录() {
 			text += "\t" + tz12 + "\t";
 		}
 	});
-	cm.sendSimple(text);
+	cm.askMenu(text);
 	cm.dispose(); // 结束
 }
 

@@ -13,7 +13,8 @@ function start() {
 function action(mode, type, selection) {
 	if (im.getMapId() == 211060400) {
 		im.playerMessage(5, "阿尔卡斯特的水晶发出光芒，然后消失了。同时，神秘地光芒包围住了莫特。");
-		var newStatus = cm.getQuestRecord(3182);
+		im.sendOkS("好像生效了。看看莫特的情况吧。");
+		var newStatus = im.getQuestRecord(3182);
 		newStatus.setCustomData("211060400");
 		im.getPlayer().updateQuest(newStatus, true);
 		im.gainItem(im.getItemId(), -1);

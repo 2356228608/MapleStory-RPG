@@ -12,7 +12,7 @@ function action(mode, type, selection) {
 		// 没完成剧情？强行遣送
 		if (!ms.isQuestFinished(30007)) {
 			ms.warp(910700200, 0);
-			ms.getMap().startMapEffect("这里的情况好像不对劲。还是先了解一下状况吧。", 5120124);
+			ms.getMap().startSimpleMapEffect("这里的情况好像不对劲。还是先了解一下状况吧。", 5120124);
 		}
 		ms.dispose();
 	} else {

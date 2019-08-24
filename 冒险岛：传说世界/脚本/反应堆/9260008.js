@@ -10,7 +10,7 @@ function act() {
 			em.setProperty("stage36_stage", stage + 1);
 			em.setProperty("stage36_curBit", 1);
 			if (stage == 8) {
-				em.getMapFactoryMap(mapid).startMapEffect("很好！你已经正确输入了所有密码！和菜鸟探险家打声招呼，然后前往下一层吧。", 5120061);
+				em.getMapFactoryMap(mapid).startSimpleMapEffect("很好！你已经正确输入了所有密码！和菜鸟探险家打声招呼，然后前往下一层吧。", 5120061);
 				em.setProperty("stage36", "clear");
 				rm.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
 			} else {

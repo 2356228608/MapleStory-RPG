@@ -83,7 +83,7 @@ function action首次进入(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushScaleInfo(200, 1500, 200, -480, 100);
 	} else if (status === i++) {
-		ms.spawnNpcForPlayer(1501012, -645, 130); //D5 F8 86 01
+		ms.npc_ChangeController(1501012, -645, 130, 0); //D5 F8 86 01
 		ms.inGameDirectionEvent_AskAnswerTime(100);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -110);
@@ -117,7 +117,7 @@ function action首次进入(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.hideNpc(1501012);
+		ms.npc_LeaveField(1501012);
 		ms.npc_LeaveField(1501014);
 		ms.updateInfoQuest(37159, "1");
 		ms.updateInfoQuest(37150, "00=h1;02=h1");

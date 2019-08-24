@@ -215,7 +215,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 6:
@@ -230,7 +230,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 8:
@@ -245,7 +245,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 10:
@@ -268,7 +268,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 13:
@@ -283,7 +283,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("咳……幸好全部消灭了。你做得不错。让我们通过右侧边缘的传送出口前往下一层吧。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("咳……幸好全部消灭了。你做得不错。让我们通过右侧边缘的传送出口前往下一层吧。", 5120061);
 		} else if (kill == kilReq * 3 || kill == kilReq * 2 || kill == kilReq * 1) {
 			scheduleNew("stage13_Fight", 10);
 		}
@@ -301,7 +301,7 @@ function monsterValue(eim, mobId) {
 				player.changeMap(mapid + 2, 0);
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid + 2).startMapEffect("做得很好！赶快从右侧的出口下去吧。", 5120061);
+			em.getMapFactoryMap(mapid + 2).startSimpleMapEffect("做得很好！赶快从右侧的出口下去吧。", 5120061);
 		}
 		break;
 	case 16:
@@ -316,7 +316,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 20:
@@ -339,7 +339,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 28:
@@ -358,7 +358,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 30:
@@ -384,7 +384,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 32:
@@ -396,7 +396,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 37:
@@ -415,7 +415,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你已经将所有的怪物各消灭了100个。让我们前往下一层吧。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你已经将所有的怪物各消灭了100个。让我们前往下一层吧。", 5120061);
 		} else if (kill[index] >= kilReq) {
 			eim.getPlayers().forEach(function (player) {
 				player.dropMessage(5, "你消灭了100多个" + mobsName37F[index] + "。现在请消灭其他怪物。");
@@ -446,7 +446,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你已经将所有的怪物各消灭了30个。请前往下一层。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你已经将所有的怪物各消灭了30个。请前往下一层。", 5120061);
 		} else if (kill[index] >= kilReq) {
 			eim.getPlayers().forEach(function (player) {
 				player.dropMessage(5, "你消灭了30多个" + mobsName42F[index] + "。现在请消灭其他怪物。");
@@ -465,7 +465,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("你现在可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你现在可以前往下一层了。", 5120061);
 		}
 		break;
 	case 47:
@@ -474,7 +474,7 @@ function monsterValue(eim, mobId) {
 			eim.getPlayers().forEach(function (player) {
 				player.openNpc(2540005, "特效_完成");
 			});
-			em.getMapFactoryMap(mapid).startMapEffect("咳。现在我的声音才能传到你那儿。我已经把门打开了，请前往下一层吧。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("咳。现在我的声音才能传到你那儿。我已经把门打开了，请前往下一层吧。", 5120061);
 		}
 		break;
 	case 50:
@@ -574,7 +574,7 @@ function stage3_CountItem() {
 			scheduleNew("stage3_CountItem", 3);
 			return;
 		} else {
-			em.getMapFactoryMap(mapid).startMapEffect("哇！你真的收集到1000个啦？现在我们可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("哇！你真的收集到1000个啦？现在我们可以前往下一层了。", 5120061);
 			em.setProperty("stage3", "clear");
 			player.openNpc(2540005, "特效_完成");
 		}
@@ -683,7 +683,7 @@ function stage18_CountItem() {
 			scheduleNew("stage18_CountItem", 3);
 			return;
 		} else {
-			em.getMapFactoryMap(mapid).startMapEffect("终于收集够椰子果了。现在我们可以前往下一层了。", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("终于收集够椰子果了。现在我们可以前往下一层了。", 5120061);
 			em.setProperty("stage18", "clear");
 			player.openNpc(2540005, "特效_完成");
 		}
@@ -744,7 +744,7 @@ function stage34_CountItem() {
 			scheduleNew("stage34_CountItem", 3);
 			return;
 		} else {
-			em.getMapFactoryMap(mapid).startMapEffect("你已经将10个紫色皮革全部搜集到了！让我们前往下一层吧！", 5120061);
+			em.getMapFactoryMap(mapid).startSimpleMapEffect("你已经将10个紫色皮革全部搜集到了！让我们前往下一层吧！", 5120061);
 			em.setProperty("stage34", "clear");
 			player.openNpc(2540005, "特效_完成");
 		}

@@ -6,9 +6,25 @@ function start(mode, type, selection) {
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status == i++) {
-		qm.forceStartQuest();
+		qm.askYesNo("要是……有谁听到了我的话……请过来跟我说会儿话……只要一小会儿就行！！");
+	} else if (status == i++) {
+		qm.sendNext("你听到我的话了？呼……太好了……我还在想，要是没人听见我的话的话，我该怎么办……");
+	} else if (status == i++) {
+		qm.sendNext("我的名字叫#b#p2161004##k……为了寻找传说中的#b狮子王的勋章#k，我来到了这个地方……我在城堡的各处寻找勋章的时候……城堡突然开始摇晃，接着怪物就出现了……就在我慌慌张张地避开怪物逃走的时候……突然有个年轻人出现在了我的面前……");
+	} else if (status == i++) {
+		qm.sendNext("那个年轻人说自己是#b狮子王班·雷昂#k，是这个城的主人……他说我未经允许就进入了城堡，然后把我变成了无法从这里离开的幽灵……可能是因为诅咒的缘故，虽然变成了幽灵，但感觉身体里有寒气在到处乱窜，身体像刀割一样地疼，从来都不会停歇……现在我光是这样说话，就已经非常痛苦了……");
+	} else if (status == i++) {
+		qm.sendNext("虽然我变成了这副模样……但是我想把这封信送给在远方等待着我的家人……你能帮我把这封信交给冰峰雪域的#b阿尔卡斯特#k吗？阿尔卡斯特会帮我把信转交给我的家人的……");
+	} else if (status == i++) {
 		if (!qm.haveItem(4032859))
 			qm.gainItem(4032859, 1);
+		var newStatus = qm.getQuestRecord(3181);
+		newStatus.setStatus(1);
+		qm.getPlayer().updateQuest(newStatus, true);
+		qm.sendNext("为了方便自己回去，我留了一个珍贵的魔法卷轴。我会用它把你送到#b冰峰雪域#k，帮我把信交绐阿尔卡斯特！");
+	} else if (status == i++) {
+		qm.warp(211000000, 0);
+		qm.OnStartNavigation(211000000, 1, "2020005", 3181);
 		qm.dispose();
 	}
 }

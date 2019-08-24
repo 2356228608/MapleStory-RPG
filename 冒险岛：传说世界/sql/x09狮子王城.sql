@@ -2,6 +2,20 @@
 -- 任务
 -- ----------------------------
 REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('37157', 'endscript', '1', 'q37157e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3142', 'endscript', '1', 'q3142e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3165', 'endscript', '1', 'q3165e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3166', 'endscript', '1', 'q3166e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3167', 'endscript', '1', 'q3167e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3170', 'endscript', '1', 'q3170e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3171', 'endscript', '1', 'q3171e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3176', 'endscript', '1', 'q3176e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3177', 'endscript', '1', 'q3177e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('3178', 'endscript', '1', 'q3178e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('31037', 'endscript', '1', 'q31037e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('31040', 'endscript', '1', 'q31040e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('31041', 'endscript', '1', 'q31041e');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('31042', 'startscript', '0', 'q31042s');
+REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('31042', 'endscript', '1', 'q31042e');
 -- ----------------------------
 -- 商店
 -- ----------------------------
@@ -48,3 +62,32 @@ REPLACE INTO `shopitems` VALUES ('11283033', '2161013', '2330000', '500', '0', '
 -- ----------------------------
 -- 怪物掉落
 -- ----------------------------
+REPLACE INTO `drop_data` VALUES ('28684', '8230052', '看门鳄鱼兵', '4000625', '鳄鱼兵的头盔', '1', '1', '3165', '61440');
+REPLACE INTO `drop_data` VALUES ('28686', '8211005', '[★]冰玫瑰', '4030036', '玫瑰种子', '1', '1', '0', '500000');
+REPLACE INTO `drop_data` VALUES ('28687', '8211001', '钥匙看守卢梭', '4030032', '卢梭的钥匙', '1', '1', '0', '100000');
+REPLACE INTO `drop_data` VALUES ('28688', '8211006', '[★]钥匙看守卢梭', '4030032', '卢梭的钥匙', '1', '1', '0', '500000');
+
+REPLACE INTO `drop_data` VALUES ('28689', '8210005', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+REPLACE INTO `drop_data` VALUES ('28690', '8210004', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+REPLACE INTO `drop_data` VALUES ('28691', '8210003', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+REPLACE INTO `drop_data` VALUES ('28692', '8210002', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+REPLACE INTO `drop_data` VALUES ('28693', '8210001', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+REPLACE INTO `drop_data` VALUES ('28694', '8210000', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+REPLACE INTO `drop_data` VALUES ('28695', '8210013', '[★]钥匙看守卢梭', '4033113', '卢梭的钥匙', '1', '1', '3144', '500000');
+
+REPLACE INTO `drop_data` VALUES ('28696', '8210005', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+REPLACE INTO `drop_data` VALUES ('28697', '8210004', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+REPLACE INTO `drop_data` VALUES ('28698', '8210003', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+REPLACE INTO `drop_data` VALUES ('28699', '8210002', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+REPLACE INTO `drop_data` VALUES ('28700', '8210001', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+REPLACE INTO `drop_data` VALUES ('28701', '8210000', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+REPLACE INTO `drop_data` VALUES ('28702', '8210013', '[★]钥匙看守卢梭', '4033119', '卢梭的钥匙', '1', '1', '3146', '50000');
+
+REPLACE INTO `drop_data` VALUES ('28703', '8210005', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+REPLACE INTO `drop_data` VALUES ('28704', '8210004', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+REPLACE INTO `drop_data` VALUES ('28705', '8210003', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+REPLACE INTO `drop_data` VALUES ('28706', '8210002', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+REPLACE INTO `drop_data` VALUES ('28707', '8210001', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+REPLACE INTO `drop_data` VALUES ('28708', '8210000', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+REPLACE INTO `drop_data` VALUES ('28709', '8210013', '[★]钥匙看守卢梭', '4033114', '卢梭的钥匙', '1', '1', '3147', '10000');
+

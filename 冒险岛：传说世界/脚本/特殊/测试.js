@@ -47,8 +47,56 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	cm.forceStartQuest(37157, "1");
+	// 访问过控制之神？
+	cm.updateInfoQuest(18837, "visit=1");
+	// 挑战次数 每天重置用的参考时间 ？ 最高关卡 模式？
+	cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=5;mode=1");
+	// 18839=第一关 是否通关 耗费秒数 星级 已完成第一次（控制对话）
+	//cm.updateInfoQuest(18839, "isClear=1;br=14;cs=3;first=1");
+	cm.updateInfoQuest(18839, "first=1");
+	// 更新时间 星星总数
+	cm.updateInfoQuest(18869, "starSumT=190824142712;starSum=3");
+	// 总耗时 更新时间
+	cm.updateInfoQuest(18870, "timeSum=14;timeSumT=190824142712");
+	// 本次陷阱次数 总陷阱次数 更新时间
+	cm.updateInfoQuest(18877, "trap=6;trapSum=8;T=190824143554936");
+	// 剩余时间 ？
+	cm.updateInfoQuest(34500, "time=10000000;type=1");
+
+	cm.updateInfoQuest(500650, "uW=3;3=6");
+	cm.updateInfoQuest(500651, "3=1");
+	// 控制之神
+	//cm.openUI(1112);
+	cm.getMap().startSimpleMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
 	cm.dispose();
+}
+
+function getData(manager, quest, name) {
+	var str = manager.getInfoQuest(quest);
+	var data = new Array();
+	for (var i = 0; i < name.length; i++) {
+		data.push([name[i], "0"]);
+	}
+	if (str == null)
+		return;
+	str.split(";").forEach(function (e, i) {
+		if (e.length <= 1) {
+			return;
+		}
+		var v = e.split("=");
+		if (typeof(v) == "undefined" || v.length != 2)
+			return;
+		data[i][1] = isNaN(v[1]) ? 0 : v[1];
+	});
+	return data;
+}
+
+function saveData(manager, quest, data) {
+	var str = "";
+	data.forEach(function (e, i) {
+		str += e[0] + "=" + e[1] + ((i < data.length - 1) ? ";" : "");
+	});
+	manager.updateInfoQuest(quest, str);
 }
 
 function actionStage(mode, type, selection) {
@@ -112,6 +160,10 @@ function randomNum(minNum, maxNum) {
 }
 
 function action缩放(mode, type, selection) {
+	if (status == 0 && mode == 0) {
+		cm.dispose();
+		return;
+	}
 	(mode == 1) ? status++ : status--;
 	var i = -1;
 	if (status <= i++) {
@@ -174,6 +226,30 @@ function actionMob(mode, type, selection) {
 	cm.dispose();
 }
 
+function spawnMob(em, eim, map, level, mod, mobid, x, y) {
+	var mob = em.getMonster(mobid);
+	var newHP = mob.getMobMaxHp() * 100000 * mod;
+	// 首先要注入涉及到HP的 OverrideStats 实例
+	var modified = em.newMonsterStats();
+	modified.setOHp(newHP);
+	modified.setOMp(mob.getMobMaxMp() * 9000);
+	mob.setOverrideStats(modified);
+	// 然后就可以提取晋升的 ChangedStats 实例魔改了
+	var oldStats = mob.getStats();
+	var newStats = mob.getChangedStats();
+	newStats.watk = Math.round(oldStats.getPhysicalAttack() * mod);
+	newStats.matk = Math.round(oldStats.getMagicAttack() * mod);
+	newStats.acc = Math.round(oldStats.getAcc() * mod);
+	newStats.eva = Math.round(oldStats.getEva() * mod);
+	newStats.PDRate = Math.min(oldStats.isBoss() ? 30 : 20, Math.round(oldStats.getPDRate() * mod));
+	newStats.MDRate = Math.min(oldStats.isBoss() ? 30 : 20, Math.round(oldStats.getMDRate() * mod));
+	newStats.pushed = Math.round(oldStats.getPushed() * level);
+	newStats.speed = Math.round(oldStats.getSpeed() * level);
+	newStats.level = level;
+	eim.registerMonster(mob);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(x, y));
+}
+
 var count = 30;
 var start = 1000; // 阿丽莎呢？？？？
 var end = 1000;
@@ -185,7 +261,7 @@ function actionMapEffect(mode, type, selection) {
 	} else if (status < end) {
 		var now = start + 5120000 + status;
 		cm.warp(992000000 + level[status % 10] * 1000, 0);
-		cm.getMap().startMapEffect("startMapEffect Code " + now, now);
+		cm.getMap().startSimpleMapEffect("startSimpleMapEffect Code " + now, now);
 		cm.askMenu("NEXT CODE : " + now);
 	} else {
 		cm.dispose();

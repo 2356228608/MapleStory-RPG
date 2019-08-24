@@ -34,6 +34,11 @@ function action(mode, type, selection) {
 		cm.dispose();
 		return;
 	}
+	if(cm.getQuestStatus(3142)==0){
+			cm.sendOkS("这里不知道通往什么地方。还是先找鲁丹了解一下情况吧。\r\n\r\n（需要执行#b狮子王的看门人#k任务才能进入。）");
+		cm.dispose();
+		return;		
+	}
 	mode == 1 ? status++ : status--;
 	if (cm.getMapId() == startmap) {
 		var em = cm.getEventManager(PQname[selection]);

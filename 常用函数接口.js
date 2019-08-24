@@ -8,7 +8,7 @@ cm.askAcceptDecline("text");
 // 只能往下翻页
 cm.sendNextNoESC("糟糕了！！", 3000107);
 // 控制字体
-#fn黑体##fs32#
+ # fn黑体 ## fs32 #
 
 // 0~4 各种类型的通知
 cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
@@ -16,6 +16,9 @@ cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
 cm.addPopupSay(0, 2000, "果然有出口。应该把这一事实告诉少女。");
 // 头上雇佣信息 存留一段时间
 cm.hireTutorMsg();
+// 聊天栏里的系统类消息，特点是色彩非常丰富
+cm.spouseMessage(0x15, "[家族跑旗赛活动] 现在管理员已经关闭了活动入口。");
+
 
 // MapleCharacter下发消息，显示在聊天栏 0白1绿2粉3橙4紫
 player.showMessage(0, "0/300");
@@ -115,7 +118,7 @@ ms.inGameDirectionEvent_SetFaceOff(1, 300); //0x10
 // 镜头移动加上缩放，单独占用一次迭代 [移动耗时] [缩放比例，标准1000，越大越放大] [动画耗时] [x] [y]
 ms.inGameDirectionEvent_PushScaleInfo(1000, 1000, 1000, -850, 140);
 // 切换NPC动画状态，详见蘑菇城 [NPCID] [状态序号，从0开始] [是否重复]
-cm.npc_SetSpecialState(1302114, 2,0);
+cm.npc_SetSpecialState(1302114, 2, 0);
 // 换表情？
 cm.effect_Direction("Effect/Direction4.img/cannonshooter/face01");
 // 浮在头上的文本，浅灰色背景
@@ -124,6 +127,8 @@ cm.balloonMsg("balloonMsg", 100, 100);
 cm.effect_NormalSpeechBalloon("参数1", 2000, 4);
 // 屏幕变黑，只有周围有光
 cm.effect_Lightness(false);
+// 改变玩家表情
+cm.emotion(int expression, int duration)
 
 function o文字特效() {}
 /*
@@ -190,7 +195,7 @@ function o地图特效() {}
 // 5121037 鲜花
 // 5121050 花蘑菇
 // 5121052 星星
-cm.getMap().startMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
+cm.getMap().startSimpleMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
 
 function o功能类方法() {}
 function randomNum(minNum, maxNum) {

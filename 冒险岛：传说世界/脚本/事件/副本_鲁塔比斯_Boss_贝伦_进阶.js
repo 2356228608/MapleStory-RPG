@@ -56,7 +56,7 @@ function changedMap(eim, player, mapid) {
 	}
 	if (mapid == mapIds[1]) {
 		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startMapEffect("竟敢无视我的警告，又到这里来。这次我不会再手下留情了。", 5120103);
+		map.startSimpleMapEffect("竟敢无视我的警告，又到这里来。这次我不会再手下留情了。", 5120103);
 	}
 }
 

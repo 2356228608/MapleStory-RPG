@@ -37,8 +37,9 @@ function action(mode, type, selection) {
 		selStr += n;
 		
 		selStr += "#L1#" + zhuti +"Lv.30[列娜海峡]的邀请#l"+n;
-		//selStr += "#L3#" + zhuti +"Lv.30[妖精学院艾利涅]的求助#l"+n;
+		selStr += "#L3#" + zhuti +"Lv.30[妖精学院艾利涅]的求助#l"+n;
 		selStr += "#L2#" + zhuti +"Lv.60[蘑菇国王]的邀请信#l"+n;
+		selStr += "#L4#" + zhuti +"Lv.110[狮子王城主题副本]#l"+n;
 		selStr +="";
 		
 		cm.askMenu(selStr);
@@ -70,8 +71,12 @@ function action(mode, type, selection) {
 				cm.openNpc(9900004,"妖精学院艾利涅的求助");
 				break;
 			case 4:
+				if(cm.getLevel() < 110){
+					cm.dispose();
+					cm.sendOk("很遗憾，任务要求等级不够!");
+				}
 				cm.dispose();
-				cm.openNpc(9900004,"妖精学院艾利涅的求助");
+				cm.warp(211060000, 0);
 				break;	
 				
 				
