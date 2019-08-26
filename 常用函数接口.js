@@ -8,7 +8,7 @@ cm.askAcceptDecline("text");
 // 只能往下翻页
 cm.sendNextNoESC("糟糕了！！", 3000107);
 // 控制字体
- # fn黑体 ## fs32 #
+cm.sendNext("#fn黑体##fs32#");
 
 // 0~4 各种类型的通知
 cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
@@ -19,7 +19,6 @@ cm.hireTutorMsg();
 // 聊天栏里的系统类消息，特点是色彩非常丰富
 cm.spouseMessage(0x15, "[家族跑旗赛活动] 现在管理员已经关闭了活动入口。");
 
-
 // MapleCharacter下发消息，显示在聊天栏 0白1绿2粉3橙4紫
 player.showMessage(0, "0/300");
 // -1红色正中 1弹窗 2蓝底 3(null)红底 5红色 6蓝色 -6 灰色 -7黄色
@@ -28,6 +27,8 @@ player.dropMessage(-1, "-1/300");
 function o任务工具() {}
 // 传送
 cm.warp(910700200, 0);
+// 同地图瞬间移动
+cm.onTeleport(1, cm.getPlayer().getId(), -67, 92);
 // 开始任务
 cm.forceStartQuest();
 // 结束任务
@@ -129,6 +130,10 @@ cm.effect_NormalSpeechBalloon("参数1", 2000, 4);
 cm.effect_Lightness(false);
 // 改变玩家表情
 cm.emotion(int expression, int duration)
+// 地图中央横幅效果
+cm.getWeatherEffectNotice("文字", id, 2000, 1);
+// 添加固化额外UI [必须0？] [UI ID] [UI路径]
+cm.PQ_EFFECT(0, 100161, "UI/UIWindowEvent.img/starDust_Adventure", 0, 0);
 
 function o文字特效() {}
 /*
@@ -159,43 +164,6 @@ function o文字特效() {}
 \t 空格
 #fNpc/1500011.img/stand/0# NPC图片
  */
-
-function o地图特效() {}
-// 5120008 枫叶
-// 5120012 圣诞礼盒
-// 5120016 老虎
-// 5120017 女法师
-// 5120019 云朵
-// 5120026 标准黄框
-// 5120027 高科技信息框
-// 5120030 棒棒糖
-// 5120034 披萨盒子和可乐
-// 5120052 白毛斗士
-// 5120053 胡子大叔
-// 5120055 阿卡伊勒
-// 5120059 希拉国度的女灵魂
-// 5120080 拿剑的女战士
-// 5120081 拿法杖的女法师
-// 5120085
-// 5120093 拿锤子的恶魔猎手？
-// 5120124 被铁链捆绑的木框
-// 5120130	BBQ
-// 5120161 兽人大酋长
-// 5120187	黑暗传令兵
-// 5120184	迷宫向导
-// 5120179	小坏蛋冒险萌
-// 5120178	怪物出租车司机
-// 5120177	帕普拉图斯指南
-// 5120176	金币哗啦啦水槽骑宠
-// 5120175	石精灵
-// 5120173	布莱克缤提示栏
-// 5120172	圣诞节任务用
-// 5121000 火影
-// 5121027 金元宝
-// 5121037 鲜花
-// 5121050 花蘑菇
-// 5121052 星星
-cm.getMap().startSimpleMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
 
 function o功能类方法() {}
 function randomNum(minNum, maxNum) {

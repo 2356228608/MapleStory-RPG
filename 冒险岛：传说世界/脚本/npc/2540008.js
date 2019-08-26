@@ -28,7 +28,7 @@ function action(mode, type, selection) {
 		status--;
 	}
 	selectionLog[status] = selection;
-	var em = cm.getEventManager("Map_TowerOfOz");
+	var em = cm.getEventManager("副本_起源之塔");
 	var stage = parseInt(em.getProperty("stage39_stage"));
 	if (stage == 0) {
 		action0(mode, type, selection, em);

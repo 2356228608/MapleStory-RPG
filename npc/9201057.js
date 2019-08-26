@@ -1,8 +1,7 @@
 ﻿/*
  Bell - KC/NLC Subway Station(103000100/600010001), Waiting Room(600010002/600010004)
  */
-
-        var section;
+var section;
 var msg = new Array("New Leaf City of Masteria", "Kerning City of Victoria Island", "Kerning City", "New Leaf City");
 var ticket = new Array(4031711, 4031713);
 var cost = 5000;
@@ -10,7 +9,6 @@ var returnMap = new Array(103000100, 600010001);
 
 function start() {
     status = -1;
-    sw = cm.getEventManager("Subway");
     action(1, 0, 0);
 }
 

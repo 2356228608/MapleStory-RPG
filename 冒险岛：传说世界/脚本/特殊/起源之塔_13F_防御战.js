@@ -21,13 +21,13 @@ function action(mode, type, selection) {
 		return
 	}
 	if (id == 0) {
-		cm.addPopupSay(2540000, 4000, "那边" + mobName[id] + "出现了。要将它们全部消灭，注意不要漏掉！");
+		cm.getMap().getWeatherEffectNotice("那边" + mobName[id] + "出现了。要将它们全部消灭，注意不要漏掉！", 147, 30000, 1);
 	} else if (id == 1) {
-		cm.addPopupSay(2540000, 4000, "这次出现的是" + mobName[id] + "。请将它们全部消灭，一个也不要漏掉。");
+		cm.getMap().getWeatherEffectNotice("这次出现的是" + mobName[id] + "。请将它们全部消灭，一个也不要漏掉。", 147, 30000, 1);
 	} else if (id == 2) {
-		cm.addPopupSay(2540000, 4000, mobName[id] + "也出现了。就要结束了，不要掉以轻心，将它们全部消灭。");
+		cm.getMap().getWeatherEffectNotice(mobName[id] + "也出现了。就要结束了，不要掉以轻心，将它们全部消灭。", 147, 30000, 1);
 	} else {
-		cm.addPopupSay(2540000, 4000, "所有的怪物全部出动了。这是最后一次了，再加把劲。");
+		cm.getMap().getWeatherEffectNotice("所有的怪物全部出动了。这是最后一次了，再加把劲。", 147, 30000, 1);
 	}
 	cm.dispose();
 }

@@ -15,13 +15,13 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	if (cm.getNpc() == 2540001) {
-		cm.addPopupSay(2540001, 6000, "左侧，它们开始从左侧涌过来啦！！");
+		cm.getMap().getWeatherEffectNotice("左侧，它们开始从左侧涌过来啦！！", 150, 60000, 1);
 	} else if (cm.getNpc() == 2540002) {
-		cm.addPopupSay(2540001, 6000, "右侧，它们开始从右侧涌过来啦！！")
+		cm.getMap().getWeatherEffectNotice("右侧，它们开始从右侧涌过来啦！！", 150, 60000, 1);
 	}else if (cm.getNpc() == 2540003) {
-		cm.addPopupSay(2540001, 6000, "它们开始从两侧一起涌过来啦！请千万要守护我！")
+		cm.getMap().getWeatherEffectNotice("它们开始从两侧一起涌过来啦！请千万要守护我！", 150, 60000, 1);
 	}else if (cm.getNpc() == 2540004) {
-		cm.addPopupSay(2540001, 6000, "现在就要接近尾声了。请和我说话，我会为你将门打开。")
+		cm.getMap().getWeatherEffectNotice("现在就要接近尾声了。请和我说话，我会为你将门打开。", 150, 60000, 1);
 	}
 	cm.dispose();
 }

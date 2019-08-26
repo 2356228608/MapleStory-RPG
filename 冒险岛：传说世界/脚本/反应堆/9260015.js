@@ -4,8 +4,8 @@ var posDesc = ["左上方", "左边", "左下方", "右上方", "右边", "右�
 var mobs27F = [2600106, 9800145];
 
 function act() {
-	var em = rm.getEventManager("Map_TowerOfOz");
-	var eim = em.getInstance("Map_TowerOfOz");
+	var em = rm.getEventManager("副本_起源之塔");
+	var eim = em.getInstance("副本_起源之塔");
 	var map = em.getMapFactoryMap(rm.getMapId());
 	var loc = randomNum(0, pos.length - 1);
 	var mobType = mobs27F[randomNum(0, 1)];
@@ -18,7 +18,7 @@ function act() {
 		eim.registerMonster(mob);
 		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(pos[loc][0] + randomNum(-200, 200), pos[loc][1]));
 	}
-	rm.addPopupSay(2540000, 2000, posDesc[loc] + "的那些家伙出现了！在它们消失之前赶紧消灭掉！");
+	rm.getWeatherEffectNotice(posDesc[loc] + " 的那些家伙出现了！在它们消失之前赶紧消灭掉！ ", 147, 60000, 1);
 }
 
 function randomNum(minNum, maxNum) {

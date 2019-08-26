@@ -13,7 +13,7 @@ function action(mode, type, selection) {
 		return;
 	}
 	ms.effect_Text("#fn微软雅黑##fs24#◆ 独立副本 ◆\r\n#fn黑体##fs40#起源之塔", 100, 2000, 4, 0, -150, 1, 4, 0, 0, 0);
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var time = em == null ? null : em.getProperty("time" + ms.getPlayer().getId());
 	var level = em == null ? null : em.getProperty("level" + ms.getPlayer().getId());
 	// 不是完成副本后退出的

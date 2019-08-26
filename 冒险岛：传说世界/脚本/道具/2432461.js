@@ -79,7 +79,7 @@ function 我不想再待在这里了() {
 
 function 掉下来了() {
 	var mapId = im.getMapId();
-	var em = im.getEventManager("Map_TowerOfOz");
+	var em = im.getEventManager("副本_起源之塔");
 	switch (mapId) {
 	case 992023000:
 		var fails = parseInt(em.getProperty("stage23_fail")) + 1;
@@ -112,8 +112,8 @@ function 钥匙全部用完了() {
 		im.askYesNo(text, NPC);
 	} else if (status == 3) {
 		im.warp(992033000, 0);
-		im.gainItem(4009233, 2);
-		im.gainItem(4009231, 2);
+		im.gainItem(4009233, 8);
+		//im.gainItem(4009231, 2);
 		im.dispose(); // 结束
 	} else {
 		im.dispose(); // 结束

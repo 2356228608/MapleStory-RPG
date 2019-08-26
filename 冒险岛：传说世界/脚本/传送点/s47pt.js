@@ -1,7 +1,7 @@
 function enter(pi) {
 	var id = pi.getPortal().getId();
-	var em = pi.getEventManager("Map_TowerOfOz");
-	var eim = em.getInstance("Map_TowerOfOz");
+	var em = pi.getEventManager("副本_起源之塔");
+	var eim = em.getInstance("副本_起源之塔");
 	var trigger = parseInt(em.getProperty("stage47_trigger"));
 	if (id != trigger) {
 		return true;

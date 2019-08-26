@@ -20,7 +20,7 @@ function enter(pi) {
 	}
 	// 【2】起源之塔
 	var level = parseInt((mapId - 992000000) / 1000);
-	var em = pi.getEventManager("Map_TowerOfOz");
+	var em = pi.getEventManager("副本_起源之塔");
 	var prop = em.getProperty("stage" + level);
 	// 没有通关，也不是 x5 层
 	if (level % 10 != 5 && (prop == null || !prop.equals("clear"))) {

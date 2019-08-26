@@ -8,19 +8,14 @@ var BGM = [["阿里安特", "Bgm14/Ariant"], ["明珠港", "Bgm02/AboveTheTreeto
 
 function action(mode, type, selection) {
 	status++;
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && (prop.equals("start") || prop.equals("clear"))) {
 		ms.dispose();
 		return;
 	}
 	if (ms.isQuestFinished(42010)) {
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "现在，你要认真倾听音乐，然后回答问题并通过这里。");
-		var sound = parseInt(em.getProperty("stage" + level + "_bgm_1"));
-		ms.fieldEffect_PlayBGM(BGM[sound][1]);
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		ms.dispose();
+		startMap(em);
 		return;
 	}
 
@@ -30,7 +25,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
@@ -44,14 +39,17 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "现在，你要认真倾听音乐，然后回答问题并通过这里。");
-		var sound = parseInt(em.getProperty("stage" + level + "_bgm_1"));
-		ms.fieldEffect_PlayBGM(BGM[sound][1]);
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		//ms.warp(992019000, 1);
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em) {
+	ms.dispose();
+	em.setProperty("stage" + level, "start");
+	ms.getMap().getWeatherEffectNotice("现在，你要认真倾听音乐，然后回答问题并通过这里。", 147, 60000, 1);
+	var sound = parseInt(em.getProperty("stage" + level + "_bgm_1"));
+	ms.fieldEffect_PlayBGM(BGM[sound][1]);
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 }

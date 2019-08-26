@@ -7,7 +7,7 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 
 function action(mode, type, selection) {
 	status++;
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var map = em.getMapFactoryMap(ms.getMapId());
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && (prop.equals("start") || prop.equals("clear"))) {
@@ -15,12 +15,7 @@ function action(mode, type, selection) {
 		return;
 	}
 	if (ms.isQuestFinished(42010)) {
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "按照你自己的意愿转动传送口，然后前往下一层吧。");
-		ms.gainItem(4009233, 2);
-		ms.gainItem(4009231, 2);
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		ms.dispose();
+		startMap(em);
 		return;
 	}
 
@@ -32,11 +27,11 @@ function action(mode, type, selection) {
 		for (var i = 0; i < 5; i++) {
 			for (var j = 0; j < 5; j++) {
 				var reactor = map.getReactorByName(i + "" + j);
-				reactor.forceHitReactor(ms.getPlayer(), randomNum(0,3));
+				reactor.forceHitReactor(ms.getPlayer(), randomNum(0, 3));
 			}
 		}
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
@@ -51,16 +46,19 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "按照你自己的意愿转动传送口，然后前往下一层吧。");
-		ms.gainItem(4009233, 2);
-		ms.gainItem(4009231, 2);
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		//ms.warp(992019000, 1);
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em) {
+	ms.dispose();
+	em.setProperty("stage" + level, "start");
+	ms.getMap().getWeatherEffectNotice("按照你自己的意愿转动传送口，然后前往下一层吧。", 147, 60000, 1);
+	ms.gainItem(4009233, 8);
+	//ms.gainItem(4009231, 2);
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 }
 
 function randomNum(minNum, maxNum) {

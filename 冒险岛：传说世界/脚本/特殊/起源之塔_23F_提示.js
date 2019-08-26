@@ -19,7 +19,7 @@ function action(mode, type, selection) {
 		cm.dispose();
 		return;
 	}
-	var em = cm.getEventManager("Map_TowerOfOz");
+	var em = cm.getEventManager("副本_起源之塔");
 	var map = em.getMapFactoryMap(cm.getMapId());
 	var helped = parseInt(em.getProperty("stage23_help_" + id));
 	if (helped >= 3) {
@@ -46,7 +46,7 @@ function action(mode, type, selection) {
 	} else if (status >= 4 && status <= 4 + tabs[id][1] - tabs[id][0]) {
 		var reactor = map.getReactorByName(tabs[id][0] + status - 4);
 		reactor.forceHitReactor(cm.getPlayer(), 1);
-		cm.inGameDirectionEvent_AskAnswerTime(750);
+		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === 5 + tabs[id][1] - tabs[id][0]) {
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === 6 + tabs[id][1] - tabs[id][0]) {

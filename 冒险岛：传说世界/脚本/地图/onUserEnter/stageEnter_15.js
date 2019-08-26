@@ -19,7 +19,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.forceStartQuest(quest);
 		ms.inGameDirectionEvent_AskAnswerTime(500);

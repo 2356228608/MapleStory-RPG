@@ -7,27 +7,14 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 
 function action(mode, type, selection) {
 	status++;
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
 		ms.dispose();
 		return;
 	}
 	if (ms.isQuestFinished(42010)) {
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "请消灭稻草人，前往下一层吧。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		var eim = em.getInstance("Map_TowerOfOz");
-		var map = em.getMapFactoryMap(ms.getMapId());
-		var mob = em.getMonster(9309203);
-		var modified = em.newMonsterStats();
-		modified.setOHp(2100000000);
-		mob.setOverrideStats(modified);
-		mob.getStats().setFixedDamage(1000000);
-		mob.getStats().setChange(true);
-		eim.registerMonster(mob);
-		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000, 0));
-		ms.dispose();
+		startMap(em);
 		return;
 	}
 
@@ -37,7 +24,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
@@ -51,22 +38,25 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "请消灭稻草人，前往下一层吧。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		var eim = em.getInstance("Map_TowerOfOz");
-		var map = em.getMapFactoryMap(ms.getMapId());
-		var mob = em.getMonster(9309203);
-		var modified = em.newMonsterStats();
-		modified.setOHp(2100000000);
-		mob.setOverrideStats(modified);
-		mob.getStats().setFixedDamage(1000000);
-		mob.getStats().setChange(true);
-		eim.registerMonster(mob);
-		map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000, 0));
-		//ms.warp(992019000, 1);
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em) {
+	ms.dispose();
+	em.setProperty("stage" + level, "start");
+	ms.getMap().getWeatherEffectNotice("请消灭稻草人，前往下一层吧。", 147, 60000, 1);
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+	var eim = em.getInstance("副本_起源之塔");
+	var map = em.getMapFactoryMap(ms.getMapId());
+	var mob = em.getMonster(9309203);
+	var modified = em.newMonsterStats();
+	modified.setOHp(2100000000);
+	mob.setOverrideStats(modified);
+	mob.getStats().setFixedDamage(1000000);
+	mob.getStats().setChange(true);
+	eim.registerMonster(mob);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(1000, 0));
 }

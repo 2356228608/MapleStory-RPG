@@ -15,7 +15,7 @@ var moblevel = 300;
 // 副本开关 开启、true 关闭、false
 var open = true;
 // 配置文件名称
-var eventname = ["Map_TowerOfOz"];
+var eventname = ["副本_起源之塔"];
 // 设置每日次数
 var maxenter = [200, 200];
 // 地图名称

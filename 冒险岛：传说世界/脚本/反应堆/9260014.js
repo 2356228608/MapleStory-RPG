@@ -1,7 +1,7 @@
 var pos = [[724, -700], [724, -460], [724, -220], [724, 20], [1270, -640], [1270, -400], [1270, -160], [1270, 80], [-700, -700], [-700, -460], [-700, -220], [-700, 20], [-1250, -640], [-1250, -400], [-1250, -160], [-1250, 80]];
 
 function act() {
-	var em = rm.getEventManager("Map_TowerOfOz");
+	var em = rm.getEventManager("副本_起源之塔");
 	var map = em.getMapFactoryMap(rm.getMapId());
 	for (var i = 0; i < pos.length; i++) {
 		if (randomNum(0, 100) > 75)

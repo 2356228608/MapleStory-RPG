@@ -8,7 +8,7 @@ function act() {
 		rm.dropSingleItem(4000136);
 		break;
 	case 3:
-		var em = rm.getEventManager("Map_TowerOfOz");
+		var em = rm.getEventManager("副本_起源之塔");
 		var map = em.getMapFactoryMap(rm.getMapId());
 		var modified = em.newMonsterStats();
 		modified.setOHp(915750);

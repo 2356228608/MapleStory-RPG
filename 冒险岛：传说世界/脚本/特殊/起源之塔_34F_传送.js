@@ -14,11 +14,11 @@ function action(mode, type, selection) {
 	var item = cm.getPlayer().getItemAmount(4009234);
 	var id = cm.getNpc();
 	if (item >= 10) {
-		cm.gainItem(4009234, -10);
-		cm.warp(992034000, id);
-		cm.addPopupSay(2540000, 2000, "你使用了10个黄色皮革。现在还剩下个" + item + "黄色皮革。");
+		var pos = cm.getMap().getPortal(id).getPosition();
+		cm.onTeleport(1, cm.getPlayer().getId(), pos.getX(), pos.getY());
+		cm.getWeatherEffectNotice("你使用了10个黄色皮革。现在还剩下个" + item + "黄色皮革。", 147, 60000, 1);
 	} else {
-		cm.addPopupSay(2540000, 2000, "你身上只有" + item + "个黄色皮革，还不够激发传送点的。再去收集一些吧。");
+		cm.getWeatherEffectNotice("你身上只有" + item + "个黄色皮革，还不够激发传送点的。再去收集一些吧。", 147, 60000, 1);
 	}
 	cm.dispose();
 }

@@ -15,7 +15,7 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	status++;
-	var em = im.getEventManager("Map_TowerOfOz");
+	var em = im.getEventManager("副本_起源之塔");
 	var level = parseInt(em.getProperties().getProperty("state", "0"));
 	var map = im.getMapId();
 	var myInfo = getMyInfo();

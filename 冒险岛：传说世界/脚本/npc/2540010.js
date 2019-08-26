@@ -17,7 +17,7 @@ function start() {
 function action(mode, type, selection) {
 	status++;
 	selectionLog[status] = selection;
-	var em = cm.getEventManager("Map_TowerOfOz");
+	var em = cm.getEventManager("副本_起源之塔");
 	var stage = parseInt(em.getProperty("stage49_stage"));
 	var correct = parseInt(em.getProperty("stage49_correct"));
 	if (stage == 0) { // 刷怪
@@ -111,9 +111,9 @@ function action1(mode, type, selection, em, correct) {
 				}
 				cm.sendNext(text);
 			} else {
-				var eim = em.getInstance("Map_TowerOfOz");
+				var eim = em.getInstance("副本_起源之塔");
 				eim.restartEventTimer(eim.getTimeLeft() - 5 * 60 * 1000);
-				cm.addPopupSay(2540000, 4000, "糟糕，朦胧石的保护时间被桃乐丝扣除了5分钟！下次回答前一定要想清楚啊！");
+				cm.getMap().getWeatherEffectNotice("糟糕，朦胧石的保护时间被桃乐丝扣除了5分钟！下次回答前一定要想清楚啊！", 147, 60000, 1);
 				cm.sendOk("答错了，你个笨蛋！不聪明的人会受到桃乐丝的惩罚！", 2540010);
 				cm.dispose();
 			}
@@ -151,7 +151,7 @@ function actionEnd(mode, type, selection, em) {
 }
 
 function generateMob(em) {
-	var eim = em.getInstance("Map_TowerOfOz");
+	var eim = em.getInstance("副本_起源之塔");
 	var map = em.getMapFactoryMap(cm.getMapId());
 	curMob = randomNum(0, mobList.length - 1);
 	em.setProperty("stage49_curMob", curMob);
@@ -164,7 +164,7 @@ function generateMob(em) {
 }
 
 function clearMob(em) {
-	var eim = em.getInstance("Map_TowerOfOz");
+	var eim = em.getInstance("副本_起源之塔");
 	cm.killAllMob();
 }
 

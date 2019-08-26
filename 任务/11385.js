@@ -1,9 +1,1 @@
-﻿var status = -1;
-
-function start(mode, type, selection) {
-    qm.forceCompleteQuest();
-    qm.dispose();
-}
-function end(mode, type, selection) {
-    qm.dispose();
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/任务/11385.js

@@ -7,19 +7,14 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 
 function action(mode, type, selection) {
 	status++;
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
 		ms.dispose();
 		return;
 	}
 	if (ms.isQuestFinished(42010)) {
-		ms.warp(992013000, 1);
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "请躲避掉落的碎片，并在怪物撞击到魔力石之前，将它们全部消灭。注意不要远离魔力石。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		scheduleNew("stage13_Fight", 10, em);
-		ms.dispose();
+		startMap(em);
 		return;
 	}
 
@@ -29,7 +24,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
@@ -43,15 +38,20 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		ms.warp(992013000, 1);
-		em.setProperty("stage" + level, "start");
-		ms.addPopupSay(2540000, 6000, "请躲避掉落的碎片，并在怪物撞击到魔力石之前，将它们全部消灭。注意不要远离魔力石。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		scheduleNew("stage13_Fight", 10, em);
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em) {
+	ms.dispose();
+	var pos = ms.getMap().getPortal(1).getPosition();
+	ms.onTeleport(1, ms.getPlayer().getId(), pos.getX(), pos.getY());
+	em.setProperty("stage" + level, "start");
+	ms.getMap().getWeatherEffectNotice("请躲避掉落的碎片，并在怪物撞击到魔力石之前，将它们全部消灭。注意不要远离魔力石。", 147, 60000, 1);
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+	scheduleNew("stage13_Fight", 10, em);
 }
 
 function scheduleNew(funcName, seconds, em) {

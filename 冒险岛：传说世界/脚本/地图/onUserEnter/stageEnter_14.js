@@ -7,7 +7,7 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 
 function action(mode, type, selection) {
 	status++;
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var prop = em == null ? null : em.getProperty("stage" + level);
 	if (prop != null && prop.equals("start")) {
 		ms.dispose();
@@ -36,7 +36,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {

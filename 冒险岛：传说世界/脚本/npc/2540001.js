@@ -14,7 +14,7 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	status++;
-	var em = cm.getEventManager("Map_TowerOfOz");
+	var em = cm.getEventManager("副本_起源之塔");
 	var count = parseInt(em.getProperty("stage7_count"));
 	if (status < 0) {
 		cm.dispose();

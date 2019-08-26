@@ -7,18 +7,14 @@ var header = "#fn黑体##fs32#B - " + level + " F\r\n\r\n";
 
 function action(mode, type, selection) {
 	status++;
-	var em = ms.getEventManager("Map_TowerOfOz");
+	var em = ms.getEventManager("副本_起源之塔");
 	var prop = em == null ? null : em.getProperty("stage" + parseInt(level));
 	if (prop != null && prop.equals("start")) {
 		ms.dispose();
 		return;
 	}
 	if (ms.isQuestFinished(42010)) {
-		ms.warp(992006000, 1);
-		em.setProperty("stage" + parseInt(level), "start");
-		ms.addPopupSay(2540000, 6000, "请消灭300个绿水灵。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-		ms.dispose();
+		startMap(em);
 		return;
 	}
 
@@ -28,7 +24,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		// 初始化
 		ms.curNodeEventEnd(true);
-		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status === i++) {
@@ -42,12 +38,17 @@ function action(mode, type, selection) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
-		ms.dispose();
-		ms.warp(992006000, 1);
-		em.setProperty("stage" + parseInt(level), "start");
-		ms.addPopupSay(2540000, 6000, "请消灭300个绿水灵。");
-		ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
+		startMap(em);
 	} else {
 		ms.dispose();
 	}
+}
+
+function startMap(em) {
+	ms.dispose();
+	var pos = ms.getMap().getPortal(1).getPosition();
+	ms.onTeleport(1, ms.getPlayer().getId(), pos.getX(), pos.getY());
+	em.setProperty("stage" + parseInt(level), "start");
+	ms.getMap().getWeatherEffectNotice("请消灭300个绿水灵。", 147, 60000, 1);
+	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 }

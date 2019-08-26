@@ -23,7 +23,7 @@ function start(mode, type, selection) {
         qm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
         qm.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
-        qm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 500);
+        qm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 500, 0);
         qm.inGameDirectionEvent_AskAnswerTime(500);
     } else if (status === i++) {
         qm.fieldEffect_ProcessOnOffLayer("1", "Map/Effect2.img/kinesis/news2", 0, 1000, 0, 0, 12, 4, 0);
@@ -36,10 +36,10 @@ function start(mode, type, selection) {
         qm.fieldEffect_ProcessOnOffLayer("1", "", 2, 1500, 0, 0, 0, 0, 0);
         qm.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
-        qm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0);
+        qm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
         qm.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
-        qm.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 1000);
+        qm.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 1000, 0);
         qm.inGameDirectionEvent_AskAnswerTime(1400);
     } else if (status === i++) {
         qm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解

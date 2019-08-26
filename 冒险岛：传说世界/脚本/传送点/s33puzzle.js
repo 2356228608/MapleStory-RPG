@@ -3,12 +3,13 @@ var next = [[0, -1], [-1, 0], [0, 1], [1, 0]];
 
 function enter(pi) {
 	var id = pi.getPortal().getId();
-	var em = pi.getEventManager("Map_TowerOfOz");
-	var eim = em.getInstance("Map_TowerOfOz");
+	var em = pi.getEventManager("副本_起源之塔");
+	var eim = em.getInstance("副本_起源之塔");
 	var teleport = parseInt(em.getProperty("stage33_teleport"));
 	var map = em.getMapFactoryMap(pi.getMapId());
 	if (id == 49) {
-		pi.warp(pi.getMapId(), 44);
+		var pos = pi.getMap().getPortal(44).getPosition();
+		pi.onTeleport(1, pi.getPlayer().getId(), pos.getX(), pos.getY()-30);
 		if (teleport >= 9) {
 			em.setProperty("stage33", "clear");
 			pi.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
@@ -21,10 +22,13 @@ function enter(pi) {
 	var state = parseInt(reactor.getState());
 	var nextLoc = [reactorLoc[0] + next[state][0], reactorLoc[1] + next[state][1]];
 	if (nextLoc[0] == 5 && nextLoc[1] == 4) {
-		pi.warp(pi.getMapId(), 49);
+		var pos = pi.getMap().getPortal(49).getPosition();
+		pi.onTeleport(1, pi.getPlayer().getId(), pos.getX(), pos.getY()-30);
 		em.setProperty("stage33_teleport", teleport + 1);
 	} else if (nextLoc[0] >= 0 && nextLoc[0] < 5 && nextLoc[1] >= 0 && nextLoc[1] < 5) {
-		pi.warp(pi.getMapId(), portals[nextLoc[0]][nextLoc[1]]);
+		var pos = pi.getMap().getPortal(portals[nextLoc[0]][nextLoc[1]]).getPosition();
+		pi.onTeleport(1, pi.getPlayer().getId(), pos.getX(), pos.getY()-30);
+
 		em.setProperty("stage33_teleport", teleport + 1);
 	} else {
 		// 失败特效

@@ -15,7 +15,7 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	status++;
-	var em = cm.getEventManager("Map_TowerOfOz");
+	var em = cm.getEventManager("副本_起源之塔");
 	var stage = parseInt(em.getProperty("stage36_stage"));
 	if (stage == 0) {
 		action0(mode, type, selection, em);
@@ -61,14 +61,14 @@ function action1(mode, type, selection, em, stage) {
 	} else if (status > 3 && status <= 3 + stage) {
 		var password = parseInt(em.getProperty("stage36_password_" + (status - 3)));
 		cm.fieldEffect_ScreenMsg("Map/Effect2.img/aquaris/36F_" + password);
-		cm.addPopupSay(2540003, 1000, names[password - 1]);
+		cm.getMap().getWeatherEffectNotice(names[password - 1], 149, 60000, 1);
 		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === 3 + stage + 1) {
 		cm.sendOk("你每输入一个，我都会提示你是否输入正确了。");
 	} else if (status === 3 + stage + 2) {
 		cm.curNodeEventEnd(true);
 		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		cm.addPopupSay(2540003, 2000, "请按顺序攻击怪物，并输入密码。你每输入一个，我都会提示你正确与否。#b为了让我跟上你的速度，请慢慢输入。");
+		cm.getMap().getWeatherEffectNotice("请按顺序攻击怪物，并输入密码。你每输入一个，我都会提示你正确与否。#b为了让我跟上你的速度，请慢慢输入。", 149, 60000, 1);
 		cm.dispose();
 	} else {
 		cm.dispose();

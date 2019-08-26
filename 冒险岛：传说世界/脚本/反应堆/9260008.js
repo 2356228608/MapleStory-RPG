@@ -1,5 +1,5 @@
 function act() {
-	var em = rm.getEventManager("Map_TowerOfOz");
+	var em = rm.getEventManager("副本_起源之塔");
 	var stage = parseInt(em.getProperty("stage36_stage"));
 	var curBit = parseInt(em.getProperty("stage36_curBit"));
 	var password = parseInt(em.getProperty("stage36_password_" + curBit));
@@ -14,15 +14,15 @@ function act() {
 				em.setProperty("stage36", "clear");
 				rm.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
 			} else {
-				rm.addPopupSay(2540003, 1000, "正确！目前还有密码，请再次和我说话，确认下一个密码。");
+				rm.getMap().getWeatherEffectNotice("正确！目前还有密码，请再次和我说话，确认下一个密码。", 149, 60000, 1);
 			}
 		} else {
 			em.setProperty("stage36_curBit", curBit + 1);
-			rm.addPopupSay(2540003, 1000, "正确。请继续攻击怪物，然后再输入" + (stage - curBit) + "个密码。");
+			rm.getMap().getWeatherEffectNotice("正确。请继续攻击怪物，然后再输入" + (stage - curBit) + "个密码。", 149, 60000, 1);
 		}
 	} else {
 		em.setProperty("stage36_curBit", 1);
-		rm.addPopupSay(2540003, 1000, "错误！你必须要从头开始再输入密码一遍。");
+		rm.getMap().getWeatherEffectNotice("错误！你必须要从头开始再输入密码一遍。", 149, 60000, 1);
 	}
 }
 

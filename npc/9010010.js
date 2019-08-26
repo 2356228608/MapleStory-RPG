@@ -1,5 +1,1 @@
-﻿
-        function action(mode, type, selection) {
-            cm.sendOk("水晶的秘密我不能轻易告诉别人。");
-            cm.safeDispose()
-        }
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/npc/9010010.js

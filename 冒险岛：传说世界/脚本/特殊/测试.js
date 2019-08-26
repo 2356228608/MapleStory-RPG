@@ -45,15 +45,53 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/viking");
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
-
 function action(mode, type, selection) {
-	// 访问过控制之神？
+	var reactor = cm.getMap().getReactorByOid(5);
+	reactor.forceHitReactor(cm.getPlayer(), 1);
+	cm.dispose();
+}
+
+function actionPacket(mode, type, selection) {
+	status++;
+	selectionLog[status] = selection;
+	var i = -1;
+	if (status <= i++) {
+		cm.dispose();
+	} else if (status === i++) {
+		// 初始化
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		cm.mplewPacket("4fa", "01 5F CD 27 01 3C 28 00 00 10 FF DC 00 01 01 06 00 DE FE 42 FF 01 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00");
+		cm.inGameDirectionEvent_AskAnswerTime(50);
+	} else if (status === i++) {
+		cm.mplewPacket("4fe", "5F CD 27 01 FF FF 00 00 00 00 00 00 00 00 10 FF F5 00 00 00 00 00 01 00 10 FF F5 00 00 00 00 00 06 00 00 00 00 00 00 00 05 38 04 00");
+		cm.inGameDirectionEvent_AskAnswerTime(1000);
+	} else if (status === i++) {
+		// 收尾
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		cm.dispose();
+	} else {
+		cm.dispose();
+	}
+}
+
+function actionTP(mode, type, selection) {
+	var pos = ms.getMap().getPortal(0).getPosition();
+	ms.onTeleport(1, ms.getPlayer().getId(), pos.getX(), pos.getY());
+}
+function actionHD(mode, type, selection) {
+	// 缓存控制之神里角色最后移动时间
+	updateInfoQuest(34515, Long.toString(System.currentTimeMillis()));
+
+	// 访问过控制之神；入场时选择的关卡
 	cm.updateInfoQuest(18837, "visit=1");
 	// 挑战次数 每天重置用的参考时间 ？ 最高关卡 模式？
 	cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=5;mode=1");
 	// 18839=第一关 是否通关 耗费秒数 星级 已完成第一次（控制对话）
-	//cm.updateInfoQuest(18839, "isClear=1;br=14;cs=3;first=1");
-	cm.updateInfoQuest(18839, "first=1");
+	cm.updateInfoQuest(18839, "isClear=1;br=14;cs=3;first=1");
 	// 更新时间 星星总数
 	cm.updateInfoQuest(18869, "starSumT=190824142712;starSum=3");
 	// 总耗时 更新时间
@@ -65,9 +103,15 @@ function action(mode, type, selection) {
 
 	cm.updateInfoQuest(500650, "uW=3;3=6");
 	cm.updateInfoQuest(500651, "3=1");
-	// 控制之神
-	//cm.openUI(1112);
-	cm.getMap().startSimpleMapEffect("和沉睡的血腥女皇说话吧。", 5120085);
+
+	// 大冒险等级？
+	qm.updateInfoQuest(100161, "lv=1");
+	qm.updateInfoQuest(500617, "lv=1");
+
+	// 大冒险属性
+	qm.teachSkill(80000582, 1);
+	// 大冒险技能 80000584 80000583 80002703 80002705 80002707 80002709（奥本的勋章）
+	qm.teachSkill(80000584, 1);
 	cm.dispose();
 }
 
@@ -250,18 +294,12 @@ function spawnMob(em, eim, map, level, mod, mobid, x, y) {
 	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(x, y));
 }
 
-var count = 30;
-var start = 1000; // 阿丽莎呢？？？？
-var end = 1000;
-var level = [5, 15, 25, 35, 45, 10, 20, 30, 40, 50];
 function actionMapEffect(mode, type, selection) {
 	(mode == 1) ? status++ : status--;
 	if (status < 0) {
 		cm.dispose();
 	} else if (status < end) {
-		var now = start + 5120000 + status;
-		cm.warp(992000000 + level[status % 10] * 1000, 0);
-		cm.getMap().startSimpleMapEffect("startSimpleMapEffect Code " + now, now);
+		cm.getMap().getWeatherEffectNotice("getWeatherEffectNotice " + (start + status), start + status, 2000, 1);
 		cm.askMenu("NEXT CODE : " + now);
 	} else {
 		cm.dispose();

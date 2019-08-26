@@ -14,7 +14,7 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	status++;
-	var em = cm.getEventManager("Map_TowerOfOz");
+	var em = cm.getEventManager("副本_起源之塔");
 	var winner = parseInt(em.getProperty("stage3_winner"));
 	var bet = parseInt(em.getProperty("stage3_bet_egg_on_right"));
 	if (status < 0) {

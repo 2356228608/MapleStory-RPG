@@ -37,16 +37,12 @@ function start() {
             var quantity = em.Paodian_quantity();
             player.modifyCSPoints(mode, quantity);
             if (mode == 1) {
-				//player.dropMessage(-1, "[全域泡点]：获得 [ " + quantity + " ] 点卷");
-                player.dropMessage(-6, "[全域泡点]：获得 [ " + quantity + " ] 消费币");
+                player.dropMessage(-6, "[全域泡点]：获得 [ " + quantity + " ] 点卷");
             }else if (mode == 2) {
-				//player.dropMessage(-1, "[全域泡点]：获得 [ " + quantity + " ] 抵用卷");
                 player.dropMessage(-6, "[全域泡点]：获得 [ " + quantity + " ] 抵用卷");
             } else if(mode == 3){
-				//player.dropMessage(-1, "[全域泡点]：获得 [ " + quantity + " ] 消费币");
-                player.dropMessage(-6, "[全域泡点]：获得 [ " + quantity + " ] 点卷");
+                player.dropMessage(-6, "[全域泡点]：获得 [ " + quantity + " ] 消费币");
             }else {
-				//player.dropMessage(-1, "[全域泡点]：获得 [ " + quantity + " ] 经验");
                 player.dropMessage(-6, "[全域泡点]：获得 [ " + quantity + " ] 经验");
             }
         }
