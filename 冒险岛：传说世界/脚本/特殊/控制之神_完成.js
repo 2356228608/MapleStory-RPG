@@ -39,7 +39,7 @@ function action(mode, type, selection) {
 		data[2][1] = 3 - timeLevel(level, time);
 		saveData(cm, 18838 + level, data);
 		cm.playerMessage(-1, cm.getPlayer().getName() + "以" + data[2][1] + "颗星通关！");
-		cm.gainItem(4310266, level * (data[2][1] - oldstar));
+		cm.gainItem(4310266, level * data[2][1]);
 
 		var dataGame = getData(cm, 18838, ["count", "stageT", "hack", "stage", "mode"]);
 		dataGame[3][1] = Math.max(parseInt(dataGame[3][1]),level);

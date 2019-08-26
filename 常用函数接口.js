@@ -96,7 +96,7 @@ cm.mapMessage("三生三世");
 cm.mob_EnterField(9300546, -900, 29);
 // NPC离场
 cm.npc_LeaveField(3000107);
-// 召唤NPC [ID] [X] [Y] [方向 0右1左]
+// 召唤NPC [ID] [X] [Y] [是否开启移动]
 cm.npc_ChangeController(3000106, 500, 20, 1); //D5 F8 86 01
 cm.npc_SetSpecialAction(3000106, "summon");
 // NPC往右走 ID 0左1右 X Y
@@ -164,6 +164,11 @@ function o文字特效() {}
 \t 空格
 #fNpc/1500011.img/stand/0# NPC图片
  */
+ 
+function map地图效果(){}
+[陨石数量] [延时，越大越慢] [类型 1=绿陨石 7=开始有蓝陨石]
+obtacleFall(count, final int type1, final int type2) 
+
 
 function o功能类方法() {}
 function randomNum(minNum, maxNum) {

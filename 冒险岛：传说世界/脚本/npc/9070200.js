@@ -34,7 +34,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		cm.sendNext_Bottom("那你只要做好羊的行动，当个挑战神操作的普通人类就好了，祝你好运。", 9070200);
 		cm.updateInfoQuest(18837, "visit=1");
-		var data = getData(cm, 18838, ["count","stageT","hack","stage","mode"]);
+		var data = getData(cm, 18838, ["count", "stageT", "hack", "stage", "mode"]);
 		data[0][1] = 99;
 		data[1][1] = new Date().getTime();
 		data[2][1] = 0;
@@ -48,7 +48,8 @@ function action(mode, type, selection) {
 
 function openUI() {
 	cm.addPopupSay(9070200, 2000, "你要挑战“神操作”吗？");
-	cm.openUIWithOption(1112, 0);
+	var data = getData(cm, 18838, ["count", "stageT", "hack", "stage", "mode"]);
+	cm.openUIWithOption(1112, Math.floor(parseInt(data[3][1]-1) / 5));
 	cm.dispose();
 }
 

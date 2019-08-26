@@ -5,7 +5,7 @@ function enter(pi) {
 	pi.addPopupSay(say[rand][0], 500, say[rand][1]);
 	pi.fieldEffect_PlayFieldSound("Sound/Ambience.img/warning");
 	pi.emotion(5, 2000);
-	
+
 	var data = getData(pi, 18877, ["trap", "trapSum", "T"]);
 	data[0][1] = parseInt(data[0][1]);
 	data[1][1] = parseInt(data[1][1]);
@@ -49,7 +49,8 @@ var say = [[9070200, "别因为这种事就放弃。"],
 	[9070202, "因为痛，所以叫青春。"],
 	[9070203, "你也太慢腾腾了吧，就跟树懒似的。"],
 	[9070201, "额啊……加油。"],
-	[9070200, "我总觉得你还是得做200个深蹲才行。"]];
+	[9070200, "我总觉得你还是得做200个深蹲才行。"],
+	[9070201, "跳跃是艺术加技术~"]];
 
 function randomNum(minNum, maxNum) {
 	switch (arguments.length) {

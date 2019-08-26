@@ -48,6 +48,7 @@ function start(mode, type, selection) {
 			qm.gainItem(4310266, -upgrade[level]);
 			qm.sendOk("\r\n你已经是#b" + tier[level] + "大冒险家#k了。恭喜！", 9062143);
 			qm.teachSkill(80000582, level - 1);
+			// 删除技能
 			qm.dispelSkill(skill[level - 1]);
 			qm.teachSkill(skill[level], 1);
 		}

@@ -46,8 +46,13 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
 function action(mode, type, selection) {
-	var reactor = cm.getMap().getReactorByOid(5);
-	reactor.forceHitReactor(cm.getPlayer(), 1);
+	//cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=5;mode=1");
+	// 18839=第一关 是否通关 耗费秒数 星级 已完成第一次（控制对话）
+	var mapid = 993001000 + 8 * 10;
+	var emName = "小游戏_控制之神";
+	var em = cm.getEventManager(emName);
+	var map = em.getMapFactoryMap(mapid);
+	map.obtacleFall(20, 1, 1);
 	cm.dispose();
 }
 
@@ -85,7 +90,11 @@ function actionTP(mode, type, selection) {
 function actionHD(mode, type, selection) {
 	// 缓存控制之神里角色最后移动时间
 	updateInfoQuest(34515, Long.toString(System.currentTimeMillis()));
-
+	// 是否完结了全部大冒险岛内容，完结就不显示UI了
+	cm.updateInfoQuest(100114, "finished=1");
+	// 今日获得的能量
+	cm.updateInfoQuest(100168, "123");
+	
 	// 访问过控制之神；入场时选择的关卡
 	cm.updateInfoQuest(18837, "visit=1");
 	// 挑战次数 每天重置用的参考时间 ？ 最高关卡 模式？

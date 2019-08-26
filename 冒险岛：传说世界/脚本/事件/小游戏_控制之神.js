@@ -39,6 +39,10 @@ function changedMap(eim, player, mapid) {
 		on玩家退场(eim, player, false);
 		return;
 	}
+	var level = Math.round((mapid - 993001000) / 10);
+	if (level == 8) {
+		scheduleNew("level8_stone", 0);
+	}
 }
 
 function playerDisconnected(eim, player) {
@@ -158,4 +162,22 @@ function on玩家退场(eim, player, isTimeout) {
 	em.setProperty("state", 0);
 	em.setProperty("leader", "true");
 	eim.unregisterPlayer(player);
+}
+
+function level8_stone() {
+	var mapid = 993001000 + 8 * 10;
+	if (em.getPlayersInMap(mapid).size() == 0) {
+		return;
+	}
+	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 10);
+	scheduleNew("level8_stone", 10);
+}
+
+function level9_platform() {
+	var mapid = 993001000 + 9 * 10;
+	if (em.getPlayersInMap(mapid).size() == 0) {
+		return;
+	}
+	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 10);
+	scheduleNew("level8_stone", 10);
 }

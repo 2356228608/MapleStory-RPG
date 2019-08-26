@@ -22,6 +22,8 @@ function action(mode, type, selection) {
 		action5(mode, type, selection, level, data);
 	} else if (level == 6) {
 		action6(mode, type, selection, level, data);
+	} else if (level == 9) {
+		action9(mode, type, selection, level, data);
 	} else {
 		startGame(level);
 	}
@@ -227,10 +229,47 @@ function action6(mode, type, selection, level, data) {
 	}
 }
 
+function action9(mode, type, selection, level, data) {
+	var i = -1;
+	if (status <= i++) {
+		ms.dispose();
+	} else if (status === i++) {
+		// 初始化
+		ms.curNodeEventEnd(true);
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		ms.inGameDirectionEvent_PushMoveInfo(0, 500, -4000, -400);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_AskAnswerTime(500);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("我说，你能看到那边移动的踏板吗？嘿嘿。", 9070202);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("那便是科学，科学果然是伟大的。", 9070202);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("如果不掐准时机，估计就会掉下去，一定要看好了再跳。", 9070202);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("如果运气糟糕，有可能踩上踏板就脚底打滑跌落。", 9070202);
+	} else if (status === i++) {
+		ms.sendNextNoESC_Bottom("特别是在踏板上升的时候有可能会打滑，一定要小心啊，嘿嘿。", 9070202);
+	} else if (status === i++) {
+		// 收尾
+		ms.curNodeEventEnd(true);
+		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		ms.dispose();
+
+		data[3][1] = 1;
+		saveData(ms, 18838 + level, data);
+		startGame(level);
+	} else {
+		ms.dispose();
+	}
+}
+
 function startGame(level) {
 	ms.fieldEffect_PlayFieldSound("Sound/MiniGame.img/multiBingo/start");
 	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-	if (level - 1 < startInfo.length) {
+	if (level - 1 < startInfo.length && startInfo[level - 1].length==4) {
 		ms.getWeatherEffectNotice(startInfo[level - 1][1], startInfo[level - 1][0], 5000, 1);
 		ms.addPopupSay(startInfo[level - 1][2], 2000, startInfo[level - 1][3]);
 	}
@@ -246,7 +285,8 @@ var startInfo = [[215, "用冲锋到终点！", 9070203, "冲锋就是朝着想�
 	[214, "在跳跃过程中按照向上的方向键，就可以跳得更高！", 9070201, "在冲锋过程中先按下向上的方向键再跳会更简单！试着找到轻松的方法"],
 	[213, "跳跃过程中按下左右方向键，可以控制在空中的姿势，嘿嘿。", 9070202, "跳跃过程中按下方向键，可以朝着想要的方向进行空中操控。"],
 	[214, "试着在保持冲锋的状态下连续跳跃。", 9070201, "正如我之前所说的，在冲锋过程中可以先按下向上的方向键再跳"],
-	[212, "在空中按下左右方向键，避开脏物。", 9070200, "恩……就算碰到了脏物，也不代表就会死……"]
+	[212, "在空中按下左右方向键，避开脏物。", 9070200, "恩……就算碰到了脏物，也不代表就会死……"],[],[],
+	[213, "试着利用上下移动的踏板到达目的地，嘿嘿。", 9070202, "当踏板位于合适位置时再跳会比较好。\r\n可不能随便什么状态就跳。"]
 ];
 
 function getData(manager, quest, name) {
