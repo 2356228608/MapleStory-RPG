@@ -2,7 +2,10 @@ function enter(pi) {
 	var pos = pi.getMap().getPortal(0).getPosition();
 	pi.onTeleport(1, pi.getPlayer().getId(), pos.getX(), pos.getY());
 	var rand = randomNum(0, say.length - 1);
-	pi.addPopupSay(say[rand][0], 500, say[rand][1]);
+	var level = Math.round((mapid - 993001000) / 10);
+	if(level!=18){
+		pi.addPopupSay(say[rand][0], 500, say[rand][1]);
+	}
 	pi.fieldEffect_PlayFieldSound("Sound/Ambience.img/warning");
 	pi.emotion(5, 2000);
 
