@@ -11,18 +11,24 @@ function start() {
 
 // 主体
 function action(mode, type, selection) {
-	var pos = cm.getMap().getPortal(0).getPosition();
-	cm.onTeleport(1, cm.getPlayer().getId(), pos.getX(), pos.getY());
-	var distance = cm.getNpc();
-	if (distance < 15) {
-		cm.addPopupSay(9070201, 2000, "你的跳跃记录为" + distance + "米，再挑战看看！");
+	var em = cm.getEventManager("小游戏_控制之神");
+	var count = parseInt(em.getProperty("level18_count"))+1;
+	if(count>=30){
+		actionFinish(mode, type, selection);
+	}else{
+		var id = cm.getNpc();
+		var switchId = parseInt(em.getProperty("level18_switch"));
+		if(switchId!=id){
+			em.setProperty("level18_switch" ,id);
+			em.setProperty("level18_count" ,count);
+			if(count==1){
+				var text = "这是一个好的开始！" + NumberToChinese(count)+"！";
+			}else{
+				var text = NumberToChinese(count)+"！";
+			}
+			cm.addPopupSay(9070203, 2000, text);
+		}
 		cm.dispose();
-	} else if (distance < 21) {
-		cm.addPopupSay(9070201, 2000, "你的跳跃记录为" + distance + "米。好样的！");
-		actionFinish(mode, type, selection);
-	} else {
-		cm.addPopupSay(9070201, 2000, "你的跳跃记录为……哇，你跳得好远！好厉害！");
-		actionFinish(mode, type, selection);
 	}
 }
 function actionFinish(mode, type, selection) {
@@ -138,4 +144,52 @@ function saveData(manager, quest, data) {
 		str += e[0] + "=" + e[1] + ((i < data.length - 1) ? ";" : "");
 	});
 	manager.updateInfoQuest(quest, str);
+}
+
+function NumberToChinese(num){
+    var unitPos = 0;
+    var strIns = '', chnStr = '';
+    var needZero = false;
+
+    if(num === 0){
+        return chnNumChar[0];
+    }
+
+    while(num > 0){
+        var section = num % 10000;
+        if(needZero){
+            chnStr = chnNumChar[0] + chnStr;
+        }
+        strIns = SectionToChinese(section);
+        strIns += (section !== 0) ? chnUnitSection[unitPos] : chnUnitSection[0];
+        chnStr = strIns + chnStr;
+        needZero = (section < 1000) && (section > 0);
+        num = Math.floor(num / 10000);
+        unitPos++;
+    }
+
+    return chnStr;
+}
+
+function SectionToChinese(section){
+    var strIns = '', chnStr = '';
+    var unitPos = 0;
+    var zero = true;
+    while(section > 0){
+        var v = section % 10;
+        if(v === 0){
+            if(!zero){
+                zero = true;
+                chnStr = chnNumChar[v] + chnStr;
+            }
+        }else{
+            zero = false;
+            strIns = chnNumChar[v];
+            strIns += chnUnitChar[unitPos];
+            chnStr = strIns + chnStr;
+        }
+        unitPos++;
+        section = Math.floor(section / 10);
+    }
+    return chnStr;
 }
