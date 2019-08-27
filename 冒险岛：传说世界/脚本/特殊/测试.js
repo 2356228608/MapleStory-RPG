@@ -47,7 +47,8 @@ function act蘑菇城() {
 }
 function action(mode, type, selection) {
 	//cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=25;mode=1");
-cm.CP_Urus_DynamicObjMove(-2912, -400,-2912,-300,-2912,-200,1,0,-5,"updown0");
+	cm.finishAchievement(1,2);
+cm.CP_Urus_DynamicObjMove(-2912, -400,-2912,-100,-2912,-400,1,0,-5,"updown0");
 //cm.CP_Urus_DynamicObjMove(-2912, -128,-2912,-400,-2912,-128,1,0,5,"updown0");
 //cm.CP_Urus_DynamicObjMove(-305, -531,-305,-220,-305,-531,1,0,5,"updown1");
 //cm.CP_Urus_DynamicObjMove(-305, -531,-305,-531,-305,-220,1,0,5,"updown1");

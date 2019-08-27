@@ -41,17 +41,19 @@ function changedMap(eim, player, mapid) {
 	}
 	var level = Math.round((mapid - 993001000) / 10);
 	if (level == 8) {
-		scheduleNew("level8_stone", 0);
+		scheduleNew("level" + level + "_stone", 0);
 	} else if (level == 9) {
-		scheduleNew("level9_platform", 0);
+		scheduleNew("level" + level + "_platform", 0);
 	} else if (level == 10) {
-		scheduleNew("level10_platform", 0);
+		scheduleNew("level" + level + "_platform", 0);
 	} else if (level == 12) {
-		scheduleNew("level12_stone", 0);
+		scheduleNew("level" + level + "_stone", 0);
 	} else if (level == 14) {
-		scheduleNew("level14_platform", 0);
+		scheduleNew("level" + level + "_platform", 0);
 	} else if (level == 17) {
-		scheduleNew("level17_stone", 0);
+		scheduleNew("level" + level + "_stone", 0);
+	} else if (level == 34) {
+		scheduleNew("level" + level + "_stone", 0);
 	}
 }
 
@@ -220,6 +222,16 @@ function level12_stone() {
 
 function level17_stone() {
 	var level = 17;
+	var mapid = 993001000 + level * 10;
+	if (em.getPlayersInMap(mapid).size() == 0) {
+		return;
+	}
+	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 1);
+	scheduleNew("level" + level + "_stone", 10);
+}
+
+function level34_stone() {
+	var level = 34;
 	var mapid = 993001000 + level * 10;
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
