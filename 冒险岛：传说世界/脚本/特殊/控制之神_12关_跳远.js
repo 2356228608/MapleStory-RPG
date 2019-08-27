@@ -14,6 +14,7 @@ function action(mode, type, selection) {
 	var em = cm.getEventManager("小游戏_控制之神");
 	var count = parseInt(em.getProperty("level18_count"))+1;
 	if(count>=30){
+		cm.addPopupSay(9070203, 2000, "三十！很好！做得好！成功了！");
 		actionFinish(mode, type, selection);
 	}else{
 		var id = cm.getNpc();
@@ -21,10 +22,23 @@ function action(mode, type, selection) {
 		if(switchId!=id){
 			em.setProperty("level18_switch" ,id);
 			em.setProperty("level18_count" ,count);
+			var text = ""
 			if(count==1){
-				var text = "这是一个好的开始！" + NumberToChinese(count)+"！";
-			}else{
-				var text = NumberToChinese(count)+"！";
+				text += "这是一个好的开始！";
+			}
+			text += NumberToChinese(count)+"！";
+			if(count==5){
+				text += "比光还要快！";
+			}else if(count==10){
+				text += "我的名字是闪电箭！";
+			}else if(count==15){
+				text += "就算辛苦也要坚持！";
+			}else if(count==20){
+				text += "想妈妈了吧？！";
+			}else if(count==25){
+				text += "现在就剩下五个了！";
+			}else if(count==29){
+				text += "最后一个！";
 			}
 			cm.addPopupSay(9070203, 2000, text);
 		}
