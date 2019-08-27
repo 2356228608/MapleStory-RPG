@@ -18,13 +18,13 @@ function action(mode, type, selection) {
             ms.fieldEffect_ScreenMsg("maplemap/enter/10000");
             ms.inGameDirectionEvent_AskAnswerTime(1000);
         } else if (status == 1) {
-            ms.npc_ChangeController(10300, -240, 220);
+            ms.npc_ChangeController(10300, -240, 220, 1);
             ms.npc_SetSpecialAction(10300, "summon");
             ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/1", 900, 0, -120, 1, 0, 1, 10300, 0, 0);
-            ms.inGameDirectionEvent_AskAnswerTime(1800);
+			ms.inGameDirectionEvent_AskAnswerTime(1800);
         } else if (status == 2) {
             ms.npc_SetForceMove(10300, 1, 1000, 100);
-            ms.inGameDirectionEvent_PushMoveInfo(0, 200, 200, 200);
+			ms.inGameDirectionEvent_PushMoveInfo(0, 200, 200, 200);
         } else if (status == 3) {
             ms.inGameDirectionEvent_AskAnswerTime(4542); //延时(毫秒)
         } else if (status == 4) {

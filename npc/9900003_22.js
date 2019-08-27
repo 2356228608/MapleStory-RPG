@@ -84,7 +84,15 @@ function action(mode, type, selection) {
             cm.openNpc(9270035, 2);
         } else if (selection == 2) {
             status = 5;
-            cm.askMenu("您好 #r#h ##k 请选择您要操作的项目:\r\n#b#L1#群宠技能#l\r\n#L4#骑宠技能#l\r\n#L5#夜光技能\r\n#L6#骑士团2段跳技能\r\n#L7#影魂异人控制侵蚀技能\r\n\r\n#L8#修复骑士团希纳斯的骑士技能\r\n\r\n#k");
+            var text="您好 #r#h ##k 请选择您要操作的项目:\r\n";
+			text+="#b#L1#群宠技能#l\r\n";
+			text+="#b#L4#骑宠技能#l\r\n";
+			text+="#b#L6#骑士团2段跳技能#l\r\n";
+			text+="#b#L7#影魂异人控制侵蚀技能#l\r\n";
+			text+="#b#L8#修复骑士团希纳斯的骑士技能#l\r\n";
+			text+="#b#L9#学习爆莉萌天使专注,真释世书技能技能#l\r\n";
+			
+			cm.askMenu(text);
         } else if (selection == 3) {
             cm.askMenu("您好 #r#h ##k 请选择您要传送的项目:\r\n#b#L0#城镇传送#l\r\n#L1#练级传送(70以上)#l\r\n#L2#次元传送#l#k"); //\r\n#L3#网吧地图#l
         } else if (selection == 5) {
@@ -248,13 +256,16 @@ function action(mode, type, selection) {
 					break;	
 			}
         }else if (selection == 9) {
-			switch (cm.getJob()) {
-				case 332://风灵
-					cm.teachSkill(3321003, 1, 1);//希纳斯的骑士
+			if(cm.getJob()==6512&&cm.getLevel()>=200){
+				cm.teachSkill(60011005, 1, 1);//专注
+				cm.teachSkill(60010217, 1, 1);//真释世书
 					cm.dispose();
-					cm.playerMessage(1,"恭喜您学习暗红释魂4。");
-					break;
+					cm.playerMessage(1,"恭喜您学习专注,真释世书技能成功。");
+			}else{
+				cm.dispose();
+				cm.playerMessage(1,"此技能是爆莉萌天使5转后才可以学的。");
 			}
+			
         }
     }
 }

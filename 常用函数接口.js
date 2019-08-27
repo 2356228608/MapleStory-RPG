@@ -164,13 +164,14 @@ function o文字特效() {}
 \t 空格
 #fNpc/1500011.img/stand/0# NPC图片
  */
- 
-function map地图效果(){}
-[陨石数量] [延时，越大越慢] [类型 1=绿陨石 7=开始有蓝陨石]
-obtacleFall(count, final int type1, final int type2) 
 
+function map地图效果() {}
+[陨石数量][延时，越大越慢][类型 1 = 绿陨石 7 = 开始有蓝陨石]
+qm.obtacleFall(count, type1, type2)
 
 function o功能类方法() {}
+// 删除技能
+qm.teachSkill(skill[level - 1], -1, 0);
 function randomNum(minNum, maxNum) {
 	switch (arguments.length) {
 	case 1:

@@ -1,6 +1,6 @@
-/*  This is mada by 娜娜    
+﻿/*  This is mada by 娜娜    
  *  This source is made by BMS Team
- *  地图:'勇士部落 : 废弃研究室' (910090305)
+ *  地图:'
  *  脚本功能：转职任务35903 
  *  @Author 娜娜 
  */			
@@ -31,14 +31,13 @@ function action(mode, type, selection) {
 		cm.sendOk("很遗憾，您因为违反用户守则被禁止游戏活动，如有异议请联系管理员.");
 		cm.dispose();
 	} else if (status == 0) {
-		var selStr = "啊，来得正好。从外部发来了紧急请求，务必请勇士你帮忙啊。";
+		var selStr = "";
 		var n = "\r\n";
-		var ziti = "#b#fn微软雅黑##fs18#" + tz3;
+		var ziti = "#b#fn微软雅黑##fs14#" + tz3;
 		selStr += n;
-		selStr += "#L1#" + ziti + "每日日常任务#l"+n+n;
-		selStr += "#L2#" + ziti + "主题副本任务#l"+n+n;
-		selStr += "#L3#" + ziti + "剧情副本任务#l"+n+n;
-		//selStr += "#L4#" + ziti + "小游戏_控制之神#l"+n+n;
+		selStr += "#L1#" + ziti + "我想挑战小游戏_控制之神#l"+n+n;
+		selStr += "#L2#" + ziti + "进入大冒险岛村庄#l"+n+n;
+		selStr += "#L3#" + ziti + "不玩了,我想回去#l"+n+n;
 		selStr +="";
 		
 		cm.askMenu(selStr);
@@ -47,7 +46,7 @@ function action(mode, type, selection) {
 		switch (selection) {
 			case 1:
 				cm.dispose();
-				cm.openNpc(9900003,12);
+				cm.openNpc(9070200);
 				break;
 			case 2:
 				cm.dispose();
@@ -55,13 +54,10 @@ function action(mode, type, selection) {
 				break;
 			case 3:
 				cm.dispose();
-				cm.openNpc(9900004,"剧情副本任务列表");
+				//cm.openNpc(level,"小游戏_控制之神");
+				cm.warp(910000000);
 				break;
-			case 4:
-				cm.dispose();
-				cm.openNpc(1,"小游戏_控制之神");
-				cm.addPopupSay(1540108, 2000, "温馨提示:此游戏各地图可以最高跳跃\r\n连续按箭头← ←或→ → 可触发.");
-				break;	
+			
 		}
 	}
 }

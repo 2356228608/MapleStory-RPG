@@ -5,18 +5,21 @@ var status = -1;
 
 function action(mode, type, selection) {
 	status++;
-	var level = (ms.getMapId() - 993001000) / 10;
+	var level = Math.round((ms.getMapId() - 993001000) / 10);
 	var data = getData(ms, 18838 + level, ["isClear", "br", "cs", "first"]);
-	if (parseInt(data[3][1]) == 0) {
-		action0(mode, type, selection, level, data);
+		ms.playerMessage(5, "level"+level);
+	if (level == 6) {
+		actionMoveCamera(mode, type, selection, level, -4000, -3200);
+	} else if (level == 9) {
+		actionMoveCamera(mode, type, selection, level, -4000, -400);
+	} else if (level == 15) {
+		action15(mode, type, selection, level);
 	} else {
-		start(level);
+		startGame(level);
 	}
 }
 
-function action0(mode, type, selection, level, data) {
-	status++;
-	selectionLog[status] = selection;
+function actionMoveCamera(mode, type, selection, level, x, y) {
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
@@ -24,38 +27,72 @@ function action0(mode, type, selection, level, data) {
 		// 初始化
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
-		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-	} else if (status === i++) {
-		ms.sendNext_Bottom("这是你在本性森林的第一次挑战呢！幸会！\r\n\r\n我是#b比光还要快的树懒#k，#g闪电箭#k！", 9070203);
-	} else if (status === i++) {
-		ms.sendNext_Bottom("这里类似于进入本性森林的走廊，你会学会有关#g冲锋#k的使用方法。", 9070203);
-	} else if (status === i++) {
-		ms.sendNext_Bottom("你问要怎么冲锋吗？#g连续朝你想要奔跑的方向按下两次方向键#k就可以了。", 9070203);
-	} else if (status === i++) {
-		ms.sendNext_Bottom("这里只要跑到右侧尽头就可以了，希望你能够尽情奔跑！当然你是赶不上我的速度的……呵呵。", 9070203);
+		ms.inGameDirectionEvent_PushMoveInfo(0, 0, x, y);
 	} else if (status === i++) {
 		// 收尾
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		ms.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		ms.dispose();
-
-		data[3][1] = 1;
-		saveData(pi, 18838 + level, data);
+		startGame(level);
 	} else {
 		ms.dispose();
 	}
 }
 
-function start(level) {
+function action15(mode, type, selection, level) {
+	var i = -1;
+	if (status <= i++) {
+		ms.dispose();
+	} else if (status === i++) {
+		// 初始化
+		ms.curNodeEventEnd(true);
+		ms.setInGameDirectionMode(true, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.inGameDirectionEvent_PushScaleInfo(500, 800, 500, -3300, -130);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_AskAnswerTime(500);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_PushMoveInfo(1, 0, 0,0);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_PushMoveInfo(0, 500, -3400, -130);
+	} else if (status === i++) {
+		ms.inGameDirectionEvent_AskAnswerTime(500);
+	} else if (status === i++) {
+		// 收尾
+		ms.curNodeEventEnd(true);
+		ms.setInGameDirectionMode(false, false); //屏蔽/解锁操作台 true = 锁 false = 解
+		ms.dispose();
+		startGame(level);
+	} else {
+		ms.dispose();
+	}
+}
+
+function startGame(level) {
 	ms.fieldEffect_PlayFieldSound("Sound/MiniGame.img/multiBingo/start");
 	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
-	ms.getWeatherEffectNotice(startInfo[level - 1][1], startInfo[level - 1][0], 5000, 1);
-	ms.addPopupSay(startInfo[level - 1][2], 2000, startInfo[level - 1][3]);
+	if (level - 10 < startInfo.length && startInfo[level - 10].length == 4) {
+		ms.getWeatherEffectNotice(startInfo[level - 10][1], startInfo[level - 10][0], 5000, 1);
+		ms.addPopupSay(startInfo[level - 10][2], 2000, startInfo[level - 10][3]);
+	}
+
+	var em = ms.getEventManager("小游戏_控制之神");
+	var eim = em.getInstance("小游戏_控制之神");
+	eim.startEventTimer(10 * 60 * 1000);
 	ms.dispose();
 }
 
-var startInfo = [215, "用冲锋到终点！", 9070203, "冲锋就是朝着想去的方向连续！按两次！方向键……呵呵。"];
+// 212-9070200 猫 213-9070202 兔 214-9070201 熊  215-9070203 树懒
+var startInfo = [[212, "避开上升的踏板上的脏东西", 9070200, "先爬上下面能看到的那块长踏板，然后就会动了。"],
+	[214, "试着灵活运用跳跃技能达到目的地~", 9070201, "跳跃过程中灵活运用向上的方向键，说不定会有捷径，好好找找看"],
+	[214, "在第三块踏板处尽可能往远处跳", 9070201, "在第三块踏板处尽可能往远处跳，超过15米就合格！"],
+	[212, "灵活运用跳跃技能，避开脏物往前走。", 9070200, "试试在障碍物和障碍物中间点跳跃。"],
+	[212, "避开上升的踏板上的脏东西。", 9070200, "知道吧？用下面的长踏板往下走"],
+	[215, "用连续冲锋跳到达目的地！", 9070203, "用冲锋跳越过去！和连续的跳跃，偶尔中途暂停一下会更有利！"],
+	[213, "试着利用上下移动的踏板到达目的地，嘿嘿。", 9070202, "当踏板位于合适位置时再跳会比较好。\r\n可不能随便什么状态就跳。"],
+	[215, "避开坠落的陨石，到达终点！", 9070203, "这个地方你应该很熟悉！偶尔挨几下再往前冲也很有男子气概"],
+	[215, "要反复碰触左右的熊30次！", 9070203, "反复碰触左右沉睡的熊！总共30次！"],
+	[215, "避开坠落的陨石，到达终点！", 9070203, "这个地方你应该很熟悉！偶尔挨几下再往前冲也很有男子气概"]
+];
 
 function getData(manager, quest, name) {
 	var str = manager.getInfoQuest(quest);

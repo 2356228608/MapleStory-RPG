@@ -46,13 +46,11 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
 function action(mode, type, selection) {
-	//cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=5;mode=1");
-	// 18839=第一关 是否通关 耗费秒数 星级 已完成第一次（控制对话）
-	var mapid = 993001000 + 8 * 10;
-	var emName = "小游戏_控制之神";
-	var em = cm.getEventManager(emName);
-	var map = em.getMapFactoryMap(mapid);
-	map.obtacleFall(20, 1, 1);
+	//cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=25;mode=1");
+cm.CP_Urus_DynamicObjMove(-2912, -400,-2912,-300,-2912,-200,1,0,-5,"updown0");
+//cm.CP_Urus_DynamicObjMove(-2912, -128,-2912,-400,-2912,-128,1,0,5,"updown0");
+//cm.CP_Urus_DynamicObjMove(-305, -531,-305,-220,-305,-531,1,0,5,"updown1");
+//cm.CP_Urus_DynamicObjMove(-305, -531,-305,-531,-305,-220,1,0,5,"updown1");
 	cm.dispose();
 }
 
@@ -94,7 +92,7 @@ function actionHD(mode, type, selection) {
 	cm.updateInfoQuest(100114, "finished=1");
 	// 今日获得的能量
 	cm.updateInfoQuest(100168, "123");
-	
+
 	// 访问过控制之神；入场时选择的关卡
 	cm.updateInfoQuest(18837, "visit=1");
 	// 挑战次数 每天重置用的参考时间 ？ 最高关卡 模式？
@@ -184,9 +182,7 @@ function actionMovie(mode, type, selection) {
 		cm.curNodeEventEnd(true);
 		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		cm.inGameDirectionEvent_AskAnswerTime(0);
-	} else if (status === i++) {
-		cm.inGameDirectionEvent_AskAnswerTime(500);
+		cm.inGameDirectionEvent_PushScaleInfo(500, 500, 500, -4000, 0);
 	} else if (status === i++) {
 		// 收尾
 		cm.curNodeEventEnd(true);

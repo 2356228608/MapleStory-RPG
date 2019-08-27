@@ -12,6 +12,5 @@ function start() {
 // 主体
 function action(mode, type, selection) {
 	cm.dispose();
-cm.playerMessage(5, "果然有出口。应该把这一事实告诉少女。");
-	//cm.warp(993001000, 0);
+	cm.warp(993001000, 0);
 }
