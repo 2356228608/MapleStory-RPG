@@ -55,8 +55,8 @@ function action(mode, type, selection) {
 		if (em == null || open == false) {
 			cm.sendOk_Bottom("配置文件不存在,请联系管理员。", 9070200);
 		} else {
-			var prop = em.getProperty("state_" + level);
-			if (prop == null || prop.equals("0")) {
+			var mapid = 993001000 + level * 10;
+			if (em.getPlayersInMap(mapid).size() == 0) {
 				// 当前选择关卡
 				cm.updateInfoQuest(18837, "visit=1;" + level);
 				// 扣除闯关次数
