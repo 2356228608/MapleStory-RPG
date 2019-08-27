@@ -52,6 +52,8 @@ function changedMap(eim, player, mapid) {
 		scheduleNew("level" + level + "_platform", 0);
 	} else if (level == 17) {
 		scheduleNew("level" + level + "_stone", 0);
+	} else if (level == 18) {
+		em.setProperty("level18_count", 0);
 	} else if (level == 34) {
 		scheduleNew("level" + level + "_stone", 0);
 	}
