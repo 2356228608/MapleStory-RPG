@@ -52,6 +52,9 @@ function changedMap(eim, player, mapid) {
 		scheduleNew("level" + level + "_platform", 0);
 	} else if (level == 17) {
 		scheduleNew("level" + level + "_stone", 0);
+	} else if (level == 18) {
+		em.setProperty("level18_count", 0);
+		em.setProperty("level18_switch", -1);
 	} else if (level == 34) {
 		scheduleNew("level" + level + "_stone", 0);
 	}
@@ -182,8 +185,8 @@ function level8_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 1);
-	scheduleNew("level" + level + "_stone", 10);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	scheduleNew("level" + level + "_stone", 5);
 }
 
 function level9_platform() {
@@ -216,8 +219,8 @@ function level12_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 1);
-	scheduleNew("level" + level + "_stone", 10);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	scheduleNew("level" + level + "_stone", 5);
 }
 
 function level17_stone() {
@@ -226,8 +229,8 @@ function level17_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 1);
-	scheduleNew("level" + level + "_stone", 10);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	scheduleNew("level" + level + "_stone", 5);
 }
 
 function level34_stone() {
@@ -236,6 +239,6 @@ function level34_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(20, 1, 1);
-	scheduleNew("level" + level + "_stone", 10);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	scheduleNew("level" + level + "_stone", 5);
 }
