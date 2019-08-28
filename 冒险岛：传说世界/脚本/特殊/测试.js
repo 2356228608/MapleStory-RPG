@@ -86,10 +86,12 @@ function actionTP(mode, type, selection) {
 function actionHD(mode, type, selection) {
 	// 缓存控制之神里角色最后移动时间
 	updateInfoQuest(34515, Long.toString(System.currentTimeMillis()));
-	// 领取每周礼物的时间 是否完结了全部大冒险岛内容，完结就不显示UI了
-	cm.updateInfoQuest(100114, "time=12345;finished=1");
+	// 上一次领取每周礼物的时间 可以领取的礼物 是否完结了全部大冒险岛内容，完结就不显示UI了
+	cm.updateInfoQuest(100114, "time=12345;reward=1;finished=1");
 	// 今日获得的能量
 	cm.updateInfoQuest(100168, "123");
+	// 控制之神 20+ 皮肤奖励
+	qm.updateInfoQuest(500651, "clear=1");
 
 	// 访问过控制之神；入场时选择的关卡
 	cm.updateInfoQuest(18837, "visit=1");
