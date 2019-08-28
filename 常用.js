@@ -134,6 +134,8 @@ cm.emotion(int expression, int duration)
 cm.getWeatherEffectNotice("文字", id, 2000, 1);
 // 添加固化额外UI [必须0？] [UI ID] [UI路径]
 cm.PQ_EFFECT(0, 100161, "UI/UIWindowEvent.img/starDust_Adventure", 0, 0);
+// 完成成就 [ID] [?]
+cm.finishAchievement(1,2);
 
 function o文字特效() {}
 /*

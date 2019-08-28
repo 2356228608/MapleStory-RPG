@@ -5,10 +5,10 @@
 var mapIds = [993080500];
 var mapHall = 993080400;
 var emName = "小游戏_大冒险钻头_练习";
-var startPos = [0, 0];
-var posDiff = [100, 200];
+var startPos = [40, -356];
+var posDiff = [200, 300];
 var level = 10;
-var mob = [9833338, 9833348, 9833358];
+var mobId = [9833338, 9833348, 9833358, 9833368];
 
 function init() {
 	em.setProperty("state", 0);
@@ -26,10 +26,10 @@ function setup(eim, leaderid) {
 	}
 	var map = em.getMapFactoryMap(mapIds[0]);
 	for (var i = 0; i < level; i++) {
-		for (var j = 0; j < mob.length; j++) {
-			var mob = em.getMonster(mob[j] + i);
+		for (var j = 0; j < mobId.length; j++) {
+			var mob = em.getMonster(mobId[j] + i);
 			eim.registerMonster(mob);
-			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(startPos[0] + j * posDiff, startPos[1] + i * posDiff));
+			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(startPos[0] + j * posDiff[0], startPos[1] - i * posDiff[1]));
 		}
 	}
 	return eim;

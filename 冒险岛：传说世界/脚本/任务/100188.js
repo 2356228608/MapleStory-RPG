@@ -3,7 +3,7 @@ var selectionLog = new Array(); // 记录每一轮的选择
 
 function start(mode, type, selection) {
 	var info = qm.getInfoQuest(100188);
-	if (info == null || !info.equals("start")) {
+	if (info == null || info.indexOf("start")<0) {
 		startIntro(mode, type, selection);
 	} else {
 		qm.dispose();
@@ -54,7 +54,9 @@ function startIntro(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextPrev("去吧！#b#h0##k！\r\n征服#e#b<大冒险钻头>#k#n，然后回来！", 9062147);
 	} else if (status == i++) {
-		qm.updateInfoQuest(100188, "start");
+		qm.updateInfoQuest(100188, "start;0");
+		qm.forceStartQuest();
+		qm.forceCompleteQuest();
 		qm.dispose();
 	}
 }

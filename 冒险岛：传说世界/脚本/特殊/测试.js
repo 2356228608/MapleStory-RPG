@@ -46,10 +46,10 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
 function action(mode, type, selection) {
-	//cm.finishAchievement(1,2);
-	cm.getMap().CP_Urus_DynamicObjMove(-305, -531, -305, -220, -305, -531, 1, 0, 5, "updown1");
-	//cm.CP_Urus_DynamicObjMove(-2912, -128,-2912,-400,-2912,-128,1,0,-5,"updown0");
-	cm.inGameDirectionEvent_PushScaleInfo("800", 800, 1000);
+	var newStatus = cm.getQuestRecord(500619);
+	newStatus.setStatus(0);
+	// 这样才能有效更新
+	cm.getPlayer().updateQuest(newStatus, true);
 	cm.dispose();
 }
 function actionPacket(mode, type, selection) {
@@ -92,6 +92,8 @@ function actionHD(mode, type, selection) {
 	cm.updateInfoQuest(100168, "123");
 	// 控制之神 20+ 皮肤奖励
 	qm.updateInfoQuest(500651, "clear=1");
+	// 大冒险钻头击杀数量
+	cm.updateInfoQuest(100188, "123");
 
 	// 访问过控制之神；入场时选择的关卡
 	cm.updateInfoQuest(18837, "visit=1");

@@ -12,21 +12,21 @@ function start(mode, type, selection) {
 	(mode == 1) ? status++ : status--;
 	var i = -1;
 	selectionLog[status] = selection;
+	var info = qm.getInfoQuest(100161);
+	if (info == null || info.length < 4) {
+		var level = 1;
+		qm.updateInfoQuest(100161, "lv=1");
+	} else {
+		var level = parseInt(info.substr(3));
+	}
 
-	var item = cm.getItemQuantity(4310266);
+	var item = qm.getItemQuantity(4310266);
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status === i++) {
-		var info = qm.getInfoQuest(100161);
-		if (info == null || info.length < 4) {
-			var level = 1;
-			qm.updateInfoQuest(100161, "lv=1");
-		} else {
-			var level = parseInt(info.substr(3));
-		}
 		var text = "#b#e<大冒险等级>申请升级！#n#k\r\n\r\n";
 		text += "- 当前<大冒险等级>：#b" + tier[level - 1] + "（" + (7 - level) + "级）#k\r\n";
-		if (level) {
+		if (level == 6) {
 			text = "\r\n你已经是最高等级大冒险家了。恭喜！";
 			qm.sendOk(text, 9062143);
 			qm.dispose();

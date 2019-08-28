@@ -26,7 +26,7 @@ function playerEntry(eim, player) {
 	var id = parseInt(player.getInfoQuest(18837).substr(8)) - 1;
 	var map = eim.getMapInstance(id);
 	player.changeMap(map, map.getPortal(0));
-	player.setReviveCount(-1);
+	player.setReviveCount(-100);
 	//eim.startEventTimer(10 * 60 * 1000);
 }
 
@@ -205,11 +205,10 @@ function level9_platform() {
 	var cur = parseInt(em.getProperty("level" + level + "_switch"));
 	var next = (cur + 1) % 2;
 	for (var i = 0; i <= 1; i++) {
-		em.broadcastServerMsg("[CP_Urus_DynamicObjMove] " + pos[i][cur][0] + ", " + pos[i][cur][1] + ", " + pos[i][next][0] + ", " + pos[i][next][1] + ", " + pos[i][cur][0] + ", " + pos[i][cur][1] + ", " + 1 + ", " + Math.pow(-1, cur) * speed[i][0] + ", " + Math.pow(-1, cur) * speed[i][1] + ", " + "updown" + i);
 		em.getMapFactoryMap(mapid).CP_Urus_DynamicObjMove(pos[i][cur][0], pos[i][cur][1], pos[i][next][0], pos[i][next][1], pos[i][cur][0], pos[i][cur][1], 1, Math.pow(-1, cur) * speed[i][0], Math.pow(-1, cur) * speed[i][1], "updown" + i);
 	}
 	em.setProperty("level" + level + "_switch", next);
-	scheduleNew("level" + level + "_platform", 4);
+	scheduleNew("level" + level + "_platform",2);
 }
 
 function level32_platform() {
@@ -227,7 +226,7 @@ function level32_platform() {
 		em.getMapFactoryMap(mapid).CP_Urus_DynamicObjMove(pos[i][cur][0], pos[i][cur][1], pos[i][next][0], pos[i][next][1], pos[i][cur][0], pos[i][cur][1], 1, Math.pow(-1, cur) * speed[i][0], Math.pow(-1, cur) * speed[i][1], "updown" + (i + 1));
 	}
 	em.setProperty("level" + level + "_switch", next);
-	scheduleNew("level" + level + "_platform", 8);
+	scheduleNew("level" + level + "_platform", 3);
 }
 
 function level36_platform() {
@@ -245,7 +244,7 @@ function level36_platform() {
 		em.getMapFactoryMap(mapid).CP_Urus_DynamicObjMove(pos[i][cur][0], pos[i][cur][1], pos[i][next][0], pos[i][next][1], pos[i][cur][0], pos[i][cur][1], 1, Math.pow(-1, cur) * speed[i][0], Math.pow(-1, cur) * speed[i][1], "updown" + (i + 1));
 	}
 	em.setProperty("level" + level + "_switch", next);
-	scheduleNew("level" + level + "_platform", 12);
+	scheduleNew("level" + level + "_platform", 5);
 }
 
 function level12_stone() {

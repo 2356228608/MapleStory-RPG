@@ -12,8 +12,10 @@ function start(mode, type, selection) {
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status === i++) {
-		qm.askMenu("去#b<操作之神>#k挑战#e神之操作#n吧！\r\n\r\n#b每通过一关，都可以获得在<操作之神>中获得的#b星星数量5倍#k的#b大冒险币#k！", 9062148);
+		qm.sendOk("去#b<操作之神>#k挑战#e神之操作#n吧！\r\n\r\n#b每通过一关，都可以获得在<操作之神>中获得的#b星星数量5倍#k的#b大冒险币#k！", 9062148);
 	} else if (status == i++) {
+		qm.forceStartQuest();
+		qm.forceCompleteQuest();
 		qm.dispose();
 	}
 }

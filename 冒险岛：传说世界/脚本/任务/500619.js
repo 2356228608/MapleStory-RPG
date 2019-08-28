@@ -1,7 +1,7 @@
 var status = -1;
 var selectionLog = new Array(); // 记录每一轮的选择
 var tier = ["初级", "中级", "高级", "资深", "精英", "大师"];
-var reward = [2450141, 5], [2023654, 5], [2023672, 5], [2436078, 5], [2435924, 1], [2434921, 1], [2434288, 5], [4001864, 5], [2434917, 5], [2630181, 50], [1712001, 10], [1712002, 10], [1712003, 10], [1712004, 10], [1712005, 10], [1712006, 10];
+var reward = [[2450141, 5], [2023654, 5], [2023672, 5], [2436078, 5], [2435924, 1], [2434921, 1], [2434288, 5], [4001864, 5], [2434917, 5], [2630181, 50], [1712001, 10], [1712002, 10], [1712003, 10], [1712004, 10], [1712005, 10], [1712006, 10]];
 
 function start(mode, type, selection) {
 	if (status == 0 && mode == 0) {
@@ -27,9 +27,9 @@ function start(mode, type, selection) {
 		var text = "#b#e<大冒险等级>每周奖励！#n#k\r\n\r\n- 当前<大冒险等级>：#b" + tier[level - 1] + "（" + (7 - level) + "级）#k\r\n#r（每周奖励从中级（5级）以上开始可以获得）#k\r\n#L1# #b查看<大冒险等级>每周奖励列表#l#k";
 		if (!isSameWeek(new Date().getTime(), Number(data[0][1]))) {
 			data[0][1] = new Date().getTime();
-			data[1][1] = level;
+			data[1][1] = (level - 1) * 2;
 			rewardLeft = data[1][1];
-			qm.saveData(qm, 100114, data);
+			saveData(qm, 100114, data);
 		}
 		if (rewardLeft > 0) {
 			text += "\r\n\r\n#b※ 本周还可以领取 #e" + rewardLeft + "#n 件奖励#n\r\n#b";
@@ -41,6 +41,8 @@ function start(mode, type, selection) {
 		var text = "\r\n#e<大冒险等级>每周奖励列表#n\r\n#b";
 		if (rewardLeft > 0) {
 			text += "\r\n#b※ 本周还可以领取 #e" + rewardLeft + "#n 件奖励#n\r\n#b";
+		} else {
+			qm.dispose();
 		}
 		reward.forEach(function (e, index) {
 			text += "\r\n  ";
@@ -53,11 +55,11 @@ function start(mode, type, selection) {
 		qm.sendOk(text, 9062143);
 	} else if (status === i++) {
 		var text = "恭喜！这是你的奖励！";
-		text += "\r\n  #i" + reward[selection][0] + ":#  #t" + reward[selection][0] + ":# " + reward[selection][1] + "个";
+		text += "\r\n  #b#i" + reward[selection][0] + ":#  #t" + reward[selection][0] + ":# " + reward[selection][1] + "个";
 		qm.sendOk(text, 9062143);
 		qm.gainItem(reward[selection][0], reward[selection][1]);
 		data[1][1] = parseInt(data[1][1]) - 1;
-		qm.saveData(qm, 100114, data);
+		saveData(qm, 100114, data);
 	} else {
 		qm.dispose();
 	}
