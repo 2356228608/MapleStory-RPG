@@ -296,6 +296,12 @@ function action9(mode, type, selection, level, data) {
 }
 
 function startGame(level) {
+	var newStatus = ms.getQuestRecord(34502);
+	newStatus.setCustomData(level);
+	newStatus.setStatus(1);
+	ms.getPlayer().updateQuest(newStatus, true);
+	ms.Update_god_of_control_ui(2,2,10000000,0,10000000,34500);
+	
 	ms.fieldEffect_PlayFieldSound("Sound/MiniGame.img/multiBingo/start");
 	ms.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/start");
 	if (level - 1 < startInfo.length && startInfo[level - 1].length == 4) {

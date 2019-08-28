@@ -42,7 +42,7 @@ function action(mode, type, selection) {
 		cm.gainItem(4310266, level * data[2][1]);
 
 		var dataGame = getData(cm, 18838, ["count", "stageT", "hack", "stage", "mode"]);
-		dataGame[3][1] = Math.max(parseInt(dataGame[3][1]),level);
+		dataGame[3][1] = Math.max(parseInt(dataGame[3][1]), level);
 		saveData(cm, 18838, dataGame);
 
 		var dataTime = getData(cm, 18870, ["timeSum", "timeSumT"]);
@@ -50,12 +50,15 @@ function action(mode, type, selection) {
 		dataTime[1][1] = new Date().getTime();
 		saveData(cm, 18870, dataTime);
 
-		if (oldstar < data[1][3]) {
-			var dataStar = getData(cm, 18869, ["starSumT", "starSum"]);
-			dataStar[0][1] = new Date().getTime();
-			dataStar[1][1] = parseInt(dataStar[1][1]) + data[2][1] - oldstar;
-			saveData(cm, 18869, dataStar);
+		var dataStar = getData(cm, 18869, ["starSumT", "starSum"]);
+		dataStar[0][1] = new Date().getTime();
+		dataStar[1][1] = 0;
+		for (var i = 1; i <= Math.min(40, dataGame[3][1]); i++) {
+			var dataLevel = getData(cm, 18838 + i, ["isClear", "br", "cs", "first"]);
+			var thisStar = parseInt(dataLevel[2][1]);
+			dataStar[1][1] += (thisStar <= 3 && thisStar >= 0) ? thisStar : 0;
 		}
+		saveData(cm, 18869, dataStar);
 
 		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {

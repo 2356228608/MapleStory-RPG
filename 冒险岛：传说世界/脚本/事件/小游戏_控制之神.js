@@ -26,6 +26,7 @@ function playerEntry(eim, player) {
 	var id = parseInt(player.getInfoQuest(18837).substr(8)) - 1;
 	var map = eim.getMapInstance(id);
 	player.changeMap(map, map.getPortal(0));
+	player.setReviveCount(-1);
 	//eim.startEventTimer(10 * 60 * 1000);
 }
 
@@ -44,6 +45,7 @@ function changedMap(eim, player, mapid) {
 		scheduleNew("level" + level + "_stone", 0);
 	} else if (level == 9) {
 		scheduleNew("level" + level + "_platform", 0);
+		em.setProperty("level" + level + "_switch", 0);
 	} else if (level == 10) {
 		scheduleNew("level" + level + "_platform", 0);
 	} else if (level == 12) {
@@ -53,10 +55,16 @@ function changedMap(eim, player, mapid) {
 	} else if (level == 17) {
 		scheduleNew("level" + level + "_stone", 0);
 	} else if (level == 18) {
-		em.setProperty("level18_count", 0);
-		em.setProperty("level18_switch", -1);
+		em.setProperty("level" + level + "_count", 0);
+		em.setProperty("level" + level + "_switch", -1);
+	} else if (level == 32) {
+		scheduleNew("level" + level + "_platform", 0);
+		em.setProperty("level" + level + "_switch", 0);
 	} else if (level == 34) {
 		scheduleNew("level" + level + "_stone", 0);
+	} else if (level == 36) {
+		scheduleNew("level" + level + "_platform", 0);
+		em.setProperty("level" + level + "_switch", 0);
 	}
 }
 
@@ -97,10 +105,6 @@ function allMonstersDead(eim) {
 	} else if (state.equals("2")) {
 		em.setProperty("state", "3");
 	}
-}
-
-function playerRevive(eim, player) {
-	return false;
 }
 
 function clearPQ(eim) {
@@ -185,7 +189,7 @@ function level8_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 1);
 	scheduleNew("level" + level + "_stone", 5);
 }
 
@@ -195,22 +199,53 @@ function level9_platform() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
+	var pos = [[[-2912, -400], [-2912, -128]], [[-305, -531], [-305, -220]]];
+	var speed = [[0, 5], [0, 5]];
 
-	em.CP_Urus_DynamicObjMove(-305, -220, -305, -531, -305, -220, 0, -5, "updown1");
-	em.CP_Urus_DynamicObjMove(-2912, -400, -2912, -128, -2912, -400, 0, 5, "updown0");
-	scheduleNew("level" + level + "_platform_2", 5);
+	var cur = parseInt(em.getProperty("level" + level + "_switch"));
+	var next = (cur + 1) % 2;
+	for (var i = 0; i <= 1; i++) {
+		em.broadcastServerMsg("[CP_Urus_DynamicObjMove] " + pos[i][cur][0] + ", " + pos[i][cur][1] + ", " + pos[i][next][0] + ", " + pos[i][next][1] + ", " + pos[i][cur][0] + ", " + pos[i][cur][1] + ", " + 1 + ", " + Math.pow(-1, cur) * speed[i][0] + ", " + Math.pow(-1, cur) * speed[i][1] + ", " + "updown" + i);
+		em.getMapFactoryMap(mapid).CP_Urus_DynamicObjMove(pos[i][cur][0], pos[i][cur][1], pos[i][next][0], pos[i][next][1], pos[i][cur][0], pos[i][cur][1], 1, Math.pow(-1, cur) * speed[i][0], Math.pow(-1, cur) * speed[i][1], "updown" + i);
+	}
+	em.setProperty("level" + level + "_switch", next);
+	scheduleNew("level" + level + "_platform", 4);
 }
 
-function level9_platform_2() {
-	var level = 9;
+function level32_platform() {
+	var level = 32;
 	var mapid = 993001000 + level * 10;
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
+	var pos = [[[-3084, -304], [-3084, 166]], [[-2427, -304], [-2427, 166]], [[-2165, -304], [-2165, 166]]];
+	var speed = [[0, 6], [0, 5], [0, 5]];
 
-	em.CP_Urus_DynamicObjMove(-2912, -128, -2912, -400, -2912, -128, 0, -5, "updown0");
-	em.CP_Urus_DynamicObjMove(-305, -531, -305, -220, -305, -531, 0, 5, "updown1");
-	scheduleNew("level" + level + "_platform_2", 5);
+	var cur = parseInt(em.getProperty("level" + level + "_switch"));
+	var next = (cur + 1) % 2;
+	for (var i = 0; i <= 2; i++) {
+		em.getMapFactoryMap(mapid).CP_Urus_DynamicObjMove(pos[i][cur][0], pos[i][cur][1], pos[i][next][0], pos[i][next][1], pos[i][cur][0], pos[i][cur][1], 1, Math.pow(-1, cur) * speed[i][0], Math.pow(-1, cur) * speed[i][1], "updown" + (i + 1));
+	}
+	em.setProperty("level" + level + "_switch", next);
+	scheduleNew("level" + level + "_platform", 8);
+}
+
+function level36_platform() {
+	var level = 36;
+	var mapid = 993001000 + level * 10;
+	if (em.getPlayersInMap(mapid).size() == 0) {
+		return;
+	}
+	var pos = [[[-3156, -480], [-3156, 227]], [[-2156, -480], [-2156, 227]]];
+	var speed = [[0, 7], [0, 7]];
+
+	var cur = parseInt(em.getProperty("level" + level + "_switch"));
+	var next = (cur + 1) % 2;
+	for (var i = 0; i <= 1; i++) {
+		em.getMapFactoryMap(mapid).CP_Urus_DynamicObjMove(pos[i][cur][0], pos[i][cur][1], pos[i][next][0], pos[i][next][1], pos[i][cur][0], pos[i][cur][1], 1, Math.pow(-1, cur) * speed[i][0], Math.pow(-1, cur) * speed[i][1], "updown" + (i + 1));
+	}
+	em.setProperty("level" + level + "_switch", next);
+	scheduleNew("level" + level + "_platform", 12);
 }
 
 function level12_stone() {
@@ -219,7 +254,7 @@ function level12_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 1);
 	scheduleNew("level" + level + "_stone", 5);
 }
 
@@ -229,7 +264,7 @@ function level17_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 1);
 	scheduleNew("level" + level + "_stone", 5);
 }
 
@@ -239,6 +274,6 @@ function level34_stone() {
 	if (em.getPlayersInMap(mapid).size() == 0) {
 		return;
 	}
-	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 15);
+	em.getMapFactoryMap(mapid).obtacleFall(6, 4, 1);
 	scheduleNew("level" + level + "_stone", 5);
 }

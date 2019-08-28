@@ -99,7 +99,7 @@ cm.npc_LeaveField(3000107);
 // 召唤NPC [ID] [X] [Y] [是否开启移动]
 cm.npc_ChangeController(3000106, 500, 20, 1); //D5 F8 86 01
 cm.npc_SetSpecialAction(3000106, "summon");
-// NPC往右走 ID 0左1右 X Y
+// NPC往右走 ID 0左1右 距离 速度
 cm.npc_SetForceMove(3000107, 1, 600, 100);
 // npc挂了
 cm.npc_SetSpecialAction(3000123, "die1", 1);

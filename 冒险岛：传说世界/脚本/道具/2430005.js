@@ -7,6 +7,7 @@ function start() {
 }
 
 function action(mode, type, selection) {
+	im.playerMessage(5, "当前地图：" + im.getMapId() + " - " + im.getMap().getMapName());
 	im.playerMessage(5, "当前坐标：" + im.getPlayer().getPosition());
 	im.dispose();
 }

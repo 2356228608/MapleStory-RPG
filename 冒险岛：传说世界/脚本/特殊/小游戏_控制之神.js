@@ -24,50 +24,74 @@ var maxPlayers = 1;
 var moblevel = 255;
 /*var questID = 31732;*/
 var chs = 0;
+var level = -1;
 
 function start() {
 	status = -1;
 	action(1, 0, 0);
 }
 function action(mode, type, selection) {
-	if (status >= 0 && mode == 0) {
-		cm.dispose();
-		return;
-	}
-	mode == 1 ? status++ : status--;
+	status++;
 	if (cm.getMapId() != startmap) {
 		cm.warp(startmap, 0);
 		cm.dispose();
 		return;
 	}
 	var data = getData(cm, 18838, ["count", "stageT", "hack", "stage", "mode"]);
+	data[4][1] = 1;
+	var timeDiff = new Date().getTime() - Number(data[1][1]);
+	if (timeDiff > 7 * 24 * 3600 * 1000) {
+		cm.playerMessage(5, "一星期过去了，又可以继续尽情挑战控制之神了。");
+		data[0][1] = 99;
+		data[1][1] = new Date().getTime();
+		saveData(cm, 18838, data);
+	}
 	var count = parseInt(data[0][1]);
-	var level = cm.getNpc();
 	if (count <= 0) {
 		cm.sendOk_Bottom("啊呀，这星期已经没有挑战次数了呀？下周再试试吧~", 9070200);
+		cm.dispose();
+		return;
 	}
 
-	var em = cm.getEventManager(PQname[selection]);
+	if (level < 0)
+		level = cm.getNpc();
+	var i = -1;
+	if (status <= i++) {
+		cm.dispose();
+	} else if (status === i++) {
+		var datalevel = getData(cm, 18838 + level, ["isClear", "br", "cs", "first"]);
+		if (parseInt(datalevel[0][1]) == 1) {
+			cm.askYesNoNoESC_Bottom("该关卡已通关，\r\n你要用中了陷阱之时剩余挑战次数会减少1次、计时器会重置的\r\n#b<挑战模式>#k入场吗？", 9070200);
+		} else {
+			startEvent(data, count);
+		}
+	} else if (status === i++) {
+		if (mode == 1) {
+			data[4][1] = 2; // 挑战模式
+		}
+		startEvent(data, count);
+	} else {
+		cm.dispose();
+	}
+}
+
+function startEvent(data, count) {
+	var em = cm.getEventManager(PQname[chs]);
 	if (em == null || open == false) {
 		cm.sendOk_Bottom("配置文件不存在,请联系管理员。", 9070200);
 	} else {
-		var em = cm.getEventManager(PQname[chs]);
-		if (em == null || open == false) {
-			cm.sendOk_Bottom("配置文件不存在,请联系管理员。", 9070200);
+		var mapid = 993001000 + level * 10;
+		if (em.getPlayersInMap(mapid).size() == 0) {
+			// 当前选择关卡
+			cm.updateInfoQuest(18837, "visit=1;" + level);
+			// 扣除闯关次数
+			data[0][1] = count - 1;
+			saveData(cm, 18838, data);
+			// 开工
+			em.startInstance(cm.getPlayer());
+			em.setProperty("PQLog", PQLog[chs]); // 务必放在加载事件下方
 		} else {
-			var mapid = 993001000 + level * 10;
-			if (em.getPlayersInMap(mapid).size() == 0) {
-				// 当前选择关卡
-				cm.updateInfoQuest(18837, "visit=1;" + level);
-				// 扣除闯关次数
-				data[0][1] = count - 1;
-				saveData(cm, 18838, data);
-				// 开工
-				em.startInstance(cm.getPlayer());
-				em.setProperty("PQLog", PQLog[chs]); // 务必放在加载事件下方
-			} else {
-				cm.sendOk_Bottom("这一关已经有人在尝试挑战了，换其他频道尝试吧。", 9070200);
-			}
+			cm.sendOk_Bottom("这一关已经有人在尝试挑战了，换其他频道尝试吧。", 9070200);
 		}
 	}
 	cm.dispose();

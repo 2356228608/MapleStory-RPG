@@ -46,15 +46,12 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
 function action(mode, type, selection) {
-	//cm.updateInfoQuest(18838, "count=99;stageT=190824142712;hack=0;stage=25;mode=1");
-	cm.finishAchievement(1,2);
-cm.CP_Urus_DynamicObjMove(-2912, -400,-2912,-100,-2912,-400,1,0,-5,"updown0");
-//cm.CP_Urus_DynamicObjMove(-2912, -128,-2912,-400,-2912,-128,1,0,5,"updown0");
-//cm.CP_Urus_DynamicObjMove(-305, -531,-305,-220,-305,-531,1,0,5,"updown1");
-//cm.CP_Urus_DynamicObjMove(-305, -531,-305,-531,-305,-220,1,0,5,"updown1");
+	//cm.finishAchievement(1,2);
+	cm.getMap().CP_Urus_DynamicObjMove(-305, -531, -305, -220, -305, -531, 1, 0, 5, "updown1");
+	//cm.CP_Urus_DynamicObjMove(-2912, -128,-2912,-400,-2912,-128,1,0,-5,"updown0");
+	cm.inGameDirectionEvent_PushScaleInfo("800", 800, 1000);
 	cm.dispose();
 }
-
 function actionPacket(mode, type, selection) {
 	status++;
 	selectionLog[status] = selection;
@@ -83,14 +80,14 @@ function actionPacket(mode, type, selection) {
 }
 
 function actionTP(mode, type, selection) {
-	var pos = ms.getMap().getPortal(0).getPosition();
-	ms.onTeleport(1, ms.getPlayer().getId(), pos.getX(), pos.getY());
+	var pos = cm.getMap().getPortal(0).getPosition();
+	cm.onTeleport(1, cm.getPlayer().getId(), pos.getX(), pos.getY());
 }
 function actionHD(mode, type, selection) {
 	// 缓存控制之神里角色最后移动时间
 	updateInfoQuest(34515, Long.toString(System.currentTimeMillis()));
-	// 是否完结了全部大冒险岛内容，完结就不显示UI了
-	cm.updateInfoQuest(100114, "finished=1");
+	// 领取每周礼物的时间 是否完结了全部大冒险岛内容，完结就不显示UI了
+	cm.updateInfoQuest(100114, "time=12345;finished=1");
 	// 今日获得的能量
 	cm.updateInfoQuest(100168, "123");
 

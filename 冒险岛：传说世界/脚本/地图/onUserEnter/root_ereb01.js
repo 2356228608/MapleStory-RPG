@@ -14,11 +14,11 @@ function action(mode, type, selection) {
 		ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
 		// 召唤南哈特
-		ms.npc_ChangeController(1101002, 150, 10, 1); //D5 F8 86 01
-		ms.npc_SetSpecialAction(1101002, "summon");
+		ms.npc_ChangeController(1064026, 150, 10, 1); //D5 F8 86 01
+		ms.npc_SetSpecialAction(1064026, "summon");
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.sendNextNoESC("你把世界树带来了吗？", 1101002);
+		ms.sendNextNoESC("你把世界树带来了吗？", 1064026);
 	} else if (status === i++) {
 		ms.sendNextSNoESC("现在正在和冒险骑士团一起过来呢。啊，他们来了。");
 	} else if (status === i++) {
@@ -36,7 +36,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		ms.sendNextNoESC("我正在等你，世界树！", 1101002);
+		ms.sendNextNoESC("我正在等你，世界树！", 1064026);
 	} else if (status === i++) {
 		ms.sendNextNoESC("欢迎你。我一直在等待见到你的这一天。", 1101000);
 	} else if (status === i++) {
@@ -56,7 +56,7 @@ function action(mode, type, selection) {
 		ms.npc_LeaveField(1064024);
 		ms.inGameDirectionEvent_AskAnswerTime(4000);
 	} else if (status === i++) {
-		ms.sendNextNoESC("希望你能在女皇和神兽的庇护下，做个幸福的梦……", 1101002);
+		ms.sendNextNoESC("希望你能在女皇和神兽的庇护下，做个幸福的梦……", 1064026);
 	} else if (status === i++) {
 		// 收尾
 		ms.curNodeEventEnd(true);
@@ -66,7 +66,7 @@ function action(mode, type, selection) {
 		// 传送回真正的圣地？
 		ms.warp(130000000, 0);
 		// NPC离场
-		ms.npc_LeaveField(1101002);
+		ms.npc_LeaveField(1064026);
 		// 修改30013任务状态
 		ms.updateInfoQuest(30013,"restart=1");
 		ms.forceCompleteQuest(30013);
