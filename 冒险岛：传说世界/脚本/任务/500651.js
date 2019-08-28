@@ -20,11 +20,13 @@ function start(mode, type, selection) {
 		var info = qm.getInfoQuest(500651);
 		if (pass < 20) {
 			text += "#r（未达成）#k\r\n";
-		} else if (info == null || info.index("clear") < 0) {
+		} else if (info == null || info.index("clear=1") < 0) {
 			qm.gainItem(2630132, 1);
 			text += "#g（已达成）#k\r\n";
 			text += "\r\n恭喜你通过了#b操作之神20关#k！这是你的奖励！";
 			text += "\r\n#i2630132:# #t2630132:#";
+			qm.updateInfoQuest(500651, "clear=1");
+			qm.gainItem(2630132, 1);
 		} else {
 			text += "#b（已领取）#k\r\n";
 			text += "\r\n你已经领取过奖励了哦。";
