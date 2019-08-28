@@ -90,6 +90,8 @@ function actionHD(mode, type, selection) {
 	cm.updateInfoQuest(100114, "time=12345;reward=1;finished=1");
 	// 今日获得的能量
 	cm.updateInfoQuest(100168, "123");
+	// 控制之神 20+ 皮肤奖励
+	qm.updateInfoQuest(500651, "clear=1");
 
 	// 访问过控制之神；入场时选择的关卡
 	cm.updateInfoQuest(18837, "visit=1");
