@@ -455,20 +455,20 @@
 						<string name="type" value="counting"/>
 					</imgdir>
 					<imgdir name="checkValue">
-						<imgdir name="fieldset">
+						<imgdir name="field">
 							<string name="condition" value="or"/>
 							<imgdir name="values">
 								<imgdir name="0">
-									<string name="fieldset_name" value="LionCastle01"/>
-									<int name="fieldset_index" value="1"/>
+									<int name="field_id" value="211070100"/>
 								</imgdir>
 								<imgdir name="1">
-									<string name="fieldset_name" value="LionCastle02"/>
-									<int name="fieldset_index" value="1"/>
+									<int name="field_id" value="211070102"/>
 								</imgdir>
 								<imgdir name="2">
-									<string name="fieldset_name" value="LionCastle03"/>
-									<int name="fieldset_index" value="1"/>
+									<int name="field_id" value="211070104"/>
+								</imgdir>
+								<imgdir name="3">
+									<int name="field_id" value="211070200"/>
 								</imgdir>
 							</imgdir>
 						</imgdir>
@@ -487,20 +487,17 @@
 						<string name="type" value="counting"/>
 					</imgdir>
 					<imgdir name="checkValue">
-						<imgdir name="fieldset">
+						<imgdir name="field">
 							<string name="condition" value="or"/>
 							<imgdir name="values">
 								<imgdir name="0">
-									<string name="fieldset_name" value="LionCastle01"/>
-									<int name="fieldset_index" value="2"/>
+									<int name="field_id" value="211070101"/>
 								</imgdir>
 								<imgdir name="1">
-									<string name="fieldset_name" value="LionCastle02"/>
-									<int name="fieldset_index" value="2"/>
+									<int name="field_id" value="211070103"/>
 								</imgdir>
 								<imgdir name="2">
-									<string name="fieldset_name" value="LionCastle03"/>
-									<int name="fieldset_index" value="2"/>
+									<int name="field_id" value="211070105"/>
 								</imgdir>
 							</imgdir>
 						</imgdir>
@@ -519,20 +516,17 @@
 						<string name="type" value="counting"/>
 					</imgdir>
 					<imgdir name="checkValue">
-						<imgdir name="fieldset">
+						<imgdir name="field">
 							<string name="condition" value="or"/>
 							<imgdir name="values">
 								<imgdir name="0">
-									<string name="fieldset_name" value="LionCastle01"/>
-									<int name="fieldset_index" value="0"/>
+									<int name="field_id" value="211070110"/>
 								</imgdir>
 								<imgdir name="1">
-									<string name="fieldset_name" value="LionCastle02"/>
-									<int name="fieldset_index" value="0"/>
+									<int name="field_id" value="211070111"/>
 								</imgdir>
 								<imgdir name="2">
-									<string name="fieldset_name" value="LionCastle03"/>
-									<int name="fieldset_index" value="0"/>
+									<int name="field_id" value="211070112"/>
 								</imgdir>
 							</imgdir>
 						</imgdir>
