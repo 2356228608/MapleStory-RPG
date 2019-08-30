@@ -258,8 +258,7 @@
 					</imgdir>
 					<imgdir name="checkValue">
 						<imgdir name="fieldset">
-							<string name="fieldset_name" value="tangyoon_"/>
-							<int name="fieldset_index" value="0"/>
+							<int name="field_id" value="912080100"/>
 						</imgdir>
 					</imgdir>
 				</imgdir>
