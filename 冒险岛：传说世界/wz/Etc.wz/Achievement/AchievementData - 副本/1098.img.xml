@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1098.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="exploration"/>
+		<string name="name" value="[地区探险]探索梦幻主题公园"/>
+		<string name="desc" value="探索梦幻主题公园"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="&lt;梦幻主题公园 - 梦幻主题公园&lt;正门&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222100000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="梦幻主题公园&lt;正门&gt;"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="&lt;梦幻主题公园 - 滑稽车站&lt;1&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222110000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="滑稽车站&lt;1&gt;"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="&lt;梦幻主题公园 - 滑稽车站&lt;2&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222110100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="滑稽车站&lt;2&gt;"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="&lt;梦幻主题公园 - 幽灵屋&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222110110"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="幽灵屋"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="&lt;梦幻主题公园 - 滑稽车站&lt;3&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222110200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="滑稽车站&lt;3&gt;"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="&lt;梦幻主题公园 - 极限车站&lt;1&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222120000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="极限车站&lt;1&gt;"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="&lt;梦幻主题公园 - 极限车站&lt;2&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222120100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="极限车站&lt;2&gt;"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="&lt;梦幻主题公园 - 极限车站&lt;3&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222120200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="极限车站&lt;3&gt;"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="&lt;梦幻主题公园 - 幻想车站&lt;1&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222130000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="幻想车站&lt;1&gt;"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="&lt;梦幻主题公园 - 幻想车站&lt;2&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222130100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="幻想车站&lt;2&gt;"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="&lt;梦幻主题公园 - 梦幻动物秀&lt;入口&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="222130200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="梦幻动物秀&lt;入口&gt;"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

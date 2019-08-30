@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="2002.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="item"/>
+		<string name="subCategory" value="collection"/>
+		<string name="name" value="[勋章]只来得及准备到第100阶段"/>
+		<string name="desc" value="获得所有碎梦者勋章"/>
+		<string name="difficulty" value="unique"/>
+		<int name="score" value="40"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+		<int name="sync" value="1"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="获得&lt;碎梦者30级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15922"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="获得&lt;碎梦者40级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15923"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="获得&lt;碎梦者50级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15924"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="获得&lt;碎梦者60级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15925"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="获得&lt;碎梦者70级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15926"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="获得&lt;碎梦者80级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15927"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="获得&lt;碎梦者90级占领者&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15928"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="获得&lt;碎梦者大师&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="15929"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1113.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="exploration"/>
+		<string name="name" value="[地区探险]探索万神殿"/>
+		<string name="desc" value="探索万神殿"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="探索&lt;诺巴族圣地 - 万神殿&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400000000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="探索&lt;万神殿 - 大神殿内部&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400000001"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="大神殿内部"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="探索&lt;万神殿西部地区 - 万神殿西部平原&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400020100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿西部平原"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="探索&lt;万神殿南部地区 - 桔石怪森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400030300"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="桔石怪森林"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="探索&lt;万神殿南部地区 - 万神殿南部平原&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400030100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿南部平原"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="探索&lt;万神殿东部地区 - 万神殿东部平原&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400010100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿东部平原"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="探索&lt;万神殿东部地区 - 万神殿东部森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400010300"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿东部森林"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="探索&lt;万神殿北部地区 - 万神殿北部平原&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400040100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿北部平原"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="探索&lt;万神殿北部地区 - 塞纳罗飞栖息地&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400040300"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="塞纳罗飞栖息地"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="探索&lt;万神殿西部地区 - 赫里希安攻击队基地&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400020300"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="赫里希安攻击队基地"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="探索&lt;万神殿圣地 - 西侧圣殿&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400020000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="西侧圣殿"/>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="探索&lt;万神殿西部地区 - 万神殿西部边界&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400020200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿西部边界"/>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="探索&lt;万神殿南部地区 - 魔力反斥森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400030400"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="魔力反斥森林"/>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="探索&lt;万神殿圣地 - 南侧圣殿&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400030000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="南侧圣殿"/>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="探索&lt;万神殿南部地区 - 万神殿南部边界&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400030200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿南部边界"/>
+		</imgdir>
+		<imgdir name="15">
+			<string name="name" value="探索&lt;万神殿南部地区 - 闪耀之石森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400030500"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="闪耀之石森林"/>
+		</imgdir>
+		<imgdir name="16">
+			<string name="name" value="探索&lt;万神殿圣地 - 东侧圣殿&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400010000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="东侧圣殿"/>
+		</imgdir>
+		<imgdir name="17">
+			<string name="name" value="探索&lt;万神殿东部地区 - 万神殿东部边界&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400010200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿东部边界"/>
+		</imgdir>
+		<imgdir name="18">
+			<string name="name" value="探索&lt;万神殿东部地区 - 充满魔力的森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400010400"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="充满魔力的森林"/>
+		</imgdir>
+		<imgdir name="19">
+			<string name="name" value="探索&lt;万神殿圣地 - 北侧圣殿&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400040000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="北侧圣殿"/>
+		</imgdir>
+		<imgdir name="20">
+			<string name="name" value="探索&lt;万神殿北部地区 - 万神殿北部边界&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="400040200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="万神殿北部边界"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

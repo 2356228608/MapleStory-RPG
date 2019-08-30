@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1277.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="special"/>
+		<string name="name" value="[怪物公园]绝佳的经验值猎场"/>
+		<string name="desc" value="怪物公园通关次数达到100次"/>
+		<int name="parentId" value="1280"/>
+		<string name="difficulty" value="normal"/>
+		<int name="score" value="10"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="submission_info"/>
+			<int name="gaugeMissionIndex" value="0"/>
+			<string name="gaugeSubMission" value="script"/>
+		</imgdir>
+		<string name="keyword" value="通关怪物公园"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="[怪物公园]通关100次"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="100"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

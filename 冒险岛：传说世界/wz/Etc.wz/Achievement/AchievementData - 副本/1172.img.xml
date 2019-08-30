@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1172.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="quest"/>
+		<string name="name" value="消亡旅途神秘调查团"/>
+		<string name="desc" value="完成消亡旅途的所有每日任务"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="[每日任务]消灭200个喜悦艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34130"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="[每日任务]消灭200个愤怒艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34131"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="[每日任务]消灭200个悲伤艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34132"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="[每日任务]消灭200个快乐艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34133"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="[每日任务]消灭200个岩石艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34134"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="[每日任务]消灭200个火焰艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34135"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="[每日任务]消灭200个坚毅灵魂艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34136"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="[每日任务]消灭200个安息艾尔达"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34137"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="[每日任务]消灭130个艾尔达之火"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34138"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="[每日任务]收集50个喜悦艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34139"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="[每日任务]收集50个愤怒艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34140"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="[每日任务]收集50个悲伤艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34141"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="[每日任务]收集50个快乐艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34142"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="[每日任务]收集50个岩石艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34143"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="[每日任务]收集50个火焰艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34144"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="15">
+			<string name="name" value="[每日任务]收集50个坚毅灵魂艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34145"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="16">
+			<string name="name" value="[每日任务]收集50个安息艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34146"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="17">
+			<string name="name" value="[每日任务]收集33个灯火艾尔达样品"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34147"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="18">
+			<string name="name" value="[每日任务]传递30个忘却抑制剂"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34148"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="19">
+			<string name="name" value="[每日任务]传递30个消亡抑制剂"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34149"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="20">
+			<string name="name" value="[每日任务]传递30个安息抑制剂"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34150"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

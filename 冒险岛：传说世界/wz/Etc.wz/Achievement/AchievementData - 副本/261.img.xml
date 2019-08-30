@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="261.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="job"/>
+		<string name="subCategory" value="story"/>
+		<string name="name" value="卡德娜之书"/>
+		<string name="desc" value="完成卡德娜剧情任务"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+		<int name="sync" value="1"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="完成&lt;天才少年科尼&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34608"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="完成&lt;PM 4:55&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34613"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="完成&lt;令人在意的孩子&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34621"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="完成&lt;试剂&amp;生物&amp;毒气&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34630"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="完成&lt;正义使者！？&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34642"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="完成&lt;再见，格兰蒂斯！&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34654"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="完成&lt;渴望苍龙炮&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34715"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="完成&lt;发动作战&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34723"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="完成&lt;开始收复城堡&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="34735"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="完成&lt;最后的决战 - 背后的袭击者麦格纳斯&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="31533"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

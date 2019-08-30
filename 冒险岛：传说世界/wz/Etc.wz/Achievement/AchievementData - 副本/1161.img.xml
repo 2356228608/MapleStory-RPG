@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1161.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="quest"/>
+		<string name="name" value="[主题副本]拯救童话村"/>
+		<string name="desc" value="完成[主题副本]童话村"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+		<int name="sync" value="1"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="完成&lt;[童话村]愤怒宝玉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30407"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="完成&lt;[童话村]后悔宝玉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30413"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="完成&lt;[童话村]暴食宝玉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30420"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="完成&lt;[童话村]嫉妒宝玉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30428"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="完成&lt;[童话村]贪婪宝玉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30436"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="完成&lt;[童话村]怠惰宝玉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30447"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="完成&lt;[童话村]再见，童话村&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="30457"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

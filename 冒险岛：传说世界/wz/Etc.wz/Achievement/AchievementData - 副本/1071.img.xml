@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1071.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="exploration"/>
+		<string name="name" value="[地区探险]探索射手村"/>
+		<string name="desc" value="探索射手村及周边地区"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="探索&lt;射手村 - 射手村&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="探索&lt;射手村 - 玛亚的家&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000001"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="玛亚的家"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="探索&lt;射手村 - 长老斯坦的家&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000002"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="长老斯坦的家"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="探索&lt;射手村 - 丽娜的家&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000003"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="丽娜的家"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="探索&lt;射手村 - 射手村市场&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村市场"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="探索&lt;射手村 - 射手村武器店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000101"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村武器店"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="探索&lt;射手村 - 射手村杂货店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000102"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村杂货店"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="探索&lt;射手村 - 射手村整容院&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000103"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村整容院"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="探索&lt;射手村 - 射手村美发店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000104"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村美发店"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="探索&lt;射手村 - 射手村护肤中心&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000105"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村护肤中心"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="探索&lt;射手村 - 射手村公园&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村公园"/>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="探索&lt;射手村 - 弓箭手培训中心&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000201"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="弓箭手培训中心"/>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="探索&lt;射手村 - 宠物公园&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000202"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="宠物公园"/>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="探索&lt;射手村 - 射手村游戏中心&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000203"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村游戏中心"/>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="探索&lt;射手村 - 弓箭手殿堂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<imgdir name="0">
+									<int name="field_id" value="100000204"/>
+								</imgdir>
+								<imgdir name="1">
+									<int name="field_id" value="100000205"/>
+								</imgdir>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="弓箭手殿堂"/>
+		</imgdir>
+		<imgdir name="15">
+			<string name="name" value="探索&lt;射手村 - 衣柜坠落的房间&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100000004"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="衣柜坠落的房间"/>
+		</imgdir>
+		<imgdir name="16">
+			<string name="name" value="探索&lt;射手村 - 梦境小道&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100010100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="梦境小道"/>
+		</imgdir>
+		<imgdir name="17">
+			<string name="name" value="探索&lt;射手村 - 射手村北部小山&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100010000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="射手村北部小山"/>
+		</imgdir>
+		<imgdir name="18">
+			<string name="name" value="探索&lt;射手村 - 奇怪的山丘&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100010001"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="奇怪的山丘"/>
+		</imgdir>
+		<imgdir name="19">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 孢子山丘&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="孢子山丘"/>
+		</imgdir>
+		<imgdir name="20">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 哼唱小道&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="哼唱小道"/>
+		</imgdir>
+		<imgdir name="21">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 蘑菇王小道&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020101"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="蘑菇王小道"/>
+		</imgdir>
+		<imgdir name="22">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 银莲花树丛&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="银莲花树丛"/>
+		</imgdir>
+		<imgdir name="23">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 青蘑菇树林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020301"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="青蘑菇树林"/>
+		</imgdir>
+		<imgdir name="24">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 蓝蘑菇王森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020301"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="蓝蘑菇王森林"/>
+		</imgdir>
+		<imgdir name="25">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 青蘑菇树林2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020400"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="青蘑菇树林2"/>
+		</imgdir>
+		<imgdir name="26">
+			<string name="name" value="探索&lt;蘑菇之歌森林 - 微风森林&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100020401"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="微风森林"/>
+		</imgdir>
+		<imgdir name="27">
+			<string name="name" value="探索&lt;石人寺院 - 石人寺院入口&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100040000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="石人寺院入口"/>
+		</imgdir>
+		<imgdir name="28">
+			<string name="name" value="探索&lt;石人寺院 - 石人寺院1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100040100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="石人寺院1"/>
+		</imgdir>
+		<imgdir name="29">
+			<string name="name" value="探索&lt;石人寺院 - 石人寺院2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100040200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="石人寺院2"/>
+		</imgdir>
+		<imgdir name="30">
+			<string name="name" value="探索&lt;石人寺院 - 石人寺院3&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100040300"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="石人寺院3"/>
+		</imgdir>
+		<imgdir name="31">
+			<string name="name" value="探索&lt;石人寺院 - 石人寺院4&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="100040400"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="石人寺院4"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1074.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="exploration"/>
+		<string name="name" value="[地区探险]探索明珠港"/>
+		<string name="desc" value="探索明珠港及周边地区"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="探索&lt;明珠港 - 明珠港&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104000000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="明珠港"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="探索&lt;明珠港 - 明珠港防具店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104000001"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="明珠港防具店"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="探索&lt;明珠港 - 明珠港杂货店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104000002"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="明珠港杂货店"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="探索&lt;明珠港 - 明珠港武器店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104000003"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="明珠港武器店"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="探索&lt;明珠港 - 特鲁的情报商店&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104000004"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="特鲁的情报商店"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="探索&lt;港口大道 - 六岔路口&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104020000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="六岔路口"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="探索&lt;港口大道 - 金银岛大树升降场&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<imgdir name="0">
+									<int name="field_id" value="104020100"/>
+								</imgdir>
+								<imgdir name="1">
+									<int name="field_id" value="104020100"/>
+								</imgdir>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="金银岛大树升降场"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="探索&lt;港口大道 - 天空之城方向升降场&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<imgdir name="0">
+									<int name="field_id" value="104020110"/>
+								</imgdir>
+								<imgdir name="1">
+									<int name="field_id" value="104020110"/>
+								</imgdir>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="天空之城方向升降场"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="探索&lt;港口大道 - 圣地方向升降场&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<imgdir name="0">
+									<int name="field_id" value="104020120"/>
+								</imgdir>
+								<imgdir name="1">
+									<int name="field_id" value="104020120"/>
+								</imgdir>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="圣地方向升降场"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="探索&lt;港口大道 - 明珠港郊外&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104010000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="明珠港郊外"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="探索&lt;港口大道 - 小道1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104010100"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="小道1"/>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="探索&lt;港口大道 - 小道2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="104010200"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="小道2"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

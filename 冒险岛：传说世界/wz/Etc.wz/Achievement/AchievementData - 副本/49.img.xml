@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="49.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="memory"/>
+		<string name="subCategory" value="level"/>
+		<string name="name" value="抢先一步V"/>
+		<string name="desc" value="90分钟内完成第5次转职\n(接收&quot;5转：艾尔达的召唤&quot;后 ~ 完成&quot;5转：力量的记录--力量觉醒&quot;)"/>
+		<string name="difficulty" value="epic"/>
+		<int name="score" value="30"/>
+		<string name="keyword" value="90分钟内完成第5次转职"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="90分钟内完成第5次转职"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

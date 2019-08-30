@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1112.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="exploration"/>
+		<string name="name" value="[地区探险]探索尖耳狐狸村"/>
+		<string name="desc" value="探索尖耳狐狸村"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="探索&lt;米纳尔森林 - 尖耳狐狸村&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="尖耳狐狸村"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="探索&lt;尖耳狐狸村 - 隐月之家&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000001"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="隐月之家"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="探索&lt;尖耳狐狸村 - 狐狸树&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000002"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="狐狸树"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="探索&lt;狐狸山岗 - 月影山丘1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000010"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="月影山丘1"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="探索&lt;狐狸山岗 - 月影山丘2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000011"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="月影山丘2"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="探索&lt;狐狸山岗 - 月影山丘3&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000012"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="月影山丘3"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="探索&lt;狐狸山岗 - 泪岩山丘1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000020"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="泪岩山丘1"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="探索&lt;狐狸山岗 - 泪岩山丘2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000021"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="泪岩山丘2"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="探索&lt;狐狸山岗 - 泪岩山丘3&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000022"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="泪岩山丘3"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="探索&lt;狐狸山岗 - 圆石峡谷1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000030"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="圆石峡谷1"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="探索&lt;狐狸山岗 - 圆石峡谷2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000031"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="圆石峡谷2"/>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="探索&lt;狐狸山岗 - 险峻峡谷1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000040"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="险峻峡谷1"/>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="探索&lt;狐狸山岗 - 险峻峡谷2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000041"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="险峻峡谷2"/>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="探索&lt;狐狸山岗 - 断头峡谷1&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000050"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="断头峡谷1"/>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="探索&lt;狐狸山岗 - 断头峡谷2&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="410000051"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="断头峡谷2"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

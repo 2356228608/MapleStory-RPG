@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1265.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="special"/>
+		<string name="name" value="[起源之塔]造物主是谁？！"/>
+		<string name="desc" value="通关起源之塔50层"/>
+		<string name="difficulty" value="unique"/>
+		<int name="score" value="40"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="submission_info"/>
+			<int name="gaugeMissionIndex" value="0"/>
+			<string name="gaugeSubMission" value="script"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="[起源之塔]通关50层"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

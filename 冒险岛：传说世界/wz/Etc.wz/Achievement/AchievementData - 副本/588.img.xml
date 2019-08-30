@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="588.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="battle"/>
+		<string name="subCategory" value="field"/>
+		<string name="name" value="[偷蛋]3.125%的奇迹"/>
+		<string name="desc" value="偷蛋达到顶端"/>
+		<string name="difficulty" value="unique"/>
+		<int name="score" value="40"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="submission_info"/>
+			<int name="gaugeMissionIndex" value="0"/>
+			<string name="gaugeSubMission" value="script"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="[偷蛋]到达顶端"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

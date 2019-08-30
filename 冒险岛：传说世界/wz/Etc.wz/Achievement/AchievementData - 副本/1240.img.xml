@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1240.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="special"/>
+		<string name="name" value="[碎梦者]开始就成功了一半"/>
+		<string name="desc" value="通过碎梦者10阶段以上后领取奖励"/>
+		<string name="difficulty" value="normal"/>
+		<int name="score" value="10"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="submission_info"/>
+			<int name="gaugeMissionIndex" value="0"/>
+			<string name="gaugeSubMission" value="script"/>
+		</imgdir>
+		<string name="keyword" value="通关10阶段以上"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="[碎梦者]通关第10阶段后领取奖励"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

@@ -25,7 +25,7 @@ function start(mode, type, selection) {
 		qm.sendNextPrev("此外，如果需要更详细的说明，可以点击UI的帮助按钮。从现在开始，在#b冒险岛成就#k中留下你浓墨重彩的一笔吧！", 9000086);
 	} else if (status == i++) {
 		qm.forceStartQuest();
-		qm.finishAchievement(1,2);
+		qm.finishAchievement(1);
 		qm.forceCompleteQuest();
 		qm.dispose();
 	}

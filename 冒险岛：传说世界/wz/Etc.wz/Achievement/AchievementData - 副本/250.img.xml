@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="250.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="job"/>
+		<string name="subCategory" value="story"/>
+		<string name="name" value="双弩精灵之书"/>
+		<string name="desc" value="完成双弩精灵故事任务"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+		<int name="sync" value="1"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="完成&lt;缺少的和完成的&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="24075"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="完成&lt;寻找干净的水&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="24078"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="完成&lt;一无所获的调查&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="24081"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="完成&lt;假情报&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="24085"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="完成&lt;冒险骑士团的道歉&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="quest_state_change">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_change_info">
+							<int name="quest_id" value="24098"/>
+							<imgdir name="quest_state">
+								<int name="min" value="2"/>
+								<int name="max" value="2"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

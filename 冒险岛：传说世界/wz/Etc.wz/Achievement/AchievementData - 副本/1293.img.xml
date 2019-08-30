@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1293.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="special"/>
+		<string name="name" value="[武陵道场]轻松修炼的奖赏"/>
+		<string name="desc" value="累计获得100,000点武陵道场点数"/>
+		<int name="parentId" value="1296"/>
+		<string name="difficulty" value="epic"/>
+		<int name="score" value="30"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="submission_info"/>
+			<int name="gaugeMissionIndex" value="0"/>
+			<string name="gaugeSubMission" value="script"/>
+		</imgdir>
+		<string name="keyword" value="获得武陵道场点数"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="[武陵道场]累计获得100,000点"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="100000"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

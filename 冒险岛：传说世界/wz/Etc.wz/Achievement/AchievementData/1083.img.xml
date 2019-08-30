@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="1083.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="adventure"/>
+		<string name="subCategory" value="exploration"/>
+		<string name="name" value="[地区探险]探索鲁塔比斯"/>
+		<string name="desc" value="探索鲁塔比斯"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="探索&lt;鲁塔比斯 - 巨大的树根&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="field">
+							<int name="field_id" value="105200000"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="巨大的树根"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="探索&lt;鲁塔比斯 - 东侧庭院&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBanbanNormal_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="东侧庭院"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="探索&lt;鲁塔比斯 - 东侧庭院&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBanbanChaos_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="东侧庭院&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="探索&lt;鲁塔比斯 - 时间缝隙&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBanbanNormal_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="时间缝隙"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="探索&lt;鲁塔比斯 - 时间缝隙&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBanbanChaos_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="时间缝隙&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="探索&lt;鲁塔比斯 - 半半的内心世界&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBanbanChaos_"/>
+							<int name="fieldset_index" value="2"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="半半的内心世界&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="探索&lt;鲁塔比斯 - 西侧庭院&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaPierreNormal_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="西侧庭院"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="探索&lt;鲁塔比斯 - 西侧庭院&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaPierreChaos_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="西侧庭院&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="探索&lt;鲁塔比斯 - 午后茶苑&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaPierreNormal_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="午后茶苑"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="探索&lt;鲁塔比斯 - 午后茶苑&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaPierreChaos_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="午后茶苑&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="探索&lt;鲁塔比斯 - 南部庭院&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaQueenNormal_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="南部庭院"/>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="探索&lt;鲁塔比斯 - 南部庭院&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaQueenChaos_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="南部庭院&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="探索&lt;鲁塔比斯 - 女王之城&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaQueenNormal_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="女王之城"/>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="探索&lt;鲁塔比斯 - 女王之城&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaQueenChaos_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="女王之城&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="探索&lt;鲁塔比斯 - 北部庭院&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBellumNormal_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="北部庭院"/>
+		</imgdir>
+		<imgdir name="15">
+			<string name="name" value="探索&lt;鲁塔比斯 - 北部庭院&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBellumChaos_"/>
+							<int name="fieldset_index" value="0"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="北部庭院&lt;进阶&gt;"/>
+		</imgdir>
+		<imgdir name="16">
+			<string name="name" value="探索&lt;鲁塔比斯 - 深渊洞穴&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBellumNormal_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="深渊洞穴"/>
+		</imgdir>
+		<imgdir name="17">
+			<string name="name" value="探索&lt;鲁塔比斯 - 深渊洞穴&lt;进阶&gt;&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="field_enter">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="fieldset">
+							<string name="fieldset_name" value="rootaBellumChaos_"/>
+							<int name="fieldset_index" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="深渊洞穴&lt;进阶&gt;"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

@@ -46,10 +46,7 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
 function action(mode, type, selection) {
-	var newStatus = cm.getQuestRecord(500619);
-	newStatus.setStatus(0);
-	// 这样才能有效更新
-	cm.getPlayer().updateQuest(newStatus, true);
+	cm.forceStartQuest(25940, "1");
 	cm.dispose();
 }
 function actionPacket(mode, type, selection) {

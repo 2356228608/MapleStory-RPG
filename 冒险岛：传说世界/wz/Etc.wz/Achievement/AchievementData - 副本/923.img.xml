@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="923.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="item"/>
+		<string name="subCategory" value="collection"/>
+		<string name="name" value="[灵魂结晶]伟大的灵魂锻造者"/>
+		<string name="desc" value="合成以下首领怪灵魂结晶碎片，获得伟大的灵魂结晶"/>
+		<string name="difficulty" value="legendary"/>
+		<int name="score" value="100"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+		<string name="block" value="hide"/>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="获得&lt;伟大的CQ57灵魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的CQ57灵魂"/>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="获得&lt;伟大的戴米安灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的戴米安灵魂结晶"/>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="获得&lt;伟大的路西德灵魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的路西德灵魂"/>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="获得&lt;伟大的麦格纳斯灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的麦格纳斯灵魂结晶"/>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="获得&lt;伟大的莫卡丁灵魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的莫卡丁灵魂"/>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="获得&lt;伟大的班·雷昂灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的班·雷昂灵魂结晶"/>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="获得&lt;伟大的半半灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的半半灵魂结晶"/>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="获得&lt;伟大的蝙蝠怪灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的蝙蝠怪灵魂结晶"/>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="获得&lt;伟大的贝伦灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的贝伦灵魂结晶"/>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="获得&lt;伟大的血腥女王灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的血腥女王灵魂结晶"/>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="获得&lt;伟大的斯乌灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的斯乌灵魂结晶"/>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="获得&lt;伟大的希纳斯灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的希纳斯灵魂结晶"/>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="获得&lt;伟大的阿卡伊勒灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的阿卡伊勒灵魂结晶"/>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="获得&lt;伟大乌鲁斯之魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大乌鲁斯之魂"/>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="获得&lt;伟大的扎昆灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的扎昆灵魂结晶"/>
+		</imgdir>
+		<imgdir name="15">
+			<string name="name" value="获得&lt;伟大的朱莉娅灵魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的朱莉娅灵魂"/>
+		</imgdir>
+		<imgdir name="16">
+			<string name="name" value="获得&lt;伟大的卡里亚恩灵魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的卡里亚恩灵魂"/>
+		</imgdir>
+		<imgdir name="17">
+			<string name="name" value="获得&lt;伟大的弗雷德灵魂&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的弗雷德灵魂"/>
+		</imgdir>
+		<imgdir name="18">
+			<string name="name" value="获得&lt;伟大的皮埃尔灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的皮埃尔灵魂结晶"/>
+		</imgdir>
+		<imgdir name="19">
+			<string name="name" value="获得&lt;伟大的品克缤灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的品克缤灵魂结晶"/>
+		</imgdir>
+		<imgdir name="20">
+			<string name="name" value="获得&lt;伟大的希拉灵魂结晶&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="script">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+					</imgdir>
+				</imgdir>
+			</imgdir>
+			<string name="keyword" value="伟大的希拉灵魂结晶"/>
+		</imgdir>
+	</imgdir>
+</imgdir>

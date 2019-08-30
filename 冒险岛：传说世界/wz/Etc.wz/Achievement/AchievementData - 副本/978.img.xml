@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="978.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="item"/>
+		<string name="subCategory" value="enchantment"/>
+		<string name="name" value="[咒语痕迹]一口气还原"/>
+		<string name="desc" value="咒语痕迹还原卷轴成功100次"/>
+		<int name="parentId" value="979"/>
+		<string name="difficulty" value="epic"/>
+		<int name="score" value="30"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="basic"/>
+			<string name="gauge" value="submission_info"/>
+			<int name="gaugeMissionIndex" value="0"/>
+			<string name="gaugeSubMission" value="spell_trace_enchant"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="咒语痕迹还原卷轴成功100次"/>
+			<imgdir name="subMission">
+				<imgdir name="spell_trace_enchant">
+					<imgdir name="score">
+						<int name="targetScore" value="100"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="spell_trace_enchant">
+							<int name="is_innocent_scroll" value="1"/>
+						</imgdir>
+						<imgdir name="enchant_result">
+							<int name="is_success" value="1"/>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>

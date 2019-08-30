@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<imgdir name="607.img">
+	<imgdir name="info">
+		<string name="mainCategory" value="battle"/>
+		<string name="subCategory" value="field"/>
+		<string name="name" value="[突发任务]危机应对能力A+"/>
+		<string name="desc" value="完成所有种类的突发任务"/>
+		<string name="difficulty" value="rare"/>
+		<int name="score" value="20"/>
+		<imgdir name="uiType">
+			<string name="uiForm" value="mission"/>
+			<string name="gauge" value="mission_count"/>
+		</imgdir>
+	</imgdir>
+	<imgdir name="mission">
+		<imgdir name="0">
+			<string name="name" value="完成&lt;消灭100只等级范围怪物&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49001"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="1">
+			<string name="name" value="完成&lt;消灭200只等级范围怪物&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49002"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="2">
+			<string name="name" value="完成&lt;消灭300只等级范围怪物&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49003"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="3">
+			<string name="name" value="完成&lt;区域怪物狩猎中达成100连击&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49004"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="4">
+			<string name="name" value="完成&lt;区域怪物狩猎中达成200连击&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49005"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="5">
+			<string name="name" value="完成&lt;区域怪物狩猎中达成300连击&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49006"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="6">
+			<string name="name" value="完成&lt;怪物狩猎中发动15次多连杀&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49007"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="7">
+			<string name="name" value="完成&lt;怪物狩猎中发动25次多连杀&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49008"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="8">
+			<string name="name" value="完成&lt;怪物狩猎中发动50次多连杀&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49009"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="9">
+			<string name="name" value="完成&lt;触发1次区域内生成的符文、诱饵&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49010"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="10">
+			<string name="name" value="完成&lt;前往斗燃地区&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49011"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="11">
+			<string name="name" value="完成&lt;消灭1只精英怪物&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49012"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="12">
+			<string name="name" value="完成&lt;消灭2只精英怪物&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49013"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="13">
+			<string name="name" value="完成&lt;消灭3只精英怪物&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49014"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="14">
+			<string name="name" value="完成&lt;通关1次火焰狼巢穴&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49016"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="15">
+			<string name="name" value="完成&lt;帮助赏金猎人兄弟1次&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49017"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+		<imgdir name="16">
+			<string name="name" value="完成&lt;使用1次区域内的隐藏传送口&gt;"/>
+			<imgdir name="subMission">
+				<imgdir name="suddenmission_complete">
+					<imgdir name="score">
+						<int name="targetScore" value="1"/>
+						<string name="compare" value="greater_than_or_equal_to"/>
+						<string name="type" value="counting"/>
+					</imgdir>
+					<imgdir name="checkValue">
+						<imgdir name="quest_id">
+							<string name="condition" value="or"/>
+							<imgdir name="values">
+								<int name="0" value="49018"/>
+							</imgdir>
+						</imgdir>
+					</imgdir>
+				</imgdir>
+			</imgdir>
+		</imgdir>
+	</imgdir>
+</imgdir>
