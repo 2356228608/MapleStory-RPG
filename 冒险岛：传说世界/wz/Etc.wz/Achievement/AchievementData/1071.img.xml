@@ -446,7 +446,7 @@
 					</imgdir>
 					<imgdir name="checkValue">
 						<imgdir name="field">
-							<int name="field_id" value="100020301"/>
+							<int name="field_id" value="100020300"/>
 						</imgdir>
 					</imgdir>
 				</imgdir>
