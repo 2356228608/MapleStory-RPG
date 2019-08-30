@@ -239,20 +239,17 @@
 						<string name="type" value="counting"/>
 					</imgdir>
 					<imgdir name="checkValue">
-						<imgdir name="fieldset">
+						<imgdir name="field">
 							<string name="condition" value="or"/>
 							<imgdir name="values">
 								<imgdir name="0">
-									<string name="fieldset_name" value="papulatusEasy_"/>
-									<int name="fieldset_index" value="0"/>
+									<int name="field_id" value="220080100"/>
 								</imgdir>
 								<imgdir name="1">
-									<string name="fieldset_name" value="papulatusNormal_"/>
-									<int name="fieldset_index" value="0"/>
+									<int name="field_id" value="220080200"/>
 								</imgdir>
 								<imgdir name="2">
-									<string name="fieldset_name" value="papulatusChaos_"/>
-									<int name="fieldset_index" value="0"/>
+									<int name="field_id" value="220080300"/>
 								</imgdir>
 							</imgdir>
 						</imgdir>
