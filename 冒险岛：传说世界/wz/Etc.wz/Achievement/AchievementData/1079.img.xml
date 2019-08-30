@@ -369,9 +369,8 @@
 						<string name="type" value="counting"/>
 					</imgdir>
 					<imgdir name="checkValue">
-						<imgdir name="fieldset">
-							<string name="fieldset_name" value="fairyAcademy1_"/>
-							<int name="fieldset_index" value="0"/>
+						<imgdir name="field">
+							<int name="field_id" value="101073010"/>
 						</imgdir>
 					</imgdir>
 				</imgdir>
@@ -406,9 +405,8 @@
 						<string name="type" value="counting"/>
 					</imgdir>
 					<imgdir name="checkValue">
-						<imgdir name="fieldset">
-							<string name="fieldset_name" value="fairyAcademy2_"/>
-							<int name="fieldset_index" value="0"/>
+						<imgdir name="field">
+							<int name="field_id" value="101073110"/>
 						</imgdir>
 					</imgdir>
 				</imgdir>
