@@ -23,7 +23,7 @@ function action(mode, type, selection) {
         cm.fieldEffect_KinesisEXP(350);
         cm.updateInfoQuest(22700, "V01=1;V02=1;E1=1");
         cm.gainExp(350);
-        cm.effect_Voice("Voice3.img/Kinesis/guide_04");
+        cm.effect_Voice("Voice3.img/Kinesis/guide_04");//播放声音Voice.img开头的字符串
         cm.inGameDirectionEvent_AskAnswerTime(2500);
     } else if (status === i++) {
         cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家

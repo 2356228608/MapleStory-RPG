@@ -13,26 +13,23 @@ function action(mode, type, selection) {
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
-	} else if (status === i++) {}
-	else if (status === i++) {
+	} else if (status === i++) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, false, false);
 		ms.setStandAloneMode(true);
-		ms.npc_ChangeController(9400047, "142142365", 552, 708);
-		ms.npc_SetSpecialAction("142142365", "summon");
-		ms.npc_ChangeController(9400048, "142142366", 356, 708);
-		ms.npc_SetSpecialAction("142142366", "summon");
-		ms.npc_ChangeController(9400036, "142142367", 940, 708);
-		ms.npc_SetSpecialAction("142142367", "summon");
+		ms.npc_ChangeController(9400047, "oid=142142365", 552, 708);
+		ms.npc_SetSpecialAction("oid=142142365", "summon");
+		ms.npc_ChangeController(9400048, "oid=142142366", 356, 708);
+		ms.npc_SetSpecialAction("oid=142142366", "summon");
+		ms.npc_ChangeController(9400036, "oid=142142367", 940, 708);
+		ms.npc_SetSpecialAction("oid=142142367", "summon");
 		ms.inGameDirectionEvent_AskAnswerTime(4200);
 	} else if (status === i++) {
-		ms.curNodeEventEnd(true);
 		ms.effect_Text("#fn黑体##fs18#嘟嘟失踪1个小时前" 100, 2200, 6, -50, -50, 1, 4, 0, 0, 0);
-		ms.updateAchievement(558, 0, "");
-		ms.inGameDirectionEvent_Effect("Effect/OnUserEff.img/emotion/love", 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/OnUserEff.img/emotion/love", 0, 0, 0, 1, 0, 1, "oid=142142365", 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2400);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/OnUserEff.img/emotion/love", 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/OnUserEff.img/emotion/love", 0, 0, 0, 1, 0, 1, "oid=142142367", 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2400);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("哈哈哈，嘟嘟，谢谢你今天和我一起玩，真是太有趣了！", 9400047);
@@ -58,8 +55,7 @@ function action(mode, type, selection) {
 		ms.fieldEffect_PlayFieldSound("Sound/PL_3min.img/direction/frog_shout");
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		ms.npc_ChangeController("142142367");
-		ms.npc_LeaveField("142142367");
+		ms.npc_LeaveField("oid=142142367");
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
@@ -82,12 +78,12 @@ function action(mode, type, selection) {
 		ms.sendNextNoESC_Bottom("嘟嘟的声音！", 9400048);
 		ms.inGameDirectionEvent_AskAnswerTime(1200);
 	} else if (status === i++) {
-		ms.npc_ChangeController(9400039, "142150855", 2257, 375);
-		ms.npc_SetSpecialAction("142150855", "summon");
-		ms.npc_ChangeController(9400041, "142150856", 2523, 375);
-		ms.npc_SetSpecialAction("142150856", "summon");
-		ms.npc_ChangeController(9400036, "142150857", 2381, 375);
-		ms.npc_SetSpecialAction("142150857", "summon");
+		ms.npc_ChangeController(9400039, "oid=142150855", 2257, 375);
+		ms.npc_SetSpecialAction("oid=142150855", "summon");
+		ms.npc_ChangeController(9400041, "oid=142150856", 2523, 375);
+		ms.npc_SetSpecialAction("oid=142150856", "summon");
+		ms.npc_ChangeController(9400036, "oid=142150857", 2381, 375);
+		ms.npc_SetSpecialAction("oid=142150857", "summon");
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushMoveInfo(0, 300, 2000, 300);
@@ -109,18 +105,15 @@ function action(mode, type, selection) {
 		ms.fieldEffect_InsertCanvas(0, 0, 0, 0, 0, 1000, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1400);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/OnUserEff/emotionBalloon/exclamation3", 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/OnUserEff/emotionBalloon/exclamation3", 0, 0, 0, 1, 0, 1, "oid=142150857", 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.npc_setForceFlip("142150855", 1);
 		ms.inGameDirectionEvent_AskAnswerTime(1200);
 	} else if (status === i++) {
-		ms.npc_ChangeController("142150855");
-		ms.npc_LeaveField("142150855");
-		ms.npc_ChangeController("142150856");
-		ms.npc_LeaveField("142150856");
-		ms.npc_ChangeController("142150857");
-		ms.npc_LeaveField("142150857");
+		ms.npc_LeaveField("oid=142150855");
+		ms.npc_LeaveField("oid=142150856");
+		ms.npc_LeaveField("oid=142150857");
 		ms.inGameDirectionEvent_AskAnswerTime(1200);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushScaleInfo(0, 1000, 2147483647, 2147483647, 2147483647);
@@ -136,9 +129,9 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.setInGameDirectionMode(false, false, false);
 		ms.setStandAloneMode(false);
-		ms.updateAchievement(558, 0, "");
-		ms.npc_LeaveField("142142365");
-		ms.npc_LeaveField("142142366");
+		ms.curNodeEventEnd(true);
+		ms.npc_LeaveField("oid=142142365");
+		ms.npc_LeaveField("oid=142142366");
 		ms.warp(867111001);
 		ms.dispose();
 	}

@@ -176,8 +176,9 @@ function action(mode, type, selection) {
 		if (cm.getPlayer().getIntNoRecord(99997) == 0) {
 			cm.askMenu_Bottom(selStr);
 		} else {
-			cm.askMenu(selStr);
+			cm.sendNextPrev_Illus(selStr,9130081);
 		}
+		//cm.finishAchievement(1,2);
 		//cm.askMenu_Bottom(selStr);
 		//cm.askMenuS_New(selStr);
 

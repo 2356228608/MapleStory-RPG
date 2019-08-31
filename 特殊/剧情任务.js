@@ -38,7 +38,7 @@ function action(mode, type, selection) {
 		selStr += "#L1#" + ziti + "每日日常任务#l"+n+n;
 		selStr += "#L2#" + ziti + "主题副本任务#l"+n+n;
 		selStr += "#L3#" + ziti + "剧情副本任务#l"+n+n;
-		//selStr += "#L4#" + ziti + "小游戏_控制之神#l"+n+n;
+		selStr += "#L4#" + ziti + "小游戏_控制之神#l"+n+n;
 		selStr +="";
 		
 		cm.askMenu(selStr);
