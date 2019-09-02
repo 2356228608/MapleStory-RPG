@@ -172,6 +172,7 @@ function action第二幕(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(4000);
 	} else if (status === i++) {
 		// 屏幕在颤抖
+		ms.fieldEffect_Tremble(0, 1, 18000));
 		ms.inGameDirectionEvent_PushScaleInfo(500, 1000, 500, 133, 270);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(15000);

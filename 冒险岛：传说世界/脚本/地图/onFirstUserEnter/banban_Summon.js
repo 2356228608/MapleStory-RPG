@@ -15,12 +15,7 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		var eim = cm.getEventInstance();
-		if (eim != null) {
-			var em = eim.getEventManager();
-			ms.getMap().spawnMonsterOnGroundBelow(
-				em.getMonster(8910000), new java.awt.Point(256, 443));
-		}
+		ms.getMap().startSimpleMapEffect("从时空缝隙中召唤半半吧。", 5120026);
 		ms.dispose();
 	} else {
 		ms.dispose();

@@ -45,8 +45,9 @@ function act蘑菇城() {
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/viking");
 	cm.fieldEffect_ScreenMsg("Map/Effect2.img/flowervioleta/puzzle");
 }
+
 function action(mode, type, selection) {
-	cm.forceStartQuest(25940, "1");
+	cm.forceCompleteQuest(59709);
 	cm.dispose();
 }
 function actionPacket(mode, type, selection) {
@@ -88,7 +89,7 @@ function actionHD(mode, type, selection) {
 	// 今日获得的能量
 	cm.updateInfoQuest(100168, "123");
 	// 控制之神 20+ 皮肤奖励
-	qm.updateInfoQuest(500651, "clear=1");
+	cm.updateInfoQuest(500651, "clear=1");
 	// 大冒险钻头击杀数量
 	cm.updateInfoQuest(100188, "123");
 
@@ -111,13 +112,13 @@ function actionHD(mode, type, selection) {
 	cm.updateInfoQuest(500651, "3=1");
 
 	// 大冒险等级？
-	qm.updateInfoQuest(100161, "lv=1");
-	qm.updateInfoQuest(500617, "lv=1");
+	cm.updateInfoQuest(100161, "lv=1");
+	cm.updateInfoQuest(500617, "lv=1");
 
 	// 大冒险属性
-	qm.teachSkill(80000582, 1);
+	cm.teachSkill(80000582, 1);
 	// 大冒险技能 80000584 80000583 80002703 80002705 80002707 80002709（奥本的勋章）
-	qm.teachSkill(80000584, 1);
+	cm.teachSkill(80000584, 1);
 	cm.dispose();
 }
 
@@ -259,9 +260,8 @@ function actionQuest(mode, type, selection) {
 }
 
 function actionMob(mode, type, selection) {
-	var emName = "副本_起源之塔";
-	var em = cm.getEventManager(emName);
-	var eim = em.getInstance(emName);
+	var eim = cm.getEventInstance();
+	var em = eim.getEventManager();
 	var map = em.getMapFactoryMap(cm.getMapId());
 	var mob = em.getMonster(9309200);
 	var modified = em.newMonsterStats();

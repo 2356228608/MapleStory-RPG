@@ -3,13 +3,9 @@ var status = -1; // status: 当前聊天交互轮数
 var selectionLog = new Array(); // 记录每一轮的选择
 
 // 开头
-function start() {
-	action(1, 0, 0);
-}
-
 function start(mode, type, selection) {
 	if (status == 0 && mode == 0) {
-		im.dispose();
+		qm.dispose();
 		return;
 	}
 	(mode == 1) ? status++ : status--;
@@ -28,7 +24,7 @@ function start(mode, type, selection) {
 
 function end(mode, type, selection) {
 	if (status == 0 && mode == 0) {
-		im.dispose();
+		qm.dispose();
 		return;
 	}
 	(mode == 1) ? status++ : status--;

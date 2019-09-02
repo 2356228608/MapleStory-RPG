@@ -15,12 +15,13 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		var eim = cm.getEventInstance();
+		var eim = ms.getEventInstance();
 		if (eim != null) {
 			var em = eim.getEventManager();
 			ms.getMap().spawnMonsterOnGroundBelow(
-				em.getMonster(8900000), new java.awt.Point(497, 551));
+				em.getMonster(8900100), new java.awt.Point(497, 551));
 		}
+		ms.getMap().startSimpleMapEffect("欢迎你来参加皮埃尔的茶会！", 5120098);
 		ms.dispose();
 	} else {
 		ms.dispose();

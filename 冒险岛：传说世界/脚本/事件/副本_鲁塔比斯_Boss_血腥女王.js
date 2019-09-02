@@ -60,10 +60,6 @@ function changedMap(eim, player, mapid) {
 			em.setProperty("leader", "true");
 		}
 	}
-	if (mapid == mapIds[1]) {
-		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startSimpleMapEffect("无礼的家伙！竟然随意进出大殿！", 5120099);
-	}
 }
 
 function playerDisconnected(eim, player) {
@@ -106,3 +102,21 @@ function playerDead(eim, player) {}
 function cancelSchedule() {}
 function monsterDrop(eim, player, mob) {}
 function pickUpItem(eim, player, itemID) {}
+
+// 循环调动事件
+function scheduleNew(funcName, seconds) {
+	var setupTask = em.schedule(funcName, seconds * 1000);
+	return setupTask;
+}
+function notice2() {
+	var eim = em.getInstance("副本_鲁塔比斯_Boss_血腥女王");
+	eim.getMapInstance(1).getWeatherEffectNotice("无礼的家伙！竟然随意进出大殿！", 114, 4000, 1);
+}
+function notice3() {
+	var eim = em.getInstance("副本_鲁塔比斯_Boss_血腥女王");
+	//eim.getMapInstance(1).getWeatherEffectNotice("无礼的家伙！竟然随意进出大殿！", 115, 4000, 1);
+}
+function notice4() {
+	var eim = em.getInstance("副本_鲁塔比斯_Boss_血腥女王");
+	eim.getMapInstance(1).getWeatherEffectNotice("呵呵，对你的死亡，我表示很悲伤。", 116, 4000, 1);
+}

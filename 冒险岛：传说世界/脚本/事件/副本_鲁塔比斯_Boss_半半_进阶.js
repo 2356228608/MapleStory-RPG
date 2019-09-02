@@ -52,10 +52,6 @@ function changedMap(eim, player, mapid) {
 			em.setProperty("leader", "true");
 		}
 	}
-	if (mapid == mapIds[1]) {
-		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startSimpleMapEffect("从时空缝隙中召唤半半吧。", 5120026);
-	}
 }
 
 function playerDisconnected(eim, player) {

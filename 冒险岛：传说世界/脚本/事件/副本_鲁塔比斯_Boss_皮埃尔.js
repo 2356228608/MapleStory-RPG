@@ -51,10 +51,6 @@ function changedMap(eim, player, mapid) {
 			em.setProperty("leader", "true");
 		}
 	}
-	if (mapid == mapIds[1]) {
-		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startSimpleMapEffect("欢迎你来参加皮埃尔的茶会！", 5120098);
-	}
 }
 
 function playerDisconnected(eim, player) {

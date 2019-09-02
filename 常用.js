@@ -132,10 +132,17 @@ cm.effect_Lightness(false);
 cm.emotion(int expression, int duration)
 // 地图中央横幅效果
 cm.getWeatherEffectNotice("文字", id, 2000, 1);
+cm.startSimpleMapEffect("文字", 5120116);
 // 添加固化额外UI [必须0？] [UI ID] [UI路径]
 cm.PQ_EFFECT(0, 100161, "UI/UIWindowEvent.img/starDust_Adventure", 0, 0);
 // 完成成就 [ID] [?]
 cm.finishAchievement(1,2);
+// 震动屏幕
+cm.fieldEffect_Tremble(66666, 0, 3000);
+// 另一种头顶字幕
+cm.getTopMsgFont(String msg, int nFont, int nFontSizeType, int nFontColorType, int nFadeOutDelay) 
+// NPC翻转
+cm.npc_setForceFlip(String npcTag, int value)
 
 function o文字特效() {}
 /*

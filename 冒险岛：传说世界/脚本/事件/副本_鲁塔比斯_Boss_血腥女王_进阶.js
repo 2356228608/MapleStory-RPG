@@ -2,7 +2,7 @@
  * 进阶血腥女王
  */
 
-var mapIds = [105200700,105200710];
+var mapIds = [105200700, 105200710];
 
 //自定义复活次数
 var reviveCount = 5;
@@ -15,7 +15,7 @@ function init() {
 
 function setup(eim, leaderid) {
 	em.setProperty("state", "1");
-	em.setProperty("stage", "1");
+	em.setProperty("stage", "0");
 	em.setProperty("leader", "true");
 	var eim = em.newInstance("副本_鲁塔比斯_Boss_血腥女王_进阶");
 	for (var i = 0; i < mapIds.length; i++) {
@@ -31,7 +31,6 @@ function setup(eim, leaderid) {
 
 function playerEntry(eim, player) {
 	var map = eim.getMapInstance(0);
-	//map.startSimpleMapEffect("和沉睡的血腥女皇说话吧。", 5120124);
 	player.setReviveCount(reviveCount); //地图复活次数
 	player.changeMap(map, map.getPortal(0));
 }
@@ -55,10 +54,6 @@ function changedMap(eim, player, mapid) {
 			em.setProperty("state", "0");
 			em.setProperty("leader", "true");
 		}
-	}
-	if (mapid == mapIds[1]) {
-		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startSimpleMapEffect("无礼的家伙！竟然随意进出大殿！", 5120099);
 	}
 }
 
@@ -112,3 +107,21 @@ function playerDead(eim, player) {}
 function cancelSchedule() {}
 function monsterDrop(eim, player, mob) {}
 function pickUpItem(eim, player, itemID) {}
+
+// 循环调动事件
+function scheduleNew(funcName, seconds) {
+	var setupTask = em.schedule(funcName, seconds * 1000);
+	return setupTask;
+}
+function notice2() {
+	var eim = em.getInstance("副本_鲁塔比斯_Boss_血腥女王_进阶");
+	eim.getMapInstance(1).getWeatherEffectNotice("无礼的家伙！竟然随意进出大殿！", 114, 4000, 1);
+}
+function notice3() {
+	var eim = em.getInstance("副本_鲁塔比斯_Boss_血腥女王_进阶");
+	//eim.getMapInstance(1).getWeatherEffectNotice("无礼的家伙！竟然随意进出大殿！", 115, 4000, 1);
+}
+function notice4() {
+	var eim = em.getInstance("副本_鲁塔比斯_Boss_血腥女王_进阶");
+	eim.getMapInstance(1).getWeatherEffectNotice("呵呵，对你的死亡，我表示很悲伤。", 116, 4000, 1);
+}

@@ -54,10 +54,6 @@ function changedMap(eim, player, mapid) {
 			em.setProperty("leader", "true");
 		}
 	}
-	if (mapid == mapIds[1]) {
-		var map = em.getMapFactoryMap(mapIds[1]);
-		map.startSimpleMapEffect("竟敢无视我的警告，又到这里来。这次我不会再手下留情了。", 5120103);
-	}
 }
 
 function playerDisconnected(eim, player) {

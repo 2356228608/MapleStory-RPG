@@ -20,6 +20,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		var id = im.getItemId();
 		im.sendOk("#i" + id + "##z" + id + "#\r\n我也不知道这个道具应该能做什么……它的脚本位于： #b %SCRIPT_PATH%#k\r\n\r\n如果你有兴趣，欢迎一起来修复！", 0);
+		im.dispose();
 	} else {
 		im.dispose();
 	}

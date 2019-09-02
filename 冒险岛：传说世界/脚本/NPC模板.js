@@ -20,6 +20,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		var id = cm.getNpc();
 		cm.sendOk("……啊？你找我吗？我也不知道我应该做什么。我的脚本位于： #b %SCRIPT_PATH%#k\r\n\r\n如果你有兴趣，欢迎一起来修复我的脚本！");
+		cm.dispose();
 	} else {
 		cm.dispose();
 	}

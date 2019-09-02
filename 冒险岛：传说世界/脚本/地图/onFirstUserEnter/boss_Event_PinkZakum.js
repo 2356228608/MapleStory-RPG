@@ -16,9 +16,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 	} else if (status === i++) {
 		ms.getMap().resetFully();
-		ms.getMap().startSimpleMapEffect(
-					"DO NOT BE ALARMED! The Pink Zakum clone was just to help adventurers like you relieve stress!",
-					5120039);
+		ms.getMap().startSimpleMapEffect("DO NOT BE ALARMED! The Pink Zakum clone was just to help adventurers like you relieve stress!", 5120039);
 		ms.dispose();
 	} else {
 		ms.dispose();

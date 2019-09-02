@@ -12,58 +12,64 @@ function start(mode, type, selection) {
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status === i++) {
-		qm.sendNext_Bottom("要怎么才能复原笔记本上被抹去的内容呢……", 9400031);
+		qm.sendNextS_Bottom("要怎么才能复原笔记本上被抹去的内容呢……", 9400031);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("魔法密林图书馆的“汉斯”在解读过去和梦境上有着卓越的能力。", 9400031);
+		qm.sendNextS_Bottom("魔法密林图书馆的“汉斯”在解读过去和梦境上有着卓越的能力。", 9400031);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("如果去请求他的帮助，说不定就能找到解决的方法。", 9400031);
+		qm.sendNextS_Bottom("如果去请求他的帮助，说不定就能找到解决的方法。", 9400031);
 	} else if (status === i++) {
-		qm.askYesNo_Bottom("现在就移动吧. #b(接受后会立刻移动到汉斯的位置.)#k", 9400031);
+		qm.askYesNoS_Bottom("现在就移动吧. #b(接受后会立刻移动到汉斯的位置.)#k", 9400031);
 	} else if (status === i++) {
 		qm.warp(101000003);
 		qm.forceStartQuest();
+		qm.dispose();
 	} else if (status == i++) {
 		qm.dispose();
 	}
 }
 
 function end(mode, type, selection) {
+	if (status == 0 && mode == 0) {
+		qm.dispose();
+		return;
+	}
 	(mode == 1) ? status++ : status--;
+	selectionLog[status] = selection;
 	var i = -1;
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status == i++) {
 		qm.sendNextNoESC_Bottom("你找我有什么事，冒险家？", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("我在背包中发现了这个笔记本……但是我完全想不起来是在哪里得到它的。", 1032001);
+		qm.sendNextS_Bottom("我在背包中发现了这个笔记本……但是我完全想不起来是在哪里得到它的。", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("这应该是个很重要的东西，但奇怪的是我完全想不起来。", 1032001);
+		qm.sendNextS_Bottom("这应该是个很重要的东西，但奇怪的是我完全想不起来。", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("你能够知道过去我是怎么得到这个东西的吗？", 1032001);
+		qm.sendNextS_Bottom("你能够知道过去我是怎么得到这个东西的吗？", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("让我看看……嗯，你说得对。", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("我感受到了强烈的冒险和苦难的气息。这个肯定是个记录了重要事件的东西。", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("但现在这个笔记本是空白的。", 1032001);
+		qm.sendNextS_Bottom("但现在这个笔记本是空白的。", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("只有最后一页上写有一句[一定要阻止APORD] ，不知道是什么意思……", 1032001);
+		qm.sendNextS_Bottom("只有最后一页上写有一句[一定要阻止APORD] ，不知道是什么意思……", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("我觉得这个似乎很重要，没办法置之不理，所以来请求你的帮助。", 1032001);
+		qm.sendNextS_Bottom("我觉得这个似乎很重要，没办法置之不理，所以来请求你的帮助。", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("很好，我可以给你帮助……但是你得知道一件事情。", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("什么事？", 1032001);
+		qm.sendNextS_Bottom("什么事？", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("如果你想探寻已经遗忘的过去，你必须成为其中的一部分，重新经历那一切。", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("也就是说……？", 1032001);
+		qm.sendNextS_Bottom("也就是说……？", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("你必须重新再克服一次这上面记录的试炼和困境。", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("如果你想看到这里记录的过去，你就得成为这个过去的一部分。你做好觉悟了吗？", 1032001);
 	} else if (status === i++) {
-		qm.sendNext_Bottom("是的，不管是什么事情，请你快点展现给我吧。", 1032001);
+		qm.sendNextS_Bottom("是的，不管是什么事情，请你快点展现给我吧。", 1032001);
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("好，那从现在开始，我将给予你看到你和这个笔记本究竟经历了什么事情的能力。", 1032001);
 	} else if (status === i++) {
@@ -73,7 +79,7 @@ function end(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNextNoESC_Bottom("祝你好运！", 1032001);
 		qm.forceCompleteQuest(59701);
-		qm.fieldEffect_KinesisEXP(Math.pow(qm.getPlayer().getLevel(), qm.getPlayer().getLevel() / 25));
+		qm.fieldEffect_KinesisEXP(qm.getPlayer().getLevel() * 10000);
 		qm.updateInfoQuest(59761, "1=1;2=1");
 		qm.fieldEffect_PlayFieldSound("Sound/Field.img/masteryBook/EnchantSuccess");
 		qm.dispose();

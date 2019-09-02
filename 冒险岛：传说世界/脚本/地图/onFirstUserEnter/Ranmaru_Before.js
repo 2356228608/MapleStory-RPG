@@ -15,7 +15,7 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		var eim = cm.getEventInstance();
+		var eim = ms.getEventInstance();
 		if (eim != null) {
 			var em = eim.getEventManager();
 			ms.getMap().spawnMonsterOnGroundBelow(

@@ -2,6 +2,7 @@
 -- 任务
 -- ----------------------------
 REPLACE INTO `wz_questreqdata` (`questid`, `name`, `type`, `stringStore`) VALUES ('25940', 'endscript', '1', 'q25940e');
+UPDATE `wz_questreqdata` SET `intStoresSecond`='0' WHERE (`id`='2496937');
 -- ----------------------------
 -- 商店
 -- ----------------------------

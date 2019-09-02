@@ -15,12 +15,14 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		var eim = cm.getEventInstance();
+		var eim = ms.getEventInstance();
 		if (eim != null) {
 			var em = eim.getEventManager();
+			var mobId = ms.getMapId() >= 105200810 ? 8930000 : 8930100;
 			ms.getMap().spawnMonsterOnGroundBelow(
-				em.getMonster(8930000), new java.awt.Point(256, 443));
+				em.getMonster(mobId), new java.awt.Point(256, 443));
 		}
+		ms.getMap().startSimpleMapEffect("竟敢无视我的警告，又到这里来。这次我不会再手下留情了。", 5120103);
 		ms.dispose();
 	} else {
 		ms.dispose();

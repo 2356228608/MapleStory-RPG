@@ -129,7 +129,7 @@ function action1(mode, type, selection, em, correct) {
 			if (correct == 4) {
 				var map = em.getMapFactoryMap(cm.getMapId());
 				map.hideNpc(2540010);
-				em.getMapFactoryMap(cm.getMapId()).startSimpleMapEffect("哇！真是太棒了！终于见到桃乐丝了。请到下一层将桃乐丝消灭吧。", 5120061);
+				cm.getMap().getWeatherEffectNotice("哇！真是太棒了！终于见到桃乐丝了。请到下一层将桃乐丝消灭吧。", 147, 60000, 1);
 				cm.fieldEffect_ScreenMsg("UI/UIWindowPL.cmg/HiddenCatch/StageImg/clear");
 				em.setProperty("stage49", "clear");
 				em.setProperty("stage49_stage", 2);

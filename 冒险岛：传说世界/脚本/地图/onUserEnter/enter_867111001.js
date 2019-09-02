@@ -8,28 +8,30 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
-	(mode == 1) ? status++ : status--;
-	selectionLog[status] = selection;
+	status++;
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
 		ms.curNodeEventEnd(true);
 		ms.setInGameDirectionMode(true, false, false);
+		ms.inGameDirectionEvent_SetAdditionalEffectVisibleForInGameDirection();
 		ms.setStandAloneMode(true);
-		ms.npc_ChangeController(9400042, "oid=142156705", 1380, 707);
-		ms.npc_SetSpecialAction("oid=142156705", "summon");
-		ms.npc_ChangeController(9400043, "oid=142156706", 1080, 640);
-		ms.npc_SetSpecialAction("oid=142156706", "summon");
-		ms.npc_ChangeController(9400044, "oid=142156707", 1530, 706);
-		ms.npc_SetSpecialAction("oid=142156707", "summon");
-		ms.npc_ChangeController(9400045, "oid=142156708", 1712, 708);
-		ms.npc_SetSpecialAction("oid=142156708", "summon");
-		ms.npc_ChangeController(9400046, "oid=142156709", 956, 705);
-		ms.npc_SetSpecialAction("oid=142156709", "summon");
+		ms.inGameDirectionEvent_SetHideEffect(1);
+		ms.npc_ChangeController(9400042, "oid=1710276", 1380, 707, 1);
+		ms.npc_SetSpecialAction("oid=1710276", "summon");
+		ms.npc_ChangeController(9400043, "oid=1710277", 1080, 640, 0);
+		ms.npc_SetSpecialAction("oid=1710277", "summon");
+		ms.npc_ChangeController(9400044, "oid=1710278", 1530, 706, 1);
+		ms.npc_SetSpecialAction("oid=1710278", "summon");
+		ms.npc_ChangeController(9400045, "oid=1710279", 1712, 708, 1);
+		ms.npc_SetSpecialAction("oid=1710279", "summon");
+		ms.npc_ChangeController(9400046, "oid=1710280", 956, 705, 0);
+		ms.npc_SetSpecialAction("oid=1710280", "summon");
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 500, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
+		ms.curNodeEventEnd(true);
 		ms.inGameDirectionEvent_PushScaleInfo(150, 1400, 500, 1300, 650);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1200);
@@ -49,6 +51,7 @@ function action(mode, type, selection) {
 		ms.sendNextNoESC_Bottom("是啊，必须找她……！", 9400042);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("好的！现在就去！", 9400044);
+	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2400);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 500, 0);
@@ -56,8 +59,8 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		ms.npc_ChangeController(9400031, "oid=142161498", 1280, 705);
-		ms.npc_SetSpecialAction("oid=142161498", "summon");
+		ms.npc_ChangeController(9400031, "oid=1710566", 1280, 705, 0);
+		ms.npc_SetSpecialAction("oid=1710566", "summon");
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1200);
 	} else if (status === i++) {
@@ -77,16 +80,18 @@ function action(mode, type, selection) {
 		ms.sendNextNoESC_Bottom("我看到抓走嘟嘟的那个飞行物似乎是往那边飞走了……", 9400042);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("嘟嘟从来没有离开过村子……它肯定会很害怕的，真是担心啊……", 9400042);
-		ms.npc_ChangeController(9400065, "oid=142165032", 1134, 687);
-		ms.npc_SetSpecialAction("oid=142165032", "summon");
 	} else if (status === i++) {
+		ms.npc_ChangeController(9400065, "oid=1710703", 1134, 687, 0);
+		ms.npc_SetSpecialAction("oid=1710703", "summon");
 		ms.sendNextNoESC_Bottom("那边……是冒险岛世界！为什么要把嘟嘟带到冒险岛世界去呢？", 9400065);
+	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		ms.sendNextNoESC_Bottom("请不要担心，村长，还有各位村民。我是名侦探代号BT！我一定会把嘟嘟找回来的！", 9400031);
+	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		ms.npc_SetSpecialAction("oid=142161498", "fighting");
+		ms.npc_SetSpecialAction("oid=1710566", "fighting");
 		ms.inGameDirectionEvent_AskAnswerTime(2400);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushScaleInfo(0, 1000, 2147483647, 2147483647, 2147483647);
@@ -97,23 +102,23 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		ms.forceCompleteQuest(59702);
-		ms.fieldEffect_KinesisEXP(23200);
 		ms.updateInfoQuest(59761, "1=1;2=1;3=1");
 		ms.inGameDirectionEvent_AskAnswerTime(4200);
 	} else if (status === i++) {
-		ms.fieldEffect_PlayFieldSound("Sound/Field.img/masteryBook/EnchantSuccess");
+		ms.effect_Voice("Field.img/masteryBook/EnchantSuccess");
+		ms.inGameDirectionEvent_SetHideEffect(0);
 		ms.setInGameDirectionMode(false, false, false);
 		ms.setStandAloneMode(false);
-		ms.curNodeEventEnd(true);
-		ms.npc_LeaveField("oid=142156705");
-		ms.npc_LeaveField("oid=142156706");
-		ms.npc_LeaveField("oid=142156707");
-		ms.npc_LeaveField("oid=142156708");
-		ms.npc_LeaveField("oid=142156709");
-		ms.npc_LeaveField("oid=142161498");
-		ms.npc_LeaveField("oid=142165032");
+		ms.npc_LeaveField("oid=1710276");
+		ms.npc_LeaveField("oid=1710277");
+		ms.npc_LeaveField("oid=1710278");
+		ms.npc_LeaveField("oid=1710279");
+		ms.npc_LeaveField("oid=1710280");
+		ms.npc_LeaveField("oid=1710566");
+		ms.npc_LeaveField("oid=1710703");
 		var mapId = parseInt(ms.getInfoQuest(59744).substr(4));
 		ms.warp(mapId);
+		ms.fieldEffect_KinesisEXP(ms.getPlayer().getLevel() * 10000);
 		ms.dispose();
 	}
 }

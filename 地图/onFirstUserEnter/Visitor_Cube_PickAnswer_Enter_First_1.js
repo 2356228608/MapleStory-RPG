@@ -1,0 +1,1 @@
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/地图/onFirstUserEnter/Visitor_Cube_PickAnswer_Enter_First_1.js

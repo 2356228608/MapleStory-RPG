@@ -12,11 +12,11 @@ function start(mode, type, selection) {
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status === i++) {
-		qm.sendNext_Bottom("汉斯说只要打开笔记本里想要复原的那一页就行……让我来看看……！", 9400031);
+		qm.sendNextS_Bottom("汉斯说只要打开笔记本里想要复原的那一页就行……让我来看看……！");
 	} else if (status === i++) {
-		qm.askMenu_Bottom("要不要读一读？\r\n#b#L0#打开笔记本。#l\r\n#L1#以后再说吧。#l", 9400031);
+		qm.askMenuS_Bottom("要不要读一读？\r\n#b#L0#打开笔记本。#l\r\n#L1#以后再说吧。#l");
 	} else if (status === i++) {
-		if (selectionLog[2] == 1) {
+		if (selectionLog[2] == 0) {
 			qm.updateInfoQuest(59744, "map=" + qm.getMapId());
 			qm.forceStartQuest(59702, "");
 			qm.warp(867111000);

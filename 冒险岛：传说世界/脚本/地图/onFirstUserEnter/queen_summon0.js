@@ -15,6 +15,7 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
+		ms.getWeatherEffectNotice("和沉睡的血腥女王说话吧。", 0, 4000, 1);
 		ms.dispose();
 	} else {
 		ms.dispose();
