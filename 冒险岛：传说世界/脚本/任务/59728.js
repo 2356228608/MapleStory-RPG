@@ -14,14 +14,17 @@ function start(mode, type, selection) {
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status == i++) {
-		qm.sendNextSNoESC_Bottom("笔记本的第七页写满了……！");
+		qm.setInGameDirectionMode(false, false, false);
+		qm.askMenuS_Bottom("汉斯说打开笔记本上想复原的那一页就行……要不要打开笔记本看看呢？\r\n#b#L0#1. 打开笔记本。#l\r\n#L1#2. 以后再说吧。#l");
 	} else if (status === i++) {
-		qm.askMenuS_Bottom("要不要读一下？\r\n#b#L0#1. 读一下。#l\r\n#L1#2. 以后再读。#l");
-	} else if (status === i++) {
-		qm.dispose();
-		if (selection == 0) {
-			qm.openNpc(0, "任务_" + qm.getQuest());
+		if (selection == 1) {
+			qm.dispose();
+			return;
 		}
+		qm.updateInfoQuest(59744, "map=" + qm.getMapId());
+		qm.forceStartQuest(59728, "");
+		qm.warp(867111059);
+		qm.dispose();
 	}
 }
 
@@ -36,10 +39,8 @@ function end(mode, type, selection) {
 	if (status <= i++) {
 		qm.dispose();
 	} else if (status == i++) {
-		var id = qm.getQuest();
-		qm.askYesNo("这个任务的结束脚本还没有修复哦。它的脚本位于： #b /脚本/任务/#e" + id + "#n.js#k\r\n\r\n如果你有兴趣，欢迎一起来修复！\r\n\r\n那么现在，你要立刻完成这个任务吗？");
-	} else if (status == i++) {
-		qm.forceCompleteQuest();
+		qm.updateInfoQuest(59744, "map=" + qm.getMapId());
+		qm.warp(867111019);
 		qm.dispose();
 	}
 }

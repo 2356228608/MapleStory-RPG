@@ -15,7 +15,7 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		ms.playerMessage(5, "这个地图进入触发事件的脚本尚未修复。脚本位于： %SCRIPT_PATH%");
+		ms.playerMessage(5, "这个地图进入触发事件的脚本尚未修复。脚本位于： 脚本/地图/onUserEnter/enter_867111290.js");
 		ms.dispose();
 	} else {
 		ms.dispose();
