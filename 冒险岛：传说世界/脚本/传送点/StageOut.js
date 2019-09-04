@@ -53,6 +53,7 @@ function enter(pi) {
 	pi.getPlayer().dropMessage(5, "获得了" + pointsReward + "点起源点数。已被转化为了冒险岛世界的气息。");
 	pi.gainItem(4036455, pointsReward);
 	pi.gainExp(exps[index]);
+	cm.updateAchievement(1266, 0, "script", 1, 200);
 	// TODO 暂时避开故障楼层，等娜娜修复
 	while (badMaps.indexOf(level + 1) > -1) {
 		level++;
