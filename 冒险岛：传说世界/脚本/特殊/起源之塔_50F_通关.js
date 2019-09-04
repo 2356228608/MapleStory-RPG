@@ -30,7 +30,6 @@ function action(mode, type, selection) {
 		cm.dispose();
 		cm.warp(992000000, 0);
 		cm.fieldEffect_InsertCanvas(0, 0, 0, 0, 100, 0, 0);
-		cm.finishAchievement(1265);
 	} else {
 		cm.dispose();
 	}
