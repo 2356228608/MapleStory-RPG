@@ -50,6 +50,7 @@ function action(mode, type, selection) {
 		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
 		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
 		cm.fieldEffect_ScreenMsg("UI/UIWindowPL.img/HiddenCatch/StageImg/clear");
+		cm.finishAchievement(1260 + level/10);
 		cm.dispose();
 	} else {
 		cm.dispose();
