@@ -22,7 +22,7 @@
 				if (eim != null && em != null) {
 					em.setProperty("state", "2");
 					rm.mapMessage(5, "进阶闹钟已被召唤!请在一定时间内击退!");
-					rm.fieldEffect_PlayBGM("Bgm09/TimeAttack");
+					//rm.fieldEffect_PlayBGM("Bgm09/TimeAttack");
 					rm.spawnMonster(8500001, -410, -400);
 					rm.getMap(220080100).setReactorState();
 				}

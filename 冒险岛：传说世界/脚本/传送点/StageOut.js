@@ -7,7 +7,7 @@ var points = [4, 12, 14, 16, 24, 29, 35, 46, 75, 58, 73, 77, 96, 112, 137, 139, 
 var exps = [33474, 83687, 83687, 127118, 143248, 143248, 192090, 192090, 413928, 413928, 571006, 571006, 571006, 640872, 839876, 839876, 903628, 1355442, 1656447, 1656447, 1656447, 1830930, 2395173, 2395173, 2622873, 2622873, 4667404, 4667404, 5909948, 5909948, 5909948, 7038672, 7983508, 7983508, 10080948, 12601185, 13096065, 13096065, 13096065, 13562465, 13562465, 13562465, 13562465, 13562465, 16272958]
 // 目前故障的楼层
 var badMaps = [2, 4, 6, 16, 19, 21, 29, 37, 38, 42, 43, 46];
-// 跑酷楼层，直接通过   
+// 跑酷楼层，直接通过
 var bypassFloor = [12, 17, 19, 22, 23, 27, 41, 44, 48];
 
 function enter(pi) {
@@ -52,8 +52,11 @@ function enter(pi) {
 	var pointsReward = pi.getPlayer().hasEquipped(1113128) ? points[index] * 2 : points[index]; // 起源之塔增强之戒
 	pi.getPlayer().dropMessage(5, "获得了" + pointsReward + "点起源点数。已被转化为了冒险岛世界的气息。");
 	pi.gainItem(4036455, pointsReward);
+	pi.updateAchievement(1272, 0, "script", pointsReward, 10000);
+	pi.updateAchievement(1273, 0, "script", pointsReward, 100000);
+	pi.updateAchievement(1274, 0, "script", pointsReward, 1000000);
+	pi.updateAchievement(1266, 0, "script", 1, 200);
 	pi.gainExp(exps[index]);
-	cm.updateAchievement(1266, 0, "script", 1, 200);
 	// TODO 暂时避开故障楼层，等娜娜修复
 	while (badMaps.indexOf(level + 1) > -1) {
 		level++;

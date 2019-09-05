@@ -47,33 +47,12 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	if (status == 0 && mode == 0) {
-		ms.dispose();
-		return;
-	}
-	status++;
-	selectionLog[status] = selection;
-	var i = -1;
-	if (status <= i++) {
-		ms.dispose();
-	} else if (status === i++) {
-		cm.Hidden_background("DL5_m", 0);
-		cm.curNodeEventEnd(true);
-		cm.setInGameDirectionMode(true, false, false);
-		cm.fieldEffect_ProcessOnOffLayer("BlackOut", "Map/Effect2.img/BlackOut", 0, 0, 0, 0, 2000000, 4, 1);
-		cm.inGameDirectionEvent_AskAnswerTime(4000);
-	} else if (status === i++) {
-		cm.effect_Text("#fn????##fs18#……影牙……", 100, 2200, 4, -50, -50, 1, 4, 0, 0, 0);
-		cm.inGameDirectionEvent_AskAnswerTime(4000);
-	} else if (status === i++) {
-		cm.effect_Text("#fn????##fs22#……影牙，快起来……", 50, 2200, 4, -50, -50, 1, 4, 0, 0, 0);
-		cm.fieldEffect_ProcessOnOffLayer("BlackOut", "", 2, 4000, 0, 0, 0, 0, 0);
-		cm.inGameDirectionEvent_AskAnswerTime(2000);
-	} else if (status === i++) {
-		ms.dispose();
-	} else {
-		ms.dispose();
-	}
+	var eim = cm.getEventInstance();
+	var em = eim.getEventManager();
+	var map = em.getMapFactoryMap(cm.getMapId());
+	var mob = em.getMonster(9410881);
+	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
+	ms.dispose();
 }
 function actionPacket(mode, type, selection) {
 	status++;

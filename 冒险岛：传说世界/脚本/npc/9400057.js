@@ -19,7 +19,6 @@ function action(mode, type, selection) {
 		cm.dispose();
 	} else if (status === i++) {
 		cm.askMenu_Bottom("#face0##fs25##e#b<超空间魔方>#k#n#fs16#\r\n本舰是#b私营银河研究合作机关APORD#k的第6号研究船。\r\n有什么可以为你效劳？\r\n#L1#进入超空间魔方。#l\r\n#L9#放弃。#l", 9400057);
-		cm.dispose();
 	} else if (status === i++) {
 		if (selection == 9) {
 			qm.dispose();
