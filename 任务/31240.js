@@ -9,7 +9,7 @@ function start() {
 
 function start(mode, type, selection) {
 	if (status == 0 && mode == 0) {
-		qm.dispose();
+		im.dispose();
 		return;
 	}
 	(mode == 1) ? status++ : status--;
@@ -28,7 +28,7 @@ function start(mode, type, selection) {
 
 function end(mode, type, selection) {
 	if (status == 0 && mode == 0) {
-		qm.dispose();
+		im.dispose();
 		return;
 	}
 	(mode == 1) ? status++ : status--;

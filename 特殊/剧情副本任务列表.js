@@ -35,6 +35,7 @@ function action(mode, type, selection) {
 		var n = "\r\n";
 		var zhuti= tz4 +"#b#fn微软雅黑##fs18#[剧情任务] ";
 		selStr += n;
+		selStr += "#L5#" + zhuti +"Lv.33橡果侦探团[完善40%]#l"+n;
 		selStr += "#L4#" + zhuti +"Lv.35金海滩#l"+n;
 		selStr += "#L3#" + zhuti +"Lv.120艾洛丁#l"+n;
 		selStr += "#L1#" + zhuti +"Lv.125鲁塔比斯#l"+n;
@@ -78,6 +79,14 @@ function action(mode, type, selection) {
 				}
 				cm.dispose();
 				cm.openNpc(9900004,"金海滩");
+				break;
+			case 5:
+				if(cm.getLevel() < 33){
+					cm.dispose();
+					cm.sendOk("很遗憾，任务要求等级不够!");
+				}
+				cm.dispose();
+				cm.openNpc(9900004,"橡果侦探团");
 				break;
 		}
 	}

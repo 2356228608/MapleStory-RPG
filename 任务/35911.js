@@ -32,7 +32,7 @@ function start(mode, type, selection) {
 		//qm.OnStartNavigation(100051013,1,"",35910);//开始导航
 		//qm.gainItem(4036526, 10);//这掉落物要加到数据库里,不然怪不会掉 ,我这里直接给了.
 		qm.dispose();
-		qm.warp(100051020, 0);//剧情直接跳过,不写了910090307
+		qm.warp(910090307, 0);//剧情直接跳过,不写了910090307
 		
     } else {
         qm.dispose();

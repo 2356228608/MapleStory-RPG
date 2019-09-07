@@ -27,7 +27,7 @@ function start(mode, type, selection) {
 		qm.forceStartQuest();//开始任务
 		//qm.forceCompleteQuest();//完成任务
 		qm.OnStartNavigation(100051013,1,"",35910);//开始导航
-		//qm.gainItem(4036526, 10);//这掉落物要加到数据库里,不然怪不会掉 ,我这里直接给了.
+		qm.gainItem(4036526, 10);//这掉落物要加到数据库里,不然怪不会掉 ,我这里直接给了.
 		qm.dispose();
 		//qm.warp(100051000, 0);
     } else {

@@ -47,12 +47,27 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	var eim = cm.getEventInstance();
-	var em = eim.getEventManager();
-	var map = em.getMapFactoryMap(cm.getMapId());
-	var mob = em.getMonster(9410881);
-	map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
-	ms.dispose();
+	status++;
+	selectionLog[status] = selection;
+	var i = -1;
+	if (status <= i++) {
+		cm.dispose();
+	} else if (status === i++) {
+		// 初始化
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
+		cm.fieldEffect_Unew150("Map/Effect2.img/Blizzard/skeleton", "normal", "", 257, 0, 0, 0, 0);
+		cm.inGameDirectionEvent_AskAnswerTime(3000);
+	} else if (status === i++) {
+		// 收尾
+		cm.curNodeEventEnd(true);
+		cm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+		cm.setStandAloneMode(false); //屏蔽/解锁 剧情其他玩家
+		cm.dispose();
+	} else {
+		cm.dispose();
+	}
 }
 function actionPacket(mode, type, selection) {
 	status++;

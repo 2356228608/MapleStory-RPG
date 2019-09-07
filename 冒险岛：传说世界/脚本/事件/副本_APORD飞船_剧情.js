@@ -49,9 +49,9 @@ function playerRevive(eim, player) {
 	return false;
 }
 
-function changedMap(eim, player, mapid) {
+function changedMap(eim, player, mapId) {
 	// em.broadcastServerMsg("[changedMap]");
-	if (mapIds.indexOf(mapid) < 0) {
+	if (mapIds.indexOf(mapId) < 0) {
 		on玩家退场(eim, player, false);
 		return;
 	}
@@ -62,7 +62,7 @@ function changedMap(eim, player, mapid) {
 	} else {
 		em.setProperty("clear", "0");
 	}
-	em.setProperty("curMap", mapid);
+	em.setProperty("curMap", mapId);
 }
 
 function playerDisconnected(eim, player) {
@@ -90,7 +90,7 @@ function monsterValue(eim, mobId) {
 	// em.broadcastServerMsg("[monsterValue]=" + mobId);
 	eim.getPlayers().forEach(function (player) {
 		var mapId = player.getMapId();
-		if (mapid == 867111150 || mapid == 867111270 || mapid == 867111350) {
+		if (mapId == 867111150 || mapId == 867111270 || mapId == 867111350) {
 			var kilReq = 1;
 		} else {
 			var kilReq = 10;
@@ -100,7 +100,8 @@ function monsterValue(eim, mobId) {
 		if (kill >= kilReq) {
 			player.openNpc(2540005, "特效_完成_APORD飞船");
 			em.setProperty("clear", "1");
-			scheduleNew("通关特效()", 2);
+			结束特效1();
+			scheduleNew("结束特效2", 2);
 		}
 	});
 	return 1;
@@ -194,7 +195,27 @@ function on玩家退场(eim, player, isTimeout) {
 	eim.unregisterPlayer(player);
 }
 
-function 通关特效() {
+function 结束特效1() {
+	var eim = em.getInstance(eventName);
+	var mob = em.getMonster(9410880);
+	eim.getPlayers().forEach(function (player) {
+		var mapId = player.getMapId();
+		var map = em.getMapFactoryMap(mapId);
+		if (mapId == 867111060) {
+			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
+		} else if (mapId == 867111080) {
+			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 116));
+		} else if (mapId == 867111100) {
+			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
+		} else if (mapId == 867111120) {
+			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
+		} else if (mapId == 867111120) {
+			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
+		}
+	});
+}
+
+function 结束特效2() {
 	var curMap = parseInt(em.getProperty("curMap"));
 
 	var eim = em.getInstance(eventName);
@@ -204,6 +225,7 @@ function 通关特效() {
 		if (mapId != curMap)
 			return;
 		var map = em.getMapFactoryMap(mapId);
+		map.killAllMonsters(false);
 		if (mapId == 867111060) {
 			map.spawnMonsterOnGroundBelow(mob, new java.awt.Point(-1, 45));
 		} else if (mapId == 867111080) {

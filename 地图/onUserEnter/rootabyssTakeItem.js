@@ -9,7 +9,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 		return;
 	}
-	(mode == 1) ? status++ : status--;
+	status++;
 	selectionLog[status] = selection;
 	var i = -1;
 	if (status <= i++) {

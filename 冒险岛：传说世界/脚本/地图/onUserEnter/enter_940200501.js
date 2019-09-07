@@ -11,7 +11,7 @@ function action(mode, type, selection) {
 	}
 	status++;
 	selectionLog[status] = selection;
-	ms.playerMessage(5, "status=" + status);
+	//ms.playerMessage(5, "status=" + status);
 	var i = -1;
 	if (status <= i++) {
 		ms.dispose();

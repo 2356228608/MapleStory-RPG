@@ -57,6 +57,7 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		qm.sendNext_Bottom("#face2#好的，我马上把你带到高尔根那里去。\r\n请跟我来，嘿嘿。向着高尔根家，出发～！", 1013350);
 	} else if (status === i++) {
+		qm.setPartner(1,1013350,80002700,0);
 		qm.forceStartQuest();//开始任务
 		qm.forceCompleteQuest();//完成任务
 		qm.forceStartQuest(35913);//开始任务
