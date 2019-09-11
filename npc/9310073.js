@@ -172,7 +172,7 @@ function action(mode, type, selection) {
 					cm.dispose();
 					cm.sendOk("请先1转后再来找我!");
 				}else if(cm.getLevel() <= cm.getplayermaxLevel()){
-					cm.askNumber("请输入你想要升级到多少等级.最高"+cm.getplayermaxLevel()+"级,\r\n注意:升级过程中请勿其他NPC操作,\r\n#k", 0, 0, cm.getplayermaxLevel());
+					cm.askNumber("请输入你想要升级的等级.最高"+cm.getplayermaxLevel()+"级,\r\n注意:升级过程中请勿其他NPC操作,\r\n比如要升级到200级,就填数字200#k", 0, 0, cm.getplayermaxLevel());
 					select=1;
 				}else{
 					cm.dispose();

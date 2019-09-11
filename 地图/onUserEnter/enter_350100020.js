@@ -19,9 +19,7 @@ function action(mode, type, selection) {
 		cm.setInGameDirectionMode(true, false, false);
 		cm.inGameDirectionEvent_SetHideEffect(1);
 		cm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
-		cm.fieldEffect_Unew150("", "Map/Effect2.img/Blizzard/skeleton", "normal", 1, 1, 1, 0, 0);
-		cm.fieldEffect_PlayFieldSound("Ambience.img/blizzard_soft")
-		cm.setAmbience("Ambience.img/blizzard_soft",100,60);
+		cm.fieldEffect_Unew150("Map/Effect2.img/Blizzard/skeleton", "normal", "", 257, 1, 0, 0, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
 		cm.curNodeEventEnd(true);
@@ -39,32 +37,32 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/8");
+		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/8", 128);
 		cm.fieldEffect_ProcessOnOffLayer("8", "Map/Effect2.img/HofM/ACT1_text/8", 0, 2500, 0, -70, 12, 7, 1);
 		cm.inGameDirectionEvent_AskAnswerTime(7500);
 	} else if (status === i++) {
 		cm.fieldEffect_ProcessOnOffLayer("8", "", 2, 500, 0, 0, 0, 0, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/9");
+		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/9", 128);
 		cm.fieldEffect_ProcessOnOffLayer("9", "Map/Effect2.img/HofM/ACT1_text/9", 0, 2500, 0, -70, 12, 7, 1);
 		cm.inGameDirectionEvent_AskAnswerTime(7000);
 	} else if (status === i++) {
 		cm.fieldEffect_ProcessOnOffLayer("9", "", 2, 500, 0, 0, 0, 0, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("#face1#弗里德，为了恢复伤口，我得在这座岛上长眠。", 1540820);
+		cm.onScriptMessage(3, 0, 1, 0, "#face1#弗里德，为了恢复伤口，我得在这座岛上长眠。", 256, 0, 37, 0, 1, 1540820); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/1");
-		cm.sendNextNoESC_Bottom("#face2#如果连你都长眠了，那现在真的就只剩下我一个人了。", 1540836);
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/1", 128);
+		cm.onScriptMessage(3, 0, 1, 0, "#face2#如果连你都长眠了，那现在真的就只剩下我一个人了。", 257, 0, 37, 0, 1, 1540836); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/2");
-		cm.sendNextNoESC_Bottom("#face1#不要伤心，我们的缘分并没有止步于此。", 1540820);
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/2", 128);
+		cm.onScriptMessage(3, 0, 1, 0, "#face1#不要伤心，我们的缘分并没有止步于此。", 257, 0, 37, 0, 1, 1540820); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/3");
-		cm.sendNextNoESC_Bottom("#face2#对，我们的缘分不会止步于此。", 1540836);
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/3", 128);
+		cm.onScriptMessage(3, 0, 1, 0, "#face2#对，我们的缘分不会止步于此。", 257, 0, 37, 0, 1, 1540836); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/4");
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/4", 128);
 		cm.fieldEffect_InsertCanvas(1, 200, 0, 0, 0, 1300, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(1600);
 	} else if (status === i++) {
@@ -73,18 +71,18 @@ function action(mode, type, selection) {
 		cm.fieldEffect_ProcessOnOffLayer("mark", "Map/Effect2.img/HofM/ACT1_bye/mark", 0, 2500, 0, 0, 16, 4, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(3500);
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("#face2#在遥远的将来，我的子孙后代会相见，不过到了那个时候，我也早已不是这个世界上的人了。", 1540836);
+		cm.onScriptMessage(3, 0, 1, 0, "#face2#在遥远的将来，我的子孙后代会相见，不过到了那个时候，我也早已不是这个世界上的人了。", 256, 0, 37, 0, 1, 1540836); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/5");
-		cm.sendNextNoESC_Bottom("#face2#你能替我将消息传递给他们吗？", 1540836);
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/5", 128);
+		cm.onScriptMessage(3, 0, 1, 0, "#face2#你能替我将消息传递给他们吗？", 257, 0, 37, 0, 1, 1540836); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/6");
-		cm.sendNextNoESC_Bottom("#face1#我们可是发誓要永远保住这份友情的，我们的约定会一直坚守下去的。", 1540820);
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/6", 128);
+		cm.onScriptMessage(3, 0, 1, 0, "#face1#我们可是发誓要永远保住这份友情的，我们的约定会一直坚守下去的。", 257, 0, 37, 0, 1, 1540820); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/7");
-		cm.sendNextNoESC_Bottom("#face2#谢谢，阿弗利埃，我的人生中能够有你作伴，我很开心。", 1540836);
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/7", 128);
+		cm.onScriptMessage(3, 0, 1, 0, "#face2#谢谢，阿弗利埃，我的人生中能够有你作伴，我很开心。", 257, 0, 37, 0, 1, 1540836); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/8");
+		cm.effect_Voice("Voice3.img/HofM/ACT1/BYE/8", 128);
 		cm.fieldEffect_ProcessOnOffLayer("whiteback", "", 2, 1000, 0, 0, 0, 0, 0);
 		cm.fieldEffect_ProcessOnOffLayer("mark", "", 2, 1000, 0, 0, 0, 0, 0);
 		cm.fieldEffect_ProcessOnOffLayer("base", "", 2, 1000, 0, 0, 0, 0, 0);
@@ -95,14 +93,14 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		cm.inGameDirectionEvent_AskAnswerTime(3000);
 	} else if (status === i++) {
-		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/10");
+		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/10", 128);
 		cm.fieldEffect_ProcessOnOffLayer("10", "Map/Effect2.img/HofM/ACT1_text/10", 0, 2500, 0, -70, 12, 7, 1);
 		cm.inGameDirectionEvent_AskAnswerTime(7500);
 	} else if (status === i++) {
 		cm.fieldEffect_ProcessOnOffLayer("10", "", 2, 500, 0, 0, 0, 0, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/11");
+		cm.fieldEffect_PlayFieldSound("Sound/Voice3.img/HofM/ACT1/NAR/11", 128);
 		cm.fieldEffect_ProcessOnOffLayer("11", "Map/Effect2.img/HofM/ACT1_text/11", 0, 2500, 0, -70, 12, 7, 1);
 		cm.inGameDirectionEvent_AskAnswerTime(6500);
 	} else if (status === i++) {

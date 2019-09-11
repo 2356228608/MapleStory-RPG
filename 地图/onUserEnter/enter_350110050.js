@@ -16,8 +16,7 @@ function action(mode, type, selection) {
 		ms.dispose();
 	} else if (status === i++) {
 		cm.forceStartQuest(33900, "4");
-		cm.fieldEffect_Unew150("Map/Effect2.img/Blizzard/skeleton", "normal", "", 257, 0, 0, 0, 0);
-		cm.fieldEffect_PlayFieldSound("Ambience.img/blizzard_soft")
+		cm.fieldEffect_Unew150("Map/Effect2.img/Blizzard/skeleton", "normal", "", 257, 0, 18000, 0, 0);
 		cm.curNodeEventEnd(true);
 		cm.setInGameDirectionMode(true, false, false);
 		cm.inGameDirectionEvent_PushScaleInfo(0, 2000, 0, -1134, 365);
@@ -27,22 +26,21 @@ function action(mode, type, selection) {
 		cm.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
 		cm.inGameDirectionEvent_MoveAction(0);
-		cm.sendNextNoESC_Bottom("#face1#啊，是暴风雪！小心点！", 1540807);
+		cm.onScriptMessage(3, 0, 1, 0, "#face1#啊，是暴风雪！小心点！", 256, 0, 37, 0, 1, 1540807); // [类型] 普通对话
 	} else if (status === i++) {
 		cm.inGameDirectionEvent_MoveAction(4);
-		cm.fieldEffect_Unew150("Map/Effect2.img/Blizzard/skeleton", "normal", "", 257, 0, 0, 0, 0);
-		cm.fieldEffect_PlayFieldSound("Sound/Ambience.img/blizzard_strong");
+		cm.fieldEffect_Unew150("Map/Effect2.img/Blizzard/skeleton", "normal2", "", 257, 0, 2000, 0, 0);
+		cm.fieldEffect_PlayFieldSound("Sound/Ambience.img/blizzard_strong", 100);
 		cm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		cm.inGameDirectionEvent_MoveAction(0);
 		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		cm.fieldEffect_PlayFieldSound("Ambience.img/blizzard_soft")
-		cm.sendNextNoESC_Bottom("主人，暴风雪来袭之前，#b似乎雪会暂停一会儿！#k \r\n我们看准时机，#b趴下#k藏好，就能避免冰冻！", 1540807);
+		cm.onScriptMessage(3, 0, 1, 0, "主人，暴风雪来袭之前，#b似乎雪会暂停一会儿！#k \r\n我们看准时机，#b趴下#k藏好，就能避免冰冻！", 256, 0, 37, 0, 1, 1540807); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("等暴风雪来袭，怪物都会被冻住，这样打猎也会更方便。", 1540807);
+		cm.onScriptMessage(3, 0, 1, 0, "等暴风雪来袭，怪物都会被冻住，这样打猎也会更方便。", 257, 0, 37, 0, 1, 1540807); // [类型] 普通对话
 	} else if (status === i++) {
-		cm.sendNextNoESC_Bottom("别忘了，当我在飞龙穿梭#b(S)#k的时候，如果主人能够使用\r\n狂风穿梭#b(A)#k，\r\n就能够触发#b融合技能#k哦，主人。", 1540807);
+		cm.onScriptMessage(3, 0, 1, 0, "别忘了，当我在飞龙穿梭#b(S)#k的时候，如果主人能够使用\r\n狂风穿梭#b(A)#k，\r\n就能够触发#b融合技能#k哦，主人。", 257, 0, 37, 0, 1, 1540807); // [类型] 普通对话
 	} else if (status === i++) {
 		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
