@@ -43,13 +43,13 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_ForcedFlip10(2, 180);
 		ms.inGameDirectionEvent_AskAnswerTime(2500);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face3#帕勒坦遗迹……终于找到了。\r\n插图上画的地方应该就是这里。", 1013358);
+		ms.sendNextNoESC_Bottom("#face3#帕勒坦遗迹……终于找到了。\r\n插图上画的地方应该就是这里。", 1013358);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face1#呵呵……规模比想象的还要雄伟嘛。\r\n感觉这里一定埋藏着了不起的东西。", 1013358);
+		ms.sendNextNoESC_Bottom("#face1#呵呵……规模比想象的还要雄伟嘛。\r\n感觉这里一定埋藏着了不起的东西。", 1013358);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face0#“找到三把钥匙，插在考验祭坛之上。”\r\n书桌上的纸条，这样写道。", 1013358);
+		ms.sendNextNoESC_Bottom("#face0#“找到三把钥匙，插在考验祭坛之上。”\r\n书桌上的纸条，这样写道。", 1013358);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_PushScaleInfo(1500, 1500, 1500, -650, -400);
 	} else if (status === i++) {
@@ -74,9 +74,9 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face1#一把已经在研究室中得到了。\r\n另一把在来的路上找到了。", 1013358);
+		ms.sendNextNoESC_Bottom("#face1#一把已经在研究室中得到了。\r\n另一把在来的路上找到了。", 1013358);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face0#从钥匙的反应来看……\r\n最后一把钥匙一定就在这个遗迹中。", 1013358);
+		ms.sendNextNoESC_Bottom("#face0#从钥匙的反应来看……\r\n最后一把钥匙一定就在这个遗迹中。", 1013358);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
@@ -89,9 +89,9 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(300);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face3#怎么在震动？难道……要坍塌了吗？", 1013358);
+		ms.sendNextNoESC_Bottom("#face3#怎么在震动？难道……要坍塌了吗？", 1013358);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face0#但是煮熟的鸭子总不能就这样飞了吧。\r\n迅速把事情搞定，然后离开这里吧。", 1013358);
+		ms.sendNextNoESC_Bottom("#face0#但是煮熟的鸭子总不能就这样飞了吧。\r\n迅速把事情搞定，然后离开这里吧。", 1013358);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
@@ -109,9 +109,9 @@ function action(mode, type, selection) {
 		ms.setInGameDirectionMode(false, false, false);
 		ms.updateInfoQuest(35947, "2=1");
 		ms.effect_OnUserEff("UI/tutorial.img/34");
-		ms.sendNext_Bottom("#face0#好的，要到祭坛钥匙指向的地方去看看吗？\r\n刚好就在这附近。快去看看吧。", 1013358);
+		ms.sendNextNoESC_Bottom("#face0#好的，要到祭坛钥匙指向的地方去看看吗？\r\n刚好就在这附近。快去看看吧。", 1013358);
 	} else if (status === i++) {
-		ms.sendNext_Bottom("#face0#与钥匙产生共鸣的地方……在那边。", 1013358);
+		ms.sendNextNoESC_Bottom("#face0#与钥匙产生共鸣的地方……在那边。", 1013358);
 	} else if (status === i++) {
 		//ms.forceStartQuest(35900);
 		ms.dispose();
