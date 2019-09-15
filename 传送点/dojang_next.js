@@ -1,9 +1,1 @@
-﻿function enter(pi) {
-    if ((pi.getMapId() == 925060200) && (pi.getMap().getAllMonstersThreadsafe().size() > 0)) {
-        pi.dojoAgent_NextMap(true, false);
-    } else if (pi.getMap().getAllMonstersThreadsafe().size() > 1) {
-        pi.playerMessage("杩????╀??????┿??");
-    } else {
-        pi.dojoAgent_NextMap(true, false);
-    }
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/传送点/dojang_next.js

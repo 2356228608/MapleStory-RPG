@@ -174,7 +174,7 @@ var fish = [
     2003572, 2003572, 2003572, 2003572, 2003572//巨人秘药     最小
 ];
 function init() {
-    //scheduleNew();
+    scheduleNew();
 }
 
 function scheduleNew() {
@@ -190,12 +190,17 @@ function scheduleNew() {
 }
 
 function cancelSchedule() {
-    //setupTask.cancel(true);
+    setupTask.cancel(true);
 }
 
 function start() {
-    //scheduleNew();
-    
+    scheduleNew();
+    var allPlayers = em.getChannelServer().getMapFactory().getMap(741000202).getCharacters();//取得当前地图上面的所有玩家
+    allPlayers = allPlayers.iterator();
+    while (allPlayers.hasNext()) {//循环每一个玩家
+        var player = allPlayers.next();
+        fishing(player);
+    }
 }
 
 function fishing(c) {

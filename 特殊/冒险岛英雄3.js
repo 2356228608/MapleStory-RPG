@@ -18,12 +18,8 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status === i++) {
-		cm.onScriptMessage(3, 0, 0, 0, "要开始‘Act 3.陌生的世界’吗？\r\n\r\n#b   - 进场时角色的技能增益会全部消失。#k\r\n#b   - 分辨率1024*768以上可以正常进行。#k\r\n#b   - 处理黑色天堂之后的剧情。#k\r\n#b   - 以剧情上的主人公进行游戏。#k\r\n", 0, 3, 4, 0, 0, 1540446); // [类型] 是/否
-	} else if (status === i++) {
-		cm.forceStartQuest(33913, "");
-		// [2019/9/6 14:45:01] 当前所在地图: cm.warp(913050010) - 即将切换地图，请检查是否有应属于下一地图的指令被错误分配
-		cm.warp(350130000);
-		cm.dispose();
+		var id = cm.getNpc();
+		cm.sendOk("……啊？你找我吗？我也不知道我应该做什么。我的脚本位于： #b 脚本/特殊/冒险岛英雄3.js#k\r\n\r\n如果你有兴趣，欢迎一起来修复我的脚本！");
 	} else {
 		cm.dispose();
 	}

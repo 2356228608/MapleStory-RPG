@@ -22,9 +22,6 @@ function setup() {
 
 }
 
-function cancelSchedule() {
-}
-
 
 function playerEntry(eim, player) {
     eim.setProperty("finsh", "0");

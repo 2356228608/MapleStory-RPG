@@ -210,7 +210,7 @@ var weapon = [1003172, 1003173, 1003174, 1003175, 1003176, 1052314, 1052315, 105
 ];
 
 function init() {
-    //scheduleNew();
+    scheduleNew();
 }
 
 function scheduleNew() {
@@ -231,12 +231,12 @@ function scheduleNew() {
 }
 
 function cancelSchedule() {
-    //setupTask.cancel(true);
+    setupTask.cancel(true);
 }
 
 function start() {
-    //scheduleNew();
-    //gainItems();
+    scheduleNew();
+    gainItems();
 }
 
 function removePlayer(player) {
@@ -258,7 +258,18 @@ function gainItems() {
 }
 
 function getAllPalyerInMap(mapid, hour) {
-    
+    var allPlayers = em.getChannelServer().getMapFactory().getMap(mapid).getCharacters();
+    allPlayers = allPlayers.iterator();
+    while (allPlayers.hasNext()) {
+        var player = allPlayers.next();
+        if (mapid == 741000201 || mapid == 741000202 || mapid == 741000208 || debug || (hour >= 20 && hour <= 22)) { //时间控制 
+            content(player, mapid); //钓鱼
+        } else {
+            removePlayer(player);
+            //player.getClient().getSession().write(MaplePacketCreator.serverNotice(5, "外层空间钓鱼场能更高提升钓鱼效率."));
+            player.dropMessage(1, "外层空间钓鱼场能更高提升钓鱼效率.");
+        }
+    }
 }
 
 function content(c, mapid) {
