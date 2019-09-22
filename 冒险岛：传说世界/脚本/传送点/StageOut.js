@@ -55,6 +55,7 @@ function enter(pi) {
 	pi.updateAchievement(1272, 0, "script", pointsReward, 10000);
 	pi.updateAchievement(1273, 0, "script", pointsReward, 100000);
 	pi.updateAchievement(1274, 0, "script", pointsReward, 1000000);
+	pi.updateAchievement(1275, 0, "script", pointsReward, 1000000);
 	pi.updateAchievement(1266, 0, "script", 1, 200);
 	pi.gainExp(exps[index]);
 	// TODO 暂时避开故障楼层，等娜娜修复

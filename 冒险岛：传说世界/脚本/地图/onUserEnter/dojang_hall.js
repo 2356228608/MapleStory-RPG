@@ -15,7 +15,21 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		ms.playerMessage(5, "这个地图进入触发事件的脚本尚未修复。脚本位于： 脚本/地图/onUserEnter/dojang_hall.js");
+		cm.updateInfoQuest(3887, "check=0");
+		cm.updateInfoQuest(3888, "dojangRankJob=0;dojangRank2=0");
+
+		var date = new Date();
+		var newStatus = cm.getQuestRecord(3846);
+		newStatus.setCustomData((date.getYear() - 100) + "/" + (date.getMonth() + 1) + "/" + date.getDay());
+		newStatus.setStatus(1);
+		cm.getPlayer().updateQuest(newStatus, true);
+
+		var newStatus = cm.getQuestRecord(7279);
+		newStatus.setCustomData("0");
+		newStatus.setStatus(1);
+		cm.getPlayer().updateQuest(newStatus, true);
+
+		cm.updateInfoQuest(14981, "PCAdvantage=0");
 		ms.dispose();
 	} else {
 		ms.dispose();

@@ -1,4 +1,4 @@
-/* 鲁塔比斯 世界树的危机
+﻿/* 鲁塔比斯 世界树的危机
 Made by Jessefjxm
  */
 var status = -1;
@@ -35,7 +35,7 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		qm.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-        qm.warp(913080000, 0);
+        qm.warp(130000000, 0);
 		// 收尾		
 		qm.curNodeEventEnd(true);
 		qm.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解

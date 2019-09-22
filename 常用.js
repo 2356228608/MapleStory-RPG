@@ -136,7 +136,7 @@ cm.startSimpleMapEffect("文字", 5120116);
 // 添加固化额外UI [必须0？] [UI ID] [UI路径]
 cm.PQ_EFFECT(0, 100161, "UI/UIWindowEvent.img/starDust_Adventure", 0, 0);
 // 完成成就 [ID] [?]
-cm.finishAchievement(1,2);
+cm.finishAchievement(1);
 // 震动屏幕
 cm.fieldEffect_Tremble(66666, 0, 3000);
 // 另一种头顶字幕

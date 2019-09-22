@@ -1,4 +1,4 @@
-/* 鲁塔比斯 消灭北侧的封印守护者
+﻿/* 鲁塔比斯 消灭北侧的封印守护者
 Made by Jessefjxm
  */
 var status = -1;
@@ -32,10 +32,9 @@ function end(mode, type, selection) {
 		qm.sendNextNoESC("我说怎么感觉身体变轻了。束缚着身体的黑暗气息已经完全感觉不到了！封印好像已经完全解开了！", 1064001);
 	} else if (status <= i++) {
 		// 图片 阿丽莎发光了
-        qm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/undo");
+		qm.fieldEffect_ScreenMsg("Map/Effect.img/rootabyss/undo");
 		qm.inGameDirectionEvent_AskAnswerTime(5000);
-	} else if (status === i++) {
-		qm.forceCompleteQuest();
+		qm.forceCompleteQuest(30012);
 		qm.dispose();
 	} else {
 		qm.dispose();
