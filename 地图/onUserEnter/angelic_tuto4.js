@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 06
  * 地图：万神殿东部地区 - 东侧圣殿 (940011040)
  * @author 狐狸糊涂
@@ -50,9 +50,9 @@ function action(mode, type, selection) {
         ms.sendNextNoESC("她……她！起来了！", 3000115);
     } else if (status === i++) {
         ms.inGameDirectionEvent_AskAnswerTime(1200);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000114, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000111, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000115, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000114, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000111, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000115, 0, 0);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
         ms.inGameDirectionEvent_OneTimeAction(495, 0);

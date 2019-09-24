@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 09
  * 地图：万神殿 - 大神殿内部 (940011070)
  * @author 狐狸糊涂
@@ -27,7 +27,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(120);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene1");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/5", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/5", 1200, 0, -100);
         ms.npc_ChangeController(3000152, 300, 10, 1);//78 61 00 01
         ms.npc_SetSpecialAction(3000152, "summon");
         ms.sendNextNoESC("#h0#！！等等！", 3000152);
@@ -41,7 +41,7 @@ function action(mode, type, selection) {
         ms.sendNextSNoESC("可是圣物没了这个事实是板上钉钉的啊！");
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(1);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/6", 1200, 0, -120, 1, 0, 1, 3000152, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/6", 1200, 0, -100, 1, 0, 1, 3000152, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
         ms.npc_LeaveField(3000152);

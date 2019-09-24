@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 01
  * 地图：秘密地图 - 大神殿内部 (940001000)
  * @author 狐狸糊涂
@@ -33,7 +33,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.inGameDirectionEvent_AskAnswerTime(2501);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg1/0", 7000, 0, -150, 1, 0, 1, 3000107, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg1/0", 7000, 0, -100, 1, 0, 1, 3000107, 0, 0);
         ms.npc_SetForceMove(3000107, 1, 600, 100);
         ms.inGameDirectionEvent_PushMoveInfo(1, 100, 0, 0);
     } else if (status === i++) {

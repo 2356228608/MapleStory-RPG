@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 12
  * 地图：万神殿东部地区 - 东侧圣殿 (940011100)
  * @author 狐狸糊涂
@@ -24,7 +24,7 @@ function action(mode, type, selection) {
         ms.sendNextNoESC("原来放圣物的地方你没发现什么吗？", 3000132);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(2);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg2/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg2/0", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.sendNextNoESC("虽不是什么好东西，你戴在手上看看吧。", 3000132);

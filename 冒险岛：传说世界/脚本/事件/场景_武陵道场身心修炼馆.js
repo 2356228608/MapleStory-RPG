@@ -2,17 +2,21 @@
 var mapIds = [925080000];
 var mapHall = 925020001;
 
-function init() {}
+function init() {
+}
 
 function start() {
 	em.getPlayersInMap(mapIds[0]).forEach(function (player) {
 		var data = getData(player, 18766, ["Time", "enterTime"]);
-		data[0][1] = parseInt(data[0][1]) - 10;
+		data[0][1] = parseInt(data[0][1]) - 5;
 		saveData(player, 18766, data); ;
 		player.gainExp(player.getNeededExp() / 10000, true, false, true);
-		player.dropMessage(5, "还能在身心修炼馆内待上 " + parseInt(data[0][1] / 60) + "分钟。");
+		
+		if (data[0][1] % 60 == 0) {
+			player.dropMessage(5, "还能在身心修炼馆内待上 " + parseInt(data[0][1] / 60) + " 分钟。");
+		}
 	});
-	setupTask = scheduleNew("start", 10);
+	setupTask = scheduleNew("start", 5);
 }
 
 function setup(eim, leaderid) {
@@ -20,11 +24,15 @@ function setup(eim, leaderid) {
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
 	}
-	setupTask = scheduleNew("start", 10);
+	setupTask = scheduleNew("start", 5);
 	return eim;
 }
 
-function playerEntry(eim, player) {}
+function playerEntry(eim, player) {
+	player.setReviveCount(-100);
+	var map = eim.getMapInstance(0);
+	player.changeMap(map, map.getPortal(0));
+}
 
 function playerRevive(eim, player) {
 	return false;
@@ -85,8 +93,6 @@ function playerDead(eim, player) {
 function cancelSchedule() {
 	setupTask.cancel(true);
 }
-
-var setupTask;
 
 // ===================== 功能类方法 ======================
 

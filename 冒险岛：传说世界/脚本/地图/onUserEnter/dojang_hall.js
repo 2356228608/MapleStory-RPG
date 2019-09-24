@@ -15,9 +15,7 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		ms.dispose();
 	} else if (status === i++) {
-		cm.updateInfoQuest(3887, "check=0");
 		cm.updateInfoQuest(3888, "dojangRankJob=0;dojangRank2=0");
-
 		var date = new Date();
 		var newStatus = cm.getQuestRecord(3846);
 		newStatus.setCustomData((date.getYear() - 100) + "/" + (date.getMonth() + 1) + "/" + date.getDay());

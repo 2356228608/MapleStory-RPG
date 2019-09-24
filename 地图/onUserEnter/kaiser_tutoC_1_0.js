@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 12
  * 地图：万神殿东部地区 - 东侧圣殿 (940001210)
  * @author 狐狸糊涂
@@ -34,9 +34,9 @@ function action(mode, type, selection) {
         ms.npc_SetSpecialAction(3000115, "summon");
         ms.sendNextNoESC("你到底是感觉到了什么……", 3000104);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/3", 1200, 0, -120, 1, 0, 1, 3000104, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/3", 1200, 0, -120);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/4", 1200, 0, -120, 1, 0, 1, 3000103, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/3", 1200, 0, -100, 1, 0, 1, 3000104, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/3", 1200, 0, -100);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/4", 1200, 0, -100, 1, 0, 1, 3000103, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.sendNextNoESC("祭司们在做什么？话说怎么是陌生面孔啊？", 3000103);
@@ -74,7 +74,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(600);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/7", 1200, 0, -120, 1, 0, 1, 3000103, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/7", 1200, 0, -100, 1, 0, 1, 3000103, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
         ms.fieldEffect_ScreenMsg("kaiser/tear_rush");

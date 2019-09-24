@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 05
  * 地图：万神殿东部地区 - 东侧圣殿 (940011030)
  * @author 狐狸糊涂
@@ -35,9 +35,9 @@ function action(mode, type, selection) {
         ms.npc_SetSpecialAction(3000115, "summon");
         ms.sendNextNoESC("你到底是感觉到了什么……", 3000104);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -120, 1, 0, 1, 3000104, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -120, 1, 0, 1, 3000140, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/3", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100, 1, 0, 1, 3000104, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100, 1, 0, 1, 3000140, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/3", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.sendNextNoESC("祭司们在做什么？话说怎么是陌生面孔啊？", 3000103);
@@ -68,13 +68,13 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(300);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(2);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000110, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000114, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000111, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -140, 1, 0, 1, 3000115, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000110, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000114, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000111, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/1", 1200, 0, -100, 1, 0, 1, 3000115, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(300);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/6", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/6", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
         ms.fieldEffect_ScreenMsg("kaiser/tear_rush");

@@ -1,47 +1,20 @@
-// 全局变量
-var status = -1; // status: 当前聊天交互轮数
-var selectionLog = new Array(); // 记录每一轮的选择
+﻿/*  This source is made by BMS Team
+ *  脚本功能：[新手剧情]双弩精灵系列remake
+ *  @Author 柠檬兔
+ *  工具提供：Jessefjxm
+ */
 
-// 开头
-function start() {
-	action(1, 0, 0);
-}
+var status = -1;
 
 function start(mode, type, selection) {
-	if (status == 0 && mode == 0) {
-		im.dispose();
-		return;
-	}
-	(mode == 1) ? status++ : status--;
-	selectionLog[status] = selection;
-	var i = -1;
-	if (status <= i++) {
-		qm.dispose();
-	} else if (status == i++) {
-		cm.askAcceptDecline("#b(看到了制造结界的魔法语言。念诵咒语，可以为埃欧雷设置结界。至少在100年之内谁也无法入侵村子的强力结界……要设置结界吗？)", 1033205);
-	} else if (status === i++) {
-		cm.forceStartQuest(24004);
-		cm.forceCompleteQuest(24004);
-		cm.sendOk("#b(设置了结界。这下村子应该安全了……)", 1033205);
-		qm.dispose();
-	}
-}
+    status++;
 
-function end(mode, type, selection) {
-	if (status == 0 && mode == 0) {
-		im.dispose();
-		return;
-	}
-	(mode == 1) ? status++ : status--;
-	selectionLog[status] = selection;
-	var i = -1;
-	if (status <= i++) {
-		qm.dispose();
-	} else if (status == i++) {
-		var id = qm.getQuest();
-		qm.askYesNo("这个任务的结束脚本还没有修复哦。它的脚本位于： #b /脚本/任务/#e" + id + "#n.js#k\r\n\r\n如果你有兴趣，欢迎一起来修复！\r\n\r\n那么现在，你要立刻完成这个任务吗？");
-	} else if (status == i++) {
-		qm.forceCompleteQuest();
-		qm.dispose();
-	}
+    if (status == 0) {
+        qm.sendNext("#b(看到了制造结界的魔法语言。念诵咒语，可以为埃欧雷设置结界。至少在100年之内谁也无法入侵村子的强力结界……要设置结界吗？)");
+    } else if (status == 1) {
+        qm.forceStartQuest();
+        qm.forceCompleteQuest();
+        qm.sendNext("#b(设置了结界。这下村子应该安全了……)");
+	qm.dispose();
+    }
 }

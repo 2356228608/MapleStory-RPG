@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 恶魔剧情 - 19
  * 地图：秘密地图 - 能量提取场2 (931050020)
  * @author 狐狸糊涂
@@ -29,7 +29,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 1500, 0, -100, 1, 0, 1, 2159340, 0, 0);
         ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 1500, 0, -100, 1, 0, 1, 2159341, 0, 0);
         ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 1500, 0, -100, 1, 0, 1, 2159342, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg2/0", 1500, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg2/0", 1500, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(4000);
         ms.curNodeEventEnd(true);
     } else if (status === i++) {
@@ -46,7 +46,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextPrevNoESC("必须消灭掉那些家伙，才能避免被追杀！！", 2159340);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/16", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/16", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
         ms.inGameDirectionEvent_OneTimeAction(372, 0);
@@ -55,7 +55,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(900);
         ms.effect_Direction("Effect/Direction6.img/DemonTutorial/Scene3");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/17", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/17", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(900);
     } else if (status === i++) {
         ms.fieldEffect_PlayFieldSound("demonSlayer/31121006h");
@@ -77,10 +77,10 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(990);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(0); //0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/12", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/12", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/4", 2000, 0, -120, 1, 0, 1, 2159342, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/4", 2000, 0, -100, 1, 0, 1, 2159342, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
         ms.npc_SetForceMove(2159342, -1, 150, 100);

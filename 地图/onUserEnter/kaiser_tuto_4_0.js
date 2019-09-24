@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 06
  * 地图：秘密地图 - 赫里希安外围 (940001110)
  * @author 狐狸糊涂
@@ -89,7 +89,7 @@ function action(mode, type, selection) {
         ms.effect_Direction("Effect/Direction9.img/kaiserTutorial/Scene2");
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg2/0", 0, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg2/0", 0, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
         ms.inGameDirectionEvent_PushMoveInfo(0, 450, -650, 170);

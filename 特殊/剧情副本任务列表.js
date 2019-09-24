@@ -1,9 +1,9 @@
-/*  This is mada by 娜娜    
+/*  This is mada by 娜娜
  *  This source is made by BMS Team
  *  地图:'勇士部落 : 废弃研究室' (910090305)
- *  脚本功能：转职任务35903 
- *  @Author 娜娜 
- */			
+ *  脚本功能：转职任务35903
+ *  @Author 娜娜
+ */
 var status = 0;
 
 var ttt2 = "#fUI/UIWindow/Quest/icon6/7#"; ////美化2
@@ -31,63 +31,71 @@ function action(mode, type, selection) {
 		cm.sendOk("很遗憾，您因为违反用户守则被禁止游戏活动，如有异议请联系管理员.");
 		cm.dispose();
 	} else if (status == 0) {
-		var selStr = "啊，来得正好。从外部发来了紧急请求，务必请勇士你帮忙啊。";
+		var selStr = "啊，来得正好。从外部发来了紧急请求，务必请勇士你帮忙啊。\r\n[剧情任务]";
 		var n = "\r\n";
-		var zhuti= tz4 +"#b#fn微软雅黑##fs18#[剧情任务] ";
+		var zhuti = tz4 + "#b#fn微软雅黑##fs14# ";
 		selStr += n;
-		selStr += "#L5#" + zhuti +"Lv.33橡果侦探团[完善40%]#l"+n;
-		selStr += "#L4#" + zhuti +"Lv.35金海滩#l"+n;
-		selStr += "#L3#" + zhuti +"Lv.120艾洛丁#l"+n;
-		selStr += "#L1#" + zhuti +"Lv.125鲁塔比斯#l"+n;
-		selStr += "#L2#" + zhuti +"Lv.140起源之塔#l"+n;
-		
-		
-		selStr +="";
-		
+		selStr += "#L5#" + zhuti + "Lv.33橡果侦探团[@Author Jessefjxm]#l" + n;
+		selStr += "#L4#" + zhuti + "Lv.35金海滩[@Author Jessefjxm]#l" + n;
+		selStr += "#L6#" + zhuti + "Lv.100影子炼金术士[@Author 柠檬兔]#l" + n;
+		selStr += "#L3#" + zhuti + "Lv.120艾洛丁[@Author Jessefjxm]#l" + n;
+		selStr += "#L1#" + zhuti + "Lv.125鲁塔比斯[@Author Jessefjxm]#l" + n;
+		selStr += "#L2#" + zhuti + "Lv.140起源之塔[@Author Jessefjxm]#l" + n;
+
+		selStr += "";
+
 		cm.askMenu(selStr);
-		
+
 	} else if (status == 1) {
 		switch (selection) {
-			case 1:
-				if(cm.getLevel() < 125){
-					cm.dispose();
-					cm.sendOk("很遗憾，任务要求等级不够!");
-				}
+		case 1:
+			if (cm.getLevel() < 125) {
 				cm.dispose();
-				cm.openNpc(9900004,"鲁塔比斯");
-				break;
-			case 2:
-				if(cm.getLevel() < 140){
-					cm.dispose();
-					cm.sendOk("很遗憾，任务要求等级不够!");
-				}
+				cm.sendOk("很遗憾，任务要求等级不够!");
+			}
+			cm.dispose();
+			cm.openNpc(9900004, "鲁塔比斯");
+			break;
+		case 2:
+			if (cm.getLevel() < 140) {
 				cm.dispose();
-				cm.openNpc(9900004,"起源之塔");
-				break;
-			case 3:
-				if(cm.getLevel() < 120){
-					cm.dispose();
-					cm.sendOk("很遗憾，任务要求等级不够!");
-				}
+				cm.sendOk("很遗憾，任务要求等级不够!");
+			}
+			cm.dispose();
+			cm.openNpc(9900004, "起源之塔");
+			break;
+		case 3:
+			if (cm.getLevel() < 120) {
 				cm.dispose();
-				cm.openNpc(9900004,"艾洛丁");
-				break;
-			case 4:
-				if(cm.getLevel() < 35){
-					cm.dispose();
-					cm.sendOk("很遗憾，任务要求等级不够!");
-				}
+				cm.sendOk("很遗憾，任务要求等级不够!");
+			}
+			cm.dispose();
+			cm.openNpc(9900004, "艾洛丁");
+			break;
+		case 4:
+			if (cm.getLevel() < 35) {
 				cm.dispose();
-				cm.openNpc(9900004,"金海滩");
-				break;
-			case 5:
-				if(cm.getLevel() < 33){
-					cm.dispose();
-					cm.sendOk("很遗憾，任务要求等级不够!");
-				}
+				cm.sendOk("很遗憾，任务要求等级不够!");
+			}
+			cm.dispose();
+			cm.openNpc(9900004, "金海滩");
+			break;
+		case 5:
+			if (cm.getLevel() < 33) {
 				cm.dispose();
-				cm.openNpc(9900004,"橡果侦探团");
-				break;
+				cm.sendOk("很遗憾，任务要求等级不够!");
+			}
+			cm.dispose();
+			cm.openNpc(9900004, "橡果侦探团");
+			break;
+		case 6:
+			if (cm.getLevel() < 100) {
+				cm.dispose();
+				cm.sendOk("很遗憾，任务要求等级不够!");
+			}
+			cm.dispose();
+			cm.warp(302000000);
+			break;
 		}
 	}
 }

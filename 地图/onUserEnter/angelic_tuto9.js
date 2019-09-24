@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 11
  * 地图：万神殿东部地区 - 东侧圣殿附近 (940011090)
  * @author 狐狸糊涂
@@ -24,13 +24,13 @@ function action(mode, type, selection) {
         ms.sendNextSNoESC("再去圣物原来所在的东侧圣殿看看吧，那里应该能有什么方法可以解开诅咒。");
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(2);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/1", 1200, 30, -70);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/1", 1200, 30, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg0/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg0/0", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/2", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/2", 1200, 0, -100);
         ms.inGameDirectionEvent_MoveAction(1);
         ms.inGameDirectionEvent_AskAnswerTime(60);
     } else if (status === i++) {
@@ -46,19 +46,19 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_MoveAction(0);
         ms.inGameDirectionEvent_AskAnswerTime(600);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/7", 1200, 30, -70);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/7", 1200, 30, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/3", 1200, 30, -70);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/3", 1200, 30, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/0", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1800);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/4", 1200, 30, -70);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/4", 1200, 30, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/8", 1200, 30, -70);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg0/8", 1200, 30, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.sendNextNoESC("现在你能看见我了吧？？", 3000132);

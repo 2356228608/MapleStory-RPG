@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 冒险家剧情 - 09
  * 地图：枫叶路 - 枫树山丘 (4000011)
  */
@@ -20,7 +20,7 @@ function action(mode, type, selection) {
         } else if (status == 1) {
             ms.npc_ChangeController(10300, -240, 220, 1);
             ms.npc_SetSpecialAction(10300, "summon");
-            ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/1", 900, 0, -120, 1, 0, 1, 10300, 0, 0);
+            ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/1", 900, 0, -100, 1, 0, 1, 10300, 0, 0);
 			ms.inGameDirectionEvent_AskAnswerTime(1800);
         } else if (status == 2) {
             ms.npc_SetForceMove(10300, 1, 1000, 100);

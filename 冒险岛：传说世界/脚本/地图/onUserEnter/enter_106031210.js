@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  @Author Jessefjxm
  */
 // 全局变量
@@ -41,7 +41,7 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.fieldEffect_PlayFieldSound("Sound/Field.img/flowervioleta/copa");
-		ms.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/skill/fire/0", 0, -200, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/skill/fire/0", 0, -100, 0);
 		ms.effect_NormalSpeechBalloon("#fn黑体##fs32##r（嘎嘣）", 0, 0, 0, 2000, 1300012, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {

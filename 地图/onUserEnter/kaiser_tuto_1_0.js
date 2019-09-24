@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 02
  * 地图：秘密地图 - 万神殿东部 (940001010)
  * @author 狐狸糊涂
@@ -35,7 +35,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_MoveAction(1);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg1/1", 0, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/tuto/BalloonMsg1/1", 0, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.inGameDirectionEvent_PushMoveInfo(0, 600, -1200, 29);

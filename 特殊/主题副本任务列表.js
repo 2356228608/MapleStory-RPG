@@ -31,15 +31,15 @@ function action(mode, type, selection) {
 		cm.sendOk("很遗憾，您因为违反用户守则被禁止游戏活动，如有异议请联系管理员.");
 		cm.dispose();
 	} else if (status == 0) {
-		var selStr = "啊，来得正好。从外部发来了紧急请求，务必请勇士你帮忙啊。";
+		var selStr = "啊，来得正好。从外部发来了紧急请求，务必请勇士你帮忙啊。\r\n[主题副本]";
 		var n = "\r\n";
-		var zhuti= tz4 +"#b#fn微软雅黑##fs15#[主题副本] ";
+		var zhuti= tz4 +"#b#fn微软雅黑##fs14#";
 		selStr += n;
 		
-		selStr += "#L1#" + zhuti +"Lv.30[列娜海峡]的邀请#l"+n;
-		selStr += "#L3#" + zhuti +"Lv.30[妖精学院艾利涅]的求助#l"+n;
-		selStr += "#L2#" + zhuti +"Lv.60[蘑菇国王]的邀请信#l"+n;
-		selStr += "#L4#" + zhuti +"Lv.110[狮子王城主题副本]#l"+n;
+		selStr += "#L1#" + zhuti +"Lv.30列娜海峡[@Author Jessefjxm]#l"+n;
+		selStr += "#L3#" + zhuti +"Lv.30妖精学院艾利涅[@Author Jessefjxm]#l"+n;
+		selStr += "#L2#" + zhuti +"Lv.60蘑菇国王[@Author Jessefjxm]#l"+n;
+		selStr += "#L4#" + zhuti +"Lv.110狮子王城[@Author Jessefjxm]#l"+n;
 		selStr +="";
 		
 		cm.askMenu(selStr);

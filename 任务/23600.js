@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 尖兵剧情 - 08
  * 地图：秘密研究所 - 实验室 (931050930)
  * @author 狐狸糊涂
@@ -49,8 +49,9 @@ function end(mode, type, selection) {
         qm.npc_LeaveField(2159377);
         qm.forceCompleteQuest();
         qm.setInGameDirectionMode(false); //屏蔽/解锁操作台 true = 锁 false = 解
-        qm.warp(931050940, 0);
         qm.dispose();
+        qm.warp(931050940, 0);
+
     } else {
         ms.dispose();
     }

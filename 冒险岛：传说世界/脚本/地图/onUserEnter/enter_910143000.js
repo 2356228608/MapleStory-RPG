@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 Made by Jessefjxm
  */
 var status = -1;
@@ -57,7 +57,7 @@ function action(mode, type, selection) {
 		// 恐怖叫声出现
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 3000, 0, -120, 1, 0, 1, 1501011, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 3000, 0, -100, 1, 0, 1, 1501011, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.sendNextPrevNoESC("是谁的……惨叫声？", 1012110);
@@ -79,7 +79,7 @@ function action(mode, type, selection) {
 		ms.npc_LeaveField(1501011);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -120, 1, 0, 1, 1501012, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -100, 1, 0, 1, 1501012, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(4000);
 	} else if (status === i++) {
 		// 收尾

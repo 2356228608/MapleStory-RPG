@@ -111,11 +111,10 @@ function action4(mode, type, selection, i) {
 
 			var items = [4001851, 4001852, 4001853, 4001854, 4001862, 4001881, 4001882];
 			var minutes = [30, 60, 3 * 60, 6 * 60, 12 * 60, 9 * 60, 24 * 60];
-			var i = 0;
-			for (; i < items.length; i++) {
-				if (cm.haveItem(items[i])) {
-					cm.gainItem(items[i], -cm.itemQuantity(items[i]));
-					data[0][1] += minutes[i] * 60 * cm.itemQuantity(items[i]);
+			for (var j = 0; j < items.length; j++) {
+				if (cm.haveItem(items[j])) {
+					data[0][1] += minutes[j] * 60 * cm.itemQuantity(items[j]);
+					cm.gainItem(items[j], -cm.itemQuantity(items[j]));
 				}
 			}
 			if (data[0][1] <= 0) {

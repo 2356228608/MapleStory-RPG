@@ -102,14 +102,14 @@ function action(mode, type, selection) {
                 ms.spawnMonster(9421572, 270, 32);
                 ms.spawnMonster(9421572, 360, 32);
                 ms.spawnMonster(9421572, 450, 32);
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/1", 0, 0, -120, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/1", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
                 ms.curNodeEventEnd(true);
             } else if (status == 1) {
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/2", 0, 0, -120, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/2", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
             } else if (status == 2) {
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/3", 0, 0, -120, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/3", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
             } else {
                 ms.setInGameDirectionMode(false); //屏蔽/解锁操作台 true = 锁 false = 解
@@ -134,10 +134,10 @@ function action(mode, type, selection) {
                 ms.inGameDirectionEvent_AskAnswerTime(1000);
             } else if (status == 2) {
                 ms.inGameDirectionEvent_MoveAction(0); //0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/4", 0, 0, -120, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/4", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
             } else if (status == 3) {
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/5", 0, 0, -120, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/5", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
             } else if (status == 4) {
                 ms.inGameDirectionEvent(0, 1043, 0);
@@ -145,7 +145,7 @@ function action(mode, type, selection) {
                 ms.inGameDirectionEvent_AskAnswerTime(1400);
             } else if (status == 5) {
                 ms.inGameDirectionEvent_Effect("Skill/4212.img/skill/42121005/tile/0", 0, 0, 0, 0, 0);
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/6", 0, 0, -120, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/6", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(1440);
             } else if (status == 6) {
                 ms.inGameDirectionEvent_Effect("Skill/4212.img/skill/42121005/tile/end", 0, 0, 0, 0, 0);
@@ -179,7 +179,7 @@ function action(mode, type, selection) {
                 ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/8", 0, 0, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
             } else if (status == 3) {
-                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/9", 0, 250, -150, 0, 0);
+                ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/9", 0, 250, -100, 0, 0);
                 ms.inGameDirectionEvent_AskAnswerTime(2000);
             } else if (status == 4) {
                 ms.inGameDirectionEvent_Effect("Effect/DirectionJP3.img/effect/kannaTuto/balloonMsg/10", 0, 0, -100, 0, 0);

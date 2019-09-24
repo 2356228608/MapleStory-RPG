@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 04
  * 地图：秘密地图 - 赫里希安外围 (940001100)
  * @author 狐狸糊涂
@@ -19,7 +19,7 @@ function action(mode, type, selection) {
         ms.curNodeEventEnd(true);
         ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
         ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg0/0", 0, 0, -105);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg0/0", 0, 0, -100);
         ms.inGameDirectionEvent_MoveAction(2);
         ms.sendNextSNoESC("气氛有古怪，难道是我来迟了？");
     } else if (status === i++) {
@@ -61,7 +61,7 @@ function action(mode, type, selection) {
         ms.sendNextNoESC("现在那个不重要，达勒摩尔的军队不久前占领了赫里希安。", 3000131);
     } else if (status === i++) {
         ms.npc_SetSpecialAction(3000131, "fake");
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 0, 0, -110);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 0, 0, -100);
         //ms.inGameDirectionEvent_MoveAction(2);
         ms.npc_SetSpecialAction(3000131, "fake");
         ms.sendNextSNoESC("麦格纳斯！你受伤了吗？你和达勒摩尔的军队交战了？");

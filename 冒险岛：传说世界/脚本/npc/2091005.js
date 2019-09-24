@@ -22,22 +22,31 @@ function action(mode, type, selection) {
 	status++;
 	selectionLog[status] = selection;
 	var i = -1;
-	var eim = cm.getEventInstance();
-	var em = eim.getEventManager();
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status === i++) {
-		if (em.getProperty("clear").equals("true")) {
-			cm.askYesNo("怎么, 都打倒对方了你还想去哪儿? 现在直接进入下一个阶段就可以了吧? 难不成你是想起什么要紧事了吗?");
+		if (cm.getMapId() == 925080000) {
+			var data = getData(cm, 18766, ["Time", "enterTime"]);
+			cm.askYesNo("还没到出去的时间你就要走吗？\r\n现在还剩#r#e " + parseInt(parseInt(data[0][1])/60000) + " #k#n分钟。虽说剩下的时间下一次还可以继续使用，可这有点浪费吧？你好好考虑。");
 		} else {
-			cm.askYesNo("呵! 怎么, 你现在就要放弃了吗? 所以我不是让你不要蛮干逞能了嘛, 你真的打算放弃之后出去吗?");
+			var eim = cm.getEventInstance();
+			var em = eim.getEventManager();
+			if (em.getProperty("clear").equals("true")) {
+				cm.askYesNo("怎么, 都打倒对方了你还想去哪儿? 现在直接进入下一个阶段就可以了吧? 难不成你是想起什么要紧事了吗?");
+			} else {
+				cm.askYesNo("呵! 怎么, 你现在就要放弃了吗? 所以我不是让你不要蛮干逞能了嘛, 你真的打算放弃之后出去吗?");
+			}
 		}
 	} else {
 		if (mode > 0) {
-			cm.warp(925020002, 0);
-			var data = getData(cm, 3847, ["Time", "enter", "Floor", "Result"]);
-			data[3][1] = "giveup";
-			saveData(cm, 3847, data);
+			if (cm.getMapId() == 925080000) {
+				cm.warp(925020001, 0);
+			} else {
+				cm.warp(925020002, 0);
+				var data = getData(cm, 3847, ["Time", "enter", "Floor", "Result"]);
+				data[3][1] = "giveup";
+				saveData(cm, 3847, data);
+			}
 		}
 		cm.dispose();
 	}

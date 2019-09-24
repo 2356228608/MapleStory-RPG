@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 米哈尔剧情 - 10
  * 地图：秘密地图 - 林伯特家的杂货店 (913070004)
  * @author 狐狸糊涂
@@ -39,13 +39,13 @@ function action(mode, type, selection) {
             ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/6", 2000, 0, -120, 1, -100, 0, 0, 0, 0);
             ms.inGameDirectionEvent_AskAnswerTime(1000);
         } else if (status === i++) {
-            ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/4", 2000, 0, -120);
+            ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/4", 2000, 0, -100);
             ms.inGameDirectionEvent_AskAnswerTime(1000);
         } else if (status === i++) {
-            ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/7", 2000, 0, -120);
+            ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/7", 2000, 0, -100);
             ms.inGameDirectionEvent_AskAnswerTime(2000);
         } else if (status === i++) {
-            ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/8", 2000, 0, -120);
+            ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/8", 2000, 0, -100);
             ms.inGameDirectionEvent_AskAnswerTime(1000);
         } else if (status === i++) {
             ms.topMsg("后院好像有人，到后院去看看吧。");

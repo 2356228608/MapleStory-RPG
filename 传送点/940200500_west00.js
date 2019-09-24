@@ -1,5 +1,16 @@
-function enter(pi) {
-	var id = pi.getPortal().getId();
-	var name = pi.getPortalName();
-	pi.playerMessage(5, "这个传送点 [" + id + " : " + name + "] 的脚本尚未修复。脚本位于： 脚本/传送点/940200500_west00.js 【注意】修改完脚本后要在控制台重载才能生效！");
+﻿/*  This source is made by BMS Team
+ *  脚本功能：[新手任务]魔链影士系列
+ *  @Author 柠檬兔
+ *  工具提供：Jessefjxm
+ */
+
+function enter(pi){
+
+	if (!pi.isQuestActive(34600)) {
+		pi.playerMessage(-1,"接受任务再进去吧!");
+		return;
+	}
+
+	pi.warp(940200501,0);
+
 }

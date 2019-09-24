@@ -12,7 +12,7 @@ function start() {
 	var eim = cm.getEventInstance();
 	var em = eim.getEventManager();
 	var mob = em.getMonster(9305600);
-	ms.getMap().spawnMonsterWithEffect(mob, 15, new java.awt.Point(286, 7), true);
+	ms.getMap().spawnMonsterWithEffect(mob, 15, new java.awt.Point(286, 7), false);
 	ms.fieldEffect_Tremble(0, 1, 30);
 	ms.dispose();
 }

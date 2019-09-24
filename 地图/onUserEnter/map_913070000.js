@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 米哈尔剧情 - 01
  * 地图：秘密地图 - 林伯特家的杂货店 (913070000)
  * @author 狐狸糊涂
@@ -68,7 +68,7 @@ function action(mode, type, selection) {
         ms.sendNextPrevSNoESC("是……是！！林伯特大叔！我正想清理呢！\r\n嗯，那我……就去……做事了……");
     } else if (status === i++) {
         ms.forceCompleteQuest(20030);
-        ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/4", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction7.img/effect/tuto/step0/4", 2000, 0, -100);
         ms.emotion(6, 2000);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {

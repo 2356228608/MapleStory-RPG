@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 08
  * 地图：万神殿 - 万神殿治疗室 (940011060)
  * @author 狐狸糊涂
@@ -33,7 +33,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextSNoESC("就是头有点疼，其他还好。");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(600);
     } else if (status === i++) {
         ms.sendNextSNoESC("嗯？这是什么？");

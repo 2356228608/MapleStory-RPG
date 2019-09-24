@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 07
  * 地图：万神殿东部地区 - 东侧圣殿 (940011050)
  * @author 狐狸糊涂
@@ -28,7 +28,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(1200);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -120, 1, 0, 1, 3000104, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100, 1, 0, 1, 3000104, 0, 0);
         ms.npc_ChangeController(3000106, -330, 220, 0);//11 5F 00 01
         ms.npc_SetSpecialAction(3000106, "summon");
         ms.npc_ChangeController(3000107, -420, 220, 0);//12 5F 00 01
@@ -36,8 +36,8 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(1200);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -120, 1, 0, 1, 3000106, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -140, 1, 0, 1, 3000107, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100, 1, 0, 1, 3000106, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100, 1, 0, 1, 3000107, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
@@ -48,19 +48,19 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_Effect("Effect/BasicEff.img/Kaiser_Transform4_S", 0, 0, 0, 1, 0, 1, 3000141, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(900);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/6", 1200, 0, -120, 1, 0, 1, 3000106, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/6", 1200, 0, -100, 1, 0, 1, 3000106, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(300);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/7", 1200, 0, -120, 1, 0, 1, 3000107, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/7", 1200, 0, -100, 1, 0, 1, 3000107, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(300);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/7", 1200, 0, -120, 1, 0, 1, 3000107, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/7", 1200, 0, -100, 1, 0, 1, 3000107, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(600);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg0/0", 1200, 0, -120, 1, 0, 1, 3000104, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg0/0", 1200, 0, -100, 1, 0, 1, 3000104, 0, 0);
         ms.sendNextNoESC("狂龙战士终于出现了。卡塔利安，快把他们俩带去医疗所吧。", 3000106);
         ms.effect_Direction("Effect/Direction10.img/angelicTuto/Scene3");
     } else if (status === i++) {

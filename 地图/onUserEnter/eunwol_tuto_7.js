@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 隐月剧情 - 11 13
  * 地图：尖耳狐狸村 - 狐狸树 (940200010)
  * @author 狐狸糊涂
@@ -114,7 +114,7 @@ function action(mode, type, selection) {
         } else if (status === i++) {
             ms.inGameDirectionEvent_AskAnswerTime(600);
         } else if (status === i++) {
-            ms.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/chat/nugu/0", 2000, 0, -80, 1, 0, 1, 0, 0, 0);
+            ms.inGameDirectionEvent_Effect("Effect/Direction2.img/effect/chat/nugu/0", 2000, 0, -100, 1, 0, 1, 0, 0, 0);
             ms.inGameDirectionEvent_AskAnswerTime(2500);
         } else if (status === i++) {
             ms.sendNextSNoESC("月，月亮怎么有两个？！");

@@ -36,16 +36,16 @@ function setup(eim, leaderid) {
 	for (var i = 0; i < mapIds.length; i++) {
 		var map = eim.setInstanceMap(mapIds[i]);
 		map.resetFully();
-		map.killAllMonsters(false);
+		map.killAllMonsters(true);
 	}
 	initProp("stage", 0);
 	return eim;
 }
 
 function playerEntry(eim, player) {
+	player.setReviveCount(-100);
 	var map = eim.getMapInstance(0);
 	player.changeMap(map, map.getPortal(0));
-	player.setReviveCount(-100);
 	eim.startEventTimer(15 * 60 * 1000);
 }
 
@@ -87,13 +87,15 @@ function allMonstersDead(eim) {
 }
 
 function monsterValue(eim, mobId) {
-	// em.broadcastServerMsg("[monsterValue]=" + mobId);
+	em.broadcastServerMsg("[monsterValue]=" + mobId);
 	var mapId = parseInt(em.getProperty("stage"));
 	var kilReq = 1;
 	if (mapId <= 20) {
 		kilReq = 1;
-	} else if (mapId <= 30) {
+	} else if (mapId < 30) {
 		kilReq = 6;
+	} else if (mapId == 30) {
+		kilReq = 1;
 	} else if (mapId <= 35) {
 		kilReq = 2;
 	} else if (mapId < 40) {
@@ -108,19 +110,21 @@ function monsterValue(eim, mobId) {
 		kilReq = 2;
 	}
 	var kill = parseInt(em.getProperty("kill")) + 1;
-	em.setProperty("kill", kill);
+		em.setProperty("kill", kill);
+	em.broadcastServerMsg("[mapId] " + mapId);
 	if (kill >= kilReq) {
 		eim.getPlayers().forEach(function (player) {
 			player.openNpc(2540005, "特效_完成_武陵道场");
 		});
 		// +10s
-		eim.restartEventTimer(eim.getTimeLeft() + 10 * 1000);
+		eim.restartEventTimer(Math.min(15 * 60 * 1000, eim.getTimeLeft() + 10 * 1000));
 		em.setProperty("clear", "true");
 	} else if (mapId > 30 && mapId < 40 && mapId != 33 && mapId != 36 && mapId != 39) {
 		// 得刷好几次
-		var map = em.getMapFactoryMap(mapId);
+		var map = em.getMapFactoryMap(mapHead + mapId * 100);
 		var mob = em.getMonster(9305600 + mapId - 1);
-		map.spawnMonsterWithEffect(mob, 15, new java.awt.Point(randomNum(-200, 200), 7), true);
+		em.broadcastServerMsg("[mob] " + (9305600 + mapId - 1));
+		map.spawnMonsterWithEffect(mob, 15, new java.awt.Point(randomNum(-200, 350), 7), true);
 	}
 	return 1;
 }

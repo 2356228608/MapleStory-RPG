@@ -47,8 +47,9 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	ms.spawnMob(9305301, 286, 7);
-		cm.dispose();
+cm.updateInfoQuest(3887, "point=11030;check=1");	// 触发结算奖励
+cm.updateInfoQuest(3888, "dojangRankJob=1;dojangRank2=209");	// 触发排名奖励
+	cm.dispose();
 }
 function actionPacket(mode, type, selection) {
 	status++;

@@ -1,8 +1,10 @@
-/*
+﻿/*
  * 任务：医生的拜托(23003)
- * @author 狐狸糊涂
+ * @author 柠檬兔
  */
+
 function act() {
-    rm.dropItems();
-	rm.dropSingleItem(2431855);
+rm.dropItems();
+//饱满的橡子
+rm.dropSingleItem(4034738);
 }

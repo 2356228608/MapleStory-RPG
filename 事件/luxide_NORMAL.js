@@ -130,7 +130,7 @@ function allMonstersDead(eim) {
             var chr = pIter.next();
             var map = eim.getMapFactory().getMap(706041150);
             var randitem = Math.floor(Math.random() * item.length);
-            map.spawnAutoDrop(item[randitem], chr.getPosition());//chr.getPosition()
+            //map.spawnAutoDrop(item[randitem], chr.getPosition());//chr.getPosition()
 			//map.spawnAutoDrop(item[randitem], chr.getPosition());//chr.getPosition()
         }
     }

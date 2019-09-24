@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 13
  * 地图：万神殿东部地区 - 东侧圣殿 (940001220)
  * @author 狐狸糊涂
@@ -38,7 +38,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextNoESC("你一个人难道还能上天入地了不成！！", 3000114);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/0", 1200, 0, -100);
         ms.inGameDirectionEvent_MoveAction(2);
         ms.inGameDirectionEvent_OneTimeAction(450, 0);
         ms.fieldEffect_PlayFieldSound("Kaiser/61001101");
@@ -61,7 +61,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_Effect("Npc/3000114.img/hit", 0, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(300);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/6", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/6", 1200, 0, -100);
         ms.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene2");
         ms.inGameDirectionEvent_AskAnswerTime(900);
         //ms.effect_Direction("Effect/Direction9.img/KaiserTutorial/Scene2");

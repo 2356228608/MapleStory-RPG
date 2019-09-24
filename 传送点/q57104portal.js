@@ -14,7 +14,7 @@ function enter(pi) {
                     pi.playerMessage(5, "和山中幸盛进行对话吧。");
                 }
             } else {
-                if (pi.isQuestActive(57402)) {
+                if (pi.getQuestStatus(57402)==1) {
                     pi.warp(807040100, 0);
                 } else {
                     pi.playerMessage(5, "和直江兼续进行对话吧。");

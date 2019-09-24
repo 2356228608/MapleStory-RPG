@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 夜光剧情 - 17
  * 地图：秘密地图 - 森林边界 (910141000)
  * @author 狐狸糊涂
@@ -40,7 +40,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(0); //0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
         ms.inGameDirectionEvent_OneTimeAction(4, 2000);
-        ms.inGameDirectionEvent_Effect("Effect/Direction5.img/effect/mercedesInIce/merBalloon/1", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction5.img/effect/mercedesInIce/merBalloon/1", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(2000);
     } else if (status === i++) {
         ms.effect_Direction("Effect/Direction8.img/lightningTutorial2/Scene2");

@@ -65,7 +65,7 @@ function start(mode, type, selection) {
 	} else if (status === i++) {
 		cm.setStandAloneMode(false);
 		cm.setInGameDirectionMode(false, false, false);
-		cm.changeJob(310);
+		cm.changeJob(330);
 		qm.gainItem(1592001, 1); //玛拉德远古弓 - 30级
 		qm.gainItem(1353701, 1);//潜力遗物- 30级
 		cm.openUI(1);

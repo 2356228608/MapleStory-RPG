@@ -26,8 +26,7 @@ function action(mode, type, selection) {
             status--;
         }
         if (status == 0) {
-            var selStr = "#r - GM清理和满技能功能 #k\r\n #L0#清理技能#l #L2#加满技能#l";
-            //  cm.askMenu("#r - GM清理和满技能功能 #k\r\n #L0# 清理技能 #L1# 加满技能");
+            var selStr = "#r - GM清理和满技能功能 #k\r\n#L0#清理技能#l\r\n#L2#加满技能#l \r\n#L3#满5转技能[只满已装备中的技能]#l";
             if (cm.getJob() == 4002 || cm.getJob() >= 4200 && cm.getJob() <= 4212) {
                 selStr += "\r\n #L0#清理技能#l #L1#加满技能#l";
             }
@@ -158,7 +157,7 @@ function action(mode, type, selection) {
 					}
                 break;
 			case 3:
-                cm.Maxskillv5();
+                cm.MaxV5skill();
 				cm.dispose();
 				//cm.sendOk("\r\n\t#e#r找我!");
                 break;

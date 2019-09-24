@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 14
  * 地图：万神殿东部地区 - 东侧圣殿 (940011110)
  * @author 狐狸糊涂
@@ -19,7 +19,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(60);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/2", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/2", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.sendNextNoESC("哎，看起来挺漂亮的，别不好意思。拥有特殊力量的正义勇士就得有一身漂亮制服。", 3000132);
@@ -59,7 +59,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextSNoESC("我可以吗？");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/3", 900, 30, -70);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/3", 900, 30, -100);
         ms.inGameDirectionEvent_AskAnswerTime(900);
     } else if (status === i++) {
         ms.sendNextNoESC("叽叽咕咕说什么啊！弟兄们！走！", 3000119);

@@ -1,4 +1,4 @@
-/* 起源之塔
+﻿/* 起源之塔
 Made by Jessefjxm
  */
 var status = -1;
@@ -19,7 +19,7 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("快过来。", 2540000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 0, 0, -110);
+		ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 0, 0, -100);
 		ms.inGameDirectionEvent_MoveAction(7);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {

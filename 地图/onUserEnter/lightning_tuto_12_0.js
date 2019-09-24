@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 夜光剧情 - 20
  * 地图：秘密地图 - 拉尼娅的家前院 (910141020)
  * @author 狐狸糊涂
@@ -53,7 +53,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.inGameDirectionEvent_OneTimeAction(4, 6000);
         ms.inGameDirectionEvent_Effect("Effect/Direction8.img/effect/tuto/floodEffect/0", 6000, 0, 0, 1, -5, 0, 0, 0, 0);
-        ms.inGameDirectionEvent_Effect("Effect/Direction8.img/effect/tuto/BalloonMsg1/1", 1500, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction8.img/effect/tuto/BalloonMsg1/1", 1500, 0, -100);
         ms.npc_SetForceMove(1032201, -1, 50, 100);
         ms.inGameDirectionEvent_AskAnswerTime(1500);
         ms.effect_Direction("Effect/Direction8.img/lightningTutorial2/Scene2");

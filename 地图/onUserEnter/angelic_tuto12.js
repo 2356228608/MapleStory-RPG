@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 15
  * 地图：万神殿东部地区 - 东侧圣殿 (940011150)
  * @author 狐狸糊涂
@@ -21,7 +21,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_MoveAction(0);
         ms.inGameDirectionEvent_AskAnswerTime(300);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/4", 900, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/4", 900, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(150);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(2);
@@ -39,7 +39,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_MoveAction(0);
         ms.inGameDirectionEvent_AskAnswerTime(510);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/9", 900, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/tuto/BalloonMsg1/9", 900, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(900);
     } else if (status === i++) {
         ms.sendNextNoESC("嘿嘿嘿，我的力量如何？", 3000132);

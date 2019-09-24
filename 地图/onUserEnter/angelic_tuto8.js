@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 爆莉萌天使剧情 - 10
  * 地图：万神殿西部地区 - 赫里希安攻击队基地 (940011080)
  * @author 狐狸糊涂
@@ -34,7 +34,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
         ms.npc_SetForceMove(3000140, 1, 170, 100);
-        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction10.img/effect/story/BalloonMsg1/0", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(690);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(1);

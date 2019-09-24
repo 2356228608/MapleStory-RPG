@@ -1,4 +1,4 @@
-/* 鲁塔比斯
+﻿/* 鲁塔比斯
 Made by Jessefjxm
  */
 var status = -1;
@@ -94,7 +94,7 @@ function action(mode, type, selection) {
 		ms.sendNextNoESC("肮脏的背叛者竟然敢怂恿我们背叛#r\"那个人\"#k，看来你是活得不耐烦了！", 1064017);
 	} else if (status === i++) {
 		// 特效，落柱子
-        ms.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/stone/0", 0, -200, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/stone/0", 0, -100, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		// 特效，落柱子
@@ -102,7 +102,7 @@ function action(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		// 特效，落柱子
-        ms.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/stone/0", 0, -150, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction11.img/effect/stone/0", 0, -100, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
 		// 特效，落柱子

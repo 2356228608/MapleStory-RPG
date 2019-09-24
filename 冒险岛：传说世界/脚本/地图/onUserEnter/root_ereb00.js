@@ -35,7 +35,7 @@ function action30000(mode, type, selection) {
 		ms.inGameDirectionEvent_AskAnswerTime(30);
 	} else if (status == i++) {
 		// 南哈特看向玩家
-		ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 2000, 0, -110, 1, 0, 1, 1064000, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/1", 2000, 0, -100, 1, 0, 1, 1064000, 0, 0);
 		ms.npc_SetForceMove(1064000, 1, 100, 100);
 		ms.inGameDirectionEvent_AskAnswerTime(2500); // 不加这类方法无法进入到下一阶段
 	} else if (status === i++) {

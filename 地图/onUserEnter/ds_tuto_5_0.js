@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 恶魔剧情 - 21
  * 地图：秘密地图 - 秘密广场1 (931050010)
  * @author 狐狸糊涂
@@ -35,7 +35,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextPrevNoESC("黑魔法师？军团长？听不懂你在说什么。你说的事情和现在的情况差得太远了。你知道吗？黑魔法师已经在几百年前被英雄们封印了起来！", 2159315);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(600);
     } else if (status === i++) {
         ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg0/10", 1500, -90, -150, 1, 0, 1, 0, 1, 0);

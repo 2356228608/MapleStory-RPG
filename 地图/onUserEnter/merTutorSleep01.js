@@ -1,33 +1,28 @@
-var status = -1;
+/*  This source is made by BMS Team
+ *  脚本功能：[新手任务]双弩精灵系列remake
+ *  @Author 柠檬兔
+ *  工具提供：Jessefjxm
+ */
 
+// 全局变量
+var status = -1; // status: 当前聊天交互轮数
+
+// 主体
 function action(mode, type, selection) {
-	if (mode == 1) {
-		status++;
-	} else {
-		status--;
-	}
-	if (status == 0) {
-		//        ms.teachSkill(20021166, -1, 1);
-		//        ms.teachSkill(20021181, -1, 1);
-		//        ms.teachSkill(20020111, -1, 1);
-		ms.curNodeEventEnd(true);
-		ms.effect_Direction("Effect/Direction5.img/mersedesTutorial/Scene1");
-		ms.inGameDirectionEvent_AskAnswerTime(3000);
-		cm.updateInfoQuest(24006, "Level=1;Afrien=o;Eurel=1");
-		cm.forceStartQuest(11620, "0");
-		cm.updateInfoQuest(15710, "lasttime=19/09/04/16/13");
-		cm.updateInfoQuest(25980, "normal=#");
-		cm.updateInfoQuest(25980, "normal=#;hard=#");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.forceStartQuest(11620, "0");
-		cm.setInGameDirectionMode(false, false, false);
-		ms.warp(101050010, 0);
+	status++;
+	var i = -1;
+	if (status <= i++) {
 		ms.dispose();
+        } else if (status === i++) {
+	ms.curNodeEventEnd(true);
+	ms.setInGameDirectionMode(true, false, false);
+	ms.effect_Direction("Effect/Direction5.img/mersedesTutorial/Scene1", 0, 0, 0);
+        ms.inGameDirectionEvent_AskAnswerTime(3300);
+	ms.warp(101050010);
+	} else if (status === i++) {
+	ms.warp(101050010);
+	ms.setInGameDirectionMode(false, false, false);
+	ms.dispose();
+	ms.warp(101050010);
 	}
 }

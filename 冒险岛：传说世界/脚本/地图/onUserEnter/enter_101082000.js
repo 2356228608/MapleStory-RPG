@@ -1,4 +1,4 @@
-/*
+﻿/*
 Made by Jessefjxm
  */
 var status = -1;
@@ -52,7 +52,7 @@ function action首次进入(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextSNoESC("好像没有任何……人#fs16#嗯#fs20#嗯#fs24#嗯#fs28#嗯！！！！！！！");
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -110);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -100);
 		ms.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
 		ms.fieldEffect_PlayFieldSound("Sound/SoundEff.img/heart");
@@ -86,7 +86,7 @@ function action首次进入(mode, type, selection) {
 		ms.npc_ChangeController(1501012, -645, 130, 0); //D5 F8 86 01
 		ms.inGameDirectionEvent_AskAnswerTime(100);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -110);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg1/0", 0, 0, -100);
 		ms.inGameDirectionEvent_AskAnswerTime(100);
 	} else if (status === i++) {
 		ms.inGameDirectionEvent_MoveAction(1);
@@ -102,7 +102,7 @@ function action首次进入(mode, type, selection) {
 		ms.inGameDirectionEvent_MoveAction(4);
 		ms.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/Balloonmsg0/0", 0, 0, -120, 1, 0, 1, 1501012, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/Balloonmsg0/0", 0, 0, -100, 1, 0, 1, 1501012, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2000);
 	} else if (status === i++) {
 		ms.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 1000, 0); //创建一个遮布 0x10

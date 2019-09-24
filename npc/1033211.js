@@ -19,9 +19,10 @@ function action(mode, type, selection) {
             status--;
         if (status == 0) {
             if (cm.getPlayer().getLevel() >= 200 && cm.getPlayer().getJob() == 2312) {
-                cm.askYesNo("Hi #r#h ##k, I see you dont have your #blevel 200 medal#k and #bEcho Of the Hero#k");
+                cm.askYesNo("日子过得还好吗？");
             } else {
-                cm.sendOk("You are not a mercedes or level 200 silly.");
+                cm.sendOk("生活啊每天都要开开心心。\r\n（需要转职的话输入@pm打开拍卖菜单自行转职。）");
+		cm.forceCompleteQuest(24010);
                 cm.dispose();
             }
         } else if (status == 1) {

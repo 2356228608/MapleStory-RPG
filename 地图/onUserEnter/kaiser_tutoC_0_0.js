@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 狂龙剧情 - 11
  * 地图：万神殿东部地区 - 东侧圣殿附近 (940001200)
  * @author 狐狸糊涂
@@ -45,7 +45,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.sendNextNoESC("呜呜，真心羡慕死你们了。", 3000103);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/0", 1200, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/0", 1200, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.sendNextNoESC("嗯？我忽然有种不好的预感。", 3000103);
@@ -64,7 +64,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.npc_SetForceMove(3000103, 1, 400, 100);
         ms.npc_SetForceMove(3000104, 1, 400, 100);
-        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/0", 1200, 0, -120, 1, 0, 1, 3000103, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction9.img/effect/story/BalloonMsg1/0", 1200, 0, -100, 1, 0, 1, 3000103, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(600);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(2);

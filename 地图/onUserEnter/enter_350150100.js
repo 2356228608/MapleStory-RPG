@@ -80,7 +80,7 @@ function action(mode, type, selection) {
 		cm.npc_LeaveField("oid=480939582");
 		cm.npc_ChangeController(1540780, "oid=480961071", -300, -400, 0);
 		cm.npc_SetSpecialAction("oid=480961071", "summon", 0, 0);
-		cm.inGameDirectionEvent_Effect("Skill/800019.img/skill/80001935/effect", 0, -300, -310, 1, 0, 1, 0, 0, 0);
+		cm.inGameDirectionEvent_Effect("Skill/800019.img/skill/80001935/effect", 0, -300, -300, 1, 0, 1, 0, 0, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(1000);
 	} else if (status === i++) {
 		cm.onScriptMessage(3, 0, 1, 0, "#face0#孩子们呢？", 256, 0, 37, 0, 1, 1540801); // [类型] 普通对话

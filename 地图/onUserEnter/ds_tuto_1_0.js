@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 恶魔剧情 - 04
  * 地图：秘密地图 - 时间神殿回廊2 (927000010)
  * @author 狐狸糊涂
@@ -104,13 +104,13 @@ function action(mode, type, selection) {
         ms.sendNextPrevNoESC("伟大的那一位希望我们把这一切战争都结束掉。我们接到了命令，要把那些拖拖拉拉的抵抗势力全都消灭干净。所以除了你之外的所有军团长都出发了。", 2159308);
         ms.effect_Voice("Voice.img/DemonSlayertutorial_A/21");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/18", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/18", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
         ms.sendNextNoESC("…对神木村不要留一棵草、一棵树，全都被消灭干净了…", 2159310);
         ms.effect_Voice("Voice.img/DemonSlayertutorial_A/22");
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1500);
     } else if (status === i++) {
         ms.sendNextSNoESC("(神木村所处的南部地区还有我的家人啊……！)");

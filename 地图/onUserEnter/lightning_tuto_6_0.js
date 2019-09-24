@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 夜光剧情 - 07
  * 地图：秘密地图 - 黑魔法师的房间 (927020070)
  * @author 狐狸糊涂
@@ -20,7 +20,7 @@ function action(mode, type, selection) {
         ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
         ms.npc_ChangeController(2159357, 300, -80, 1);
         ms.npc_SetSpecialAction(2159357, "summon");
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/6", 0, 0, -160);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/6", 0, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1200);
     } else if (status === i++) {
         ms.inGameDirectionEvent_PushMoveInfo(0, 300, 0, -500);

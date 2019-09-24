@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 神炮王剧情 - 02
  * 地图：可可岛 - 通往冒险岛 (3000000)
  * @author 狐狸糊涂
@@ -54,7 +54,7 @@ function action(mode, type, selection) {
         ms.npc_SetSpecialAction(1096008, "attack2");
         ms.inGameDirectionEvent_AskAnswerTime(1000);
     } else if (status === i++) {
-        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/npc/0", 2000, 0, -160, 1, 0, 1, 1096002, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/npc/0", 2000, 0, -100, 1, 0, 1, 1096002, 0, 0);
         ms.npc_SetSpecialAction(1096008, "attack1");
         ms.inGameDirectionEvent_AskAnswerTime(1000);
     } else if (status === i++) {
@@ -70,7 +70,7 @@ function action(mode, type, selection) {
         ms.effect_Direction("Effect/Direction4.img/cannonshooter/face02");
     } else if (status === i++) {
         ms.npc_SetSpecialAction(1096008, "attack2");
-        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/npc/1", 2000, 0, -160, 1, 0, 1, 1096002, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/npc/1", 2000, 0, -100, 1, 0, 1, 1096002, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(500);
         ms.effect_Direction("Effect/Direction4.img/cannonshooter/face02");
     } else if (status === i++) {
@@ -91,7 +91,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.effect_Direction("Effect/Direction4.img/cannonshooter/face05");
         ms.npc_SetSpecialAction(1096008, "attack1");
-        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/balog/0", 2000, 0, -200, 1, 0, 1, 1096008, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/balog/0", 2000, 0, -100, 1, 0, 1, 1096008, 0, 0);
         ms.inGameDirectionEvent_Effect("Mob/8150000.img/attack2/info/effect", 0, 0, 0, 1, 0, 1, 1096008, 0, 0);
         ms.fieldEffect_PlayFieldSound("cannonshooter/Attack1");
         ms.inGameDirectionEvent_AskAnswerTime(1000);
@@ -145,7 +145,7 @@ function action(mode, type, selection) {
     } else if (status === i++) {
         ms.npc_SetSpecialAction(1096008, "attack");
         ms.fieldEffect_PlayFieldSound("cannonshooter/Attack2");
-        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/balog/1", 2000, 0, -200, 1, 0, 1, 1096008, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction4.img/effect/cannonshooter/balog/1", 2000, 0, -100, 1, 0, 1, 1096008, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(300);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(2);

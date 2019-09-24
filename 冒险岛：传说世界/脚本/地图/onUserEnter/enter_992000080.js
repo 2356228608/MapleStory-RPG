@@ -1,4 +1,4 @@
-/* 起源之塔
+﻿/* 起源之塔
 Made by Jessefjxm
  */
 var status = -1;
@@ -36,16 +36,16 @@ function action4(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("……", 2540000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -120, 1, 0, 1, 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -100, 1, 0, 1, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -120, 1, 0, 1, 2540000, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -100, 1, 0, 1, 2540000, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -120, 1, 0, 1, 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -100, 1, 0, 1, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -120, 1, 0, 1, 2540000, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -100, 1, 0, 1, 2540000, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
 		ms.sendNextNoESC("……这个嘛？反正，我和真身共享记忆就只是到开始建塔为止，所以真身所做的事情就不要来问我这个思念体了吧？我会很不爽的，不是吗？", 2540000);
@@ -96,7 +96,7 @@ function action8(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("不过…………那个…………不行啊。", 2540000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/2", 3000, 0, -80, 1, 99999, 1, 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/2", 3000, 0, -100, 1, 99999, 1, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(2500);
 	} else if (status === i++) {
 		ms.sendNextSNoESC("怎么？你不是说只要输入密码就能解除结界吗？");
@@ -106,7 +106,7 @@ function action8(mode, type, selection) {
 	} else if (status === i++) {
 		ms.sendNextNoESC("我忘记了。", 2540000);
 	} else if (status === i++) {
-		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -80, 1, 99999, 1, 0, 0, 0);
+		ms.inGameDirectionEvent_Effect("Effect/Direction12.img/effect/tuto/BalloonMsg0/0", 3000, 0, -100, 1, 99999, 1, 0, 0, 0);
 		ms.inGameDirectionEvent_AskAnswerTime(1500);
 	} else if (status === i++) {
 		ms.sendNextNoESC("你说忘记了！那也没办法。已经过了太久的时间了。换做是我的话，500年前设置的装置也不会记住密码的吧？肯定是记不住的！", 2540000);

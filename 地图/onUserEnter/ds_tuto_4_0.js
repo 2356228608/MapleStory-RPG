@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 恶魔剧情 - 20
  * 地图：秘密地图 - 治疗室 (931050030)
  * @author 狐狸糊涂
@@ -65,7 +65,7 @@ function action(mode, type, selection) {
         ms.sendNextPrevSNoESC("(呼……要想恢复力量，看来得花上一段时间了。光这样待着也没用……不如去活动一下吧。)");
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(1); //0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 2000, 0, -120);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 2000, 0, -100);
         ms.inGameDirectionEvent_AskAnswerTime(1000);
     } else if (status === i++) {
         ms.sendNextSNoESC("(好像听到了什么声音……)");
@@ -93,7 +93,7 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(30);
     } else if (status === i++) {
         ms.inGameDirectionEvent_MoveAction(0); //0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
-        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 1500, 0, -120, 1, 0, 1, 2159344, 0, 0);
+        ms.inGameDirectionEvent_Effect("Effect/Direction6.img/effect/tuto/balloonMsg1/3", 1500, 0, -100, 1, 0, 1, 2159344, 0, 0);
         ms.inGameDirectionEvent_AskAnswerTime(1000);
     } else if (status === i++) {
         ms.sendNextNoESC("起来啦。身体还好吗？你的脸色还是很不好……", 2159344);

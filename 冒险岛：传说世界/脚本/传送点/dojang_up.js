@@ -4,6 +4,7 @@ function enter(pi) {
 	var em = eim.getEventManager();
 	if (!em.getProperty("clear").equals("true")) {
 		pi.playerMessage("还有剩下的怪物。");
+		// pi.dojoAgent_NextMap();
 	} else {
 		pi.dojoAgent_NextMap();
 	}
