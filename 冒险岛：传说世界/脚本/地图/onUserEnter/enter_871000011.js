@@ -3,10 +3,6 @@
  * @author 娜娜 871000010
  */
 var status = -1;
-var ca = java.util.Calendar.getInstance();
-var year = ca.get(java.util.Calendar.YEAR); //获得年份
-var month = ca.get(java.util.Calendar.MONTH) + 1; //获得月份
-var day = ca.get(java.util.Calendar.DATE); //获取日
 
 function action(mode, type, selection) {
 	if (mode == 1) {
@@ -27,17 +23,17 @@ function action(mode, type, selection) {
 		cm.inGameDirectionEvent_AskAnswerTime(300);
 	} else if (status === i++) {
 		cm.curNodeEventEnd(true);
-		cm.updateInfoQuest(26015, "");
-		cm.updateInfoQuest(18790, "mod=22879604960;lastTime=190118101952;damage=518961259314;coin=0");
-		cm.updateInfoQuest(18098, "lastTime=190928082019;coin=200");
 		cm.updateInfoQuest(500400, "open=0;0_0=1;0_1=1");
+		cm.sendNewEffects(8, []);
 		cm.inGameDirectionEvent_ForcedFlip10(2, 720);
+		cm.sendNewEffects(13, [2500, 400, 0]);
 		cm.inGameDirectionEvent_AskAnswerTime(4500);
 	} else if (status === i++) {
 		cm.updateInfoQuest(500400, "open=0;0_0=1;0_1=1");
 		cm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 500, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(500);
 	} else if (status === i++) {
+		cm.sendNewEffects(17, [0, 1000, 2000, -80, 120]);
 		cm.onTeleport(1, cm.getPlayer().getId(), -270, 110);
 		cm.fieldEffect_InsertCanvas(1, 255, 0, 0, 0, 0, 0);
 		cm.inGameDirectionEvent_AskAnswerTime(1200);
@@ -141,11 +137,13 @@ function action(mode, type, selection) {
 		cm.forceCompleteQuest(64591);
 		cm.forceStartQuest(64592, "");
 		cm.updateInfoQuest(500767, "3=1;7=1;managerXpos=100;managerYpos=100");
+		cm.sendNewEffects(14, [0, 2000, 1000]);
 		cm.updateInfoQuest(18418, "B=61292");
+		cm.sendNewEffects(19, [0]);
 		cm.setInGameDirectionMode(false, true, false);
 		cm.npc_LeaveField("oid=11110732");
 		// [2019/9/28 8:19:24] 即将切换地图: cm.warp(871000011) -> cm.warp(871200197)
-		cm.warp(871200197);
+		cm.enterHome(0);
 		cm.dispose();
 	} else {
 		ms.dispose();

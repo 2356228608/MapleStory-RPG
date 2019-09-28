@@ -19,6 +19,11 @@ function action(mode, type, selection) {
 		cm.onScriptMessage(3, 0, 0, 0, "#face0#你要现在进入我的小屋吗？", 0, 16, 36, 0, 1, 9010000); // [类型] 接受/拒绝
 	} else if (status === i++) {
 		cm.updateInfoQuest(64590, "rMap=" + cm.getMapId());
+		if (cm.getPlayer().getQuestStatus(64591) == 1) {
+			cm.warp(871000011);
+		} else {
+			cm.enterHome(0);
+		}
 		cm.dispose();
 	} else {
 		cm.dispose();
