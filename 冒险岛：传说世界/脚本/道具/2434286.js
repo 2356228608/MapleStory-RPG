@@ -30,7 +30,12 @@ function action(mode, type, selection) {
 	} else if (status === i++) {
 		var id = im.getItemId();
 		var traitName = ["charisma", "insight", "will", "craft", "sense", "charm"];
-		cm.addTrait(traitName[randomNum(0, traitName.length - 1)], 30);
+		var traitNameCN = ["领导力", "洞察", "意志力", "手技", "感性", "魅力"];
+		var rand = randomNum(0, traitName.length - 1);
+		cm.addTrait(traitName[rand], 30);
+		im.gainItem(im.getItemId(), -1);
+		cm.playerMessage(5, traitNameCN[rand] + "提高了30点。");
+		im.dispose();
 	} else {
 		im.dispose();
 	}

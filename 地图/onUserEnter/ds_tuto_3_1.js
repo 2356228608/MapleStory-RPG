@@ -115,7 +115,8 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(1500);
     } else {
         ms.npc_LeaveField(2159342);
-        ms.warp(931050030, 0);
         ms.dispose();
+        ms.warp(931050030, 0);
+
     }
 }

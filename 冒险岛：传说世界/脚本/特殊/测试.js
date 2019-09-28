@@ -47,8 +47,14 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-cm.updateInfoQuest(3887, "point=11030;check=1");	// 触发结算奖励
-cm.updateInfoQuest(3888, "dojangRankJob=1;dojangRank2=209");	// 触发排名奖励
+	var qid = 64590;
+	//cm.forceStartQuest(qid, "1");
+	//cm.updateInfoQuest(qid, "value=9");
+	var newStatus = cm.getQuestRecord(qid);
+	newStatus.setCustomData("");
+	newStatus.setStatus(0);
+	// 这样才能有效更新
+	cm.getPlayer().updateQuest(newStatus, true);
 	cm.dispose();
 }
 function actionPacket(mode, type, selection) {

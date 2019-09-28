@@ -14,7 +14,7 @@ function action(mode, type, selection) {
 	cm.fieldEffect_ScreenMsg("dojang/end/clear");
 	cm.getMap().getReactorByName("door").forceHitReactor(cm.getPlayer(), 1);
 	cm.playerMessage(-1, "击败了对手, 计时器延长10秒. ");
-	var mapId = parseInt((cm.getMapId() - 925076000) / 100);
+	var mapId = parseInt((cm.getMapId() - 925070000) / 100);
 	if (mapId == 10) {
 		cm.finishAchievement(1303);
 	} else if (mapId == 20) {

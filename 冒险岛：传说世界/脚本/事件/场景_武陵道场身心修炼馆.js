@@ -2,8 +2,7 @@
 var mapIds = [925080000];
 var mapHall = 925020001;
 
-function init() {
-}
+function init() {}
 
 function start() {
 	em.getPlayersInMap(mapIds[0]).forEach(function (player) {
@@ -11,7 +10,7 @@ function start() {
 		data[0][1] = parseInt(data[0][1]) - 5;
 		saveData(player, 18766, data); ;
 		player.gainExp(player.getNeededExp() / 10000, true, false, true);
-		
+
 		if (data[0][1] % 60 == 0) {
 			player.dropMessage(5, "还能在身心修炼馆内待上 " + parseInt(data[0][1] / 60) + " 分钟。");
 		}
@@ -91,7 +90,8 @@ function playerDead(eim, player) {
 	// em.broadcastServerMsg("[playerDead]");
 }
 function cancelSchedule() {
-	setupTask.cancel(true);
+	if (setupTask != null)
+		setupTask.cancel(true);
 }
 
 // ===================== 功能类方法 ======================

@@ -1,4 +1,1 @@
-﻿function enter(pi) {
-    pi.openNpc(1540496, "blackHeaven");
-    return true;
-}
+C:/Games/BMS/脚本/冒险岛：传说世界/脚本/传送点/bh_bossOutN.js

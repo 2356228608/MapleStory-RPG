@@ -173,6 +173,7 @@ function action(mode, type, selection) {
 		//NPC图片ID,时间(毫秒),"内容"  1540108
 		//cm.addPopupSay(1540108, 2000, "欢迎来到[" + cm.getServerName() + "],实力团队运营,独特的新玩法,有什么我能帮到你吗?");
 		//cm.askMenu(selStr);
+		//cm.decryptOpcode();
 		if (cm.getPlayer().getIntNoRecord(99997) == 0) {
 			cm.askMenu_Bottom(selStr);
 		} else {

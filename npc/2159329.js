@@ -1,12 +1,12 @@
-/*
- * 恶魔剧情 - 09
- * 地图：秘密地图 - 恶魔猎手的老家 (924020000)
- * Npc名称：烧焦的残骸2
- * @author 狐狸糊涂
+﻿/*  This source is made by BMS Team
+ *  脚本功能：[新手剧情]恶魔系列remake
+ *  @Author 柠檬兔
+ *  工具提供：Jessefjxm
  */
+
 function start() {
-    cm.sendNextSNoESC("#b戴米安！！你在哪……活着的话，就回答我！！#k");
-    cm.forceCompleteQuest(23201);
-    cm.forceStartQuest(23202);
-    cm.dispose();
+cm.sendNextSNoESC("#b戴米安！！你在哪……活着的话，就回答我！！#k");
+cm.updateInfoQuest(23201, "click=2");
+cm.updateInfoQuest(23202, "click=1");
+cm.dispose();
 }

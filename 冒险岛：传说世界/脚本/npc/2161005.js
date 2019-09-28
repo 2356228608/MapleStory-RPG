@@ -11,9 +11,9 @@ var moblevel = 255;
 //副本开关 开启、true 关闭、false
 var open = true;
 //组队log记录
-var PQ = ["副本_狮子王城_Boss_简单", "副本_狮子王城_Boss_普通", "副本_狮子王城_Boss_困难"];
+var PQ = ["Boss_狮子王城_班雷昂_简单", "Boss_狮子王城_班雷昂_普通", "Boss_狮子王城_班雷昂_困难"];
 //配置文件名称
-var eventname = ["副本_狮子王城_Boss_简单", "副本_狮子王城_Boss_普通", "副本_狮子王城_Boss_困难"];
+var eventname = ["Boss_狮子王城_班雷昂_简单", "Boss_狮子王城_班雷昂_普通", "Boss_狮子王城_班雷昂_困难"];
 //设置每日次数
 var maxenter = [10, 10, 10];
 

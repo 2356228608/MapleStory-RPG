@@ -87,7 +87,6 @@ function allMonstersDead(eim) {
 }
 
 function monsterValue(eim, mobId) {
-	em.broadcastServerMsg("[monsterValue]=" + mobId);
 	var mapId = parseInt(em.getProperty("stage"));
 	var kilReq = 1;
 	if (mapId <= 20) {
@@ -110,8 +109,7 @@ function monsterValue(eim, mobId) {
 		kilReq = 2;
 	}
 	var kill = parseInt(em.getProperty("kill")) + 1;
-		em.setProperty("kill", kill);
-	em.broadcastServerMsg("[mapId] " + mapId);
+	em.setProperty("kill", kill);
 	if (kill >= kilReq) {
 		eim.getPlayers().forEach(function (player) {
 			player.openNpc(2540005, "特效_完成_武陵道场");
@@ -123,8 +121,9 @@ function monsterValue(eim, mobId) {
 		// 得刷好几次
 		var map = em.getMapFactoryMap(mapHead + mapId * 100);
 		var mob = em.getMonster(9305600 + mapId - 1);
-		em.broadcastServerMsg("[mob] " + (9305600 + mapId - 1));
-		map.spawnMonsterWithEffect(mob, 15, new java.awt.Point(randomNum(-200, 350), 7), true);
+		eim.getPlayers().forEach(function (player) {
+			player.getMap().spawnMonsterWithEffect(mob, 15, new java.awt.Point(randomNum(-200, 350), 7), false);
+		});
 	}
 	return 1;
 }

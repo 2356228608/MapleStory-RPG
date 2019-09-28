@@ -14,7 +14,7 @@ var moblevel = 255;
 // 副本开关 开启、true 关闭、false
 var open = true;
 // 配置文件名称
-var eventname = ["副本_鲁塔比斯_Boss_皮埃尔", "副本_鲁塔比斯_Boss_皮埃尔_进阶"];
+var eventname = ["Boss_鲁塔比斯_皮埃尔", "Boss_鲁塔比斯_皮埃尔_进阶"];
 // 设置每日次数
 var maxenter = [50, 50];
 // 地图名称

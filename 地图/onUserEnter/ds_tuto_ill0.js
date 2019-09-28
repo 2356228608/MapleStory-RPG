@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 恶魔剧情 - 01
  * 地图：秘密地图 - 恶魔猎手标志 (931050310)
  * @author 狐狸糊涂
@@ -15,7 +15,7 @@ function action(mode, type, selection) {
         ms.setInGameDirectionMode(true, true);
         ms.setStandAloneMode(true);
         ms.effect_Direction("Effect/Direction6.img/DemonTutorial/SceneLogo");
-        ms.inGameDirectionEvent_AskAnswerTime(6300);
+        ms.inGameDirectionEvent_AskAnswerTime(5500);
     } else if (status === i++) {
         ms.dispose();
         ms.warp(927000000, 0);

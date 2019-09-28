@@ -1,8 +1,9 @@
-﻿/*
- * 狂龙剧情 - 02
- * 地图：秘密地图 - 万神殿东部 (940001010)
- * @author 狐狸糊涂
+﻿/*  This source is made by BMS Team
+ *  脚本功能：[新手剧情]狂龙战士系列remake
+ *  @Author 柠檬兔
+ *  工具提供：Jessefjxm
  */
+
 var status = -1;
 
 function action(mode, type, selection) {
@@ -12,12 +13,11 @@ function action(mode, type, selection) {
     if (status <= i++) {
         ms.dispose();
     } else if (status === i++) {
-        ms.curNodeEventEnd(true);
-        ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
-        ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-        ms.npc_ChangeController(3000107, -2950, 20, 0);//E0 FB 86 01
-        ms.npc_SetSpecialAction(3000107, "summon");
-        ms.sendNextNoESC("狂龙战士，我还是觉得不妥，我要跟你一起去。除了我，万神殿里还有很多值得信赖的人。", 3000107);
+	ms.curNodeEventEnd(true);
+	ms.setInGameDirectionMode(true, true, false);
+	ms.npc_ChangeController(3000107, "oid=9813952", -2950, 20, 0);
+	ms.npc_SetSpecialAction("oid=9813952", "summon", 0, 0);
+	ms.onScriptMessage(3, 0, 1, 3000107,  "狂龙战士，我还是觉得不妥，我要跟你一起去。除了我，万神殿里还有很多值得信赖的人。", 256, 0, 1, 0, 0, 0); // [类型] 普通对话
     } else if (status === i++) {
         ms.inGameDirectionEvent_PushMoveInfo(0, 300, -2150, 29);
     } else if (status === i++) {
@@ -76,8 +76,8 @@ function action(mode, type, selection) {
         ms.inGameDirectionEvent_AskAnswerTime(0);
     } else if (status === i++) {
         ms.curNodeEventEnd(true);
-        ms.fieldEffect_ScreenMsg("lightning/screenMsg/0");
-        ms.setInGameDirectionMode(false, true); //屏蔽/解锁操作台 true = 锁 false = 解
+	ms.setInGameDirectionMode(false, true, false);
+	ms.fieldEffect_ScreenMsg("lightning/screenMsg/0");
         ms.dispose();
     } else {
         ms.dispose();

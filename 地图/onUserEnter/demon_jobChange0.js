@@ -1,9 +1,9 @@
-/*
- * 恶魔剧情 - 22
- * 恶魔转职
- * 地图：931050040
- * @author 狐狸糊涂
+﻿/*  This source is made by BMS Team
+ *  脚本功能：[新手剧情]恶魔系列remake
+ *  @Author 柠檬兔
+ *  工具提供：Jessefjxm
  */
+
 var status = -1;
 var jobSelect = -1;
 
@@ -19,22 +19,24 @@ function action(mode, type, selection) {
         if (status <= i++) {
             ms.dispose();
         } else if (status === i++) {
-            ms.curNodeEventEnd(true);
-            ms.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
-            ms.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-            ms.inGameDirectionEvent_MoveAction(2); //0=停止移动 1=往左移动 2=往右移动 3=站立起来 4=趴下去 5=往左跳跃 6=往右跳跃 7=往上跳跃 8=趴下起立
-            ms.sendNextSNoESC("#b脑袋有点乱……");
-        } else if (status === i++) {
-            ms.sendNextPrevSNoESC("#b但是我拥有的力量几乎全部消失了，这个事实是不会改变的。");
-        } else if (status === i++) {
-            ms.sendNextPrevSNoESC("#b哈哈哈，我在说什么啊？这不是曾经对黑魔法师使用过的力量吗？");
-        } else if (status === i++) {
-            ms.sendNextPrevSNoESC("#b诅咒的力量几乎全部消失了，也许是命运在告诉我应该选择其他道路。");
-        } else if (status === i++) {
-            ms.sendNextPrevSNoESC("#b我竟然会说出这种话，真让人寒心。");
-        } else if (status === i++) {
-            ms.sendNextPrevSNoESC("#b好了……让我们先确定该怎么办吧，#h0#。是用曾经对黑魔法师使用过的精气的力量呢？还是使用对黑魔法师的愤怒的力量呢？");
-        } else if (status === i++) {
+ms.curNodeEventEnd(true);
+ms.setInGameDirectionMode(true, true, false);
+ms.inGameDirectionEvent_MoveAction(2);
+ms.curNodeEventEnd(true);
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b脑袋有点乱……", 256, 0, 3, 0, 0, 0); // [类型] 普通对话
+} else if (status === i++) {
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b但是我拥有的力量几乎全部消失了，这个事实是不会改变的。", 257, 0, 3, 0, 0, 0); // [类型] 普通对话
+} else if (status === i++) {
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b哈哈哈，我在说什么啊？这不是曾经对黑魔法师使用过的力量吗？", 257, 0, 3, 0, 0, 0); // [类型] 普通对话
+} else if (status === i++) {
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b诅咒的力量几乎全部消失了，也许是命运在告诉我应该选择其他道路。", 257, 0, 3, 0, 0, 0); // [类型] 普通对话
+} else if (status === i++) {
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b我竟然会说出这种话，真让人寒心。", 257, 0, 3, 0, 0, 0); // [类型] 普通对话
+} else if (status === i++) {
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b好了……让我们先确定该怎么办吧，#h0#。是用曾经对黑魔法师使用过的精气的力量呢？还是使用对黑魔法师的愤怒的力量呢？", 257, 0, 3, 0, 0, 0); // [类型] 普通对话
+} else if (status === i++) {
+ms.onScriptMessage(3, 0, 1, 2159311,  "#b好了……让我们先确定该怎么办吧，#h0#。是用曾经对黑魔法师使用过的精气的力量呢？还是使用对黑魔法师的愤怒的力量呢？", 0, 24, 1, 0, 0, 0); // [类型] 恶魔转职选择
+} else if (status === i++) {
             ms.askSelectMenu(2159311);
         } else if (status === i++) {
             if (jobSelect == -1) {
@@ -105,20 +107,17 @@ function action(mode, type, selection) {
                 }
                 ms.gainItem(2001527, 30);
 
-//            ms.forceStartQuest(23977, "1");
-//            ms.setInGameDirectionMode(false); //屏蔽/解锁操作台 true = 锁 false = 解
-//            ms.setStandAloneMode(false);
-//            ms.enableActions();
-//            ms.dispose();
             }
 				ms.forceStartQuest(23230);
-				ms.setInGameDirectionMode(false); //屏蔽/解锁操作台 true = 锁 false = 解
+				ms.setInGameDirectionMode(false, true, false);
 				ms.setStandAloneMode(false);
 				ms.getRecalcLocalStats();
 				ms.enableActions();
 				ms.dispose();
-				ms.effect_NormalSpeechBalloon("\r\n#fs30#[恶魔提示]:如果提示无法在此地图中更换装备,\r\n或者是在此地图中无法变更属性的,请小退后再继续.",1,1,0,4000,0,0);
-                ms.sendOk("#b为了向黑魔法师复仇，就算使用在军团长时期曾经用过的力量也在所不惜！！在离开之前，打开背包，确认一下消耗栏中的物品吧。背包可以通过#r“I”#b键打开。\r\n\r\n[恶魔提示]:如果提示无法在此地图中更换装备,或者是在此地图中无法使用的,请小退后再继续.");
+				ms.forceStartQuest(23977, "1");
+				ms.forceStartQuest(29958, "");
+				ms.forceCompleteQuest(29958);
+				ms.sendOk("#b为了向黑魔法师复仇，就算使用在军团长时期曾经用过的力量也在所不惜！！在离开之前，打开背包，确认一下消耗栏中的物品吧。背包可以通过#r“I”#b键打开。\r\n\r\n[恶魔提示]:如果提示无法在此地图中更换装备,或者是在此地图中无法使用的,请小退后再继续.");
 				
         } 
     }else{
