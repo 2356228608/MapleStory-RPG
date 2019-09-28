@@ -33,7 +33,7 @@ function playerRevive(eim, player) {
     player.addHP(50);
     var map = eim.getMapFactoryMap(270050300);
     player.changeMap(map, map.getPortal(0));
-    
+    player.restReviveCount();
     return true;
 }
 

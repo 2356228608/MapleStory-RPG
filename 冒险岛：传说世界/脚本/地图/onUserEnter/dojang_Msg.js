@@ -24,6 +24,7 @@ function action(mode, type, selection) {
 		];
 		ms.getMap().startSimpleMapEffect(
 			mulungEffects[randomNum(0, mulungEffects.length - 1)], 5120024);
+		ms.effect_Text("#fn微软雅黑##fs24#◆ 独立副本 ◆\r\n#fn黑体##fs40#武陵道场", 100, 2000, 4, 0, -150, 1, 4, 0, 0, 0);
 		ms.dispose();
 	} else {
 		ms.dispose();

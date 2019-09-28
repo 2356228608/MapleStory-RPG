@@ -129,34 +129,6 @@ function actionHD(mode, type, selection) {
 	cm.dispose();
 }
 
-function getData(manager, quest, name) {
-	var str = manager.getInfoQuest(quest);
-	var data = new Array();
-	for (var i = 0; i < name.length; i++) {
-		data.push([name[i], "0"]);
-	}
-	if (str == null)
-		return;
-	str.split(";").forEach(function (e, i) {
-		if (e.length <= 1) {
-			return;
-		}
-		var v = e.split("=");
-		if (typeof(v) == "undefined" || v.length != 2)
-			return;
-		data[i][1] = isNaN(v[1]) ? 0 : v[1];
-	});
-	return data;
-}
-
-function saveData(manager, quest, data) {
-	var str = "";
-	data.forEach(function (e, i) {
-		str += e[0] + "=" + e[1] + ((i < data.length - 1) ? ";" : "");
-	});
-	manager.updateInfoQuest(quest, str);
-}
-
 function actionStage(mode, type, selection) {
 	if (mapId == 16) {
 		cm.fieldEffect_ScreenMsg("Map/Effect.img/MapleHighSchool/stageEff/final");
@@ -345,4 +317,39 @@ function start黑屏放动画(mode, type, selection) {
 
 function isLeader(player) {
 	return player.getParty().getLeader().getId() == player.getId();
+}
+
+// getData(cm, 18766, ["Time", "enterTime"]);
+function getData(manager, quest, name) {
+	var str = manager.getInfoQuest(quest);
+	var data = new Array();
+	for (var i = 0; i < name.length; i++) {
+		data.push([name[i], "0"]);
+	}
+	if (str == null)
+		return;
+	str.split(";").forEach(function (e, i) {
+		if (e.length <= 1) {
+			return;
+		}
+		var v = e.split("=");
+		if (typeof(v) == "undefined" || v.length != 2)
+			return;
+		data[i][1] = isNaN(v[1]) ? 0 : v[1];
+	});
+	return data;
+}
+
+function saveData(manager, quest, data) {
+	var str = "";
+	data.forEach(function (e, i) {
+		str += e[0] + "=" + e[1] + ((i < data.length - 1) ? ";" : "");
+	});
+	manager.updateInfoQuest(quest, str);
+}
+
+function getCurDate() {
+	var date = new Date();
+	var dateStr = (date.getYear() - 100) + "/" + (date.getMonth() + 1) + "/" + date.getDay();
+	return dateStr;
 }
