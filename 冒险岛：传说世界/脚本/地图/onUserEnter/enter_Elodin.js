@@ -6,7 +6,7 @@ var status = -1;
 function action(mode, type, selection) {
 	(mode == 1) ? status++ : status--;
 	var map = ms.getMapId();
-	if (map == 101084400 && ms.isQuestFinished(37166) && !ms.isQuestFinished(37167)) {
+	if (map == 101084400 && ms.getPlayer().getQuestStatus(37167) == 1) {
 		ms.updateInfoQuest(37150, "00=h0;01=h1;02=h0;03=h2;04=h1");
 		ms.dispose();
 	} else if (ms.isQuestActive(37169)) {

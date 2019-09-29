@@ -47,18 +47,10 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	status++;
-	selectionLog[status] = selection;
-	var i = -1;
-	if (status <= i++) {
-		cm.dispose();
-	} else if (status === i++) {
-		// 初始化
-		cm.curNodeEventEnd(true);
-		cm.setInGameDirectionMode(true, true); //屏蔽/解锁操作台 true = 锁 false = 解
-		cm.setStandAloneMode(true); //屏蔽/解锁 剧情其他玩家
-		cm.dispose()
-	}
+	cm.updateInfoQuest(500400, "open=0;0_0=1;0_1=1");
+	cm.updateInfoQuest(500767, "finishTime=-1442;1=1;2=1;type=0;3=1;entrance=0;4=1;6=1;7=1;managerXpos=100;managerYpos=100");
+	cm.dispose();
+	cm.enterHome(0);
 }
 function actionPacket(mode, type, selection) {
 	status++;

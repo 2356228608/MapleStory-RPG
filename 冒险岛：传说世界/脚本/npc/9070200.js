@@ -49,7 +49,7 @@ function action(mode, type, selection) {
 function openUI() {
 	cm.addPopupSay(9070200, 2000, "你要挑战“神操作”吗？");
 	var data = getData(cm, 18838, ["count", "stageT", "hack", "stage", "mode"]);
-	cm.openUIWithOption(1112, Math.floor(parseInt(data[3][1]-1) / 5));
+	cm.openUIWithOption(1112, Math.max(0, Math.floor(parseInt(data[3][1] - 1) / 5)));
 	cm.dispose();
 }
 

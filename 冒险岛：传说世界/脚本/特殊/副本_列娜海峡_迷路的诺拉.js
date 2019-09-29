@@ -1,4 +1,4 @@
-﻿/* 
+﻿/*
 Made by jessefjxm
  */
 //副本开关 开启、true 关闭、false
@@ -70,6 +70,7 @@ function action(mode, type, selection) {
 				} else {
 					var prop = em.getProperty("state");
 					if (prop == null || prop.equals("0")) {
+						cm.dispelBuff(80001346);
 						em.startInstance(cm.getParty(), cm.getMap(), 255);
 						em.setProperty("PQLog", PQLog[chs]); // 务必放在加载事件下方
 					} else {
