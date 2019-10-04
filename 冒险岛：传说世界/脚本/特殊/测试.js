@@ -47,10 +47,12 @@ function act蘑菇城() {
 }
 
 function action(mode, type, selection) {
-	cm.updateInfoQuest(500400, "open=0;0_0=1;0_1=1");
-	cm.updateInfoQuest(500767, "finishTime=-1442;1=1;2=1;type=0;3=1;entrance=0;4=1;6=1;7=1;managerXpos=100;managerYpos=100");
+		//cm.updateInfoQuest(500767, "2=1;3=1;7=1;entrance=1;managerXpos=100;managerYpos=100");
+	//cm.useBlueprint(0,"",5,7);
+	//	cm.updateInfoQuest(500767, "1=1;2=1;3=1;type=7;entrance=0;4=1;5=1;6=1;7=1;managerXpos=100;managerYpos=100");
+	//cm.updateInfoQuest(500773, "askR=0;manager=0;managerHide=0;s1=30;talkDate=19/09/28;s2=14;s3=3;bonusTalk=0;s4=2;s5=10;resetDate=19/09/28;affDown=19/09/28");
+	//cm.updateInfoQuest(500400, "open=0;0_0=1;0_1=1");
 	cm.dispose();
-	cm.enterHome(0);
 }
 function actionPacket(mode, type, selection) {
 	status++;

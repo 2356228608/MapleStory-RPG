@@ -147,8 +147,8 @@ function action(mode, type, selection) {
 		cm.setInGameDirectionMode(false, true, false);
 		cm.npc_LeaveField("oid=11110732");
 		// [2019/9/28 8:19:24] 即将切换地图: cm.warp(871000011) -> cm.warp(871200197)
-		cm.enterHome(0);
 		cm.dispose();
+		cm.enterHome(0);
 	} else {
 		ms.dispose();
 	}

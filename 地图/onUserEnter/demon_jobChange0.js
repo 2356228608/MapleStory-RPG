@@ -23,6 +23,7 @@ ms.curNodeEventEnd(true);
 ms.setInGameDirectionMode(true, true, false);
 ms.inGameDirectionEvent_MoveAction(2);
 ms.curNodeEventEnd(true);
+ms.resetForcedStat();
 ms.onScriptMessage(3, 0, 1, 2159311,  "#b脑袋有点乱……", 256, 0, 3, 0, 0, 0); // [类型] 普通对话
 } else if (status === i++) {
 ms.onScriptMessage(3, 0, 1, 2159311,  "#b但是我拥有的力量几乎全部消失了，这个事实是不会改变的。", 257, 0, 3, 0, 0, 0); // [类型] 普通对话
@@ -117,6 +118,7 @@ ms.onScriptMessage(3, 0, 1, 2159311,  "#b好了……让我们先确定该怎么
 				ms.forceStartQuest(23977, "1");
 				ms.forceStartQuest(29958, "");
 				ms.forceCompleteQuest(29958);
+				ms.resetForcedStat();
 				ms.sendOk("#b为了向黑魔法师复仇，就算使用在军团长时期曾经用过的力量也在所不惜！！在离开之前，打开背包，确认一下消耗栏中的物品吧。背包可以通过#r“I”#b键打开。\r\n\r\n[恶魔提示]:如果提示无法在此地图中更换装备,或者是在此地图中无法使用的,请小退后再继续.");
 				
         } 

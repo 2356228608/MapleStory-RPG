@@ -16,16 +16,23 @@ function action(mode, type, selection) {
 	if (status <= i++) {
 		cm.dispose();
 	} else if (status === i++) {
-		cm.onScriptMessage(3, 0, 0, 0, "#face0#你要现在进入我的小屋吗？", 0, 16, 36, 0, 1, 9010000); // [类型] 接受/拒绝
+		if (cm.getNpc() == 0 || cm.getNpc() == cm.getPlayer().getAccountID()) {
+			var text = "我";
+		} else {
+			var text = "别人";
+		}
+		var map = cm.readQuestInfo(500773);
+		var manager = parseInt(map.getOrDefault("manager", "0"));
+		cm.onScriptMessage(3, 0, 0, 0, "#face1#要现在进入" + text + "的小屋吗？", 0, 16, 36, 0, 1, 9400920 + manager); // [类型] 接受/拒绝
 	} else if (status === i++) {
 		cm.updateInfoQuest(64590, "rMap=" + cm.getMapId());
 		cm.dispose();
 		if (cm.getPlayer().getQuestStatus(64591) == 1) {
 			cm.warp(871000011);
-		} else {
+		} else if (cm.getNpc() == cm.getPlayer().getAccountID()) {
 			cm.enterHome(0);
+		} else {
+			cm.enterHome(cm.getNpc());
 		}
-	} else {
-		cm.dispose();
 	}
 }

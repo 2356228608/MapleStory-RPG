@@ -30,6 +30,7 @@ function action1(mode, type, selection) {
 	ms.teachSkill(20021181, -1, 1);
 	ms.teachSkill(20020111, -1, 1);
 	ms.dispose();
+	ms.resetForcedStat();
 	ms.getTopMsgFont("从那之后已经过了几百年……", 3, 20, 20, 0);
 
 	}

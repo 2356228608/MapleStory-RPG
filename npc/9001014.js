@@ -76,13 +76,17 @@ function action(mode, type, selection) {
 		selStr += "#L100##b" + p2 + "神秘力量#l";
 		selStr += "#L101##b" + p2 + "激活创世武器潜能#l";
 		selStr += "#L102##b" + p2 + "装备品质提升#l\r\n\r\n";
-		selStr += "#L103##b" + p2 + "勋章融合#l\r\n\r\n";
+		selStr += "#L103##b" + p2 + "勋章融合#l";
+		selStr += "#L104##b" + p2 + "星岩卡槽#l\r\n\r\n";
 
         selStr += "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "" + tz20 + "\r\n";
         cm.askMenu(selStr);
     } else if (status == 1) {
         switch (selection) {
-
+			case 104:
+                cm.dispose();
+                cm.openNpc(1530040,"星岩卡槽");
+                break;
 			case 103:
                 cm.dispose();
                 cm.openNpc(1530040,"勋章融合");
